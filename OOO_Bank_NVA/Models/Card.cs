@@ -2,6 +2,9 @@
 
 namespace OOO_Bank_NVA.Models
 {
+    /// <summary>
+    /// Сущность карты на котором хранятся средства
+    /// </summary>
     public class Card : BaseAuditEntity
     {
         /// <summary>

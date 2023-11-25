@@ -253,16 +253,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB\ApplicationContext.cs" />
+    <Compile Include="DB\ConfigurateDB\Anchors\IEntityConfigurateAnchors.cs" />
+    <Compile Include="DB\ConfigurateDB\CardEntityConfigurate.cs" />
+    <Compile Include="DB\ConfigurateDB\DBBankEntityConfigurate.cs" />
+    <Compile Include="DB\ConfigurateDB\OperationEntityConfigurate.cs" />
+    <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="Enums\Gender.cs" />
     <Compile Include="Enums\OperationType.cs" />
+    <Compile Include="Enums\StatusType.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IApplicationContext.cs" />
+    <Compile Include="Interfaces\IEntityCreated.cs" />
+    <Compile Include="Interfaces\IEntityDeleted.cs" />
+    <Compile Include="Interfaces\IEntityUpdated.cs" />
+    <Compile Include="Interfaces\IEntityWithId.cs" />
     <Compile Include="Models\BaseAuditEntity.cs" />
     <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\DBBank.cs" />
     <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Program.cs" />

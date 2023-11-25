@@ -1,11 +1,16 @@
-﻿using System;
+﻿using OOO_Bank_NVA.Interfaces;
+using System;
 
 namespace OOO_Bank_NVA.Models
 {
     /// <summary>
     /// Класс общего поведения
     /// </summary>
-    public abstract class BaseAuditEntity
+    public abstract class BaseAuditEntity :
+        IEntityWithId,
+        IEntityCreated,
+        IEntityUpdated,
+        IEntityDeleted
     {
         /// <summary>
         /// Идентификатор

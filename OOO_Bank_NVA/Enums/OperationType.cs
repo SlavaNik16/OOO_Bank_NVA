@@ -20,7 +20,10 @@
         /// </summary>
         Translation,
 
-
+        /// <summary>
+        /// Покупка
+        /// </summary>
+        By,
 
 
     }

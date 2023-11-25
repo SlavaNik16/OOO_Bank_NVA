@@ -4,7 +4,7 @@ using System;
 namespace OOO_Bank_NVA.Models
 {
     /// <summary>
-    /// История операций от пользователя
+    /// Сущность История операций от пользователя
     /// </summary>
     public class Operation : BaseAuditEntity
     {
@@ -29,8 +29,10 @@ namespace OOO_Bank_NVA.Models
         public OperationType OperationType { get; set; }
 
         /// <summary>
-        /// Комментарий (если операция производилась переводом, 
-        /// указывается на какую карту и на сколько денег)
+        /// Комментарий (
+        /// если Перевод:указывается на какую карту и на сколько денег;
+        /// eсли Покупка:название покупки и количество;
+        /// )
         /// </summary>
         public string Comment { get; set; } = string.Empty;
     }

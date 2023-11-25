@@ -1,10 +1,9 @@
 ﻿using OOO_Bank_NVA.Enums;
-using System;
 
 namespace OOO_Bank_NVA.Models
 {
     /// <summary>
-    /// Класс клиента в банке
+    /// Сущность клиента в банке
     /// </summary>
     public class Person : BaseAuditEntity
     {
