@@ -27,7 +27,9 @@ namespace OOO_Bank_NVA.DB
             AuditForUpdated(entity, nameUser);
             using (var db = new ApplicationContext(options))
             {
+                Console.WriteLine(db.GetHashCode());
                 db.Add(entity);
+                SaveChangesAsync(db);
             }
          }
             
@@ -74,13 +76,10 @@ namespace OOO_Bank_NVA.DB
             }
         }
 
-        public CancellationToken SaveChangesAsync(CancellationToken cancellationToken = default)
+        public void SaveChangesAsync(ApplicationContext db, CancellationToken cancellationToken = default)
         {
-            using (var db = new ApplicationContext(options))
-            {
-                db.SaveChangesAsync(cancellationToken);
-            }
-            return cancellationToken;
+            Console.WriteLine(db.GetHashCode());
+            db.SaveChanges();
         }
 
     }

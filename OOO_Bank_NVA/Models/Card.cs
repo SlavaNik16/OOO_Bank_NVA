@@ -27,8 +27,5 @@ namespace OOO_Bank_NVA.Models
         /// </summary>
         public string PinCode { get; set; } = null;
 
-        internal ICollection<Person> Person { get; set; }
-
-
     }
 }

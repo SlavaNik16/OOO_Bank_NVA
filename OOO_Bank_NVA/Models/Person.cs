@@ -30,10 +30,9 @@ namespace OOO_Bank_NVA.Models
         public Gender Gender { get; set; } = Gender.Male;
 
         /// <summary>
-        /// Карта пользователя
+        /// Номер карты пользователя
         /// </summary>
-        public Guid CardId { get; set; }
-        internal Card Card { get; set; }
+        public string CardName { get; set; }
 
         internal ICollection<Operation> Operation { get; set; }
         internal ICollection<Basket> Basket { get; set; }
