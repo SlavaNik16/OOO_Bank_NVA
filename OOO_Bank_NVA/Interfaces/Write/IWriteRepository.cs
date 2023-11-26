@@ -1,6 +1,4 @@
-﻿using System.Threading;
-
-namespace OOO_Bank_NVA.Interfaces.Write
+﻿namespace OOO_Bank_NVA.Interfaces.Write
 {
     /// <summary>
     /// Интерфейс создания и модификации записей в хранилище

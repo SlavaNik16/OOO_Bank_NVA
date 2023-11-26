@@ -29,7 +29,7 @@ namespace OOO_Bank_NVA.DB
             {
                 Console.WriteLine(db.GetHashCode());
                 db.Add(entity);
-                SaveChangesAsync(db);
+                db.SaveChanges();
             }
          }
             
@@ -39,6 +39,7 @@ namespace OOO_Bank_NVA.DB
             using (var db = new ApplicationContext(options))
             {
                 db.Update(entity);
+                db.SaveChanges();
             }
         }
 
@@ -48,6 +49,7 @@ namespace OOO_Bank_NVA.DB
             using (var db = new ApplicationContext(options))
             {
                 db.Update(entity);
+                db.SaveChanges();
             }
         }
 
@@ -75,12 +77,5 @@ namespace OOO_Bank_NVA.DB
                 entityDeleted.DeletedAt = DateTimeOffset.UtcNow;
             }
         }
-
-        public void SaveChangesAsync(ApplicationContext db, CancellationToken cancellationToken = default)
-        {
-            Console.WriteLine(db.GetHashCode());
-            db.SaveChanges();
-        }
-
     }
 }
