@@ -13,7 +13,7 @@ namespace OOO_Bank_NVA.DB
         {
             var builderConfig = new ConfigurationBuilder();
             builderConfig.SetBasePath(Directory.GetCurrentDirectory());
-            builderConfig.AddJsonFile("appsettins.json");
+            builderConfig.AddJsonFile("appsettings.json");
             var config = builderConfig.Build();
             var connectionString = config.GetConnectionString("DefaultConnection");
             var builder = new DbContextOptionsBuilder<ApplicationContext>();

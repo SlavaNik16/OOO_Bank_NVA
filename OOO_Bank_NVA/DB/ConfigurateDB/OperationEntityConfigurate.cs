@@ -5,7 +5,7 @@ using OOO_Bank_NVA.Models;
 namespace OOO_Bank_NVA.DB.ConfigurateDB
 {
     /// <summary>
-    /// Конфигурация сущности Operation
+    /// Конфигурация сущности <see cref="Operation"/>
     /// </summary>
     public class OperationEntityConfigurate : IEntityTypeConfiguration<Operation>
     {

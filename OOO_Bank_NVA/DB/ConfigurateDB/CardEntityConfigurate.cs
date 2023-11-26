@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Models;
 
 namespace OOO_Bank_NVA.DB.ConfigurateDB
-{
+{ 
     /// <summary>
-    /// Конфигурация сущности Card
+    /// Конфигурация сущности <see cref="Card"/>
     /// </summary>
     public class CardEntityConfigurate : IEntityTypeConfiguration<Card>
     {
@@ -20,6 +20,10 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
             builder.Property(x => x.Balance).IsRequired();
             builder.Property(x => x.PersonId).IsRequired();
 
+            builder.HasMany(x => x.Operation)
+                .WithOne(x => x.Card)
+                .HasForeignKey(x => x.CardId)
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasIndex(x => x.Nomer)
               .IsUnique()

@@ -5,7 +5,7 @@ using OOO_Bank_NVA.Models;
 namespace OOO_Bank_NVA.DB.ConfigurateDB
 {
     /// <summary>
-    /// Конфигурация сущности Person
+    /// Конфигурация сущности <see cref="Person"/>
     /// </summary>
     public class PersonEntityConfigurate : IEntityTypeConfiguration<Person>
     {
@@ -20,15 +20,18 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
 
             builder.HasMany(x => x.Operation)
                 .WithOne(y => y.Person)
-                .HasForeignKey(z => z.PersonId);
+                .HasForeignKey(z => z.PersonId)
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasMany(x => x.Card)
              .WithOne(y => y.Person)
-             .HasForeignKey(z => z.PersonId);
+             .HasForeignKey(z => z.PersonId)
+             .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasMany(x => x.Tovar)
              .WithOne(y => y.Person)
-             .HasForeignKey(z => z.PersonId);
+             .HasForeignKey(z => z.PersonId)
+             .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasIndex(x => x.Phone)
                 .IsUnique()

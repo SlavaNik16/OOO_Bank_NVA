@@ -269,6 +269,7 @@
   <ItemGroup>
     <Compile Include="DB\ApplicationContext.cs" />
     <Compile Include="DB\ConfigurateDB\BaseAuditExtensionConfigurated.cs" />
+    <Compile Include="DB\ConfigurateDB\TovarEntityConfigurate.cs" />
     <Compile Include="DB\WriteDB\BaseWriteRepository.cs" />
     <Compile Include="DB\ConfigurateDB\Anchors\IEntityConfigurateAnchors.cs" />
     <Compile Include="DB\ConfigurateDB\CardEntityConfigurate.cs" />
@@ -310,6 +311,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="appsettings.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
