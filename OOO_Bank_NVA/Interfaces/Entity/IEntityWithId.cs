@@ -5,11 +5,11 @@ namespace OOO_Bank_NVA.Interfaces
     /// <summary>
     /// Интерфейс для работы с Id
     /// </summary>
-    public class IEntityWithId
+    public interface IEntityWithId
     {
         /// <summary>
         /// Идентификатор
         /// </summary>
-        public Guid Id { get; set; }
+        Guid Id { get; set; }
     }
 }

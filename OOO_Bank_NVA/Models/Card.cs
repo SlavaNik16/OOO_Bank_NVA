@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OOO_Bank_NVA.Models
 {
@@ -31,6 +32,9 @@ namespace OOO_Bank_NVA.Models
         /// Владелец карты
         /// </summary>
         public Guid PersonId { get; set; }
+        internal Person Person { get; set; }
+
+        internal ICollection<Operation> Operation { get; set; }
 
     }
 }
