@@ -19,5 +19,8 @@ namespace OOO_Bank_NVA.Interfaces
 
         /// <summary><see cref="DBBank"></summary>
         DbSet<DBBank> DBBanks { get; set; }
+
+        /// <summary><see cref="Basket"></summary>
+        DbSet<Basket> Baskets { get; set; }
     }
 }

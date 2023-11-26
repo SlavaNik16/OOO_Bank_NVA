@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace OOO_Bank_NVA.Models
 {
@@ -27,10 +27,8 @@ namespace OOO_Bank_NVA.Models
         /// </summary>
         public string PinCode { get; set; } = null;
 
-        /// <summary>
-        /// Владелец карты
-        /// </summary>
-        public Guid PersonId { get; set; }
+        internal ICollection<Person> Person { get; set; }
+
 
     }
 }

@@ -7,6 +7,7 @@ namespace OOO_Bank_NVA.Models
     /// Класс общего поведения
     /// </summary>
     public abstract class BaseAuditEntity :
+        IEntity,
         IEntityWithId,
         IEntityCreated,
         IEntityUpdated,
