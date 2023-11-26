@@ -31,6 +31,11 @@ namespace OOO_Bank_NVA.DB
         /// </summary>
         public DbSet<DBBank> DBBanks { get; set; }
 
+        /// <summary>
+        /// Сущность Карзины
+        /// </summary>
+        public DbSet<Basket> Baskets { get; set; }
+
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             

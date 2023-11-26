@@ -15,12 +15,6 @@ namespace OOO_Bank_NVA.Models
         internal Person Person { get; set; }
 
         /// <summary>
-        /// Какой картой произошла покупка
-        /// </summary>
-        public Guid CardId { get; set; }
-        internal Card Card { get; set; }
-
-        /// <summary>
         /// Используемая цена
         /// </summary>
         public decimal Price { get; set; }

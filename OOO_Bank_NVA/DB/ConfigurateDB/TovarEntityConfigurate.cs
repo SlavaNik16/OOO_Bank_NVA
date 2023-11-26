@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOO_Bank_NVA.DB.ConfigurateDB
 {
@@ -22,6 +17,10 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
             builder.Property(x => x.Tittle).IsRequired().HasMaxLength(120);
             builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.Count).IsRequired();
+
+            builder.HasMany(x => x.Basket)
+                .WithOne(x => x.Tovar)
+                .HasForeignKey(x => x.TovarId);
 
             builder.HasIndex(x => x.Tittle)
                 .IsUnique()

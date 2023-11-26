@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace OOO_Bank_NVA.Models
 {
@@ -10,7 +10,7 @@ namespace OOO_Bank_NVA.Models
         public string Tittle { get; set; }
 
         /// <summary>
-        /// Цена
+        /// Цена за 1
         /// </summary>
         public decimal Price { get; set; }
 
@@ -19,10 +19,6 @@ namespace OOO_Bank_NVA.Models
         /// </summary>
         public int Count { get; set; }
 
-        /// <summary>
-        /// Кто купил
-        /// </summary>
-        public Guid PersonId { get; set; }
-        internal Person Person { get; set; }
+        internal ICollection<Basket> Basket { get; set; }
     }
 }

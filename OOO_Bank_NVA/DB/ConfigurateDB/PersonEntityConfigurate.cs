@@ -20,18 +20,11 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
 
             builder.HasMany(x => x.Operation)
                 .WithOne(y => y.Person)
-                .HasForeignKey(z => z.PersonId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .HasForeignKey(z => z.PersonId);
 
-            builder.HasMany(x => x.Card)
-             .WithOne(y => y.Person)
-             .HasForeignKey(z => z.PersonId)
-             .OnDelete(DeleteBehavior.NoAction);
-
-            builder.HasMany(x => x.Tovar)
-             .WithOne(y => y.Person)
-             .HasForeignKey(z => z.PersonId)
-             .OnDelete(DeleteBehavior.NoAction);
+            builder.HasMany(x => x.Basket)
+                 .WithOne(y => y.Person)
+                 .HasForeignKey(z => z.PersonId);
 
             builder.HasIndex(x => x.Phone)
                 .IsUnique()

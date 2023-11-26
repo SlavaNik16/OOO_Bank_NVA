@@ -1,5 +1,5 @@
 ﻿using OOO_Bank_NVA.Enums;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 
 namespace OOO_Bank_NVA.Models
@@ -29,9 +29,14 @@ namespace OOO_Bank_NVA.Models
         /// </summary>
         public Gender Gender { get; set; } = Gender.Male;
 
+        /// <summary>
+        /// Карта пользователя
+        /// </summary>
+        public Guid CardId { get; set; }
+        internal Card Card { get; set; }
+
         internal ICollection<Operation> Operation { get; set; }
-        internal ICollection<Card> Card { get; set; }
-        internal ICollection<Tovar> Tovar { get; set; }
+        internal ICollection<Basket> Basket { get; set; }
 
     }
 }

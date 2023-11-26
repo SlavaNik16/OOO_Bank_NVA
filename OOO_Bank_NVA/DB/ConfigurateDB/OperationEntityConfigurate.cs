@@ -15,7 +15,6 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
             builder.PropertyAuditConfiguration();
 
             builder.Property(x => x.PersonId).IsRequired();
-            builder.Property(x => x.CardId).IsRequired();
             builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.OperationType).IsRequired();
 
