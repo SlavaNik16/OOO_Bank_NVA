@@ -9,12 +9,9 @@ namespace OOO_Bank_NVA.DB
     public class BaseWriteRepository<TEntity> : IWriteRepository<TEntity> where TEntity : class, IEntity
     {
         private DbContextOptions<ApplicationContext> options;
-        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        public CancellationToken cancellationToken;
         public BaseWriteRepository()
         {
             options = DataBaseHelper.Options();
-            cancellationToken = cancellationTokenSource.Token;
         }
         public void Add(TEntity entity, string nameUser = "Анонимный")
         {
