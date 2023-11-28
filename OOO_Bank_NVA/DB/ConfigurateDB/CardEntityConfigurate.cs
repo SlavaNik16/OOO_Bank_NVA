@@ -19,6 +19,8 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
             builder.Property(x => x.PinCode).IsRequired().HasMaxLength(8);
             builder.Property(x => x.Balance).IsRequired();
 
+            builder.Property(x => x.DateEnd).IsRequired();
+
             builder.HasIndex(x => x.Nomer)
               .IsUnique()
               .HasFilter($"{nameof(Card.DeletedAt)} is null")

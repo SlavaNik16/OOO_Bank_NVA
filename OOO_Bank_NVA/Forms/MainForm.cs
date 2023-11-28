@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
+using OOO_Bank_NVA.Forms;
 using OOO_Bank_NVA.Models;
 using System;
 using System.Security.Cryptography;
@@ -43,7 +44,10 @@ namespace OOO_Bank_NVA
 
         private void butReg_Click(object sender, EventArgs e)
         {
-
+            var personRegisterForm = new PersonRegisterForm();
+            this.Hide();
+            personRegisterForm.ShowDialog();
+            this.Show();
         }
 
         public static string getHashSha256(string text)

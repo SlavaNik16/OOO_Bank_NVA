@@ -1,4 +1,6 @@
-﻿namespace OOO_Bank_NVA.Models
+﻿using System;
+
+namespace OOO_Bank_NVA.Models
 {
     /// <summary>
     /// Сущность карты на котором хранятся средства
@@ -14,6 +16,11 @@
         /// CSC код
         /// </summary>
         public int CSCCode { get; set; }
+
+        /// <summary>
+        /// Дата oкончания
+        /// </summary>
+        public DateTime DateEnd{ get; set; }
 
         /// <summary>
         /// Баланс карты

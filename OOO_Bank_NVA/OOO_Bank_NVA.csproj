@@ -284,6 +284,12 @@
     <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="DB\DataBaseHelper.cs" />
     <Compile Include="DB\SampleContextFactory.cs" />
+    <Compile Include="Forms\InitMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InitMaterialForm.Designer.cs">
+      <DependentUpon>InitMaterialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PersonRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,8 +330,14 @@
     <Compile Include="Models\Tovar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\InitMaterialForm.resx">
+      <DependentUpon>InitMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonRegisterForm.resx">
+      <DependentUpon>PersonRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
