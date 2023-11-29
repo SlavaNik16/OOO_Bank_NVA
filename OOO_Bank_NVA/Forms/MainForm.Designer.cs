@@ -28,20 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tabUsers = new System.Windows.Forms.TabPage();
             this.tabTovars = new System.Windows.Forms.TabPage();
             this.tabSettings = new System.Windows.Forms.TabPage();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tabBasket = new System.Windows.Forms.TabPage();
+            this.tabUsers = new System.Windows.Forms.TabPage();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.materialTabControl1.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.tabUsers);
             this.materialTabControl1.Controls.Add(this.tabTovars);
+            this.materialTabControl1.Controls.Add(this.tabBasket);
             this.materialTabControl1.Controls.Add(this.tabSettings);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialTabControl1.ImageList = this.imageList1;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
@@ -50,56 +59,109 @@
             this.materialTabControl1.Size = new System.Drawing.Size(1514, 752);
             this.materialTabControl1.TabIndex = 0;
             // 
-            // tabUsers
-            // 
-            this.tabUsers.Location = new System.Drawing.Point(4, 29);
-            this.tabUsers.Name = "tabUsers";
-            this.tabUsers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUsers.Size = new System.Drawing.Size(1506, 719);
-            this.tabUsers.TabIndex = 0;
-            this.tabUsers.Text = "Пользователи";
-            this.tabUsers.UseVisualStyleBackColor = true;
-            // 
             // tabTovars
             // 
-            this.tabTovars.Location = new System.Drawing.Point(4, 29);
+            this.tabTovars.ImageKey = "Tovar.png";
+            this.tabTovars.Location = new System.Drawing.Point(4, 39);
             this.tabTovars.Name = "tabTovars";
             this.tabTovars.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTovars.Size = new System.Drawing.Size(1506, 719);
+            this.tabTovars.Size = new System.Drawing.Size(1506, 709);
             this.tabTovars.TabIndex = 1;
             this.tabTovars.Text = "Товары";
             this.tabTovars.UseVisualStyleBackColor = true;
             // 
             // tabSettings
             // 
-            this.tabSettings.Location = new System.Drawing.Point(4, 29);
+            this.tabSettings.ImageKey = "Settings.png";
+            this.tabSettings.Location = new System.Drawing.Point(4, 39);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(1506, 719);
+            this.tabSettings.Size = new System.Drawing.Size(1506, 709);
             this.tabSettings.TabIndex = 2;
             this.tabSettings.Text = "Настройки";
             this.tabSettings.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "User.png");
+            this.imageList1.Images.SetKeyName(1, "Tovar.png");
+            this.imageList1.Images.SetKeyName(2, "Basket.png");
+            this.imageList1.Images.SetKeyName(3, "Settings.png");
+            // 
+            // tabBasket
+            // 
+            this.tabBasket.ImageKey = "Basket.png";
+            this.tabBasket.Location = new System.Drawing.Point(4, 39);
+            this.tabBasket.Name = "tabBasket";
+            this.tabBasket.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBasket.Size = new System.Drawing.Size(1506, 709);
+            this.tabBasket.TabIndex = 3;
+            this.tabBasket.Text = "Корзина";
+            this.tabBasket.UseVisualStyleBackColor = true;
+            // 
+            // tabUsers
+            // 
+            this.tabUsers.ImageKey = "User.png";
+            this.tabUsers.Location = new System.Drawing.Point(4, 39);
+            this.tabUsers.Name = "tabUsers";
+            this.tabUsers.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUsers.Size = new System.Drawing.Size(1506, 709);
+            this.tabUsers.TabIndex = 0;
+            this.tabUsers.Text = "Пользователи";
+            this.tabUsers.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip.Location = new System.Drawing.Point(3, 784);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip.Size = new System.Drawing.Size(1514, 32);
+            this.statusStrip.TabIndex = 0;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(186, 25);
+            this.toolStripStatusLabel1.Text = "Статус: Пользователь";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1520, 819);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1520, 819);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1520, 819);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OOO Банк NVA";
             this.materialTabControl1.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
-        private System.Windows.Forms.TabPage tabUsers;
         private System.Windows.Forms.TabPage tabTovars;
         private System.Windows.Forms.TabPage tabSettings;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TabPage tabBasket;
+        private System.Windows.Forms.TabPage tabUsers;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

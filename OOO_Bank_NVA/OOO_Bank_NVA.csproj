@@ -308,6 +308,9 @@
     <Compile Include="Forms\PersonRegisterForm.Designer.cs">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Migrations\20231126184002_Init.cs" />
     <Compile Include="Migrations\20231126184002_Init.designer.cs">
       <DependentUpon>20231126184002_Init.cs</DependentUpon>
