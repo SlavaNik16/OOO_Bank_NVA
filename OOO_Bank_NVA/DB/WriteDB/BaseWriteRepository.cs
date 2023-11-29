@@ -2,19 +2,16 @@
 using OOO_Bank_NVA.Interfaces;
 using OOO_Bank_NVA.Interfaces.Write;
 using System;
-using System.Threading;
 
 namespace OOO_Bank_NVA.DB
 {
     public class BaseWriteRepository<TEntity> : IWriteRepository<TEntity> where TEntity : class, IEntity
     {
         private DbContextOptions<ApplicationContext> options;
-        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        public CancellationToken cancellationToken;
+
         public BaseWriteRepository()
         {
             options = DataBaseHelper.Options();
-            cancellationToken = cancellationTokenSource.Token;
         }
         public void Add(TEntity entity, string nameUser = "Анонимный")
         {
@@ -77,15 +74,5 @@ namespace OOO_Bank_NVA.DB
                 entityDeleted.DeletedAt = DateTimeOffset.UtcNow;
             }
         }
-
-        public CancellationToken SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            using (var db = new ApplicationContext(options))
-            {
-                db.SaveChangesAsync(cancellationToken);
-            }
-            return cancellationToken;
-        }
-
     }
 }

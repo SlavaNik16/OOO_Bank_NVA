@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace OOO_Bank_NVA.Models
+﻿namespace OOO_Bank_NVA.Models
 {
     /// <summary>
     /// Сущность карты на котором хранятся средства
