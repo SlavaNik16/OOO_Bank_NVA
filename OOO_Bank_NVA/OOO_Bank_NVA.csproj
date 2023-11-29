@@ -290,12 +290,6 @@
     <Compile Include="Forms\CardValidateForm.Designer.cs">
       <DependentUpon>CardValidateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InitMaterialForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\InitMaterialForm.Designer.cs">
-      <DependentUpon>InitMaterialForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,9 +353,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\CardValidateForm.resx">
       <DependentUpon>CardValidateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InitMaterialForm.resx">
-      <DependentUpon>InitMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>

@@ -37,7 +37,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(6, 105);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 206);
+            this.panel1.Size = new System.Drawing.Size(788, 206);
             this.panel1.TabIndex = 0;
             // 
             // butEnter
@@ -68,9 +68,13 @@
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.butEnter);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 389);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 389);
             this.Name = "PersonEnterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PersonEnterForm";
+            this.Text = "Вход";
             this.ResumeLayout(false);
 
         }

@@ -80,19 +80,20 @@ namespace OOO_Bank_NVA.Forms
 
         private void butCreate_Click(object sender, System.EventArgs e)
         {
-            if(!string.IsNullOrEmpty(person.CardName))
+            using (var db = new ApplicationContext(options))
             {
-                using (var db = new ApplicationContext(options))
+                var personValidate = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
+                if (personValidate != null)
                 {
-                    var personValidate = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
-                    if(personValidate != null)
-                    {
-                        MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        maskPhoneText.Text = string.Empty;
-                        return;
-                    }
+                    MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    maskPhoneText.Text = string.Empty;
+                    return;
+                }
+                if (!string.IsNullOrEmpty(person.CardName))
+                {
+
                     var card = db.Cards.FirstOrDefault(x => x.Nomer == person.CardName);
-                    if(card == null)
+                    if (card == null)
                     {
                         MessageBox.Show("Ваша карта не найдена!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         maskNumberCardText.Text = string.Empty;
