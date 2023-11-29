@@ -296,6 +296,12 @@
     <Compile Include="Forms\InitMaterialForm.Designer.cs">
       <DependentUpon>InitMaterialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PersonEnterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,17 +326,21 @@
     <Compile Include="Migrations\20231129171108_AddDateEnd.designer.cs">
       <DependentUpon>20231129171108_AddDateEnd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20231129181210_AddRole.cs" />
+    <Compile Include="Migrations\20231129181210_AddRole.designer.cs">
+      <DependentUpon>20231129181210_AddRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\Enums\Gender.cs" />
     <Compile Include="Models\Enums\OperationType.cs" />
     <Compile Include="Models\Enums\RoleType.cs" />
     <Compile Include="Models\Enums\StatusType.cs" />
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\AuthorizationForm.Designer.cs">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IApplicationContext.cs" />
     <Compile Include="Interfaces\Entity\IEntity.cs" />
@@ -353,8 +363,8 @@
     <EmbeddedResource Include="Forms\InitMaterialForm.resx">
       <DependentUpon>InitMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AuthorizationForm.resx">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonEnterForm.resx">
       <DependentUpon>PersonEnterForm.cs</DependentUpon>

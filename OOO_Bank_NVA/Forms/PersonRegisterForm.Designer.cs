@@ -43,7 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.maskPhoneText = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
+            this.passwordBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.SuspendLayout();
             // 
             // nameBox
@@ -194,7 +194,7 @@
             this.butCreate.Enabled = false;
             this.butCreate.HighEmphasis = true;
             this.butCreate.Icon = null;
-            this.butCreate.Location = new System.Drawing.Point(97, 787);
+            this.butCreate.Location = new System.Drawing.Point(142, 780);
             this.butCreate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.butCreate.Name = "butCreate";
@@ -215,7 +215,7 @@
             this.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.butCancel.HighEmphasis = true;
             this.butCancel.Icon = null;
-            this.butCancel.Location = new System.Drawing.Point(510, 787);
+            this.butCancel.Location = new System.Drawing.Point(509, 780);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.butCancel.Name = "butCancel";
@@ -300,38 +300,39 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "*Обязательно";
             // 
-            // materialTextBox21
+            // passwordBox
             // 
-            this.materialTextBox21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.passwordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTextBox21.AnimateReadOnly = false;
-            this.materialTextBox21.BackColor = System.Drawing.SystemColors.Control;
-            this.materialTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox21.Depth = 0;
-            this.materialTextBox21.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.materialTextBox21.HideSelection = true;
-            this.materialTextBox21.Hint = "Пароль";
-            this.materialTextBox21.LeadingIcon = null;
-            this.materialTextBox21.Location = new System.Drawing.Point(97, 697);
-            this.materialTextBox21.MaxLength = 75;
-            this.materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox21.Name = "materialTextBox21";
-            this.materialTextBox21.PasswordChar = '*';
-            this.materialTextBox21.PrefixSuffixText = null;
-            this.materialTextBox21.ReadOnly = false;
-            this.materialTextBox21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox21.SelectedText = "";
-            this.materialTextBox21.SelectionLength = 0;
-            this.materialTextBox21.SelectionStart = 0;
-            this.materialTextBox21.ShortcutsEnabled = true;
-            this.materialTextBox21.Size = new System.Drawing.Size(571, 48);
-            this.materialTextBox21.TabIndex = 19;
-            this.materialTextBox21.TabStop = false;
-            this.materialTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox21.TrailingIcon = null;
-            this.materialTextBox21.UseSystemPasswordChar = false;
+            this.passwordBox.AnimateReadOnly = false;
+            this.passwordBox.BackColor = System.Drawing.SystemColors.Control;
+            this.passwordBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.passwordBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.passwordBox.Depth = 0;
+            this.passwordBox.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordBox.HideSelection = true;
+            this.passwordBox.Hint = "Пароль";
+            this.passwordBox.LeadingIcon = null;
+            this.passwordBox.Location = new System.Drawing.Point(97, 697);
+            this.passwordBox.MaxLength = 20;
+            this.passwordBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
+            this.passwordBox.PrefixSuffixText = null;
+            this.passwordBox.ReadOnly = false;
+            this.passwordBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.passwordBox.SelectedText = "";
+            this.passwordBox.SelectionLength = 0;
+            this.passwordBox.SelectionStart = 0;
+            this.passwordBox.ShortcutsEnabled = true;
+            this.passwordBox.Size = new System.Drawing.Size(571, 48);
+            this.passwordBox.TabIndex = 19;
+            this.passwordBox.TabStop = false;
+            this.passwordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.passwordBox.TrailingIcon = null;
+            this.passwordBox.UseSystemPasswordChar = false;
+            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             // 
             // PersonRegisterForm
             // 
@@ -339,7 +340,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 846);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.materialTextBox21);
+            this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -383,6 +384,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox maskPhoneText;
         private System.Windows.Forms.Label label7;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
+        private MaterialSkin.Controls.MaterialTextBox2 passwordBox;
     }
 }

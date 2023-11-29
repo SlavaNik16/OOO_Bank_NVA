@@ -12,6 +12,7 @@ namespace OOO_Bank_NVA.Forms
     public partial class PersonRegisterForm : MaterialForm
     {
         private Person person;
+        private string password;
         private DbContextOptions<ApplicationContext> options;
         public PersonRegisterForm()
         {
@@ -20,6 +21,7 @@ namespace OOO_Bank_NVA.Forms
             options = DataBaseHelper.Options();
         }
         public Person Person => person;
+        public string Password => password;
         private void genderFemaleRadio_CheckedChanged(object sender, System.EventArgs e)
         {
             person.Gender = Gender.Female;
@@ -35,6 +37,7 @@ namespace OOO_Bank_NVA.Forms
             butCreate.Enabled =
                 !string.IsNullOrEmpty(person.Surname) &&
                 !string.IsNullOrEmpty(person.Name) &&
+                !string.IsNullOrEmpty(password) &&
                 !string.IsNullOrEmpty(person.Phone);
         }
 
@@ -104,6 +107,12 @@ namespace OOO_Bank_NVA.Forms
                 }
             }
             DialogResult = DialogResult.OK;
+        }
+
+        private void passwordBox_TextChanged(object sender, System.EventArgs e)
+        {
+            password = passwordBox.Text.Length >= 8 ? passwordBox.Text.Trim() : string.Empty;
+            ValidatePerson();
         }
     }
 }
