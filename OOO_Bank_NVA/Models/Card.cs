@@ -1,4 +1,6 @@
-﻿namespace OOO_Bank_NVA.Models
+﻿using System;
+
+namespace OOO_Bank_NVA.Models
 {
     /// <summary>
     /// Сущность карты на котором хранятся средства
@@ -29,10 +31,5 @@
         /// Пин код
         /// </summary>
         public string PinCode { get; set; } = null;
-
-        public Guid PersonId { get; set; }
-
-        public Guid PersonId { get; set; }
-
     }
 }
