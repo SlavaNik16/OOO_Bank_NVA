@@ -269,6 +269,8 @@ namespace OOO_Bank_NVA.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CardId");
+
                     b.HasIndex("Phone")
                         .IsUnique()
                         .HasName("IX_Person_Phone")
@@ -344,6 +346,15 @@ namespace OOO_Bank_NVA.Migrations
                     b.HasOne("OOO_Bank_NVA.Models.Person", "Person")
                         .WithMany("Operation")
                         .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("OOO_Bank_NVA.Models.Person", b =>
+                {
+                    b.HasOne("OOO_Bank_NVA.Models.Card", "Card")
+                        .WithMany("Person")
+                        .HasForeignKey("CardId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

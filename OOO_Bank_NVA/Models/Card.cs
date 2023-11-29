@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace OOO_Bank_NVA.Models
 {
@@ -31,6 +31,10 @@ namespace OOO_Bank_NVA.Models
         /// Пин код
         /// </summary>
         public string PinCode { get; set; } = null;
+
+        public Guid PersonId { get; set; }
+
+        public Guid PersonId { get; set; }
 
     }
 }
