@@ -324,6 +324,7 @@
     <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\Enums\Gender.cs" />
     <Compile Include="Models\Enums\OperationType.cs" />
+    <Compile Include="Models\Enums\RoleType.cs" />
     <Compile Include="Models\Enums\StatusType.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>

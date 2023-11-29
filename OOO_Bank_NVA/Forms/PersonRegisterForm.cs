@@ -81,6 +81,13 @@ namespace OOO_Bank_NVA.Forms
             {
                 using (var db = new ApplicationContext(options))
                 {
+                    var personValidate = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
+                    if(personValidate != null)
+                    {
+                        MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        maskPhoneText.Text = string.Empty;
+                        return;
+                    }
                     var card = db.Cards.FirstOrDefault(x => x.Nomer == person.CardName);
                     if(card == null)
                     {
