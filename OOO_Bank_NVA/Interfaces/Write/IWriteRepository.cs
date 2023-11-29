@@ -1,6 +1,4 @@
-﻿using System.Threading;
-
-namespace OOO_Bank_NVA.Interfaces.Write
+﻿namespace OOO_Bank_NVA.Interfaces.Write
 {
     /// <summary>
     /// Интерфейс создания и модификации записей в хранилище
@@ -22,9 +20,5 @@ namespace OOO_Bank_NVA.Interfaces.Write
         /// </summary>
         void Delete(TEntity entity);
 
-        /// <summary>
-        /// Асинхронно сохраняет все изменения в бд
-        /// </summary>
-        CancellationToken SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

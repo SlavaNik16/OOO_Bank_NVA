@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OOO_Bank_NVA.DB;
 
 namespace OOO_Bank_NVA.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20231129181210_AddRole")]
+    partial class AddRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -269,8 +271,6 @@ namespace OOO_Bank_NVA.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CardId");
-
                     b.HasIndex("Phone")
                         .IsUnique()
                         .HasName("IX_Person_Phone")
@@ -346,15 +346,6 @@ namespace OOO_Bank_NVA.Migrations
                     b.HasOne("OOO_Bank_NVA.Models.Person", "Person")
                         .WithMany("Operation")
                         .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("OOO_Bank_NVA.Models.Person", b =>
-                {
-                    b.HasOne("OOO_Bank_NVA.Models.Card", "Card")
-                        .WithMany("Person")
-                        .HasForeignKey("CardId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

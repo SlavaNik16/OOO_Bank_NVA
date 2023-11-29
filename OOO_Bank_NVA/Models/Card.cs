@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace OOO_Bank_NVA.Models
 {
@@ -18,6 +18,11 @@ namespace OOO_Bank_NVA.Models
         public int CSCCode { get; set; }
 
         /// <summary>
+        /// Дата oкончания
+        /// </summary>
+        public DateTime DateEnd{ get; set; }
+
+        /// <summary>
         /// Баланс карты
         /// </summary>
         public decimal Balance { get; set; }
@@ -26,9 +31,5 @@ namespace OOO_Bank_NVA.Models
         /// Пин код
         /// </summary>
         public string PinCode { get; set; } = null;
-
-        internal ICollection<Person> Person { get; set; }
-
-
     }
 }

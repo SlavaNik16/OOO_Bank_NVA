@@ -19,9 +19,7 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
             builder.Property(x => x.PinCode).IsRequired().HasMaxLength(8);
             builder.Property(x => x.Balance).IsRequired();
 
-            builder.HasMany(x => x.Person)
-              .WithOne(y => y.Card)
-              .HasForeignKey(z => z.CardId);
+            builder.Property(x => x.DateEnd).IsRequired();
 
             builder.HasIndex(x => x.Nomer)
               .IsUnique()

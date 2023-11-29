@@ -43,6 +43,9 @@
     <Reference Include="Azure.Identity, Version=1.10.4.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
       <HintPath>..\packages\Azure.Identity.1.10.4\lib\netstandard2.0\Azure.Identity.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net48\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -165,6 +168,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.1\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -267,6 +271,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colors\ColorsHelp.cs" />
     <Compile Include="DB\ApplicationContext.cs" />
     <Compile Include="DB\ConfigurateDB\BaseAuditExtensionConfigurated.cs" />
     <Compile Include="DB\ConfigurateDB\BasketEntityConfigurate.cs" />
@@ -279,20 +284,63 @@
     <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="DB\DataBaseHelper.cs" />
     <Compile Include="DB\SampleContextFactory.cs" />
+    <Compile Include="Forms\CardValidateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CardValidateForm.Designer.cs">
+      <DependentUpon>CardValidateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InitMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InitMaterialForm.Designer.cs">
+      <DependentUpon>InitMaterialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PersonEnterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonEnterForm.Designer.cs">
+      <DependentUpon>PersonEnterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PersonRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonRegisterForm.Designer.cs">
+      <DependentUpon>PersonRegisterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20231126184002_Init.cs" />
     <Compile Include="Migrations\20231126184002_Init.designer.cs">
       <DependentUpon>20231126184002_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231126201419_ChangeBD.cs" />
+    <Compile Include="Migrations\20231126201419_ChangeBD.designer.cs">
+      <DependentUpon>20231126201419_ChangeBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231129171108_AddDateEnd.cs" />
+    <Compile Include="Migrations\20231129171108_AddDateEnd.designer.cs">
+      <DependentUpon>20231129171108_AddDateEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231129181210_AddRole.cs" />
+    <Compile Include="Migrations\20231129181210_AddRole.designer.cs">
+      <DependentUpon>20231129181210_AddRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\Enums\Gender.cs" />
     <Compile Include="Models\Enums\OperationType.cs" />
+    <Compile Include="Models\Enums\RoleType.cs" />
     <Compile Include="Models\Enums\StatusType.cs" />
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\AuthorizationForm.Designer.cs">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IApplicationContext.cs" />
     <Compile Include="Interfaces\Entity\IEntity.cs" />
@@ -309,6 +357,21 @@
     <Compile Include="Models\Tovar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CardValidateForm.resx">
+      <DependentUpon>CardValidateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InitMaterialForm.resx">
+      <DependentUpon>InitMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AuthorizationForm.resx">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonEnterForm.resx">
+      <DependentUpon>PersonEnterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonRegisterForm.resx">
+      <DependentUpon>PersonRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -318,7 +381,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="appsettings.json" />
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

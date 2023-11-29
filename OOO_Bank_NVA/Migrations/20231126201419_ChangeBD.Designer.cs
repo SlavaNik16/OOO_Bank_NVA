@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OOO_Bank_NVA.DB;
 
 namespace OOO_Bank_NVA.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20231126201419_ChangeBD")]
+    partial class ChangeBD
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,9 +83,6 @@ namespace OOO_Bank_NVA.Migrations
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
 
-                    b.Property<DateTime>("DateEnd")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTimeOffset?>("DeletedAt")
                         .HasColumnType("datetimeoffset");
 
@@ -143,10 +142,7 @@ namespace OOO_Bank_NVA.Migrations
                         .HasColumnType("nvarchar(300)")
                         .HasMaxLength(300);
 
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Status")
+                    b.Property<int>("StatusType")
                         .HasColumnType("int");
 
                     b.Property<DateTimeOffset?>("UpdatedAt")
@@ -165,8 +161,8 @@ namespace OOO_Bank_NVA.Migrations
                         .HasName("IX_DBBank_Login")
                         .HasFilter("DeletedAt is null");
 
-                    b.HasIndex("Status")
-                        .HasName("IX_DBBank_Status")
+                    b.HasIndex("StatusType")
+                        .HasName("IX_DBBank_StatusType")
                         .HasFilter("DeletedAt is null");
 
                     b.ToTable("DBBanks");
@@ -269,8 +265,6 @@ namespace OOO_Bank_NVA.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CardId");
-
                     b.HasIndex("Phone")
                         .IsUnique()
                         .HasName("IX_Person_Phone")
@@ -346,15 +340,6 @@ namespace OOO_Bank_NVA.Migrations
                     b.HasOne("OOO_Bank_NVA.Models.Person", "Person")
                         .WithMany("Operation")
                         .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("OOO_Bank_NVA.Models.Person", b =>
-                {
-                    b.HasOne("OOO_Bank_NVA.Models.Card", "Card")
-                        .WithMany("Person")
-                        .HasForeignKey("CardId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
