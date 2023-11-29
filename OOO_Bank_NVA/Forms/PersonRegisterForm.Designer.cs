@@ -56,7 +56,7 @@
             this.nameBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.nameBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.nameBox.Depth = 0;
-            this.nameBox.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameBox.HideSelection = true;
             this.nameBox.Hint = "Имя";
             this.nameBox.LeadingIcon = null;
@@ -90,7 +90,7 @@
             this.surnameBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.surnameBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.surnameBox.Depth = 0;
-            this.surnameBox.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.surnameBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.surnameBox.HideSelection = true;
             this.surnameBox.Hint = "Фамилия";
             this.surnameBox.LeadingIcon = null;
@@ -117,12 +117,12 @@
             // maskNumberCardText
             // 
             this.maskNumberCardText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.maskNumberCardText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.maskNumberCardText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.maskNumberCardText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.maskNumberCardText.Location = new System.Drawing.Point(97, 598);
             this.maskNumberCardText.Mask = "0000-0000-0000-0000";
             this.maskNumberCardText.Name = "maskNumberCardText";
-            this.maskNumberCardText.Size = new System.Drawing.Size(571, 23);
+            this.maskNumberCardText.Size = new System.Drawing.Size(571, 37);
             this.maskNumberCardText.SkipLiterals = false;
             this.maskNumberCardText.TabIndex = 8;
             this.maskNumberCardText.TextChanged += new System.EventHandler(this.maskNumberCardText_TextChanged);
@@ -278,12 +278,12 @@
             // maskPhoneText
             // 
             this.maskPhoneText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.maskPhoneText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.maskPhoneText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.maskPhoneText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.maskPhoneText.Location = new System.Drawing.Point(97, 513);
             this.maskPhoneText.Mask = "(000)-000-00-00";
             this.maskPhoneText.Name = "maskPhoneText";
-            this.maskPhoneText.Size = new System.Drawing.Size(571, 23);
+            this.maskPhoneText.Size = new System.Drawing.Size(571, 37);
             this.maskPhoneText.SkipLiterals = false;
             this.maskPhoneText.TabIndex = 7;
             this.maskPhoneText.TextChanged += new System.EventHandler(this.maskPhoneText_TextChanged);
@@ -310,7 +310,7 @@
             this.passwordBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.passwordBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.passwordBox.Depth = 0;
-            this.passwordBox.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passwordBox.HideSelection = true;
             this.passwordBox.Hint = "Пароль";
             this.passwordBox.LeadingIcon = null;

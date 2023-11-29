@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
+using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Forms;
 using OOO_Bank_NVA.Models;
 using System;
@@ -39,7 +40,8 @@ namespace OOO_Bank_NVA
         {
             var personEnterForm = new PersonEnterForm();
             this.Hide();
-            if (personEnterForm.ShowDialog() == DialogResult.OK)
+            var result = personEnterForm.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 using (var db = new ApplicationContext(options))
                 {
@@ -51,14 +53,16 @@ namespace OOO_Bank_NVA
                     {
                         MessageBox.Show("Пользователь не найден среди зарегистрированных пользователей!",
                             "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Show();
                         return;
                     }
                     var person = db.Persons.FirstOrDefault(x => x.Phone == dbBank.Login);
                     UserName = $"{person.Surname}_{person.Name}";
-
+                    dbBank.Status = StatusType.Online;
+                    writeDbBankRepository.Update(dbBank, UserName);
                     var mainForm = new MainForm();
-                    this.Hide();
                     mainForm.ShowDialog();
+
                 }
             }
             this.Show();

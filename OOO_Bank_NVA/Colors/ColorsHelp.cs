@@ -21,6 +21,7 @@ namespace OOO_Bank_NVA.Colors
             but.FlatStyle = FlatStyle.Flat;
             but.FlatAppearance.BorderSize = 1;
             but.FlatAppearance.MouseOverBackColor = ColorButtonSubmitOver;
+            but.DialogResult = DialogResult.OK;
         }
         public static void ButtonCancel(Button but)
         {
@@ -28,6 +29,7 @@ namespace OOO_Bank_NVA.Colors
             but.FlatStyle = FlatStyle.Flat;
             but.FlatAppearance.BorderSize = 1;
             but.FlatAppearance.MouseOverBackColor = ColorButtonCancelOver;
+            but.DialogResult = DialogResult.Cancel;
         }
     }
 }

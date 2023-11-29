@@ -1,8 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using MaterialSkin.Controls;
 
 namespace OOO_Bank_NVA.Forms
 {
-    public partial class MainForm : Form
+    public partial class MainForm : MaterialForm
     {
         public MainForm()
         {
