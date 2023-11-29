@@ -77,7 +77,7 @@ namespace OOO_Bank_NVA.Forms
 
         private void butCreate_Click(object sender, System.EventArgs e)
         {
-            if(person.CardName != string.Empty)
+            if(!string.IsNullOrEmpty(person.CardName))
             {
                 using (var db = new ApplicationContext(options))
                 {
@@ -89,10 +89,14 @@ namespace OOO_Bank_NVA.Forms
                         return;
                     }
 
-
+                    var cardValidateForm = new CardValidateForm();
+                    this.Hide();
+                    cardValidateForm.ShowDialog();
+                    this.Show();
 
                 }
             }
+            DialogResult = DialogResult.OK;
         }
     }
 }

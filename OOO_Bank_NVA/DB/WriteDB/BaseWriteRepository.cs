@@ -2,7 +2,6 @@
 using OOO_Bank_NVA.Interfaces;
 using OOO_Bank_NVA.Interfaces.Write;
 using System;
-using System.Threading;
 
 namespace OOO_Bank_NVA.DB
 {

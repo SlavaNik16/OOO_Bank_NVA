@@ -30,7 +30,6 @@
         {
             this.nameBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.surnameBox = new MaterialSkin.Controls.MaterialTextBox2();
-            this.maskPhoneText = new System.Windows.Forms.MaskedTextBox();
             this.maskNumberCardText = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.maskPhoneText = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // nameBox
@@ -111,19 +111,6 @@
             this.surnameBox.TrailingIcon = null;
             this.surnameBox.UseSystemPasswordChar = false;
             this.surnameBox.TextChanged += new System.EventHandler(this.surnameBox_TextChanged);
-            // 
-            // maskPhoneText
-            // 
-            this.maskPhoneText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.maskPhoneText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.maskPhoneText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.maskPhoneText.Location = new System.Drawing.Point(97, 553);
-            this.maskPhoneText.Mask = "(000)-000-00-00";
-            this.maskPhoneText.Name = "maskPhoneText";
-            this.maskPhoneText.Size = new System.Drawing.Size(571, 23);
-            this.maskPhoneText.SkipLiterals = false;
-            this.maskPhoneText.TabIndex = 7;
-            this.maskPhoneText.TextChanged += new System.EventHandler(this.maskPhoneText_TextChanged);
             // 
             // maskNumberCardText
             // 
@@ -286,6 +273,19 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "*Обязательно";
             // 
+            // maskPhoneText
+            // 
+            this.maskPhoneText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.maskPhoneText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.maskPhoneText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.maskPhoneText.Location = new System.Drawing.Point(97, 553);
+            this.maskPhoneText.Mask = "(000)-000-00-00";
+            this.maskPhoneText.Name = "maskPhoneText";
+            this.maskPhoneText.Size = new System.Drawing.Size(571, 23);
+            this.maskPhoneText.SkipLiterals = false;
+            this.maskPhoneText.TabIndex = 7;
+            this.maskPhoneText.TextChanged += new System.EventHandler(this.maskPhoneText_TextChanged);
+            // 
             // PersonRegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -321,7 +321,6 @@
         #endregion
         private MaterialSkin.Controls.MaterialTextBox2 nameBox;
         private MaterialSkin.Controls.MaterialTextBox2 surnameBox;
-        private System.Windows.Forms.MaskedTextBox maskPhoneText;
         private System.Windows.Forms.MaskedTextBox maskNumberCardText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -333,5 +332,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MaskedTextBox maskPhoneText;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using MaterialSkin.Controls;
-using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.Forms;
@@ -13,19 +12,12 @@ namespace OOO_Bank_NVA
 {
     public partial class MainForm : MaterialForm
     {
-        //BaseWriteRepository<Person> writeRepository;
+        BaseWriteRepository<Person> writeRepository;
+        public static string UserName = ""; 
         public MainForm()
         {
             InitializeComponent();
-            //writeRepository = new BaseWriteRepository<Person>();
-            //var person = new Person()
-            //{
-            //    Id = Guid.NewGuid(),
-            //    Name = "Test",
-            //    Surname = "Test",
-            //    Phone = "Test"
-            //};
-            //writeRepository.Add(person);
+            writeRepository = new BaseWriteRepository<Person>();
 
             ColorsHelp.ButtonSubmit(butReg);
             ColorsHelp.ButtonSubmit(butEnter);
@@ -46,7 +38,12 @@ namespace OOO_Bank_NVA
         {
             var personRegisterForm = new PersonRegisterForm();
             this.Hide();
-            personRegisterForm.ShowDialog();
+            if (personRegisterForm.ShowDialog() == DialogResult.OK)
+            {
+                var person = personRegisterForm.Person;
+                UserName = $"{person.Surname}_{person.Name}";
+                writeRepository.Add(person, UserName);
+            }
             this.Show();
         }
 

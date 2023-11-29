@@ -284,11 +284,23 @@
     <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="DB\DataBaseHelper.cs" />
     <Compile Include="DB\SampleContextFactory.cs" />
+    <Compile Include="Forms\CardValidateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CardValidateForm.Designer.cs">
+      <DependentUpon>CardValidateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InitMaterialForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\InitMaterialForm.Designer.cs">
       <DependentUpon>InitMaterialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PersonEnterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonEnterForm.Designer.cs">
+      <DependentUpon>PersonEnterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PersonRegisterForm.cs">
       <SubType>Form</SubType>
@@ -303,6 +315,10 @@
     <Compile Include="Migrations\20231126201419_ChangeBD.cs" />
     <Compile Include="Migrations\20231126201419_ChangeBD.designer.cs">
       <DependentUpon>20231126201419_ChangeBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231129171108_AddDateEnd.cs" />
+    <Compile Include="Migrations\20231129171108_AddDateEnd.designer.cs">
+      <DependentUpon>20231129171108_AddDateEnd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="Models\Basket.cs" />
@@ -330,11 +346,17 @@
     <Compile Include="Models\Tovar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CardValidateForm.resx">
+      <DependentUpon>CardValidateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InitMaterialForm.resx">
       <DependentUpon>InitMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonEnterForm.resx">
+      <DependentUpon>PersonEnterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonRegisterForm.resx">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
