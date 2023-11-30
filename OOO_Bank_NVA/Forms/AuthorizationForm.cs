@@ -19,7 +19,8 @@ namespace OOO_Bank_NVA
         private readonly BaseWriteRepository<Person> writePersonRepository;
         private readonly BaseWriteRepository<DBBank> writeDbBankRepository;
         private readonly DbContextOptions<ApplicationContext> options;
-        public static string UserName = ""; 
+        public static string UserName = "";
+        public static Person user { get; private set; }
         public AuthorizationForm()
         {
             InitializeComponent();
@@ -57,6 +58,7 @@ namespace OOO_Bank_NVA
                         return;
                     }
                     var person = db.Persons.FirstOrDefault(x => x.Phone == dbBank.Login);
+                    user = person;
                     UserName = $"{person.Surname}_{person.Name}";
                     dbBank.Status = StatusType.Online;
                     writeDbBankRepository.Update(dbBank, UserName);

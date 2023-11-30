@@ -352,6 +352,7 @@
     <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Tovar.cs" />
+    <Compile Include="Nuget\EnumHelpPerevod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\CardValidateForm.resx">
