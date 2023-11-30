@@ -183,6 +183,7 @@
             this.butBlocked.TabIndex = 1;
             this.butBlocked.Text = "Забанить";
             this.butBlocked.UseVisualStyleBackColor = true;
+            this.butBlocked.Click += new System.EventHandler(this.butBlocked_Click);
             // 
             // butView
             // 
