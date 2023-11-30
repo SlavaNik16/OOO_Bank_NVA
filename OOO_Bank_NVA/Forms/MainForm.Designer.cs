@@ -120,7 +120,7 @@
             this.tabTovars.Location = new System.Drawing.Point(4, 39);
             this.tabTovars.Name = "tabTovars";
             this.tabTovars.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTovars.Size = new System.Drawing.Size(1506, 709);
+            this.tabTovars.Size = new System.Drawing.Size(1506, 856);
             this.tabTovars.TabIndex = 1;
             this.tabTovars.Text = "Товары";
             this.tabTovars.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             this.tabBasket.Location = new System.Drawing.Point(4, 39);
             this.tabBasket.Name = "tabBasket";
             this.tabBasket.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBasket.Size = new System.Drawing.Size(1506, 709);
+            this.tabBasket.Size = new System.Drawing.Size(1506, 856);
             this.tabBasket.TabIndex = 3;
             this.tabBasket.Text = "Корзина";
             this.tabBasket.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.tabSettings.ImageKey = "Settings.png";
             this.tabSettings.Location = new System.Drawing.Point(4, 39);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(1506, 709);
+            this.tabSettings.Size = new System.Drawing.Size(1506, 856);
             this.tabSettings.TabIndex = 2;
             this.tabSettings.Text = "Настройки";
             this.tabSettings.UseVisualStyleBackColor = true;

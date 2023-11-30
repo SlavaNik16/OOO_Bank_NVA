@@ -30,17 +30,14 @@ namespace OOO_Bank_NVA.Forms
         {
             using (var db = new ApplicationContext(options))
             {
-                var user = new Person();
-                user.Phone = "(900)-000-00-00";
-                var dbBanks = db.DBBanks.FirstOrDefault(y => y.Login == user.Phone);
-                dataGridUsers.DataSource = db.Persons.Where(x => x.Phone != user.Phone).Select(opt=> new
+                dataGridUsers.DataSource = db.Persons.Where(x => x.Phone != "(222)-222-22-22").Select(opt=> new
                 {
                     Phone = opt.Phone.ToString(),
                     Surname = opt.Surname.ToString(),
                     Name = opt.Name.ToString(),
                     Gender = opt.Gender.PerevodDescription(),
-                    Status = dbBanks.Status.PerevodDescription(),
-                    Role = dbBanks.Role.PerevodDescription()
+                    Status = db.DBBanks.FirstOrDefault(y=>y.Login == opt.Phone).Status.PerevodDescription(),
+                    Role = db.DBBanks.FirstOrDefault(y => y.Login == opt.Phone).Role.PerevodDescription()
                 }).ToList();
             }
         }

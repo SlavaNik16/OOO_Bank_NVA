@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.butCancel = new MaterialSkin.Controls.MaterialButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.passwordBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.maskPhoneText = new System.Windows.Forms.MaskedTextBox();
             this.butEnter = new MaterialSkin.Controls.MaterialButton();
-            this.passwordBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,37 +80,6 @@
             this.panel1.Size = new System.Drawing.Size(788, 206);
             this.panel1.TabIndex = 0;
             // 
-            // maskPhoneText
-            // 
-            this.maskPhoneText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskPhoneText.Location = new System.Drawing.Point(39, 62);
-            this.maskPhoneText.Mask = "(000)-000-00-00";
-            this.maskPhoneText.Name = "maskPhoneText";
-            this.maskPhoneText.Size = new System.Drawing.Size(701, 37);
-            this.maskPhoneText.TabIndex = 22;
-            this.maskPhoneText.TextChanged += new System.EventHandler(this.phoneBox_TextChanged);
-            // 
-            // butEnter
-            // 
-            this.butEnter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.butEnter.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.butEnter.Depth = 0;
-            this.butEnter.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.butEnter.Enabled = false;
-            this.butEnter.HighEmphasis = true;
-            this.butEnter.Icon = null;
-            this.butEnter.Location = new System.Drawing.Point(67, 334);
-            this.butEnter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.butEnter.MouseState = MaterialSkin.MouseState.HOVER;
-            this.butEnter.Name = "butEnter";
-            this.butEnter.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.butEnter.Size = new System.Drawing.Size(129, 36);
-            this.butEnter.TabIndex = 6;
-            this.butEnter.Text = "Подтвердить";
-            this.butEnter.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.butEnter.UseAccentColor = false;
-            this.butEnter.UseVisualStyleBackColor = true;
-            // 
             // passwordBox
             // 
             this.passwordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -144,6 +113,37 @@
             this.passwordBox.TrailingIcon = null;
             this.passwordBox.UseSystemPasswordChar = false;
             this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
+            // 
+            // maskPhoneText
+            // 
+            this.maskPhoneText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maskPhoneText.Location = new System.Drawing.Point(39, 62);
+            this.maskPhoneText.Mask = "(000)-000-00-00";
+            this.maskPhoneText.Name = "maskPhoneText";
+            this.maskPhoneText.Size = new System.Drawing.Size(701, 37);
+            this.maskPhoneText.TabIndex = 22;
+            this.maskPhoneText.TextChanged += new System.EventHandler(this.phoneBox_TextChanged);
+            // 
+            // butEnter
+            // 
+            this.butEnter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.butEnter.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.butEnter.Depth = 0;
+            this.butEnter.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.butEnter.Enabled = false;
+            this.butEnter.HighEmphasis = true;
+            this.butEnter.Icon = null;
+            this.butEnter.Location = new System.Drawing.Point(67, 334);
+            this.butEnter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.butEnter.MouseState = MaterialSkin.MouseState.HOVER;
+            this.butEnter.Name = "butEnter";
+            this.butEnter.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.butEnter.Size = new System.Drawing.Size(129, 36);
+            this.butEnter.TabIndex = 6;
+            this.butEnter.Text = "Подтвердить";
+            this.butEnter.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.butEnter.UseAccentColor = false;
+            this.butEnter.UseVisualStyleBackColor = true;
             // 
             // PersonEnterForm
             // 
