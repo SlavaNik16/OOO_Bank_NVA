@@ -1,12 +1,22 @@
 ﻿using MaterialSkin.Controls;
+using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Models;
+using OOO_Bank_NVA.Models.JsonModel;
 using OOO_Bank_NVA.Nuget;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Selectors;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using System.Windows.Threading;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 
 namespace OOO_Bank_NVA.Forms
@@ -18,62 +28,122 @@ namespace OOO_Bank_NVA.Forms
         public MainForm()
         {
             InitializeComponent();
+           // connection = new HubConnectionBuilder()
+           //        .WithUrl("https://localhost:7097/chat")
+           //        .Build();
+
+           // connection.On<string, string>("Send", (message, username) =>
+           //{
+           //    this.Invoke(new Action(() =>
+           //    {
+           //        listBox1.Items.Add($"{username} отправил: {message}");
+           //    }));
+           //});
+
             options = DataBaseHelper.Options();
             baseDBBankWriteRepository = new BaseWriteRepository<DBBank>();
             ResetDataGrid();
-            ColorsHelp.ButtonSubmit(butBlocked);
+          
             ColorsHelp.ButtonSubmit(butView);
-
+            ColorsHelp.ButtonSubmit(butSend);
+            ColorsHelp.ButtonSubmit(butTranslate);
         }
-
+      
         private void ResetDataGrid()
         {
             using (var db = new ApplicationContext(options))
             {
-                dataGridUsers.DataSource = db.Persons.Where(x => x.Phone != "(222)-222-22-22").Select(opt=> new
-                {
-                    Phone = opt.Phone.ToString(),
-                    Surname = opt.Surname.ToString(),
-                    Name = opt.Name.ToString(),
-                    Gender = opt.Gender.PerevodDescription(),
-                    Status = db.DBBanks.FirstOrDefault(y=>y.Login == opt.Phone).Status.PerevodDescription(),
-                    Role = db.DBBanks.FirstOrDefault(y => y.Login == opt.Phone).Role.PerevodDescription()
-                }).ToList();
+                dataGridUsers.DataSource = db.Persons
+                    .Where(s=>s.Phone != "(222)-222-22-22")
+                    .Join(db.DBBanks, x => x.Phone, b => b.Login,
+                    (x,b) => new
+                    {
+                        Phone = x.Phone.ToString(),
+                        Surname = x.Surname.ToString(),
+                        Name = x.Name.ToString(),
+                        Gender = x.Gender.PerevodDescription(),
+                        Status = b.Status.PerevodDescription(),
+                        Role = b.Role.PerevodDescription()
+                    }).ToList();
             }
         }
 
         private void dataGridUsers_SelectionChanged(object sender, System.EventArgs e)
         {
-            butBlocked.Enabled =
-            butView.Enabled = 
+            
+            butView.Enabled =
+            butSend.Enabled = 
+            butTranslate.Enabled =
                 dataGridUsers.SelectedRows.Count == 1;  
         }
 
         private void butBlocked_Click(object sender, System.EventArgs e)
         {
-            var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnPhone"];
-            using (var db = new ApplicationContext(options))
-            {
-                var person = db.Persons.FirstOrDefault(x => x.Phone == id.Value.ToString());
-                if (person == null) return;
+            
+        }
 
-                var result = MessageBox.Show($"Вы действительно хотите забанить\n" +
-                    $"Id: {person.Id}\n" +
-                    $"Телефон: {person.Phone}\n" +
-                    $"Фамилия:{person.Surname}\n" +
-                    $"Имя: {person.Name}", "Предупреждение!",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    var bank = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
-                    bank.Status = StatusType.Blocked;
-                    baseDBBankWriteRepository.Update(bank, AuthorizationForm.UserName);
-                    MessageBox.Show($"Пользователь успешно забанен!",
-                        "Информация!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ResetDataGrid();
-                }
-            }
+        //var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnPhone"];
+            //using (var db = new ApplicationContext(options))
+            //{
+            //    var person = db.Persons.FirstOrDefault(x => x.Phone == id.Value.ToString());
+            //    if (person == null) return;
+
+            //    var result = MessageBox.Show($"Вы действительно хотите забанить\n" +
+            //        $"Id: {person.Id}\n" +
+            //        $"Телефон: {person.Phone}\n" +
+            //        $"Фамилия:{person.Surname}\n" +
+            //        $"Имя: {person.Name}", "Предупреждение!",
+            //        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        var bank = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
+            //        bank.Status = StatusType.Blocked;
+            //        baseDBBankWriteRepository.Update(bank, AuthorizationForm.UserName);
+            //        MessageBox.Show($"Пользователь успешно забанен!",
+            //            "Информация!",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        ResetDataGrid();
+            //    }
+            //}
+        //HubConnection connection;
+        private async Task GetHttp(string message)
+        {
+          //try
+            //{
+            //    // отправка сообщения
+            //    await connection.InvokeAsync("Send", "sdfsfd", textBox1.Text);
+            //}
+            //catch (Exception ex)
+            //{
+            //    listBox1.Items.Add(ex.Message);
+            //}
+            
+            
+            //try
+            //{
+            //    // подключемся к хабу
+            //    await connection.StartAsync();
+            //    listBox1.Items.Add("Вы вошли в чат");
+            //}
+            //catch (Exception ex)
+            //{
+            //    listBox1.Items.Add(ex.Message);
+            //}
+        }
+
+        private void timerHttp_Tick(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private async void MainForm_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private async void butView_Click(object sender, EventArgs e)
+        {
             
         }
     }
