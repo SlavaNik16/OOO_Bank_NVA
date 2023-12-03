@@ -335,6 +335,12 @@
     <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="DB\DataBaseHelper.cs" />
     <Compile Include="DB\SampleContextFactory.cs" />
+    <Compile Include="Forms\AddTovarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddTovarForm.Designer.cs">
+      <DependentUpon>AddTovarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CardValidateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +368,14 @@
     <Compile Include="Migrations\20231203131748_Init.cs" />
     <Compile Include="Migrations\20231203131748_Init.designer.cs">
       <DependentUpon>20231203131748_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231203133932_AddTovars.cs" />
+    <Compile Include="Migrations\20231203133932_AddTovars.designer.cs">
+      <DependentUpon>20231203133932_AddTovars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231203134456_AddBasket.cs" />
+    <Compile Include="Migrations\20231203134456_AddBasket.designer.cs">
+      <DependentUpon>20231203134456_AddBasket.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="Models\Basket.cs" />
@@ -391,6 +405,9 @@
     <Compile Include="Nuget\EnumHelpPerevod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddTovarForm.resx">
+      <DependentUpon>AddTovarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CardValidateForm.resx">
       <DependentUpon>CardValidateForm.cs</DependentUpon>
     </EmbeddedResource>

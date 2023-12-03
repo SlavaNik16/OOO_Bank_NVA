@@ -66,7 +66,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button5 = new System.Windows.Forms.Button();
-            this.pictureBoxTovar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
@@ -81,7 +81,7 @@
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -375,7 +375,7 @@
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.pictureBoxTovar);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(1006, 3);
@@ -422,6 +422,7 @@
             this.butAdd.TabIndex = 0;
             this.butAdd.Text = "Добавить";
             this.butAdd.UseVisualStyleBackColor = true;
+            this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
             // button1
             // 
@@ -495,14 +496,14 @@
             this.button5.Text = "Посмотреть";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxTovar
+            // pictureBox1
             // 
-            this.pictureBoxTovar.Location = new System.Drawing.Point(123, 17);
-            this.pictureBoxTovar.Name = "pictureBoxTovar";
-            this.pictureBoxTovar.Size = new System.Drawing.Size(235, 129);
-            this.pictureBoxTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxTovar.TabIndex = 1;
-            this.pictureBoxTovar.TabStop = false;
+            this.pictureBox1.Location = new System.Drawing.Point(123, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 129);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // textBox1
             // 
@@ -553,7 +554,7 @@
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,7 +597,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.PictureBox pictureBoxTovar;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;

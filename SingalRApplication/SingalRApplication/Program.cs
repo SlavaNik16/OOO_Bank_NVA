@@ -36,4 +36,28 @@ app.UseEndpoints(endpoints =>
     endpoints.MapHub<ChatHub>("/chat");
 });
 
+app.MapPost("/upload", async (HttpContext context) =>
+{
+    // получем коллецию загруженных файлов
+    IFormFileCollection files = context.Request.Form.Files;
+    // путь к папке, где будут храниться файлы
+    var uploadPath = $"{Directory.GetCurrentDirectory()}/uploads";
+    // создаем папку для хранения файлов
+    Directory.CreateDirectory(uploadPath);
+
+    // пробегаемся по всем файлам
+    foreach (var file in files)
+    {
+        // формируем путь к файлу в папке uploads
+        string fullPath = $"{uploadPath}/{file.FileName}";
+
+        // сохраняем файл в папку uploads
+        using (var fileStream = new FileStream(fullPath, FileMode.Create))
+        {
+            await file.CopyToAsync(fileStream);
+        }
+    }
+    await context.Response.WriteAsync("Файлы успешно загружены");
+});
+
 app.Run();

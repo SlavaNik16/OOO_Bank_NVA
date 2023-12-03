@@ -15,9 +15,9 @@ namespace OOO_Bank_NVA.Models
         public decimal Price { get; set; }
 
         /// <summary>
-        /// Кол-во
+        /// Максимальное Кол-во
         /// </summary>
-        public int Count { get; set; }
+        public int MaxCount { get; set; } = 1;
 
         /// <summary>
         /// Описание товара

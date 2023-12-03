@@ -15,6 +15,11 @@ namespace OOO_Bank_NVA.Models
         internal Tovar Tovar { get; set; }
 
         /// <summary>
+        /// Кол-во данного товара
+        /// </summary>
+        public int Count { get; set; } = 1;
+
+        /// <summary>
         /// Кому принадлежит
         /// </summary>
         public Guid PersonId { get; set; }

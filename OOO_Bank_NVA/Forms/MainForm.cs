@@ -32,21 +32,22 @@ namespace OOO_Bank_NVA.Forms
 
             options = DataBaseHelper.Options();
             baseDBBankWriteRepository = new BaseWriteRepository<DBBank>();
-            ResetDataGrid();
-          
+            ResetDataGridUser();
+            ResetDataGridTovars();
             ColorsHelp.ButtonSubmit(butView);
             ColorsHelp.ButtonSubmit(butSend);
             ColorsHelp.ButtonSubmit(butTranslate);
         }
-      
-        private void ResetDataGrid()
+
+        #region Users
+        private void ResetDataGridUser()
         {
             using (var db = new ApplicationContext(options))
             {
                 dataGridUsers.DataSource = db.Persons
-                    .Where(s=>s.Phone != "(222)-222-22-22")
+                    .Where(s => s.Phone != "(222)-222-22-22")
                     .Join(db.DBBanks, x => x.Phone, b => b.Login,
-                    (x,b) => new
+                    (x, b) => new
                     {
                         Phone = x.Phone.ToString(),
                         Surname = x.Surname.ToString(),
@@ -58,7 +59,6 @@ namespace OOO_Bank_NVA.Forms
                     }).ToList();
             }
         }
-
         private void dataGridUsers_SelectionChanged(object sender, System.EventArgs e)
         {
             
@@ -120,5 +120,27 @@ namespace OOO_Bank_NVA.Forms
             //    listBox1.Items.Add(ex.Message);
             //}
         }
+        #endregion
+
+        #region Tovars
+        private void ResetDataGridTovars()
+        {
+            using (var db = new ApplicationContext(options))
+            {
+                dataGridTovar.DataSource = db.Tovars.Select(x => new
+                {
+                    Title = x.Tittle,
+                    Price = x.Price.ToString(),
+                }).ToList();
+            }
+        }
+        private void butAdd_Click(object sender, System.EventArgs e)
+        {
+            var addTovarForm = new AddTovarForm();
+            this.Hide();
+            addTovarForm.ShowDialog();
+            this.Show();
+        }
+        #endregion
     }
 }

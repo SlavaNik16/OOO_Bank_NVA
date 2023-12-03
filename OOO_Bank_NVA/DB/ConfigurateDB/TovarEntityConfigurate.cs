@@ -16,7 +16,7 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
 
             builder.Property(x => x.Tittle).IsRequired().HasMaxLength(120);
             builder.Property(x => x.Price).IsRequired();
-            builder.Property(x => x.Count).IsRequired();
+            builder.Property(x => x.MaxCount).IsRequired();
 
             builder.HasMany(x => x.Basket)
                 .WithOne(x => x.Tovar)
