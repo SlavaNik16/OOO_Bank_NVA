@@ -326,6 +326,7 @@
     <Compile Include="DB\ConfigurateDB\BaseAuditExtensionConfigurated.cs" />
     <Compile Include="DB\ConfigurateDB\BasketEntityConfigurate.cs" />
     <Compile Include="DB\ConfigurateDB\TovarEntityConfigurate.cs" />
+    <Compile Include="DB\ReadDB\CommonSpec.cs" />
     <Compile Include="DB\WriteDB\BaseWriteRepository.cs" />
     <Compile Include="DB\ConfigurateDB\Anchors\IEntityConfigurateAnchors.cs" />
     <Compile Include="DB\ConfigurateDB\CardEntityConfigurate.cs" />
@@ -396,7 +397,6 @@
     <Compile Include="Models\BaseAuditEntity.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\DBBank.cs" />
-    <Compile Include="Models\JsonModel\Weather.cs" />
     <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Tovar.cs" />

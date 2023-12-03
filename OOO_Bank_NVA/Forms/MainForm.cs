@@ -1,22 +1,12 @@
 ﻿using MaterialSkin.Controls;
-using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
-using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Models;
-using OOO_Bank_NVA.Models.JsonModel;
 using OOO_Bank_NVA.Nuget;
-using System;
 using System.Collections.Generic;
-using System.IdentityModel.Selectors;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
-using System.Windows.Forms;
-using System.Windows.Threading;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 
 namespace OOO_Bank_NVA.Forms
@@ -61,6 +51,7 @@ namespace OOO_Bank_NVA.Forms
                         Phone = x.Phone.ToString(),
                         Surname = x.Surname.ToString(),
                         Name = x.Name.ToString(),
+                        CardName = x.CardName ?? "Нет",
                         Gender = x.Gender.PerevodDescription(),
                         Status = b.Status.PerevodDescription(),
                         Role = b.Role.PerevodDescription()
@@ -72,15 +63,14 @@ namespace OOO_Bank_NVA.Forms
         {
             
             butView.Enabled =
+                butStripView.Enabled =
             butSend.Enabled = 
+                butStripSend.Enabled = 
             butTranslate.Enabled =
-                dataGridUsers.SelectedRows.Count == 1;  
+                butStripTranslate.Enabled =
+                    dataGridUsers.SelectedRows.Count == 1;  
         }
 
-        private void butBlocked_Click(object sender, System.EventArgs e)
-        {
-            
-        }
 
         //var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnPhone"];
             //using (var db = new ApplicationContext(options))
@@ -129,22 +119,6 @@ namespace OOO_Bank_NVA.Forms
             //{
             //    listBox1.Items.Add(ex.Message);
             //}
-        }
-
-        private void timerHttp_Tick(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private async void MainForm_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private async void butView_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

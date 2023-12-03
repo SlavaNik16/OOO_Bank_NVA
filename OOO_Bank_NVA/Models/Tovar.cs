@@ -19,6 +19,18 @@ namespace OOO_Bank_NVA.Models
         /// </summary>
         public int Count { get; set; }
 
+        /// <summary>
+        /// Описание товара
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Фото
+        /// </summary>
+        public string Photo { get; set; } = null;
+
+
+
         internal ICollection<Basket> Basket { get; set; }
     }
 }

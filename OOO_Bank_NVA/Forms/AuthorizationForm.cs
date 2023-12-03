@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
+using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Forms;
 using OOO_Bank_NVA.Models;
@@ -47,9 +48,8 @@ namespace OOO_Bank_NVA
                 using (var db = new ApplicationContext(options))
                 {
                     var dbBankRequest = personEnterForm.DBBank;
-                    var dbBank = db.DBBanks.FirstOrDefault(x =>
-                        x.Login.StartsWith(dbBankRequest.Login) &&
-                        x.Password == getHashSha256(dbBankRequest.Password));
+                    var dbBank = db.DBBanks.Authorization(dbBankRequest.Login, dbBankRequest.Password);
+
                     if(dbBank == null)
                     {
                         MessageBox.Show("Пользователь не найден среди зарегистрированных пользователей!",
@@ -58,8 +58,10 @@ namespace OOO_Bank_NVA
                         return;
                     }
                     var person = db.Persons.FirstOrDefault(x => x.Phone == dbBank.Login);
+
                     user = person;
                     UserName = $"{person.Surname}_{person.Name}";
+
                     dbBank.Status = StatusType.Online;
                     writeDbBankRepository.Update(dbBank, UserName);
                     var mainForm = new MainForm();
@@ -80,7 +82,7 @@ namespace OOO_Bank_NVA
                 var dbbank = new DBBank()
                 {
                     Login = person.Phone,
-                    Password = getHashSha256(personRegisterForm.Password)
+                    Password = CommonSpec.getHashSha256(personRegisterForm.Password)
                 };
                 UserName = $"{person.Surname}_{person.Name}";
                 writePersonRepository.Add(person, UserName);
@@ -89,21 +91,6 @@ namespace OOO_Bank_NVA
                            "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Show();
-        }
-
-        public static string getHashSha256(string text)
-        {
-            using (SHA256 hashString = SHA256.Create())
-            {
-                byte[] bytes = Encoding.Unicode.GetBytes(text);
-                byte[] hash = hashString.ComputeHash(bytes);
-                string hashstring = "";
-                foreach (byte x in hash)
-                {
-                    hashstring += String.Format("{0:x2}", x);
-                }
-                return hashstring;
-            }
         }
     }
 }

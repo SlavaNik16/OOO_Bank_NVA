@@ -1,6 +1,7 @@
 ﻿using MaterialSkin.Controls;
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.DB;
+using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Models;
 using System.Linq;
@@ -82,8 +83,8 @@ namespace OOO_Bank_NVA.Forms
         {
             using (var db = new ApplicationContext(options))
             {
-                var personValidate = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
-                if (personValidate != null)
+                var personValidate = db.DBBanks.IsPhoneWithLogin(person.Phone);
+                if (personValidate)
                 {
                     MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     maskPhoneText.Text = string.Empty;
@@ -92,8 +93,8 @@ namespace OOO_Bank_NVA.Forms
                 if (!string.IsNullOrEmpty(person.CardName))
                 {
 
-                    var card = db.Cards.FirstOrDefault(x => x.Nomer == person.CardName);
-                    if (card == null)
+                    var card = db.Cards.IsCardWithPerson(person.CardName);
+                    if (!card)
                     {
                         MessageBox.Show("Ваша карта не найдена!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         maskNumberCardText.Text = string.Empty;
