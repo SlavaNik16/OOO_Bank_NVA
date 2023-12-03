@@ -19,6 +19,7 @@ namespace OOO_Bank_NVA.Migrations
                     DeletedAt = table.Column<DateTimeOffset>(nullable: true),
                     Nomer = table.Column<string>(maxLength: 30, nullable: false),
                     CSCCode = table.Column<int>(maxLength: 6, nullable: false),
+                    DateEnd = table.Column<DateTime>(nullable: false),
                     Balance = table.Column<decimal>(nullable: false),
                     PinCode = table.Column<string>(maxLength: 8, nullable: false)
                 },
@@ -39,30 +40,12 @@ namespace OOO_Bank_NVA.Migrations
                     DeletedAt = table.Column<DateTimeOffset>(nullable: true),
                     Login = table.Column<string>(maxLength: 80, nullable: false),
                     Password = table.Column<string>(maxLength: 300, nullable: false),
-                    StatusType = table.Column<int>(nullable: false)
+                    Role = table.Column<int>(nullable: false),
+                    Status = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DBBanks", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Tovar",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    CreatedAt = table.Column<DateTimeOffset>(nullable: false),
-                    CreatedBy = table.Column<string>(maxLength: 200, nullable: false),
-                    UpdatedAt = table.Column<DateTimeOffset>(nullable: false),
-                    UpdatedBy = table.Column<string>(maxLength: 200, nullable: false),
-                    DeletedAt = table.Column<DateTimeOffset>(nullable: true),
-                    Tittle = table.Column<string>(maxLength: 120, nullable: false),
-                    Price = table.Column<decimal>(nullable: false),
-                    Count = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tovar", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -79,15 +62,56 @@ namespace OOO_Bank_NVA.Migrations
                     Name = table.Column<string>(maxLength: 80, nullable: false),
                     Phone = table.Column<string>(nullable: false),
                     Gender = table.Column<int>(nullable: false),
-                    CardId = table.Column<Guid>(nullable: false)
+                    CardName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Persons", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Tovar",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    CreatedAt = table.Column<DateTimeOffset>(nullable: false),
+                    CreatedBy = table.Column<string>(maxLength: 200, nullable: false),
+                    UpdatedAt = table.Column<DateTimeOffset>(nullable: false),
+                    UpdatedBy = table.Column<string>(maxLength: 200, nullable: false),
+                    DeletedAt = table.Column<DateTimeOffset>(nullable: true),
+                    Tittle = table.Column<string>(maxLength: 120, nullable: false),
+                    Price = table.Column<decimal>(nullable: false),
+                    Count = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    Photo = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tovar", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Operations",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    CreatedAt = table.Column<DateTimeOffset>(nullable: false),
+                    CreatedBy = table.Column<string>(maxLength: 200, nullable: false),
+                    UpdatedAt = table.Column<DateTimeOffset>(nullable: false),
+                    UpdatedBy = table.Column<string>(maxLength: 200, nullable: false),
+                    DeletedAt = table.Column<DateTimeOffset>(nullable: true),
+                    PersonId = table.Column<Guid>(nullable: false),
+                    Price = table.Column<decimal>(nullable: false),
+                    OperationType = table.Column<int>(nullable: false),
+                    Comment = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Operations", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Persons_Cards_CardId",
-                        column: x => x.CardId,
-                        principalTable: "Cards",
+                        name: "FK_Operations_Persons_PersonId",
+                        column: x => x.PersonId,
+                        principalTable: "Persons",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -122,32 +146,6 @@ namespace OOO_Bank_NVA.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Operations",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    CreatedAt = table.Column<DateTimeOffset>(nullable: false),
-                    CreatedBy = table.Column<string>(maxLength: 200, nullable: false),
-                    UpdatedAt = table.Column<DateTimeOffset>(nullable: false),
-                    UpdatedBy = table.Column<string>(maxLength: 200, nullable: false),
-                    DeletedAt = table.Column<DateTimeOffset>(nullable: true),
-                    PersonId = table.Column<Guid>(nullable: false),
-                    Price = table.Column<decimal>(nullable: false),
-                    OperationType = table.Column<int>(nullable: false),
-                    Comment = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Operations", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Operations_Persons_PersonId",
-                        column: x => x.PersonId,
-                        principalTable: "Persons",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Baskets_PersonId",
                 table: "Baskets",
@@ -173,9 +171,9 @@ namespace OOO_Bank_NVA.Migrations
                 filter: "DeletedAt is null");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DBBank_StatusType",
+                name: "IX_DBBank_Status",
                 table: "DBBanks",
-                column: "StatusType",
+                column: "Status",
                 filter: "DeletedAt is null");
 
             migrationBuilder.CreateIndex(
@@ -188,11 +186,6 @@ namespace OOO_Bank_NVA.Migrations
                 name: "IX_Operations_PersonId",
                 table: "Operations",
                 column: "PersonId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Persons_CardId",
-                table: "Persons",
-                column: "CardId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Person_Phone",
@@ -215,6 +208,9 @@ namespace OOO_Bank_NVA.Migrations
                 name: "Baskets");
 
             migrationBuilder.DropTable(
+                name: "Cards");
+
+            migrationBuilder.DropTable(
                 name: "DBBanks");
 
             migrationBuilder.DropTable(
@@ -225,9 +221,6 @@ namespace OOO_Bank_NVA.Migrations
 
             migrationBuilder.DropTable(
                 name: "Persons");
-
-            migrationBuilder.DropTable(
-                name: "Cards");
         }
     }
 }

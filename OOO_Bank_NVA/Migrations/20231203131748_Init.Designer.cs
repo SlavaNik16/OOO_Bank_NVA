@@ -10,8 +10,8 @@ using OOO_Bank_NVA.DB;
 namespace OOO_Bank_NVA.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20231129181210_AddRole")]
-    partial class AddRole
+    [Migration("20231203131748_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -298,6 +298,12 @@ namespace OOO_Bank_NVA.Migrations
 
                     b.Property<DateTimeOffset?>("DeletedAt")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");

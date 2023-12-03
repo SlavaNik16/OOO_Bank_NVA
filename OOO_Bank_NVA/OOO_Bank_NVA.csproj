@@ -359,21 +359,9 @@
     <Compile Include="Forms\PersonRegisterForm.Designer.cs">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231126184002_Init.cs" />
-    <Compile Include="Migrations\20231126184002_Init.designer.cs">
-      <DependentUpon>20231126184002_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231126201419_ChangeBD.cs" />
-    <Compile Include="Migrations\20231126201419_ChangeBD.designer.cs">
-      <DependentUpon>20231126201419_ChangeBD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231129171108_AddDateEnd.cs" />
-    <Compile Include="Migrations\20231129171108_AddDateEnd.designer.cs">
-      <DependentUpon>20231129171108_AddDateEnd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231129181210_AddRole.cs" />
-    <Compile Include="Migrations\20231129181210_AddRole.designer.cs">
-      <DependentUpon>20231129181210_AddRole.cs</DependentUpon>
+    <Compile Include="Migrations\20231203131748_Init.cs" />
+    <Compile Include="Migrations\20231203131748_Init.designer.cs">
+      <DependentUpon>20231203131748_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="Models\Basket.cs" />
@@ -443,13 +431,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.6.4.js" />
-    <Content Include="Scripts\jquery-1.6.4.min.js" />
-    <Content Include="Scripts\jquery.signalR-2.4.3.js" />
-    <Content Include="Scripts\jquery.signalR-2.4.3.min.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

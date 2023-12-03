@@ -8,8 +8,6 @@ using OOO_Bank_NVA.Forms;
 using OOO_Bank_NVA.Models;
 using System;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows.Forms;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 
