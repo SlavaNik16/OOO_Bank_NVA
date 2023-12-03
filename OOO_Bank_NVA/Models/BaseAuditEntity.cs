@@ -26,7 +26,7 @@ namespace OOO_Bank_NVA.Models
         /// <summary>
         /// Кем создан (Фамилия пользователя)
         /// </summary>
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get; set; } = string.Empty;
 
         /// <summary>
         /// Дата изменения

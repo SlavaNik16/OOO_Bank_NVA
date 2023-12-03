@@ -44,44 +44,51 @@
             this.ColumnCardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabTovars = new System.Windows.Forms.TabPage();
-            this.tabBasket = new System.Windows.Forms.TabPage();
-            this.tabSettings = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabProfile = new System.Windows.Forms.TabPage();
             this.contextMenuStripDataGridUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.butStripView = new System.Windows.Forms.ToolStripMenuItem();
             this.butStripSend = new System.Windows.Forms.ToolStripMenuItem();
             this.butStripTranslate = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridTovar = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.tabTovars = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.butEdit = new System.Windows.Forms.Button();
             this.butAdd = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.butDelete = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridTovar = new System.Windows.Forms.DataGridView();
+            this.panelInfoTovar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxDesc = new System.Windows.Forms.TextBox();
+            this.pictureBoxTovar = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.butTovarView = new System.Windows.Forms.Button();
+            this.tabBasket = new System.Windows.Forms.TabPage();
+            this.tabSettings = new System.Windows.Forms.TabPage();
+            this.tabProfile = new System.Windows.Forms.TabPage();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.butSortWithFiltr = new System.Windows.Forms.Button();
+            this.ColumnTitile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnMaxCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPhoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialTabControl1.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
-            this.tabTovars.SuspendLayout();
-            this.statusStrip.SuspendLayout();
             this.contextMenuStripDataGridUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTovar)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.tabTovars.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTovar)).BeginInit();
+            this.panelInfoTovar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusStrip.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -100,7 +107,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1500, 741);
+            this.materialTabControl1.Size = new System.Drawing.Size(1500, 707);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabUsers
@@ -258,19 +265,201 @@
             this.ColumnRole.ReadOnly = true;
             this.ColumnRole.Width = 124;
             // 
+            // contextMenuStripDataGridUsers
+            // 
+            this.contextMenuStripDataGridUsers.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStripDataGridUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.butStripView,
+            this.butStripSend,
+            this.butStripTranslate});
+            this.contextMenuStripDataGridUsers.Name = "contextMenuStripDataGridUsers";
+            this.contextMenuStripDataGridUsers.Size = new System.Drawing.Size(272, 100);
+            // 
+            // butStripView
+            // 
+            this.butStripView.Name = "butStripView";
+            this.butStripView.Size = new System.Drawing.Size(271, 32);
+            this.butStripView.Text = "Просмотреть профиль";
+            // 
+            // butStripSend
+            // 
+            this.butStripSend.Name = "butStripSend";
+            this.butStripSend.Size = new System.Drawing.Size(271, 32);
+            this.butStripSend.Text = "Отправить сообщение";
+            // 
+            // butStripTranslate
+            // 
+            this.butStripTranslate.Name = "butStripTranslate";
+            this.butStripTranslate.Size = new System.Drawing.Size(271, 32);
+            this.butStripTranslate.Text = "Передать деньги";
+            // 
             // tabTovars
             // 
+            this.tabTovars.Controls.Add(this.tableLayoutPanel4);
             this.tabTovars.Controls.Add(this.tableLayoutPanel2);
             this.tabTovars.Controls.Add(this.panel2);
-            this.tabTovars.Controls.Add(this.panel1);
+            this.tabTovars.Controls.Add(this.panelInfoTovar);
             this.tabTovars.ImageKey = "Tovar.png";
             this.tabTovars.Location = new System.Drawing.Point(4, 39);
             this.tabTovars.Name = "tabTovars";
             this.tabTovars.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTovars.Size = new System.Drawing.Size(1492, 698);
+            this.tabTovars.Size = new System.Drawing.Size(1492, 664);
             this.tabTovars.TabIndex = 1;
             this.tabTovars.Text = "Товары";
             this.tabTovars.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.30907F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.18544F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.40578F));
+            this.tableLayoutPanel2.Controls.Add(this.butEdit, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.butAdd, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.butDelete, 2, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 497);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1003, 86);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // butEdit
+            // 
+            this.butEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butEdit.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butEdit.Location = new System.Drawing.Point(307, 3);
+            this.butEdit.Name = "butEdit";
+            this.butEdit.Size = new System.Drawing.Size(377, 80);
+            this.butEdit.TabIndex = 1;
+            this.butEdit.Text = "Изменить";
+            this.butEdit.UseVisualStyleBackColor = true;
+            this.butEdit.Click += new System.EventHandler(this.butEdit_Click);
+            // 
+            // butAdd
+            // 
+            this.butAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butAdd.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butAdd.Location = new System.Drawing.Point(3, 3);
+            this.butAdd.Name = "butAdd";
+            this.butAdd.Size = new System.Drawing.Size(298, 80);
+            this.butAdd.TabIndex = 0;
+            this.butAdd.Text = "Добавить";
+            this.butAdd.UseVisualStyleBackColor = true;
+            this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
+            // 
+            // butDelete
+            // 
+            this.butDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butDelete.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butDelete.Location = new System.Drawing.Point(690, 3);
+            this.butDelete.Name = "butDelete";
+            this.butDelete.Size = new System.Drawing.Size(310, 80);
+            this.butDelete.TabIndex = 2;
+            this.butDelete.Text = "Удалить";
+            this.butDelete.UseVisualStyleBackColor = true;
+            this.butDelete.Click += new System.EventHandler(this.butDelete_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridTovar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1003, 494);
+            this.panel2.TabIndex = 2;
+            // 
+            // dataGridTovar
+            // 
+            this.dataGridTovar.AllowUserToAddRows = false;
+            this.dataGridTovar.AllowUserToDeleteRows = false;
+            this.dataGridTovar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridTovar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnTitile,
+            this.ColumnPrice,
+            this.ColumnMaxCount,
+            this.ColumnDesc,
+            this.ColumnPhoto,
+            this.ColumnId});
+            this.dataGridTovar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridTovar.Location = new System.Drawing.Point(0, 0);
+            this.dataGridTovar.Name = "dataGridTovar";
+            this.dataGridTovar.ReadOnly = true;
+            this.dataGridTovar.RowHeadersWidth = 62;
+            this.dataGridTovar.RowTemplate.Height = 28;
+            this.dataGridTovar.Size = new System.Drawing.Size(1003, 494);
+            this.dataGridTovar.TabIndex = 0;
+            this.dataGridTovar.SelectionChanged += new System.EventHandler(this.dataGridTovar_SelectionChanged);
+            // 
+            // panelInfoTovar
+            // 
+            this.panelInfoTovar.Controls.Add(this.label1);
+            this.panelInfoTovar.Controls.Add(this.textBoxDesc);
+            this.panelInfoTovar.Controls.Add(this.pictureBoxTovar);
+            this.panelInfoTovar.Controls.Add(this.tableLayoutPanel3);
+            this.panelInfoTovar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelInfoTovar.Location = new System.Drawing.Point(1006, 3);
+            this.panelInfoTovar.Name = "panelInfoTovar";
+            this.panelInfoTovar.Size = new System.Drawing.Size(483, 658);
+            this.panelInfoTovar.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(160, 203);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 30);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Описание";
+            // 
+            // textBoxDesc
+            // 
+            this.textBoxDesc.Location = new System.Drawing.Point(17, 236);
+            this.textBoxDesc.Multiline = true;
+            this.textBoxDesc.Name = "textBoxDesc";
+            this.textBoxDesc.ReadOnly = true;
+            this.textBoxDesc.Size = new System.Drawing.Size(450, 246);
+            this.textBoxDesc.TabIndex = 3;
+            this.textBoxDesc.Text = "Пример: ыуадываывжаолыущзаолыузаузыщалзуыоазылзщаылозазыщаолзщы";
+            // 
+            // pictureBoxTovar
+            // 
+            this.pictureBoxTovar.Location = new System.Drawing.Point(45, 17);
+            this.pictureBoxTovar.Name = "pictureBoxTovar";
+            this.pictureBoxTovar.Size = new System.Drawing.Size(388, 183);
+            this.pictureBoxTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxTovar.TabIndex = 1;
+            this.pictureBoxTovar.TabStop = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Controls.Add(this.butTovarView, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 497);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.2795F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.7205F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 161);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // butTovarView
+            // 
+            this.butTovarView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butTovarView.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butTovarView.Location = new System.Drawing.Point(123, 3);
+            this.butTovarView.Name = "butTovarView";
+            this.butTovarView.Size = new System.Drawing.Size(235, 83);
+            this.butTovarView.TabIndex = 5;
+            this.butTovarView.Text = "Посмотреть";
+            this.butTovarView.UseVisualStyleBackColor = true;
+            this.butTovarView.Click += new System.EventHandler(this.butTovarView_Click);
             // 
             // tabBasket
             // 
@@ -292,6 +481,16 @@
             this.tabSettings.TabIndex = 2;
             this.tabSettings.Text = "Настройки";
             this.tabSettings.UseVisualStyleBackColor = true;
+            // 
+            // tabProfile
+            // 
+            this.tabProfile.ImageKey = "User.png";
+            this.tabProfile.Location = new System.Drawing.Point(4, 39);
+            this.tabProfile.Name = "tabProfile";
+            this.tabProfile.Size = new System.Drawing.Size(1492, 698);
+            this.tabProfile.TabIndex = 4;
+            this.tabProfile.Text = "Профиль";
+            this.tabProfile.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -322,215 +521,96 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(231, 27);
             this.toolStripStatusLabel1.Text = "Статус: Пользователь";
             // 
-            // tabProfile
+            // tableLayoutPanel4
             // 
-            this.tabProfile.ImageKey = "User.png";
-            this.tabProfile.Location = new System.Drawing.Point(4, 39);
-            this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Size = new System.Drawing.Size(1492, 698);
-            this.tabProfile.TabIndex = 4;
-            this.tabProfile.Text = "Профиль";
-            this.tabProfile.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.2333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.73579F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.03091F));
+            this.tableLayoutPanel4.Controls.Add(this.butSortWithFiltr, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 583);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1003, 82);
+            this.tableLayoutPanel4.TabIndex = 4;
             // 
-            // contextMenuStripDataGridUsers
+            // butSortWithFiltr
             // 
-            this.contextMenuStripDataGridUsers.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStripDataGridUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.butStripView,
-            this.butStripSend,
-            this.butStripTranslate});
-            this.contextMenuStripDataGridUsers.Name = "contextMenuStripDataGridUsers";
-            this.contextMenuStripDataGridUsers.Size = new System.Drawing.Size(272, 100);
+            this.butSortWithFiltr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butSortWithFiltr.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butSortWithFiltr.Location = new System.Drawing.Point(226, 3);
+            this.butSortWithFiltr.Name = "butSortWithFiltr";
+            this.butSortWithFiltr.Size = new System.Drawing.Size(543, 76);
+            this.butSortWithFiltr.TabIndex = 3;
+            this.butSortWithFiltr.Text = "Фильтровать/Сортировать";
+            this.butSortWithFiltr.UseVisualStyleBackColor = true;
             // 
-            // butStripView
+            // ColumnTitile
             // 
-            this.butStripView.Name = "butStripView";
-            this.butStripView.Size = new System.Drawing.Size(271, 32);
-            this.butStripView.Text = "Просмотреть профиль";
+            this.ColumnTitile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnTitile.DataPropertyName = "Title";
+            this.ColumnTitile.HeaderText = "Название";
+            this.ColumnTitile.MinimumWidth = 8;
+            this.ColumnTitile.Name = "ColumnTitile";
+            this.ColumnTitile.ReadOnly = true;
             // 
-            // butStripSend
+            // ColumnPrice
             // 
-            this.butStripSend.Name = "butStripSend";
-            this.butStripSend.Size = new System.Drawing.Size(271, 32);
-            this.butStripSend.Text = "Отправить сообщение";
+            this.ColumnPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnPrice.DataPropertyName = "Price";
+            this.ColumnPrice.HeaderText = "Цена";
+            this.ColumnPrice.MinimumWidth = 8;
+            this.ColumnPrice.Name = "ColumnPrice";
+            this.ColumnPrice.ReadOnly = true;
             // 
-            // butStripTranslate
+            // ColumnMaxCount
             // 
-            this.butStripTranslate.Name = "butStripTranslate";
-            this.butStripTranslate.Size = new System.Drawing.Size(271, 32);
-            this.butStripTranslate.Text = "Передать деньги";
+            this.ColumnMaxCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnMaxCount.DataPropertyName = "MaxCount";
+            this.ColumnMaxCount.HeaderText = "Макс. кол-во";
+            this.ColumnMaxCount.MinimumWidth = 8;
+            this.ColumnMaxCount.Name = "ColumnMaxCount";
+            this.ColumnMaxCount.ReadOnly = true;
             // 
-            // dataGridTovar
+            // ColumnDesc
             // 
-            this.dataGridTovar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridTovar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridTovar.Location = new System.Drawing.Point(0, 0);
-            this.dataGridTovar.Name = "dataGridTovar";
-            this.dataGridTovar.RowHeadersWidth = 62;
-            this.dataGridTovar.RowTemplate.Height = 28;
-            this.dataGridTovar.Size = new System.Drawing.Size(1003, 494);
-            this.dataGridTovar.TabIndex = 0;
+            this.ColumnDesc.DataPropertyName = "Description";
+            this.ColumnDesc.HeaderText = "Описание";
+            this.ColumnDesc.MinimumWidth = 8;
+            this.ColumnDesc.Name = "ColumnDesc";
+            this.ColumnDesc.ReadOnly = true;
+            this.ColumnDesc.Visible = false;
+            this.ColumnDesc.Width = 150;
             // 
-            // panel1
+            // ColumnPhoto
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.tableLayoutPanel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1006, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(483, 692);
-            this.panel1.TabIndex = 1;
+            this.ColumnPhoto.DataPropertyName = "Photo";
+            this.ColumnPhoto.HeaderText = "Фото";
+            this.ColumnPhoto.MinimumWidth = 8;
+            this.ColumnPhoto.Name = "ColumnPhoto";
+            this.ColumnPhoto.ReadOnly = true;
+            this.ColumnPhoto.Visible = false;
+            this.ColumnPhoto.Width = 150;
             // 
-            // panel2
+            // ColumnId
             // 
-            this.panel2.Controls.Add(this.dataGridTovar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1003, 494);
-            this.panel2.TabIndex = 2;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.Controls.Add(this.button4, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.butAdd, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button3, 2, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 497);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1003, 168);
-            this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // butAdd
-            // 
-            this.butAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butAdd.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butAdd.Location = new System.Drawing.Point(3, 3);
-            this.butAdd.Name = "butAdd";
-            this.butAdd.Size = new System.Drawing.Size(328, 78);
-            this.butAdd.TabIndex = 0;
-            this.butAdd.Text = "Добавить";
-            this.butAdd.UseVisualStyleBackColor = true;
-            this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(337, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(328, 78);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Изменить";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(671, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(329, 78);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Удалить";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(671, 87);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(329, 78);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Фильтровать";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(3, 87);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(328, 78);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Сортировать";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.button5, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 500);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.625F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.75F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.625F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 192);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(123, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(235, 72);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Посмотреть";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(123, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 129);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(17, 200);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(450, 282);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Пример: ыуадываывжаолыущзаолыузаузыщалзуыоазылзщаылозазыщаолзщы";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(157, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 30);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Описание";
+            this.ColumnId.DataPropertyName = "Id";
+            this.ColumnId.HeaderText = "№";
+            this.ColumnId.MinimumWidth = 8;
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Visible = false;
+            this.ColumnId.Width = 150;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1506, 808);
-            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.materialTabControl1);
+            this.Controls.Add(this.statusStrip);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
             this.MaximizeBox = false;
@@ -540,21 +620,23 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OOO Банк NVA";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabUsers.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
+            this.contextMenuStripDataGridUsers.ResumeLayout(false);
             this.tabTovars.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridTovar)).EndInit();
+            this.panelInfoTovar.ResumeLayout(false);
+            this.panelInfoTovar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            this.contextMenuStripDataGridUsers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTovar)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -589,17 +671,23 @@
         private System.Windows.Forms.ToolStripMenuItem butStripTranslate;
         private System.Windows.Forms.DataGridView dataGridTovar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelInfoTovar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button butAdd;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button butEdit;
+        private System.Windows.Forms.Button butDelete;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBoxTovar;
+        private System.Windows.Forms.Button butTovarView;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxDesc;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button butSortWithFiltr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTitile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMaxCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhoto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
     }
 }

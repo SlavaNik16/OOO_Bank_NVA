@@ -25,11 +25,11 @@ namespace OOO_Bank_NVA.Models
         /// <summary>
         /// Баланс карты
         /// </summary>
-        public decimal Balance { get; set; }
+        public decimal Balance { get; set; } = 0;
 
         /// <summary>
         /// Пин код
         /// </summary>
-        public string PinCode { get; set; } = null;
+        public string PinCode { get; set; } = string.Empty;
     }
 }

@@ -1,9 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
-namespace OOO_Bank_NVA.Models
+namespace OOO_Bank_NVA.ModelsResponce
 {
-    public class Tovar : BaseAuditEntity
+    public class TovarResponce
     {
+
+        /// <summary>
+        /// Название товара или услуги
+        /// </summary>
+        public Guid Id { get; set; }
+
         /// <summary>
         /// Название товара или услуги
         /// </summary>
@@ -28,9 +34,5 @@ namespace OOO_Bank_NVA.Models
         /// Фото
         /// </summary>
         public string Photo { get; set; } = string.Empty;
-
-
-
-        internal ICollection<Basket> Basket { get; set; }
     }
 }

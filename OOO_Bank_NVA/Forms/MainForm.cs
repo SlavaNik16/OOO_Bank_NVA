@@ -2,11 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
+using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.Models;
+using OOO_Bank_NVA.ModelsResponce;
 using OOO_Bank_NVA.Nuget;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 
 namespace OOO_Bank_NVA.Forms
@@ -15,6 +19,7 @@ namespace OOO_Bank_NVA.Forms
     {
         private readonly DbContextOptions<ApplicationContext> options;
         private readonly BaseWriteRepository<DBBank> baseDBBankWriteRepository;
+        private readonly BaseWriteRepository<Tovar> baseTovarWriteRepository;
         public MainForm()
         {
             InitializeComponent();
@@ -32,11 +37,8 @@ namespace OOO_Bank_NVA.Forms
 
             options = DataBaseHelper.Options();
             baseDBBankWriteRepository = new BaseWriteRepository<DBBank>();
-            ResetDataGridUser();
-            ResetDataGridTovars();
-            ColorsHelp.ButtonSubmit(butView);
-            ColorsHelp.ButtonSubmit(butSend);
-            ColorsHelp.ButtonSubmit(butTranslate);
+            baseTovarWriteRepository = new BaseWriteRepository<Tovar>();
+            
         }
 
         #region Users
@@ -45,6 +47,7 @@ namespace OOO_Bank_NVA.Forms
             using (var db = new ApplicationContext(options))
             {
                 dataGridUsers.DataSource = db.Persons
+                    .NotDeletedAt()
                     .Where(s => s.Phone != "(222)-222-22-22")
                     .Join(db.DBBanks, x => x.Phone, b => b.Login,
                     (x, b) => new
@@ -127,10 +130,14 @@ namespace OOO_Bank_NVA.Forms
         {
             using (var db = new ApplicationContext(options))
             {
-                dataGridTovar.DataSource = db.Tovars.Select(x => new
+                dataGridTovar.DataSource = db.Tovars.NotDeletedAt().Select(x => new TovarResponce
                 {
-                    Title = x.Tittle,
-                    Price = x.Price.ToString(),
+                    Id = x.Id,
+                    Title = x.Title,
+                    Price = x.Price,
+                    MaxCount = x.MaxCount,
+                    Description = x.Description,
+                    Photo = x.Photo,
                 }).ToList();
             }
         }
@@ -138,9 +145,88 @@ namespace OOO_Bank_NVA.Forms
         {
             var addTovarForm = new AddTovarForm();
             this.Hide();
-            addTovarForm.ShowDialog();
+            if (addTovarForm.ShowDialog() == DialogResult.OK)
+            {
+                var tovar = addTovarForm.Tovar;
+                baseTovarWriteRepository.Add(tovar);
+                ResetDataGridTovars();
+            }
             this.Show();
         }
         #endregion
+
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+            var butArray = new Button[]
+            {
+                butView, butSend, butTranslate, butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView
+            };
+            foreach(var but in butArray)
+            {
+                ColorsHelp.ButtonSubmit(but);
+            }
+            ResetDataGridUser();
+            ResetDataGridTovars();
+        }
+
+        private void butEdit_Click(object sender, System.EventArgs e)
+        {
+            var id = (TovarResponce)dataGridTovar.Rows[dataGridTovar.SelectedRows[0].Index].DataBoundItem;
+            var addTovarForm = new AddTovarForm(id);
+            this.Hide();
+            if (addTovarForm.ShowDialog() == DialogResult.OK)
+            {
+                var tovar = addTovarForm.Tovar;
+                baseTovarWriteRepository.Update(tovar);
+                ResetDataGridTovars();
+            }
+            this.Show();
+        }
+
+        private void butDelete_Click(object sender, System.EventArgs e)
+        {
+            var id = (TovarResponce)dataGridTovar.Rows[dataGridTovar.SelectedRows[0].Index].DataBoundItem;
+            if(MessageBox.Show($"Вы действительно хотите удалить товар:\nНазвание: {id.Title}\nЦена: {id.Price}", "Предупреждение!",
+                MessageBoxButtons.OKCancel , MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                using (var db = new ApplicationContext(options))
+                {
+                    var tovar = db.Tovars.ById(id.Id);
+                    baseTovarWriteRepository.Delete(tovar);
+                    ResetDataGridTovars();
+                }
+            }
+        }
+
+        private void dataGridTovar_SelectionChanged(object sender, System.EventArgs e)
+        {
+            var count = dataGridTovar.SelectedRows.Count == 1;
+            butEdit.Enabled =
+            butDelete.Enabled =
+            butSortWithFiltr.Enabled = count;
+
+
+            panelInfoTovar.Visible = count;
+            if (count)
+            {
+                var id = (TovarResponce)dataGridTovar.Rows[dataGridTovar.SelectedRows[0].Index].DataBoundItem;
+                textBoxDesc.Text = id.Description;
+                pictureBoxTovar.Image = !string.IsNullOrEmpty(id.Photo) ? Bitmap.FromFile(id.Photo) : null;
+            }
+        }
+
+        private void butTovarView_Click(object sender, System.EventArgs e)
+        {
+            var id = (TovarResponce)dataGridTovar.Rows[dataGridTovar.SelectedRows[0].Index].DataBoundItem;
+            var addTovarBasketForm = new AddTovarBasketForm(id);
+            this.Hide();
+            if (addTovarBasketForm.ShowDialog() == DialogResult.OK)
+            {
+                var tovar = addTovarBasketForm.Basket;
+                //baseTovarWriteRepository.Update(tovar);
+                ResetDataGridTovars();
+            }
+            this.Show();
+        }
     }
 }

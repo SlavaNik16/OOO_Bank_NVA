@@ -335,6 +335,12 @@
     <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="DB\DataBaseHelper.cs" />
     <Compile Include="DB\SampleContextFactory.cs" />
+    <Compile Include="Forms\AddTovarBasketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddTovarBasketForm.Designer.cs">
+      <DependentUpon>AddTovarBasketForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddTovarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,7 +383,20 @@
     <Compile Include="Migrations\20231203134456_AddBasket.designer.cs">
       <DependentUpon>20231203134456_AddBasket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20231203190233_UpdateTitle.cs" />
+    <Compile Include="Migrations\20231203190233_UpdateTitle.designer.cs">
+      <DependentUpon>20231203190233_UpdateTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231203193552_UpdateDb.cs" />
+    <Compile Include="Migrations\20231203193552_UpdateDb.designer.cs">
+      <DependentUpon>20231203193552_UpdateDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231203194549_UpdateDb2.cs" />
+    <Compile Include="Migrations\20231203194549_UpdateDb2.designer.cs">
+      <DependentUpon>20231203194549_UpdateDb2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
+    <Compile Include="ModelsResponce\TovarResponce.cs" />
     <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\Enums\Gender.cs" />
     <Compile Include="Models\Enums\OperationType.cs" />
@@ -405,6 +424,9 @@
     <Compile Include="Nuget\EnumHelpPerevod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddTovarBasketForm.resx">
+      <DependentUpon>AddTovarBasketForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddTovarForm.resx">
       <DependentUpon>AddTovarForm.cs</DependentUpon>
     </EmbeddedResource>

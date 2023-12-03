@@ -14,7 +14,7 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
             builder.HasById();
             builder.PropertyAuditConfiguration();
 
-            builder.Property(x => x.Tittle).IsRequired().HasMaxLength(120);
+            builder.Property(x => x.Title).IsRequired().HasMaxLength(120);
             builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.MaxCount).IsRequired();
 
@@ -22,10 +22,10 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
                 .WithOne(x => x.Tovar)
                 .HasForeignKey(x => x.TovarId);
 
-            builder.HasIndex(x => x.Tittle)
+            builder.HasIndex(x => x.Title)
                 .IsUnique()
                 .HasFilter($"{nameof(Tovar.DeletedAt)} is null")
-                .HasName($"IX_{nameof(Tovar)}_{nameof(Tovar.Tittle)}");
+                .HasName($"IX_{nameof(Tovar)}_{nameof(Tovar.Title)}");
         }
     }
 }

@@ -30,8 +30,8 @@ namespace OOO_Bank_NVA.DB.ReadDB
         /// <summary>
         /// По идентификатору 
         /// </summary>
-        public static IQueryable<TEntity> ById<TEntity>(this IQueryable<TEntity> query, Guid id) where TEntity : class, IEntityWithId
-            => query.Where(x => x.Id == id);
+        public static TEntity ById<TEntity>(this IQueryable<TEntity> query, Guid id) where TEntity : class, IEntityWithId
+            => query.FirstOrDefault(x => x.Id == id);
 
         /// <summary>
         /// По идентификаторам
@@ -43,8 +43,6 @@ namespace OOO_Bank_NVA.DB.ReadDB
             {
                 case 0:
                     return query.Where(x => false);
-                case 1:
-                    return query.ById(ids.First());
                 default:
                     return query.Where(x => ids.Contains(x.Id));
             }

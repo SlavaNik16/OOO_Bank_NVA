@@ -47,9 +47,9 @@
             this.pictureBoxTovar.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBoxTovar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxTovar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxTovar.Location = new System.Drawing.Point(80, 24);
+            this.pictureBoxTovar.Location = new System.Drawing.Point(37, 118);
             this.pictureBoxTovar.Name = "pictureBoxTovar";
-            this.pictureBoxTovar.Size = new System.Drawing.Size(467, 226);
+            this.pictureBoxTovar.Size = new System.Drawing.Size(560, 226);
             this.pictureBoxTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxTovar.TabIndex = 0;
             this.pictureBoxTovar.TabStop = false;
@@ -68,12 +68,12 @@
             this.textBoxTittle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.textBoxTittle.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.textBoxTittle.Depth = 0;
-            this.textBoxTittle.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBoxTittle.HideSelection = true;
             this.textBoxTittle.Hint = "Наименование";
             this.textBoxTittle.LeadingIcon = null;
-            this.textBoxTittle.Location = new System.Drawing.Point(80, 280);
-            this.textBoxTittle.MaxLength = 32767;
+            this.textBoxTittle.Location = new System.Drawing.Point(37, 374);
+            this.textBoxTittle.MaxLength = 80;
             this.textBoxTittle.MouseState = MaterialSkin.MouseState.OUT;
             this.textBoxTittle.Name = "textBoxTittle";
             this.textBoxTittle.PasswordChar = '\0';
@@ -84,16 +84,17 @@
             this.textBoxTittle.SelectionLength = 0;
             this.textBoxTittle.SelectionStart = 0;
             this.textBoxTittle.ShortcutsEnabled = true;
-            this.textBoxTittle.Size = new System.Drawing.Size(467, 48);
+            this.textBoxTittle.Size = new System.Drawing.Size(560, 48);
             this.textBoxTittle.TabIndex = 1;
             this.textBoxTittle.TabStop = false;
             this.textBoxTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxTittle.TrailingIcon = null;
             this.textBoxTittle.UseSystemPasswordChar = false;
+            this.textBoxTittle.TextChanged += new System.EventHandler(this.textBoxTittle_TextChanged);
             // 
             // numericUpDownCount
             // 
-            this.numericUpDownCount.Location = new System.Drawing.Point(213, 378);
+            this.numericUpDownCount.Location = new System.Drawing.Point(170, 472);
             this.numericUpDownCount.Maximum = new decimal(new int[] {
             120,
             0,
@@ -112,11 +113,12 @@
             0,
             0,
             0});
+            this.numericUpDownCount.ValueChanged += new System.EventHandler(this.numericUpDownCount_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 378);
+            this.label1.Location = new System.Drawing.Point(44, 472);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 20);
             this.label1.TabIndex = 4;
@@ -124,16 +126,17 @@
             // 
             // textBoxDesc
             // 
-            this.textBoxDesc.Location = new System.Drawing.Point(80, 460);
+            this.textBoxDesc.Location = new System.Drawing.Point(37, 554);
             this.textBoxDesc.Multiline = true;
             this.textBoxDesc.Name = "textBoxDesc";
-            this.textBoxDesc.Size = new System.Drawing.Size(467, 126);
+            this.textBoxDesc.Size = new System.Drawing.Size(560, 126);
             this.textBoxDesc.TabIndex = 5;
+            this.textBoxDesc.TextChanged += new System.EventHandler(this.textBoxDesc_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(259, 427);
+            this.label2.Location = new System.Drawing.Point(216, 521);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 6;
@@ -147,15 +150,17 @@
             this.textBoxPrice.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBoxPrice.Hint = "Цена";
             this.textBoxPrice.LeadingIcon = null;
-            this.textBoxPrice.Location = new System.Drawing.Point(379, 366);
+            this.textBoxPrice.Location = new System.Drawing.Point(336, 460);
             this.textBoxPrice.MaxLength = 50;
             this.textBoxPrice.MouseState = MaterialSkin.MouseState.OUT;
             this.textBoxPrice.Multiline = false;
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(168, 50);
+            this.textBoxPrice.Size = new System.Drawing.Size(261, 50);
             this.textBoxPrice.TabIndex = 8;
             this.textBoxPrice.Text = "";
             this.textBoxPrice.TrailingIcon = null;
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.textBoxPrice_TextChanged);
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
             // 
             // butAdd
             // 
@@ -163,9 +168,10 @@
             this.butAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.butAdd.Depth = 0;
             this.butAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.butAdd.Enabled = false;
             this.butAdd.HighEmphasis = true;
             this.butAdd.Icon = null;
-            this.butAdd.Location = new System.Drawing.Point(80, 628);
+            this.butAdd.Location = new System.Drawing.Point(37, 706);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.butAdd.Name = "butAdd";
@@ -185,7 +191,7 @@
             this.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.butCancel.HighEmphasis = true;
             this.butCancel.Icon = null;
-            this.butCancel.Location = new System.Drawing.Point(465, 628);
+            this.butCancel.Location = new System.Drawing.Point(497, 706);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.butCancel.Name = "butCancel";
@@ -201,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 689);
+            this.ClientSize = new System.Drawing.Size(632, 779);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.butAdd);
             this.Controls.Add(this.textBoxPrice);
@@ -212,11 +218,10 @@
             this.Controls.Add(this.textBoxTittle);
             this.Controls.Add(this.pictureBoxTovar);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(674, 745);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(674, 745);
             this.Name = "AddTovarForm";
-            this.Text = "AddTovarForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Добавление товара";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).EndInit();
             this.ResumeLayout(false);
