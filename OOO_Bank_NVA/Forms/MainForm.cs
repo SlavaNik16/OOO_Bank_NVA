@@ -202,8 +202,7 @@ namespace OOO_Bank_NVA.Forms
         {
             var count = dataGridTovar.SelectedRows.Count == 1;
             butEdit.Enabled =
-            butDelete.Enabled =
-            butSortWithFiltr.Enabled = count;
+            butDelete.Enabled = count;
 
 
             panelInfoTovar.Visible = count;
@@ -226,6 +225,14 @@ namespace OOO_Bank_NVA.Forms
                 //baseTovarWriteRepository.Update(tovar);
                 ResetDataGridTovars();
             }
+            this.Show();
+        }
+
+        private void butSortWithFiltr_Click(object sender, System.EventArgs e)
+        {
+            var filtrAndSortForm = new FiltrAndSortForm(dataGridTovar);
+            this.Hide();
+            filtrAndSortForm.ShowDialog();
             this.Show();
         }
     }

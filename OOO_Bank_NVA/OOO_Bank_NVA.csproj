@@ -353,6 +353,12 @@
     <Compile Include="Forms\CardValidateForm.Designer.cs">
       <DependentUpon>CardValidateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FiltrAndSortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltrAndSortForm.Designer.cs">
+      <DependentUpon>FiltrAndSortForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltrAndSortForm.resx">
+      <DependentUpon>FiltrAndSortForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

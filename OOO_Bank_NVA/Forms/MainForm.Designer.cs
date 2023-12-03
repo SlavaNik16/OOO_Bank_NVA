@@ -546,6 +546,7 @@
             this.butSortWithFiltr.TabIndex = 3;
             this.butSortWithFiltr.Text = "Фильтровать/Сортировать";
             this.butSortWithFiltr.UseVisualStyleBackColor = true;
+            this.butSortWithFiltr.Click += new System.EventHandler(this.butSortWithFiltr_Click);
             // 
             // ColumnTitile
             // 
