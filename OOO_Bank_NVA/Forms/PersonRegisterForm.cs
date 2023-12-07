@@ -85,29 +85,30 @@ namespace OOO_Bank_NVA.Forms
             {
                 using (var db = new ApplicationContext(options))
                 {
-                var personValidate = db.DBBanks.IsPhoneWithLogin(person.Phone);
-                if (personValidate)
+                    var personValidate = db.DBBanks.IsPhoneWithLogin(person.Phone);
+                    if (personValidate)
                     {
                         MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         maskPhoneText.Text = string.Empty;
                         return;
                     }
-                if (!string.IsNullOrEmpty(person.CardName))
-                {
-
-                    var card = db.Cards.IsCardWithPerson(person.CardName);
-                    if (!card)
+                    if (!string.IsNullOrEmpty(person.CardName))
                     {
-                        MessageBox.Show("Ваша карта не найдена!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        maskNumberCardText.Text = string.Empty;
-                        return;
+
+                        var card = db.Cards.IsCardWithPerson(person.CardName);
+                        if (!card)
+                        {
+                            MessageBox.Show("Ваша карта не найдена!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            maskNumberCardText.Text = string.Empty;
+                            return;
+                        }
+
+                        var cardValidateForm = new CardValidateForm();
+                        this.Hide();
+                        cardValidateForm.ShowDialog();
+                        this.Show();
+
                     }
-
-                    var cardValidateForm = new CardValidateForm();
-                    this.Hide();
-                    cardValidateForm.ShowDialog();
-                    this.Show();
-
                 }
             }
             DialogResult = DialogResult.OK;
@@ -120,3 +121,4 @@ namespace OOO_Bank_NVA.Forms
         }
     }
 }
+
