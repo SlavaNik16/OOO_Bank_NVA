@@ -4,6 +4,7 @@ using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Models;
+using System.Linq;
 using System.Windows.Forms;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 
@@ -80,15 +81,17 @@ namespace OOO_Bank_NVA.Forms
 
         private void butCreate_Click(object sender, System.EventArgs e)
         {
-            using (var db = new ApplicationContext(options))
+            if(!string.IsNullOrEmpty(person.CardName))
             {
+                using (var db = new ApplicationContext(options))
+                {
                 var personValidate = db.DBBanks.IsPhoneWithLogin(person.Phone);
                 if (personValidate)
-                {
-                    MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    maskPhoneText.Text = string.Empty;
-                    return;
-                }
+                    {
+                        MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        maskPhoneText.Text = string.Empty;
+                        return;
+                    }
                 if (!string.IsNullOrEmpty(person.CardName))
                 {
 

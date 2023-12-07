@@ -145,6 +145,16 @@
             this.butEnter.UseAccentColor = false;
             this.butEnter.UseVisualStyleBackColor = true;
             // 
+            // butCancel
+            // 
+            this.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.butCancel.Location = new System.Drawing.Point(558, 325);
+            this.butCancel.Name = "butCancel";
+            this.butCancel.Size = new System.Drawing.Size(166, 53);
+            this.butCancel.TabIndex = 2;
+            this.butCancel.Text = "Отменить";
+            this.butCancel.UseVisualStyleBackColor = true;
+            // 
             // PersonEnterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -152,6 +162,7 @@
             this.ClientSize = new System.Drawing.Size(800, 400);
             this.Controls.Add(this.butEnter);
             this.Controls.Add(this.butCancel);
+            this.Controls.Add(this.butEnter);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(800, 400);

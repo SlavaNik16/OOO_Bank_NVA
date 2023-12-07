@@ -8,6 +8,8 @@ using OOO_Bank_NVA.Forms;
 using OOO_Bank_NVA.Models;
 using System;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 
@@ -18,7 +20,7 @@ namespace OOO_Bank_NVA
         private readonly BaseWriteRepository<Person> writePersonRepository;
         private readonly BaseWriteRepository<DBBank> writeDbBankRepository;
         private readonly DbContextOptions<ApplicationContext> options;
-        public static string UserName = "";
+        public static string UserName = ""; 
         public static Person user { get; private set; }
         public AuthorizationForm()
         {
@@ -63,6 +65,7 @@ namespace OOO_Bank_NVA
                     dbBank.Status = StatusType.Online;
                     writeDbBankRepository.Update(dbBank, UserName);
                     var mainForm = new MainForm();
+                    this.Hide();
                     mainForm.ShowDialog();
 
                 }
@@ -89,6 +92,21 @@ namespace OOO_Bank_NVA
                            "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Show();
+        }
+
+        public static string getHashSha256(string text)
+        {
+            using (SHA256 hashString = SHA256.Create())
+            {
+                byte[] bytes = Encoding.Unicode.GetBytes(text);
+                byte[] hash = hashString.ComputeHash(bytes);
+                string hashstring = "";
+                foreach (byte x in hash)
+                {
+                    hashstring += String.Format("{0:x2}", x);
+                }
+                return hashstring;
+            }
         }
     }
 }
