@@ -131,12 +131,12 @@ namespace OOO_Bank_NVA.Forms
         {
             using (var db = new ApplicationContext(options))
             {
-                dataGridTovar.DataSource = db.Tovars.NotDeletedAt().Select(x => new TovarResponce
+                dataGridTovar.DataSource = db.Tovars.AsNoTracking().NotDeletedAt().OrderBy(x => x.Title).Select(x => new TovarResponce
                 {
                     Id = x.Id,
-                    Title = x.Title,
-                    Price = x.Price,
                     MaxCount = x.MaxCount,
+                    Price = x.Price,
+                    Title = x.Title,
                     Description = x.Description,
                     Photo = x.Photo,
                 }).ToImmutableList();
@@ -231,9 +231,12 @@ namespace OOO_Bank_NVA.Forms
 
         private void butSortWithFiltr_Click(object sender, System.EventArgs e)
         {
-            var filtrAndSortForm = new FiltrAndSortForm(dataGridTovar);
+            var filtrAndSortForm = new FiltrAndSortTovarForm();
             this.Hide();
-            filtrAndSortForm.ShowDialog();
+            if (filtrAndSortForm.ShowDialog() == DialogResult.OK)
+            {
+                dataGridTovar.DataSource = filtrAndSortForm.GetDataGridView().DataSource;
+            }
             this.Show();
         }
 
