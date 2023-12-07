@@ -7,6 +7,7 @@ using OOO_Bank_NVA.Models;
 using OOO_Bank_NVA.ModelsResponce;
 using OOO_Bank_NVA.Nuget;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
@@ -138,7 +139,7 @@ namespace OOO_Bank_NVA.Forms
                     MaxCount = x.MaxCount,
                     Description = x.Description,
                     Photo = x.Photo,
-                }).ToList();
+                }).ToImmutableList();
             }
         }
         private void butAdd_Click(object sender, System.EventArgs e)
@@ -234,6 +235,11 @@ namespace OOO_Bank_NVA.Forms
             this.Hide();
             filtrAndSortForm.ShowDialog();
             this.Show();
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
