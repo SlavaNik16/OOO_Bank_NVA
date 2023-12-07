@@ -195,6 +195,7 @@
             this.dataGridUsers.ReadOnly = true;
             this.dataGridUsers.RowHeadersWidth = 62;
             this.dataGridUsers.RowTemplate.Height = 28;
+            this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridUsers.Size = new System.Drawing.Size(1486, 572);
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.SelectionChanged += new System.EventHandler(this.dataGridUsers_SelectionChanged);
@@ -413,10 +414,12 @@
             this.ColumnId});
             this.dataGridTovar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridTovar.Location = new System.Drawing.Point(0, 0);
+            this.dataGridTovar.MultiSelect = false;
             this.dataGridTovar.Name = "dataGridTovar";
             this.dataGridTovar.ReadOnly = true;
             this.dataGridTovar.RowHeadersWidth = 62;
             this.dataGridTovar.RowTemplate.Height = 28;
+            this.dataGridTovar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridTovar.Size = new System.Drawing.Size(1003, 494);
             this.dataGridTovar.TabIndex = 0;
             this.dataGridTovar.SelectionChanged += new System.EventHandler(this.dataGridTovar_SelectionChanged);

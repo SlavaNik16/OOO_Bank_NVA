@@ -52,11 +52,13 @@
             this.butSearch = new System.Windows.Forms.Button();
             this.butFiltr = new System.Windows.Forms.Button();
             this.butExport = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTovar)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxSort
@@ -354,6 +356,8 @@
             this.priceBox.TabIndex = 19;
             this.priceBox.Text = "";
             this.priceBox.TrailingIcon = null;
+            this.priceBox.TextChanged += new System.EventHandler(this.priceBox_TextChanged);
+            this.priceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceBox_KeyPress);
             // 
             // tableLayoutPanel2
             // 
@@ -371,11 +375,12 @@
             // 
             // butSearch
             // 
+            this.butSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butSearch.Enabled = false;
             this.butSearch.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.butSearch.Location = new System.Drawing.Point(614, 631);
+            this.butSearch.Location = new System.Drawing.Point(3, 3);
             this.butSearch.Name = "butSearch";
-            this.butSearch.Size = new System.Drawing.Size(153, 48);
+            this.butSearch.Size = new System.Drawing.Size(347, 61);
             this.butSearch.TabIndex = 21;
             this.butSearch.Text = "Найти";
             this.butSearch.UseVisualStyleBackColor = true;
@@ -383,34 +388,52 @@
             // 
             // butFiltr
             // 
+            this.butFiltr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butFiltr.Enabled = false;
             this.butFiltr.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.butFiltr.Location = new System.Drawing.Point(604, 738);
+            this.butFiltr.Location = new System.Drawing.Point(3, 137);
             this.butFiltr.Name = "butFiltr";
-            this.butFiltr.Size = new System.Drawing.Size(163, 48);
+            this.butFiltr.Size = new System.Drawing.Size(347, 63);
             this.butFiltr.TabIndex = 22;
             this.butFiltr.Text = "Фильтровать";
             this.butFiltr.UseVisualStyleBackColor = true;
+            this.butFiltr.Click += new System.EventHandler(this.butFiltr_Click);
             // 
             // butExport
             // 
             this.butExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.butExport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butExport.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.butExport.Location = new System.Drawing.Point(783, 669);
+            this.butExport.Location = new System.Drawing.Point(3, 70);
             this.butExport.Name = "butExport";
-            this.butExport.Size = new System.Drawing.Size(141, 82);
+            this.butExport.Size = new System.Drawing.Size(347, 61);
             this.butExport.TabIndex = 23;
             this.butExport.Text = "Экспорт данных";
             this.butExport.UseVisualStyleBackColor = false;
             this.butExport.Click += new System.EventHandler(this.butExport_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.butSearch, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.butExport, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.butFiltr, 0, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(577, 609);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(353, 203);
+            this.tableLayoutPanel3.TabIndex = 21;
             // 
             // FiltrAndSortTovarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 818);
-            this.Controls.Add(this.butExport);
-            this.Controls.Add(this.butFiltr);
-            this.Controls.Add(this.butSearch);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.priceBox);
             this.Controls.Add(this.label3);
@@ -433,6 +456,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTovar)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,5 +487,6 @@
         private System.Windows.Forms.Button butSearch;
         private System.Windows.Forms.Button butFiltr;
         private System.Windows.Forms.Button butExport;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

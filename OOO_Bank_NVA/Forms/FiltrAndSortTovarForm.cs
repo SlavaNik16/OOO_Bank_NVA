@@ -4,7 +4,9 @@ using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.ModelsResponce;
+using OOO_Bank_NVA.Nuget;
 using System.Collections.Generic;
+using System.ComponentModel.Composition.Primitives;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -116,7 +118,27 @@ namespace OOO_Bank_NVA.Forms
 
         private void butExport_Click(object sender, System.EventArgs e)
         {
+            Nuget.Export.CreateExcelSheet(dataGridViewTovar, "Список товаров");
+        }
 
+        private void priceBox_TextChanged(object sender, System.EventArgs e)
+        {
+            butFiltr.Enabled =
+               !string.IsNullOrWhiteSpace(priceBox.Text);
+        }
+
+        private void butFiltr_Click(object sender, System.EventArgs e)
+        {
+            var list = GetTovarList();
+            dataGridViewTovar.DataSource=list.Where(x => x.Price >= int.Parse(priceBox.Text)).ToList();
+        }
+
+        private void priceBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && (e.KeyChar != 8))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
