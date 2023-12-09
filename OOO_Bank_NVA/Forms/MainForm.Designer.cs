@@ -70,11 +70,26 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.butTovarView = new System.Windows.Forms.Button();
             this.tabBasket = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.butCanselTovar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.listView = new System.Windows.Forms.ListView();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.butBuy = new System.Windows.Forms.Button();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.tabProfile = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -88,6 +103,15 @@
             this.panelInfoTovar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tabBasket.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,12 +142,13 @@
             this.tabUsers.ImageKey = "Users.png";
             this.tabUsers.Location = new System.Drawing.Point(4, 39);
             this.tabUsers.Name = "tabUsers";
-            this.tabUsers.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabUsers.Padding = new System.Windows.Forms.Padding(3);
             this.tabUsers.Size = new System.Drawing.Size(1492, 663);
             this.tabUsers.TabIndex = 0;
             this.tabUsers.Text = "Пользователи";
             this.tabUsers.ToolTipText = "Привет";
             this.tabUsers.UseVisualStyleBackColor = true;
+            this.tabUsers.Click += new System.EventHandler(this.tabUsers_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -303,11 +328,12 @@
             this.tabTovars.ImageKey = "Tovar.png";
             this.tabTovars.Location = new System.Drawing.Point(4, 39);
             this.tabTovars.Name = "tabTovars";
-            this.tabTovars.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabTovars.Padding = new System.Windows.Forms.Padding(3);
             this.tabTovars.Size = new System.Drawing.Size(1492, 663);
             this.tabTovars.TabIndex = 1;
             this.tabTovars.Text = "Товары";
             this.tabTovars.UseVisualStyleBackColor = true;
+            this.tabTovars.Click += new System.EventHandler(this.tabTovars_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -323,7 +349,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1003, 82);
             this.tableLayoutPanel4.TabIndex = 4;
-            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // butSortWithFiltr
             // 
@@ -504,6 +529,7 @@
             // 
             // textBoxDesc
             // 
+            this.textBoxDesc.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.textBoxDesc.Location = new System.Drawing.Point(16, 235);
             this.textBoxDesc.Multiline = true;
             this.textBoxDesc.Name = "textBoxDesc";
@@ -551,21 +577,138 @@
             // 
             // tabBasket
             // 
+            this.tabBasket.Controls.Add(this.panel4);
+            this.tabBasket.Controls.Add(this.panel1);
             this.tabBasket.ImageKey = "Basket.png";
             this.tabBasket.Location = new System.Drawing.Point(4, 39);
             this.tabBasket.Name = "tabBasket";
-            this.tabBasket.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabBasket.Size = new System.Drawing.Size(1492, 660);
+            this.tabBasket.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBasket.Size = new System.Drawing.Size(1492, 663);
             this.tabBasket.TabIndex = 3;
             this.tabBasket.Text = "Корзина";
             this.tabBasket.UseVisualStyleBackColor = true;
+            this.tabBasket.Click += new System.EventHandler(this.tabBasket_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(1141, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(348, 657);
+            this.panel4.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel5);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(-2, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(350, 657);
+            this.panel6.TabIndex = 4;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel9);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(350, 657);
+            this.panel5.TabIndex = 4;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.butCanselTovar);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel9.Location = new System.Drawing.Point(0, 557);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(350, 100);
+            this.panel9.TabIndex = 0;
+            // 
+            // butCanselTovar
+            // 
+            this.butCanselTovar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butCanselTovar.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.butCanselTovar.Location = new System.Drawing.Point(0, 0);
+            this.butCanselTovar.Name = "butCanselTovar";
+            this.butCanselTovar.Size = new System.Drawing.Size(350, 100);
+            this.butCanselTovar.TabIndex = 4;
+            this.butCanselTovar.Text = "Купить";
+            this.butCanselTovar.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1138, 657);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.panel8);
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1138, 657);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.listView);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1138, 557);
+            this.panel8.TabIndex = 2;
+            // 
+            // listView
+            // 
+            this.listView.BackColor = System.Drawing.SystemColors.Info;
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.listView.HideSelection = false;
+            this.listView.Location = new System.Drawing.Point(0, 0);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(1138, 557);
+            this.listView.TabIndex = 0;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.butBuy);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 557);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1138, 100);
+            this.panel7.TabIndex = 1;
+            // 
+            // butBuy
+            // 
+            this.butBuy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butBuy.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.butBuy.Location = new System.Drawing.Point(0, 0);
+            this.butBuy.Name = "butBuy";
+            this.butBuy.Size = new System.Drawing.Size(1138, 100);
+            this.butBuy.TabIndex = 1;
+            this.butBuy.Text = "Отменить товар";
+            this.butBuy.UseVisualStyleBackColor = true;
             // 
             // tabSettings
             // 
             this.tabSettings.ImageKey = "Settings.png";
             this.tabSettings.Location = new System.Drawing.Point(4, 39);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(1492, 660);
+            this.tabSettings.Size = new System.Drawing.Size(1492, 663);
             this.tabSettings.TabIndex = 2;
             this.tabSettings.Text = "Настройки";
             this.tabSettings.UseVisualStyleBackColor = true;
@@ -575,7 +718,7 @@
             this.tabProfile.ImageKey = "User.png";
             this.tabProfile.Location = new System.Drawing.Point(4, 39);
             this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Size = new System.Drawing.Size(1492, 660);
+            this.tabProfile.Size = new System.Drawing.Size(1492, 663);
             this.tabProfile.TabIndex = 4;
             this.tabProfile.Text = "Профиль";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -610,6 +753,22 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(231, 27);
             this.toolStripStatusLabel1.Text = "Статус: Пользователь";
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 345;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Width = 220;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Width = 161;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Width = 260;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -642,6 +801,15 @@
             this.panelInfoTovar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tabBasket.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -696,5 +864,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhoto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button butBuy;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button butCanselTovar;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

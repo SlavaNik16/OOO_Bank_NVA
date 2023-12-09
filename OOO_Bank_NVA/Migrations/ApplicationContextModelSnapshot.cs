@@ -42,6 +42,9 @@ namespace OOO_Bank_NVA.Migrations
                     b.Property<Guid>("PersonId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("StatusBy")
+                        .HasColumnType("int");
+
                     b.Property<Guid>("TovarId")
                         .HasColumnType("uniqueidentifier");
 
@@ -175,55 +178,6 @@ namespace OOO_Bank_NVA.Migrations
                     b.ToTable("DBBanks");
                 });
 
-            modelBuilder.Entity("OOO_Bank_NVA.Models.Operation", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset>("CreatedAt")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
-
-                    b.Property<DateTimeOffset?>("DeletedAt")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<int>("OperationType")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("PersonId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTimeOffset?>("UpdatedAt")
-                        .IsRequired()
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("UpdatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OperationType")
-                        .HasName("IX_Operation_OperationType")
-                        .HasFilter("DeletedAt is null");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("Operations");
-                });
-
             modelBuilder.Entity("OOO_Bank_NVA.Models.Person", b =>
                 {
                     b.Property<Guid>("Id")
@@ -344,15 +298,6 @@ namespace OOO_Bank_NVA.Migrations
                     b.HasOne("OOO_Bank_NVA.Models.Tovar", "Tovar")
                         .WithMany("Basket")
                         .HasForeignKey("TovarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("OOO_Bank_NVA.Models.Operation", b =>
-                {
-                    b.HasOne("OOO_Bank_NVA.Models.Person", "Person")
-                        .WithMany("Operation")
-                        .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -331,7 +331,6 @@
     <Compile Include="DB\ConfigurateDB\Anchors\IEntityConfigurateAnchors.cs" />
     <Compile Include="DB\ConfigurateDB\CardEntityConfigurate.cs" />
     <Compile Include="DB\ConfigurateDB\DBBankEntityConfigurate.cs" />
-    <Compile Include="DB\ConfigurateDB\OperationEntityConfigurate.cs" />
     <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="DB\DataBaseHelper.cs" />
     <Compile Include="DB\SampleContextFactory.cs" />
@@ -377,33 +376,15 @@
     <Compile Include="Forms\PersonRegisterForm.Designer.cs">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231203131748_Init.cs" />
-    <Compile Include="Migrations\20231203131748_Init.designer.cs">
-      <DependentUpon>20231203131748_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231203133932_AddTovars.cs" />
-    <Compile Include="Migrations\20231203133932_AddTovars.designer.cs">
-      <DependentUpon>20231203133932_AddTovars.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231203134456_AddBasket.cs" />
-    <Compile Include="Migrations\20231203134456_AddBasket.designer.cs">
-      <DependentUpon>20231203134456_AddBasket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231203190233_UpdateTitle.cs" />
-    <Compile Include="Migrations\20231203190233_UpdateTitle.designer.cs">
-      <DependentUpon>20231203190233_UpdateTitle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231203193552_UpdateDb.cs" />
-    <Compile Include="Migrations\20231203193552_UpdateDb.designer.cs">
-      <DependentUpon>20231203193552_UpdateDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231203194549_UpdateDb2.cs" />
-    <Compile Include="Migrations\20231203194549_UpdateDb2.designer.cs">
-      <DependentUpon>20231203194549_UpdateDb2.cs</DependentUpon>
+    <Compile Include="Migrations\20231209195746_Init.cs" />
+    <Compile Include="Migrations\20231209195746_Init.designer.cs">
+      <DependentUpon>20231209195746_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
+    <Compile Include="ModelsResponce\BasketResponce.cs" />
     <Compile Include="ModelsResponce\TovarResponce.cs" />
     <Compile Include="Models\Basket.cs" />
+    <Compile Include="Models\Enums\StatusBy.cs" />
     <Compile Include="Models\Enums\Gender.cs" />
     <Compile Include="Models\Enums\OperationType.cs" />
     <Compile Include="Models\Enums\RoleType.cs" />
@@ -424,7 +405,6 @@
     <Compile Include="Models\BaseAuditEntity.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\DBBank.cs" />
-    <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Tovar.cs" />
     <Compile Include="Nuget\EnumHelpPerevod.cs" />

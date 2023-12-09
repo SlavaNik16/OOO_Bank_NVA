@@ -16,7 +16,7 @@ namespace OOO_Bank_NVA.Forms
         {
             InitializeComponent();
             basket = new Basket();
-
+            basket.PersonId = AuthorizationForm.user.Id;
             basket.TovarId = tovarResponce.Id;
             textBoxTitle.Text = tovarResponce.Title;
             labelPrice.Text = tovarResponce.Price.ToString();

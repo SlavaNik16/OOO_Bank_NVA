@@ -70,7 +70,7 @@ namespace OOO_Bank_NVA.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tovar",
+                name: "Tovars",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
@@ -79,41 +79,15 @@ namespace OOO_Bank_NVA.Migrations
                     UpdatedAt = table.Column<DateTimeOffset>(nullable: false),
                     UpdatedBy = table.Column<string>(maxLength: 200, nullable: false),
                     DeletedAt = table.Column<DateTimeOffset>(nullable: true),
-                    Tittle = table.Column<string>(maxLength: 120, nullable: false),
+                    Title = table.Column<string>(maxLength: 120, nullable: false),
                     Price = table.Column<decimal>(nullable: false),
-                    Count = table.Column<int>(nullable: false),
+                    MaxCount = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     Photo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tovar", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Operations",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    CreatedAt = table.Column<DateTimeOffset>(nullable: false),
-                    CreatedBy = table.Column<string>(maxLength: 200, nullable: false),
-                    UpdatedAt = table.Column<DateTimeOffset>(nullable: false),
-                    UpdatedBy = table.Column<string>(maxLength: 200, nullable: false),
-                    DeletedAt = table.Column<DateTimeOffset>(nullable: true),
-                    PersonId = table.Column<Guid>(nullable: false),
-                    Price = table.Column<decimal>(nullable: false),
-                    OperationType = table.Column<int>(nullable: false),
-                    Comment = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Operations", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Operations_Persons_PersonId",
-                        column: x => x.PersonId,
-                        principalTable: "Persons",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_Tovars", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -127,7 +101,9 @@ namespace OOO_Bank_NVA.Migrations
                     UpdatedBy = table.Column<string>(maxLength: 200, nullable: false),
                     DeletedAt = table.Column<DateTimeOffset>(nullable: true),
                     TovarId = table.Column<Guid>(nullable: false),
-                    PersonId = table.Column<Guid>(nullable: false)
+                    Count = table.Column<int>(nullable: false),
+                    PersonId = table.Column<Guid>(nullable: false),
+                    StatusBy = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -139,9 +115,9 @@ namespace OOO_Bank_NVA.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Baskets_Tovar_TovarId",
+                        name: "FK_Baskets_Tovars_TovarId",
                         column: x => x.TovarId,
-                        principalTable: "Tovar",
+                        principalTable: "Tovars",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -177,17 +153,6 @@ namespace OOO_Bank_NVA.Migrations
                 filter: "DeletedAt is null");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Operation_OperationType",
-                table: "Operations",
-                column: "OperationType",
-                filter: "DeletedAt is null");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Operations_PersonId",
-                table: "Operations",
-                column: "PersonId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Person_Phone",
                 table: "Persons",
                 column: "Phone",
@@ -195,9 +160,9 @@ namespace OOO_Bank_NVA.Migrations
                 filter: "DeletedAt is null");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tovar_Tittle",
-                table: "Tovar",
-                column: "Tittle",
+                name: "IX_Tovar_Title",
+                table: "Tovars",
+                column: "Title",
                 unique: true,
                 filter: "DeletedAt is null");
         }
@@ -214,13 +179,10 @@ namespace OOO_Bank_NVA.Migrations
                 name: "DBBanks");
 
             migrationBuilder.DropTable(
-                name: "Operations");
-
-            migrationBuilder.DropTable(
-                name: "Tovar");
-
-            migrationBuilder.DropTable(
                 name: "Persons");
+
+            migrationBuilder.DropTable(
+                name: "Tovars");
         }
     }
 }

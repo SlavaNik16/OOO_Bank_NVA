@@ -6,20 +6,23 @@ using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.Models;
 using OOO_Bank_NVA.ModelsResponce;
 using OOO_Bank_NVA.Nuget;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
+using ListViewItem = System.Windows.Forms.ListViewItem;
 
 namespace OOO_Bank_NVA.Forms
 {
     public partial class MainForm : MaterialForm
     {
         private readonly DbContextOptions<ApplicationContext> options;
-        private readonly BaseWriteRepository<DBBank> baseDBBankWriteRepository;
+        private readonly BaseWriteRepository<Basket> baseBasketWriteRepository;
         private readonly BaseWriteRepository<Tovar> baseTovarWriteRepository;
         public MainForm()
         {
@@ -37,7 +40,7 @@ namespace OOO_Bank_NVA.Forms
            //});
 
             options = DataBaseHelper.Options();
-            baseDBBankWriteRepository = new BaseWriteRepository<DBBank>();
+            baseBasketWriteRepository = new BaseWriteRepository<Basket>();
             baseTovarWriteRepository = new BaseWriteRepository<Tovar>();
             
         }
@@ -49,7 +52,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 dataGridUsers.DataSource = db.Persons
                     .NotDeletedAt()
-                    .Where(s => s.Phone != "(222)-222-22-22")
+                    .Where(s => s.Phone != AuthorizationForm.user.Phone)
                     .Join(db.DBBanks, x => x.Phone, b => b.Login,
                     (x, b) => new
                     {
@@ -125,7 +128,22 @@ namespace OOO_Bank_NVA.Forms
             //}
         }
         #endregion
-
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+            var butArray = new System.Windows.Forms.Button[]
+            {
+                butView, butSend, butTranslate, 
+                butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
+                butBuy, butCanselTovar
+            };
+            foreach(var but in butArray)
+            {
+                ColorsHelp.ButtonSubmit(but);
+            }
+            ResetDataGridUser();
+            ResetDataGridTovars();
+            ResetListView();
+        }
         #region Tovars
         private void ResetDataGridTovars()
         {
@@ -149,26 +167,11 @@ namespace OOO_Bank_NVA.Forms
             if (addTovarForm.ShowDialog() == DialogResult.OK)
             {
                 var tovar = addTovarForm.Tovar;
-                baseTovarWriteRepository.Add(tovar);
+                baseTovarWriteRepository.Add(tovar, AuthorizationForm.UserName);
                 ResetDataGridTovars();
             }
             this.Show();
-        }
-        #endregion
-
-        private void MainForm_Load(object sender, System.EventArgs e)
-        {
-            var butArray = new Button[]
-            {
-                butView, butSend, butTranslate, butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView
-            };
-            foreach(var but in butArray)
-            {
-                ColorsHelp.ButtonSubmit(but);
-            }
-            ResetDataGridUser();
-            ResetDataGridTovars();
-        }
+        }        
 
         private void butEdit_Click(object sender, System.EventArgs e)
         {
@@ -178,7 +181,7 @@ namespace OOO_Bank_NVA.Forms
             if (addTovarForm.ShowDialog() == DialogResult.OK)
             {
                 var tovar = addTovarForm.Tovar;
-                baseTovarWriteRepository.Update(tovar);
+                baseTovarWriteRepository.Update(tovar, AuthorizationForm.UserName);
                 ResetDataGridTovars();
             }
             this.Show();
@@ -222,8 +225,8 @@ namespace OOO_Bank_NVA.Forms
             this.Hide();
             if (addTovarBasketForm.ShowDialog() == DialogResult.OK)
             {
-                var tovar = addTovarBasketForm.Basket;
-                //baseTovarWriteRepository.Update(tovar);
+                var basket = addTovarBasketForm.Basket;
+                baseBasketWriteRepository.Add(basket, AuthorizationForm.UserName);
                 ResetDataGridTovars();
             }
             this.Show();
@@ -239,10 +242,60 @@ namespace OOO_Bank_NVA.Forms
             }
             this.Show();
         }
+        #endregion
 
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        #region Basket
+        private void ResetListView()
         {
+            using (var db = new ApplicationContext(options))
+            {
+                var imageList = new ImageList();
+                imageList.ImageSize = new Size(32, 32);
+                listView.SmallImageList = imageList;
+                var list = db.Baskets.AsNoTracking().NotDeletedAt().OrderBy(x => x.CreatedAt).ToList();
+                foreach (var l in list)
+                {
 
+                    var listItem = new ListViewItem(new string[] {
+                        l.PersonId.ToString(),
+                        l.CreatedBy,
+                        l.TovarId.ToString(),
+                        l.StatusBy.PerevodDescription()
+                    });
+                    var photo = db.Tovars.FirstOrDefault(x => x.Id == l.TovarId).Photo;
+                    if (!string.IsNullOrEmpty(photo))
+                    {
+
+                       
+
+                    }
+                    listView.Items.Add(listItem);
+                    listView.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.None);
+                    listView.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.ColumnContent);
+                    listView.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.None);
+                    listView.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.HeaderSize);
+                    //listView.AutoResizeColumn(4, ColumnHeaderAutoResizeStyle.None);
+                }
+
+            }
         }
+        #endregion
+
+        #region Tab
+        private void tabUsers_Click(object sender, System.EventArgs e)
+        {
+            ResetDataGridUser();
+        }
+
+        private void tabTovars_Click(object sender, System.EventArgs e)
+        {
+            ResetDataGridTovars();
+        }
+
+        private void tabBasket_Click(object sender, System.EventArgs e)
+        {
+            ResetListView();
+        }
+        #endregion
     }
 }

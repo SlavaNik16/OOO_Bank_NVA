@@ -18,10 +18,6 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
             builder.Property(x => x.Name).IsRequired().HasMaxLength(80);
             builder.Property(x => x.Phone).IsRequired();
 
-            builder.HasMany(x => x.Operation)
-                .WithOne(y => y.Person)
-                .HasForeignKey(z => z.PersonId);
-
             builder.HasMany(x => x.Basket)
                  .WithOne(y => y.Person)
                  .HasForeignKey(z => z.PersonId);
