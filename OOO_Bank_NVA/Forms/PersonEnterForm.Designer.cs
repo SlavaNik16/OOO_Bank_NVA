@@ -63,7 +63,8 @@
             this.butCancel.Name = "butCancel";
             this.butCancel.NoAccentTextColor = System.Drawing.Color.Empty;
             this.butCancel.Size = new System.Drawing.Size(101, 36);
-            this.butCancel.TabIndex = 4;
+            this.butCancel.TabIndex = 3;
+            this.butCancel.TabStop = false;
             this.butCancel.Text = "Отменить";
             this.butCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.butCancel.UseAccentColor = false;
@@ -107,7 +108,7 @@
             this.passwordBox.SelectionStart = 0;
             this.passwordBox.ShortcutsEnabled = true;
             this.passwordBox.Size = new System.Drawing.Size(701, 48);
-            this.passwordBox.TabIndex = 23;
+            this.passwordBox.TabIndex = 1;
             this.passwordBox.TabStop = false;
             this.passwordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.passwordBox.TrailingIcon = null;
@@ -121,7 +122,7 @@
             this.maskPhoneText.Mask = "(000)-000-00-00";
             this.maskPhoneText.Name = "maskPhoneText";
             this.maskPhoneText.Size = new System.Drawing.Size(701, 37);
-            this.maskPhoneText.TabIndex = 22;
+            this.maskPhoneText.TabIndex = 0;
             this.maskPhoneText.TextChanged += new System.EventHandler(this.phoneBox_TextChanged);
             // 
             // butEnter
@@ -139,7 +140,7 @@
             this.butEnter.Name = "butEnter";
             this.butEnter.NoAccentTextColor = System.Drawing.Color.Empty;
             this.butEnter.Size = new System.Drawing.Size(129, 36);
-            this.butEnter.TabIndex = 6;
+            this.butEnter.TabIndex = 2;
             this.butEnter.Text = "Подтвердить";
             this.butEnter.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.butEnter.UseAccentColor = false;

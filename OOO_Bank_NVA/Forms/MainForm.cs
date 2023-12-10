@@ -6,6 +6,7 @@ using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.Models;
 using OOO_Bank_NVA.ModelsResponce;
 using OOO_Bank_NVA.Nuget;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -14,6 +15,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 using ListViewItem = System.Windows.Forms.ListViewItem;
 
@@ -24,6 +26,7 @@ namespace OOO_Bank_NVA.Forms
         private readonly DbContextOptions<ApplicationContext> options;
         private readonly BaseWriteRepository<Basket> baseBasketWriteRepository;
         private readonly BaseWriteRepository<Tovar> baseTovarWriteRepository;
+        private ListViewItem listItem;
         public MainForm()
         {
             InitializeComponent();
@@ -42,7 +45,54 @@ namespace OOO_Bank_NVA.Forms
             options = DataBaseHelper.Options();
             baseBasketWriteRepository = new BaseWriteRepository<Basket>();
             baseTovarWriteRepository = new BaseWriteRepository<Tovar>();
-            
+
+        }
+        private void materialTabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            var material = (MaterialTabControl)sender;
+            var tabName = material.TabPages[e.TabPageIndex].Name;
+            switch (tabName)
+            {
+                case nameof(tabUsers):
+                    ResetDataGridUser();
+                    break;
+                case nameof(tabTovars):
+                    if(AuthorizationForm.user.CardName == null)
+                    {
+                        var result = MessageBox.Show("Чтобы перейти к товарам, нужно создать карту или добавить существующую!", "Информация",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if(result == DialogResult.OK)
+                        {
+                            materialTabControl1.SelectedTab = tabProfile;
+                        }
+                    }
+                    ResetDataGridTovars();
+                    break;
+                case nameof(tabBasket):
+                    ResetListView();
+                    break;
+                case nameof(tabSettings):
+                    
+                    break;
+                case nameof(tabProfile):
+                    ResetDataUserProfile();
+                    break;
+                default:
+                    ResetDataGridUser();
+                    ResetDataGridTovars();
+                    ResetListView();
+                    break;
+            }
+        }
+        private void ResetDataUserProfile()
+        {
+            var user = AuthorizationForm.user;
+            textBoxSurname.Text = user.Surname;
+            textBoxSurname.BackColor = SystemColors.Window;
+            textBoxName.Text = user.Name;
+            maskTextBoxPhone.Text = user.Phone;
+            textBoxGender.Text = user.Gender.PerevodDescription();
+            maskTextBoxCardName.Text = user.CardName ?? string.Empty;
         }
 
         #region Users
@@ -103,8 +153,7 @@ namespace OOO_Bank_NVA.Forms
             //    }
             //}
         //HubConnection connection;
-        private async Task GetHttp(string message)
-        {
+
           //try
             //{
             //    // отправка сообщения
@@ -126,15 +175,16 @@ namespace OOO_Bank_NVA.Forms
             //{
             //    listBox1.Items.Add(ex.Message);
             //}
-        }
+        
         #endregion
         private void MainForm_Load(object sender, System.EventArgs e)
         {
+
             var butArray = new System.Windows.Forms.Button[]
             {
                 butView, butSend, butTranslate, 
                 butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
-                butBuy, butCanselTovar
+                butCancelTovar, butBy
             };
             foreach(var but in butArray)
             {
@@ -143,6 +193,8 @@ namespace OOO_Bank_NVA.Forms
             ResetDataGridUser();
             ResetDataGridTovars();
             ResetListView();
+            ResetDataUserProfile();
+            materialTabControl1.SelectedTab = tabProfile;
         }
         #region Tovars
         private void ResetDataGridTovars()
@@ -247,55 +299,91 @@ namespace OOO_Bank_NVA.Forms
         #region Basket
         private void ResetListView()
         {
+            listView.Items.Clear();
             using (var db = new ApplicationContext(options))
             {
                 var imageList = new ImageList();
                 imageList.ImageSize = new Size(32, 32);
-                listView.SmallImageList = imageList;
-                var list = db.Baskets.AsNoTracking().NotDeletedAt().OrderBy(x => x.CreatedAt).ToList();
+                var list = db.Baskets.AsNoTracking().NotDeletedAt().Where(x=>x.PersonId == AuthorizationForm.user.Id).OrderBy(x => x.CreatedAt).ToList();
                 foreach (var l in list)
                 {
-
-                    var listItem = new ListViewItem(new string[] {
-                        l.PersonId.ToString(),
-                        l.CreatedBy,
-                        l.TovarId.ToString(),
+                    var tovar = db.Tovars.FirstOrDefault(x => x.Id == l.TovarId);
+                    listItem = new ListViewItem(new string[] {
+                        string.Empty,
+                        tovar.CreatedAt.ToString("G"),
+                        l.Count.ToString(),
+                        (tovar.Price*l.Count).ToString(),
                         l.StatusBy.PerevodDescription()
                     });
+                    listItem.Tag = l.Id;
                     var photo = db.Tovars.FirstOrDefault(x => x.Id == l.TovarId).Photo;
                     if (!string.IsNullOrEmpty(photo))
                     {
-
-                       
-
+                        imageList.Images.Add(photo, new Bitmap(photo));
+                        listView.SmallImageList = imageList;
+                        listItem.ImageIndex = imageList.Images.IndexOfKey(photo);
                     }
                     listView.Items.Add(listItem);
-                    listView.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.None);
-                    listView.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.ColumnContent);
+                    listView.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
+                    listView.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.HeaderSize);
                     listView.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.None);
                     listView.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.HeaderSize);
-                    //listView.AutoResizeColumn(4, ColumnHeaderAutoResizeStyle.None);
+                    listView.AutoResizeColumn(4, ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
-
             }
         }
         #endregion
 
-        #region Tab
-        private void tabUsers_Click(object sender, System.EventArgs e)
+        private void listView_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
-            ResetDataGridUser();
+            e.DrawDefault = true;
+            e.Item.BackColor = Color.FromArgb(200, 248, 213, 104);
+            e.Item.UseItemStyleForSubItems = true;
         }
 
-        private void tabTovars_Click(object sender, System.EventArgs e)
+        private void listView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            ResetDataGridTovars();
+            e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(127, 232, 229)), e.Bounds);
+            e.DrawText();
         }
 
-        private void tabBasket_Click(object sender, System.EventArgs e)
+        private void butCancelTovar_Click(object sender, System.EventArgs e)
         {
-            ResetListView();
+            var id = listView.SelectedItems[0].Tag.ToString();
+            using (var db = new ApplicationContext(options))
+            {
+                var basket = db.Baskets.FirstOrDefault(x => x.Id == Guid.Parse(id));
+                if (basket == null) { return; }
+                if (MessageBox.Show("Вы действительно хотите отменить из брони данный товар!", "Предупреждение!",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    baseBasketWriteRepository.Delete(basket);
+                    ResetListView();
+                }
+            }
         }
-        #endregion
+
+        private void listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            butCancelTovar.Enabled =
+            butBy.Enabled = 
+                listView.SelectedItems.Count == 1;
+        }
+
+        private void butBy_Click(object sender, EventArgs e)
+        {
+            var id = listView.SelectedItems[0].Tag.ToString();
+            using (var db = new ApplicationContext(options))
+            {
+                var basket = db.Baskets.FirstOrDefault(x => x.Id == Guid.Parse(id));
+                if (basket == null) { return; }
+                if (MessageBox.Show("Вы действительно хотите отменить из брони данный товар!", "Предупреждение!",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    baseBasketWriteRepository.Delete(basket);
+                    ResetListView();
+                }
+            }
+        }
     }
 }
