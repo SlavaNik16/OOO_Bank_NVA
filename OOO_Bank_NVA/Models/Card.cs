@@ -20,7 +20,7 @@ namespace OOO_Bank_NVA.Models
         /// <summary>
         /// Дата oкончания
         /// </summary>
-        public DateTime DateEnd{ get; set; }
+        public string DateEnd{ get; set; }
 
         /// <summary>
         /// Баланс карты

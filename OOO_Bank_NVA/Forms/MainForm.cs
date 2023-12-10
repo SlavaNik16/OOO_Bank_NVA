@@ -90,7 +90,7 @@ namespace OOO_Bank_NVA.Forms
             textBoxSurname.Text = user.Surname;
             textBoxSurname.BackColor = SystemColors.Window;
             textBoxName.Text = user.Name;
-            maskTextBoxPhone.Text = user.Phone;
+            maskTextBoxPhone.Text = user.Phone.Trim();
             textBoxGender.Text = user.Gender.PerevodDescription();
             maskTextBoxCardName.Text = user.CardName ?? string.Empty;
         }

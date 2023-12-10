@@ -35,10 +35,10 @@ namespace OOO_Bank_NVA.Forms
         private void ValidatePerson()
         {
             butCreate.Enabled =
-                !string.IsNullOrEmpty(person.Surname) &&
-                !string.IsNullOrEmpty(person.Name) &&
-                !string.IsNullOrEmpty(password) &&
-                !string.IsNullOrEmpty(person.Phone);
+                !string.IsNullOrEmpty(person.Surname.Trim()) &&
+                !string.IsNullOrEmpty(person.Name.Trim()) &&
+                !string.IsNullOrEmpty(password.Trim()) &&
+                !string.IsNullOrEmpty(person.Phone.Trim());
         }
 
         private void surnameBox_TextChanged(object sender, System.EventArgs e)
@@ -89,10 +89,10 @@ namespace OOO_Bank_NVA.Forms
                     maskPhoneText.Text = string.Empty;
                     return;
                 }
-                if (!string.IsNullOrEmpty(person.CardName))
+                if (!string.IsNullOrEmpty(person.CardName.Trim()))
                 {
 
-                    var card = db.Cards.IsCardWithPerson(person.CardName);
+                    var card = db.Cards.IsCardWithPerson(person.CardName.Trim());
                     if (!card)
                     {
                         MessageBox.Show("Ваша карта не найдена!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);

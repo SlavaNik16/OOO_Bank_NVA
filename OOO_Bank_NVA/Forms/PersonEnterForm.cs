@@ -34,7 +34,7 @@ namespace OOO_Bank_NVA.Forms
 
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
-            dbBank.Password = passwordBox.Text.Length >= 8 ? passwordBox.Text : string.Empty;
+            dbBank.Password = passwordBox.Text.Length >= 8 ? passwordBox.Text.Trim() : string.Empty;
             ValidatePerson();
         }
         private void ValidatePerson()
