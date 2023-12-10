@@ -115,6 +115,10 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.materialTabControl1.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -149,6 +153,8 @@
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -1041,8 +1047,8 @@
             this.butEditProfile.Size = new System.Drawing.Size(406, 46);
             this.butEditProfile.TabIndex = 7;
             this.butEditProfile.Text = "Изменить профиль";
-            this.butEditProfile.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.butEditProfile.UseAccentColor = true;
+            this.butEditProfile.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.butEditProfile.UseAccentColor = false;
             this.butEditProfile.UseVisualStyleBackColor = true;
             // 
             // panel12
@@ -1079,8 +1085,8 @@
             this.butRegCard.Size = new System.Drawing.Size(406, 46);
             this.butRegCard.TabIndex = 7;
             this.butRegCard.Text = "Зарегистрировать карту";
-            this.butRegCard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.butRegCard.UseAccentColor = true;
+            this.butRegCard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.butRegCard.UseAccentColor = false;
             this.butRegCard.UseVisualStyleBackColor = true;
             // 
             // listBoxChat
@@ -1164,6 +1170,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 243F));
             this.tableLayoutPanel5.Controls.Add(this.materialButton3, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.materialButton2, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel17, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -1189,7 +1196,7 @@
             this.materialButton2.TabIndex = 0;
             this.materialButton2.Text = "Очистить чат";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = true;
+            this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseCompatibleTextRendering = true;
             this.materialButton2.UseVisualStyleBackColor = false;
             // 
@@ -1209,9 +1216,56 @@
             this.materialButton3.Size = new System.Drawing.Size(236, 88);
             this.materialButton3.TabIndex = 1;
             this.materialButton3.Text = "Отправить";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.materialButton3.UseAccentColor = true;
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseCompatibleTextRendering = true;
             this.materialButton3.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(501, 47);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Телефон";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.tableLayoutPanel6);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel17.Location = new System.Drawing.Point(253, 3);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(507, 94);
+            this.panel17.TabIndex = 2;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.maskedTextBox1, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(507, 94);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(3, 50);
+            this.maskedTextBox1.Mask = "(000)-000-00-00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(501, 37);
+            this.maskedTextBox1.TabIndex = 2;
+            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainForm
             // 
@@ -1273,6 +1327,9 @@
             this.panel16.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1365,5 +1422,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private MaterialSkin.Controls.MaterialButton materialButton3;
         private MaterialSkin.Controls.MaterialButton materialButton2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
