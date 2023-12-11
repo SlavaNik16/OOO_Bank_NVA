@@ -88,37 +88,48 @@
             this.butCancelTovar = new System.Windows.Forms.Button();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.tabProfile = new System.Windows.Forms.TabPage();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.textBoxNicknameChat = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.maskedTextBoxPhoneChat = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.listBoxChat = new System.Windows.Forms.ListBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.textBoxGender = new MaterialSkin.Controls.MaterialTextBox2();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maskTextBoxCardName = new System.Windows.Forms.MaskedTextBox();
-            this.butAddcCard = new MaterialSkin.Controls.MaterialButton();
             this.textBoxName = new MaterialSkin.Controls.MaterialTextBox2();
             this.textBoxSurname = new MaterialSkin.Controls.MaterialTextBox2();
-            this.maskTextBoxPhone = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.maskTextBoxPhone2 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.panelEditProfile = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panelAddCard = new System.Windows.Forms.Panel();
+            this.maskTextBoxCardName = new System.Windows.Forms.MaskedTextBox();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.imageListTag = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.butEditProfile = new MaterialSkin.Controls.MaterialButton();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.butRegCard = new MaterialSkin.Controls.MaterialButton();
-            this.listBoxChat = new System.Windows.Forms.ListBox();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panelEditProfile = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxNickname = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.butEditPhone = new System.Windows.Forms.Button();
+            this.butEditPassword = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.butDeleteAccaunt = new System.Windows.Forms.Button();
+            this.textBoxBalance = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.butAddCard = new System.Windows.Forms.Button();
+            this.butRegCard = new System.Windows.Forms.Button();
+            this.butEditProfile = new System.Windows.Forms.Button();
+            this.butClearChat = new System.Windows.Forms.Button();
+            this.butSendChat = new System.Windows.Forms.Button();
+            this.maskTextBoxPhone = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialTabControl1.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -141,20 +152,22 @@
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.tabSettings.SuspendLayout();
             this.tabProfile.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.statusStrip.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panelEditProfile.SuspendLayout();
-            this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel17.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panelEditProfile.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panelAddCard.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.statusStrip.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -162,8 +175,8 @@
             this.materialTabControl1.Controls.Add(this.tabUsers);
             this.materialTabControl1.Controls.Add(this.tabTovars);
             this.materialTabControl1.Controls.Add(this.tabBasket);
-            this.materialTabControl1.Controls.Add(this.tabSettings);
             this.materialTabControl1.Controls.Add(this.tabProfile);
+            this.materialTabControl1.Controls.Add(this.tabSettings);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -784,6 +797,9 @@
             // 
             // tabSettings
             // 
+            this.tabSettings.Controls.Add(this.panel20);
+            this.tabSettings.Controls.Add(this.panel19);
+            this.tabSettings.Controls.Add(this.panel18);
             this.tabSettings.ImageKey = "Settings.png";
             this.tabSettings.Location = new System.Drawing.Point(4, 39);
             this.tabSettings.Name = "tabSettings";
@@ -806,13 +822,150 @@
             this.tabProfile.Text = "Профиль";
             this.tabProfile.UseVisualStyleBackColor = true;
             // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.textBoxNicknameChat);
+            this.panel16.Controls.Add(this.label2);
+            this.panel16.Controls.Add(this.textBox1);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Location = new System.Drawing.Point(485, 415);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(1007, 148);
+            this.panel16.TabIndex = 4;
+            // 
+            // textBoxNicknameChat
+            // 
+            this.textBoxNicknameChat.Location = new System.Drawing.Point(290, 18);
+            this.textBoxNicknameChat.MaxLength = 100;
+            this.textBoxNicknameChat.Name = "textBoxNicknameChat";
+            this.textBoxNicknameChat.Size = new System.Drawing.Size(616, 37);
+            this.textBoxNicknameChat.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(269, 30);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Кто пишет(Никнейм):";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(9, 65);
+            this.textBox1.MaxLength = 500;
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(897, 77);
+            this.textBox1.TabIndex = 0;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.tableLayoutPanel5);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel15.Location = new System.Drawing.Point(485, 563);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(1007, 100);
+            this.panel15.TabIndex = 3;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.7654F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.2346F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
+            this.tableLayoutPanel5.Controls.Add(this.butSendChat, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.butClearChat, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel17, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1007, 100);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.tableLayoutPanel6);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel17.Location = new System.Drawing.Point(253, 3);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(506, 94);
+            this.panel17.TabIndex = 2;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.maskedTextBoxPhoneChat, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(506, 94);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // maskedTextBoxPhoneChat
+            // 
+            this.maskedTextBoxPhoneChat.Location = new System.Drawing.Point(3, 50);
+            this.maskedTextBoxPhoneChat.Mask = "(000)-000-00-00";
+            this.maskedTextBoxPhoneChat.Name = "maskedTextBoxPhoneChat";
+            this.maskedTextBoxPhoneChat.Size = new System.Drawing.Size(500, 37);
+            this.maskedTextBoxPhoneChat.TabIndex = 2;
+            this.maskedTextBoxPhoneChat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(500, 47);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Телефон";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.listBoxChat);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(485, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(1007, 415);
+            this.panel14.TabIndex = 2;
+            // 
+            // listBoxChat
+            // 
+            this.listBoxChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxChat.FormattingEnabled = true;
+            this.listBoxChat.ItemHeight = 30;
+            this.listBoxChat.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.listBoxChat.Location = new System.Drawing.Point(0, 0);
+            this.listBoxChat.Name = "listBoxChat";
+            this.listBoxChat.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxChat.Size = new System.Drawing.Size(1007, 415);
+            this.listBoxChat.TabIndex = 1;
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.textBoxGender);
             this.panel10.Controls.Add(this.textBoxName);
             this.panel10.Controls.Add(this.textBoxSurname);
-            this.panel10.Controls.Add(this.maskTextBoxPhone);
             this.panel10.Controls.Add(this.panelEditProfile);
+            this.panel10.Controls.Add(this.maskTextBoxPhone);
+            this.panel10.Controls.Add(this.maskTextBoxPhone2);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
@@ -847,47 +1000,6 @@
             this.textBoxGender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxGender.TrailingIcon = null;
             this.textBoxGender.UseSystemPasswordChar = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.panel11);
-            this.groupBox1.Controls.Add(this.maskTextBoxCardName);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(406, 191);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Карта";
-            // 
-            // maskTextBoxCardName
-            // 
-            this.maskTextBoxCardName.Location = new System.Drawing.Point(19, 47);
-            this.maskTextBoxCardName.Mask = "0000-0000-0000-0000";
-            this.maskTextBoxCardName.Name = "maskTextBoxCardName";
-            this.maskTextBoxCardName.Size = new System.Drawing.Size(380, 40);
-            this.maskTextBoxCardName.TabIndex = 11;
-            this.maskTextBoxCardName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // butAddcCard
-            // 
-            this.butAddcCard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.butAddcCard.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.butAddcCard.Depth = 0;
-            this.butAddcCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butAddcCard.HighEmphasis = true;
-            this.butAddcCard.Icon = null;
-            this.butAddcCard.Location = new System.Drawing.Point(0, 0);
-            this.butAddcCard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.butAddcCard.MouseState = MaterialSkin.MouseState.HOVER;
-            this.butAddcCard.Name = "butAddcCard";
-            this.butAddcCard.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.butAddcCard.Size = new System.Drawing.Size(400, 48);
-            this.butAddcCard.TabIndex = 6;
-            this.butAddcCard.Text = "Добавить карту";
-            this.butAddcCard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.butAddcCard.UseAccentColor = false;
-            this.butAddcCard.UseVisualStyleBackColor = true;
             // 
             // textBoxName
             // 
@@ -947,48 +1059,107 @@
             this.textBoxSurname.TrailingIcon = null;
             this.textBoxSurname.UseSystemPasswordChar = false;
             // 
-            // maskTextBoxPhone
+            // maskTextBoxPhone2
             // 
-            this.maskTextBoxPhone.AllowPromptAsInput = true;
-            this.maskTextBoxPhone.AnimateReadOnly = true;
-            this.maskTextBoxPhone.AsciiOnly = false;
-            this.maskTextBoxPhone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.maskTextBoxPhone.BeepOnError = false;
-            this.maskTextBoxPhone.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.maskTextBoxPhone.Depth = 0;
-            this.maskTextBoxPhone.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.maskTextBoxPhone.HidePromptOnLeave = false;
-            this.maskTextBoxPhone.HideSelection = true;
-            this.maskTextBoxPhone.Hint = "Телефон";
-            this.maskTextBoxPhone.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.maskTextBoxPhone.LeadingIcon = null;
-            this.maskTextBoxPhone.Location = new System.Drawing.Point(28, 181);
-            this.maskTextBoxPhone.Mask = "(000)-000-00-00";
-            this.maskTextBoxPhone.MaxLength = 32767;
-            this.maskTextBoxPhone.MouseState = MaterialSkin.MouseState.OUT;
-            this.maskTextBoxPhone.Name = "maskTextBoxPhone";
-            this.maskTextBoxPhone.PasswordChar = '\0';
-            this.maskTextBoxPhone.PrefixSuffixText = null;
-            this.maskTextBoxPhone.PromptChar = '_';
-            this.maskTextBoxPhone.ReadOnly = true;
-            this.maskTextBoxPhone.RejectInputOnFirstFailure = false;
-            this.maskTextBoxPhone.ResetOnPrompt = true;
-            this.maskTextBoxPhone.ResetOnSpace = true;
-            this.maskTextBoxPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.maskTextBoxPhone.SelectedText = "";
-            this.maskTextBoxPhone.SelectionLength = 0;
-            this.maskTextBoxPhone.SelectionStart = 0;
-            this.maskTextBoxPhone.ShortcutsEnabled = true;
-            this.maskTextBoxPhone.Size = new System.Drawing.Size(412, 48);
-            this.maskTextBoxPhone.SkipLiterals = true;
-            this.maskTextBoxPhone.TabIndex = 6;
-            this.maskTextBoxPhone.TabStop = false;
-            this.maskTextBoxPhone.Text = "(   )-   -  -";
-            this.maskTextBoxPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.maskTextBoxPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.maskTextBoxPhone.TrailingIcon = null;
-            this.maskTextBoxPhone.UseSystemPasswordChar = false;
-            this.maskTextBoxPhone.ValidatingType = null;
+            this.maskTextBoxPhone2.AllowPromptAsInput = true;
+            this.maskTextBoxPhone2.AnimateReadOnly = true;
+            this.maskTextBoxPhone2.AsciiOnly = false;
+            this.maskTextBoxPhone2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.maskTextBoxPhone2.BeepOnError = false;
+            this.maskTextBoxPhone2.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.maskTextBoxPhone2.Depth = 0;
+            this.maskTextBoxPhone2.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.maskTextBoxPhone2.HidePromptOnLeave = true;
+            this.maskTextBoxPhone2.HideSelection = true;
+            this.maskTextBoxPhone2.Hint = "Телефон";
+            this.maskTextBoxPhone2.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.maskTextBoxPhone2.LeadingIcon = null;
+            this.maskTextBoxPhone2.Location = new System.Drawing.Point(28, 181);
+            this.maskTextBoxPhone2.Mask = "(000)-000-00-00";
+            this.maskTextBoxPhone2.MaxLength = 32767;
+            this.maskTextBoxPhone2.MouseState = MaterialSkin.MouseState.OUT;
+            this.maskTextBoxPhone2.Name = "maskTextBoxPhone2";
+            this.maskTextBoxPhone2.PasswordChar = '\0';
+            this.maskTextBoxPhone2.PrefixSuffixText = null;
+            this.maskTextBoxPhone2.PromptChar = '_';
+            this.maskTextBoxPhone2.ReadOnly = true;
+            this.maskTextBoxPhone2.RejectInputOnFirstFailure = false;
+            this.maskTextBoxPhone2.ResetOnPrompt = true;
+            this.maskTextBoxPhone2.ResetOnSpace = true;
+            this.maskTextBoxPhone2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.maskTextBoxPhone2.SelectedText = "";
+            this.maskTextBoxPhone2.SelectionLength = 0;
+            this.maskTextBoxPhone2.SelectionStart = 0;
+            this.maskTextBoxPhone2.ShortcutsEnabled = true;
+            this.maskTextBoxPhone2.Size = new System.Drawing.Size(412, 48);
+            this.maskTextBoxPhone2.SkipLiterals = true;
+            this.maskTextBoxPhone2.TabIndex = 6;
+            this.maskTextBoxPhone2.TabStop = false;
+            this.maskTextBoxPhone2.Text = "__________";
+            this.maskTextBoxPhone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskTextBoxPhone2.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.maskTextBoxPhone2.TrailingIcon = null;
+            this.maskTextBoxPhone2.UseSystemPasswordChar = false;
+            this.maskTextBoxPhone2.ValidatingType = null;
+            // 
+            // panelEditProfile
+            // 
+            this.panelEditProfile.Controls.Add(this.panel13);
+            this.panelEditProfile.Controls.Add(this.groupBox1);
+            this.panelEditProfile.Controls.Add(this.panel12);
+            this.panelEditProfile.Location = new System.Drawing.Point(14, 333);
+            this.panelEditProfile.Name = "panelEditProfile";
+            this.panelEditProfile.Size = new System.Drawing.Size(439, 327);
+            this.panelEditProfile.TabIndex = 3;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.butRegCard);
+            this.panel13.Location = new System.Drawing.Point(15, 215);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(406, 46);
+            this.panel13.TabIndex = 8;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.textBoxBalance);
+            this.groupBox1.Controls.Add(this.panelAddCard);
+            this.groupBox1.Controls.Add(this.maskTextBoxCardName);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Location = new System.Drawing.Point(15, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(406, 191);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Карта";
+            // 
+            // panelAddCard
+            // 
+            this.panelAddCard.Controls.Add(this.butAddCard);
+            this.panelAddCard.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelAddCard.Location = new System.Drawing.Point(3, 143);
+            this.panelAddCard.Name = "panelAddCard";
+            this.panelAddCard.Size = new System.Drawing.Size(400, 45);
+            this.panelAddCard.TabIndex = 12;
+            // 
+            // maskTextBoxCardName
+            // 
+            this.maskTextBoxCardName.Location = new System.Drawing.Point(11, 39);
+            this.maskTextBoxCardName.Mask = "0000-0000-0000-0000";
+            this.maskTextBoxCardName.Name = "maskTextBoxCardName";
+            this.maskTextBoxCardName.Size = new System.Drawing.Size(380, 40);
+            this.maskTextBoxCardName.TabIndex = 11;
+            this.maskTextBoxCardName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskTextBoxCardName.TextChanged += new System.EventHandler(this.maskTextBoxCardName_TextChanged);
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.butEditProfile);
+            this.panel12.Location = new System.Drawing.Point(15, 267);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(406, 46);
+            this.panel12.TabIndex = 7;
             // 
             // imageListTag
             // 
@@ -1020,252 +1191,197 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(231, 27);
             this.toolStripStatusLabel1.Text = "Статус: Пользователь";
             // 
-            // panel11
+            // panel18
             // 
-            this.panel11.Controls.Add(this.butAddcCard);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(3, 140);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(400, 48);
-            this.panel11.TabIndex = 12;
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel18.Location = new System.Drawing.Point(1015, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(477, 663);
+            this.panel18.TabIndex = 0;
             // 
-            // butEditProfile
+            // panel19
             // 
-            this.butEditProfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.butEditProfile.BackColor = System.Drawing.Color.White;
-            this.butEditProfile.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.butEditProfile.Depth = 0;
-            this.butEditProfile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butEditProfile.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butEditProfile.HighEmphasis = true;
-            this.butEditProfile.Icon = null;
-            this.butEditProfile.Location = new System.Drawing.Point(0, 0);
-            this.butEditProfile.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.butEditProfile.MouseState = MaterialSkin.MouseState.HOVER;
-            this.butEditProfile.Name = "butEditProfile";
-            this.butEditProfile.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.butEditProfile.Size = new System.Drawing.Size(406, 46);
-            this.butEditProfile.TabIndex = 7;
-            this.butEditProfile.Text = "Изменить профиль";
-            this.butEditProfile.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.butEditProfile.UseAccentColor = false;
-            this.butEditProfile.UseVisualStyleBackColor = true;
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel19.Location = new System.Drawing.Point(0, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(423, 663);
+            this.panel19.TabIndex = 1;
             // 
-            // panel12
+            // panel20
             // 
-            this.panel12.Controls.Add(this.butEditProfile);
-            this.panel12.Location = new System.Drawing.Point(15, 267);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(406, 46);
-            this.panel12.TabIndex = 7;
+            this.panel20.Controls.Add(this.butDeleteAccaunt);
+            this.panel20.Controls.Add(this.label5);
+            this.panel20.Controls.Add(this.label4);
+            this.panel20.Controls.Add(this.butEditPassword);
+            this.panel20.Controls.Add(this.butEditPhone);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panel20.Location = new System.Drawing.Point(423, 0);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(592, 663);
+            this.panel20.TabIndex = 2;
             // 
-            // panel13
+            // butEditPhone
             // 
-            this.panel13.Controls.Add(this.butRegCard);
-            this.panel13.Location = new System.Drawing.Point(15, 215);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(406, 46);
-            this.panel13.TabIndex = 8;
+            this.butEditPhone.Location = new System.Drawing.Point(127, 80);
+            this.butEditPhone.Name = "butEditPhone";
+            this.butEditPhone.Size = new System.Drawing.Size(334, 83);
+            this.butEditPhone.TabIndex = 0;
+            this.butEditPhone.Text = "Телефон";
+            this.butEditPhone.UseVisualStyleBackColor = true;
+            // 
+            // butEditPassword
+            // 
+            this.butEditPassword.Location = new System.Drawing.Point(127, 185);
+            this.butEditPassword.Name = "butEditPassword";
+            this.butEditPassword.Size = new System.Drawing.Size(334, 83);
+            this.butEditPassword.TabIndex = 1;
+            this.butEditPassword.Text = "Пароль";
+            this.butEditPassword.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(225, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 36);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Изменить";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(234, 471);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(126, 36);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Удалить";
+            // 
+            // butDeleteAccaunt
+            // 
+            this.butDeleteAccaunt.Location = new System.Drawing.Point(127, 532);
+            this.butDeleteAccaunt.Name = "butDeleteAccaunt";
+            this.butDeleteAccaunt.Size = new System.Drawing.Size(334, 83);
+            this.butDeleteAccaunt.TabIndex = 4;
+            this.butDeleteAccaunt.Text = "Аккаунт";
+            this.butDeleteAccaunt.UseVisualStyleBackColor = true;
+            // 
+            // textBoxBalance
+            // 
+            this.textBoxBalance.Location = new System.Drawing.Point(123, 94);
+            this.textBoxBalance.MaxLength = 20;
+            this.textBoxBalance.Name = "textBoxBalance";
+            this.textBoxBalance.ReadOnly = true;
+            this.textBoxBalance.Size = new System.Drawing.Size(268, 40);
+            this.textBoxBalance.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 33);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Баланс:";
+            // 
+            // butAddCard
+            // 
+            this.butAddCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butAddCard.Enabled = false;
+            this.butAddCard.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butAddCard.Location = new System.Drawing.Point(0, 0);
+            this.butAddCard.Name = "butAddCard";
+            this.butAddCard.Size = new System.Drawing.Size(400, 45);
+            this.butAddCard.TabIndex = 7;
+            this.butAddCard.Text = "Добавить карту";
+            this.butAddCard.UseVisualStyleBackColor = true;
             // 
             // butRegCard
             // 
-            this.butRegCard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.butRegCard.BackColor = System.Drawing.Color.White;
-            this.butRegCard.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.butRegCard.Depth = 0;
             this.butRegCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butRegCard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.butRegCard.HighEmphasis = true;
-            this.butRegCard.Icon = null;
+            this.butRegCard.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.butRegCard.Location = new System.Drawing.Point(0, 0);
-            this.butRegCard.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.butRegCard.MouseState = MaterialSkin.MouseState.HOVER;
             this.butRegCard.Name = "butRegCard";
-            this.butRegCard.NoAccentTextColor = System.Drawing.Color.Empty;
             this.butRegCard.Size = new System.Drawing.Size(406, 46);
-            this.butRegCard.TabIndex = 7;
+            this.butRegCard.TabIndex = 8;
             this.butRegCard.Text = "Зарегистрировать карту";
-            this.butRegCard.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.butRegCard.UseAccentColor = false;
             this.butRegCard.UseVisualStyleBackColor = true;
             // 
-            // listBoxChat
+            // butEditProfile
             // 
-            this.listBoxChat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxChat.FormattingEnabled = true;
-            this.listBoxChat.ItemHeight = 30;
-            this.listBoxChat.Location = new System.Drawing.Point(0, 0);
-            this.listBoxChat.Name = "listBoxChat";
-            this.listBoxChat.Size = new System.Drawing.Size(1007, 415);
-            this.listBoxChat.TabIndex = 1;
+            this.butEditProfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butEditProfile.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butEditProfile.Location = new System.Drawing.Point(0, 0);
+            this.butEditProfile.Name = "butEditProfile";
+            this.butEditProfile.Size = new System.Drawing.Size(406, 46);
+            this.butEditProfile.TabIndex = 9;
+            this.butEditProfile.Text = "Изменить профиль";
+            this.butEditProfile.UseVisualStyleBackColor = true;
             // 
-            // panel14
+            // butClearChat
             // 
-            this.panel14.Controls.Add(this.listBoxChat);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(485, 0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1007, 415);
-            this.panel14.TabIndex = 2;
+            this.butClearChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butClearChat.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butClearChat.Location = new System.Drawing.Point(3, 3);
+            this.butClearChat.Name = "butClearChat";
+            this.butClearChat.Size = new System.Drawing.Size(244, 94);
+            this.butClearChat.TabIndex = 10;
+            this.butClearChat.Text = "Очистить чат";
+            this.butClearChat.UseVisualStyleBackColor = true;
             // 
-            // panelEditProfile
+            // butSendChat
             // 
-            this.panelEditProfile.Controls.Add(this.panel13);
-            this.panelEditProfile.Controls.Add(this.groupBox1);
-            this.panelEditProfile.Controls.Add(this.panel12);
-            this.panelEditProfile.Location = new System.Drawing.Point(13, 332);
-            this.panelEditProfile.Name = "panelEditProfile";
-            this.panelEditProfile.Size = new System.Drawing.Size(439, 328);
-            this.panelEditProfile.TabIndex = 3;
+            this.butSendChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butSendChat.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butSendChat.Location = new System.Drawing.Point(765, 3);
+            this.butSendChat.Name = "butSendChat";
+            this.butSendChat.Size = new System.Drawing.Size(239, 94);
+            this.butSendChat.TabIndex = 11;
+            this.butSendChat.Text = "Отправить";
+            this.butSendChat.UseVisualStyleBackColor = true;
             // 
-            // panel15
+            // maskTextBoxPhone
             // 
-            this.panel15.Controls.Add(this.tableLayoutPanel5);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(485, 563);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1007, 100);
-            this.panel15.TabIndex = 3;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.textBoxNickname);
-            this.panel16.Controls.Add(this.label2);
-            this.panel16.Controls.Add(this.textBox1);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(485, 415);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1007, 148);
-            this.panel16.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 65);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(990, 77);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(269, 30);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Кто пишет(Никнейм):";
-            // 
-            // textBoxNickname
-            // 
-            this.textBoxNickname.Location = new System.Drawing.Point(290, 18);
-            this.textBoxNickname.Name = "textBoxNickname";
-            this.textBoxNickname.Size = new System.Drawing.Size(709, 37);
-            this.textBoxNickname.TabIndex = 2;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.7654F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.2346F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 243F));
-            this.tableLayoutPanel5.Controls.Add(this.materialButton3, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.materialButton2, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.panel17, 1, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1007, 100);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // materialButton2
-            // 
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton2.Font = new System.Drawing.Font("Century Gothic", 18F);
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(4, 6);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(242, 88);
-            this.materialButton2.TabIndex = 0;
-            this.materialButton2.Text = "Очистить чат";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseCompatibleTextRendering = true;
-            this.materialButton2.UseVisualStyleBackColor = false;
-            // 
-            // materialButton3
-            // 
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(767, 6);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(236, 88);
-            this.materialButton3.TabIndex = 1;
-            this.materialButton3.Text = "Отправить";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseCompatibleTextRendering = true;
-            this.materialButton3.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(501, 47);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Телефон";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.tableLayoutPanel6);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel17.Location = new System.Drawing.Point(253, 3);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(507, 94);
-            this.panel17.TabIndex = 2;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.maskedTextBox1, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(507, 94);
-            this.tableLayoutPanel6.TabIndex = 0;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(3, 50);
-            this.maskedTextBox1.Mask = "(000)-000-00-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(501, 37);
-            this.maskedTextBox1.TabIndex = 2;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskTextBoxPhone.AllowPromptAsInput = true;
+            this.maskTextBoxPhone.AnimateReadOnly = true;
+            this.maskTextBoxPhone.AsciiOnly = false;
+            this.maskTextBoxPhone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.maskTextBoxPhone.BeepOnError = false;
+            this.maskTextBoxPhone.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.maskTextBoxPhone.Depth = 0;
+            this.maskTextBoxPhone.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.maskTextBoxPhone.HidePromptOnLeave = true;
+            this.maskTextBoxPhone.HideSelection = true;
+            this.maskTextBoxPhone.Hint = "Телефон";
+            this.maskTextBoxPhone.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.maskTextBoxPhone.LeadingIcon = null;
+            this.maskTextBoxPhone.Location = new System.Drawing.Point(28, 181);
+            this.maskTextBoxPhone.Mask = "(000)-000-00-00";
+            this.maskTextBoxPhone.MaxLength = 32767;
+            this.maskTextBoxPhone.MouseState = MaterialSkin.MouseState.OUT;
+            this.maskTextBoxPhone.Name = "maskTextBoxPhone";
+            this.maskTextBoxPhone.PasswordChar = '\0';
+            this.maskTextBoxPhone.PrefixSuffixText = null;
+            this.maskTextBoxPhone.PromptChar = '_';
+            this.maskTextBoxPhone.ReadOnly = true;
+            this.maskTextBoxPhone.RejectInputOnFirstFailure = false;
+            this.maskTextBoxPhone.ResetOnPrompt = true;
+            this.maskTextBoxPhone.ResetOnSpace = true;
+            this.maskTextBoxPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.maskTextBoxPhone.SelectedText = "";
+            this.maskTextBoxPhone.SelectionLength = 0;
+            this.maskTextBoxPhone.SelectionStart = 0;
+            this.maskTextBoxPhone.ShortcutsEnabled = true;
+            this.maskTextBoxPhone.Size = new System.Drawing.Size(412, 48);
+            this.maskTextBoxPhone.SkipLiterals = true;
+            this.maskTextBoxPhone.TabIndex = 7;
+            this.maskTextBoxPhone.TabStop = false;
+            this.maskTextBoxPhone.Text = "(   )-   -  -";
+            this.maskTextBoxPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskTextBoxPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.maskTextBoxPhone.TrailingIcon = null;
+            this.maskTextBoxPhone.UseSystemPasswordChar = false;
+            this.maskTextBoxPhone.ValidatingType = null;
             // 
             // MainForm
             // 
@@ -1308,28 +1424,27 @@
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.tabSettings.ResumeLayout(false);
             this.tabProfile.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panelEditProfile.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
+            this.panel15.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panelEditProfile.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panelAddCard.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1403,28 +1518,39 @@
         private MaterialSkin.Controls.MaterialTextBox2 textBoxSurname;
         private MaterialSkin.Controls.MaterialTextBox2 textBoxGender;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialButton butAddcCard;
-        private MaterialSkin.Controls.MaterialMaskedTextBox maskTextBoxPhone;
+        private MaterialSkin.Controls.MaterialMaskedTextBox maskTextBoxPhone2;
         private System.Windows.Forms.MaskedTextBox maskTextBoxCardName;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panelAddCard;
         private System.Windows.Forms.Panel panel12;
-        private MaterialSkin.Controls.MaterialButton butEditProfile;
         private System.Windows.Forms.Panel panel13;
-        private MaterialSkin.Controls.MaterialButton butRegCard;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.ListBox listBoxChat;
         private System.Windows.Forms.Panel panelEditProfile;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox textBoxNickname;
+        private System.Windows.Forms.TextBox textBoxNicknameChat;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxPhoneChat;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Button butEditPhone;
+        private System.Windows.Forms.Button butDeleteAccaunt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button butEditPassword;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxBalance;
+        private System.Windows.Forms.Button butAddCard;
+        private System.Windows.Forms.Button butRegCard;
+        private System.Windows.Forms.Button butEditProfile;
+        private System.Windows.Forms.Button butSendChat;
+        private System.Windows.Forms.Button butClearChat;
+        private MaterialSkin.Controls.MaterialMaskedTextBox maskTextBoxPhone;
     }
 }

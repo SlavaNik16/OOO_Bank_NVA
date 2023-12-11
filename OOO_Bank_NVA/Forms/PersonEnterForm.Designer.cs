@@ -99,7 +99,7 @@
             this.passwordBox.MaxLength = 20;
             this.passwordBox.MouseState = MaterialSkin.MouseState.OUT;
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.PasswordChar = '*';
+            this.passwordBox.PasswordChar = '●';
             this.passwordBox.PrefixSuffixText = null;
             this.passwordBox.ReadOnly = false;
             this.passwordBox.RightToLeft = System.Windows.Forms.RightToLeft.No;

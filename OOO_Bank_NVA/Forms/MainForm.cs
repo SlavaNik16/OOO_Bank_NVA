@@ -184,12 +184,15 @@ namespace OOO_Bank_NVA.Forms
             {
                 butView, butSend, butTranslate, 
                 butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
-                butCancelTovar, butBy
+                butCancelTovar, butBy,
+                butAddCard, butRegCard, butEditProfile, butClearChat, butSendChat,
+                butEditPhone, butEditPassword
             };
             foreach(var but in butArray)
             {
                 ColorsHelp.ButtonSubmit(but);
             }
+            ColorsHelp.ButtonRed(butDeleteAccaunt);
             ResetDataGridUser();
             ResetDataGridTovars();
             ResetListView();
@@ -384,6 +387,11 @@ namespace OOO_Bank_NVA.Forms
                     ResetListView();
                 }
             }
+        }
+
+        private void maskTextBoxCardName_TextChanged(object sender, EventArgs e)
+        {
+            butAddCard.Enabled = maskTextBoxCardName.MaskFull ? true : false;
         }
     }
 }
