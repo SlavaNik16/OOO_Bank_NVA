@@ -376,6 +376,12 @@
     <Compile Include="Forms\PersonRegisterForm.Designer.cs">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RegCardBankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegCardBankForm.Designer.cs">
+      <DependentUpon>RegCardBankForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\20231209195746_Init.cs" />
     <Compile Include="Migrations\20231209195746_Init.designer.cs">
       <DependentUpon>20231209195746_Init.cs</DependentUpon>
@@ -434,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonRegisterForm.resx">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegCardBankForm.resx">
+      <DependentUpon>RegCardBankForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

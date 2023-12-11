@@ -26,6 +26,7 @@ namespace OOO_Bank_NVA.Forms
         private readonly DbContextOptions<ApplicationContext> options;
         private readonly BaseWriteRepository<Basket> baseBasketWriteRepository;
         private readonly BaseWriteRepository<Tovar> baseTovarWriteRepository;
+        private readonly BaseWriteRepository<Card> baseCardWriteRepository;
         private ListViewItem listItem;
         public MainForm()
         {
@@ -45,23 +46,28 @@ namespace OOO_Bank_NVA.Forms
             options = DataBaseHelper.Options();
             baseBasketWriteRepository = new BaseWriteRepository<Basket>();
             baseTovarWriteRepository = new BaseWriteRepository<Tovar>();
-
+            baseCardWriteRepository = new BaseWriteRepository<Card>();
         }
         private void materialTabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
             var material = (MaterialTabControl)sender;
-            var tabName = material.TabPages[e.TabPageIndex].Name;
+            var tabPage = material.TabPages[e.TabPageIndex];
+            NavigationTab(tabPage);
+        }
+        private void NavigationTab(TabPage tabPage)
+        {
+            var tabName = tabPage.Name;
             switch (tabName)
             {
                 case nameof(tabUsers):
                     ResetDataGridUser();
                     break;
                 case nameof(tabTovars):
-                    if(AuthorizationForm.user.CardName == null)
+                    if (AuthorizationForm.user.CardName == null)
                     {
                         var result = MessageBox.Show("Чтобы перейти к товарам, нужно создать карту или добавить существующую!", "Информация",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if(result == DialogResult.OK)
+                        if (result == DialogResult.OK)
                         {
                             materialTabControl1.SelectedTab = tabProfile;
                         }
@@ -72,7 +78,7 @@ namespace OOO_Bank_NVA.Forms
                     ResetListView();
                     break;
                 case nameof(tabSettings):
-                    
+
                     break;
                 case nameof(tabProfile):
                     ResetDataUserProfile();
@@ -193,11 +199,7 @@ namespace OOO_Bank_NVA.Forms
                 ColorsHelp.ButtonSubmit(but);
             }
             ColorsHelp.ButtonRed(butDeleteAccaunt);
-            ResetDataGridUser();
-            ResetDataGridTovars();
-            ResetListView();
-            ResetDataUserProfile();
-            materialTabControl1.SelectedTab = tabProfile;
+            NavigationTab(tabProfile);
         }
         #region Tovars
         private void ResetDataGridTovars()
@@ -223,7 +225,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 var tovar = addTovarForm.Tovar;
                 baseTovarWriteRepository.Add(tovar, AuthorizationForm.UserName);
-                ResetDataGridTovars();
+                NavigationTab(tabTovars);
             }
             this.Show();
         }        
@@ -237,7 +239,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 var tovar = addTovarForm.Tovar;
                 baseTovarWriteRepository.Update(tovar, AuthorizationForm.UserName);
-                ResetDataGridTovars();
+                NavigationTab(tabTovars);
             }
             this.Show();
         }
@@ -252,7 +254,7 @@ namespace OOO_Bank_NVA.Forms
                 {
                     var tovar = db.Tovars.ById(id.Id);
                     baseTovarWriteRepository.Delete(tovar);
-                    ResetDataGridTovars();
+                    NavigationTab(tabTovars);
                 }
             }
         }
@@ -282,7 +284,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 var basket = addTovarBasketForm.Basket;
                 baseBasketWriteRepository.Add(basket, AuthorizationForm.UserName);
-                ResetDataGridTovars();
+                NavigationTab(tabTovars);
             }
             this.Show();
         }
@@ -361,7 +363,7 @@ namespace OOO_Bank_NVA.Forms
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     baseBasketWriteRepository.Delete(basket);
-                    ResetListView();
+                    NavigationTab(tabBasket);
                 }
             }
         }
@@ -384,7 +386,7 @@ namespace OOO_Bank_NVA.Forms
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     baseBasketWriteRepository.Delete(basket);
-                    ResetListView();
+                    NavigationTab(tabBasket);
                 }
             }
         }
@@ -392,6 +394,19 @@ namespace OOO_Bank_NVA.Forms
         private void maskTextBoxCardName_TextChanged(object sender, EventArgs e)
         {
             butAddCard.Enabled = maskTextBoxCardName.MaskFull ? true : false;
+        }
+
+        private void butRegCard_Click(object sender, EventArgs e)
+        {
+            var regCardBankForm = new RegCardBankForm();
+            this.Hide();
+            if(regCardBankForm.ShowDialog() == DialogResult.OK)
+            {
+                var card = regCardBankForm.Card;
+                baseCardWriteRepository.Add(card);
+                NavigationTab(tabProfile);
+            }
+            this.Show();
         }
     }
 }
