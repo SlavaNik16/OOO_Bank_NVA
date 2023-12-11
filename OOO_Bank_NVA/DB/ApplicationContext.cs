@@ -38,7 +38,7 @@ namespace OOO_Bank_NVA.DB
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-            
+
         }
 
         /// <summary>

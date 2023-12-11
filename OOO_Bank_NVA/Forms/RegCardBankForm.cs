@@ -40,7 +40,7 @@ namespace OOO_Bank_NVA.Forms
             butEnter.Enabled =
                 !string.IsNullOrEmpty(card.Nomer.Trim()) &&
                 !string.IsNullOrEmpty(card.PinCode.Trim());
-               
+
         }
 
         private void maskedTextBoxNomer_TextChanged(object sender, EventArgs e)

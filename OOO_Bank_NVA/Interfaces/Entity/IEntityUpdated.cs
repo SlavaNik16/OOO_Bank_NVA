@@ -17,5 +17,5 @@ namespace OOO_Bank_NVA.Interfaces
         /// </summary>
         string UpdatedBy { get; set; }
     }
-    
+
 }

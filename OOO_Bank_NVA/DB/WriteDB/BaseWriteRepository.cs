@@ -28,8 +28,8 @@ namespace OOO_Bank_NVA.DB
                 db.Add(entity);
                 db.SaveChanges();
             }
-         }
-            
+        }
+
         public void Update(TEntity entity, string nameUser = "Анонимный")
         {
             AuditForUpdated(entity, nameUser);
@@ -52,7 +52,7 @@ namespace OOO_Bank_NVA.DB
 
         public void AuditForCreated(TEntity entity, string nameUser)
         {
-            if(entity is IEntityCreated entityCreated)
+            if (entity is IEntityCreated entityCreated)
             {
                 entityCreated.CreatedAt = DateTimeOffset.UtcNow;
                 entityCreated.CreatedBy = nameUser;

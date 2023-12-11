@@ -8,8 +8,8 @@ namespace OOO_Bank_NVA.Enums
         /// Офлайн
         /// </summary>
         [Description("Оффлайн")]
-        Offline, 
-        
+        Offline,
+
         /// <summary>
         /// Онлайн
         /// </summary>

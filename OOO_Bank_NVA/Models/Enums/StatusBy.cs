@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace OOO_Bank_NVA.Models.Enums
 {
@@ -16,6 +11,6 @@ namespace OOO_Bank_NVA.Models.Enums
         Attendant,
         [Description("Оплачено")]
         By,
-        
+
     }
 }

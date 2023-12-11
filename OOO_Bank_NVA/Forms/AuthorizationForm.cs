@@ -48,7 +48,7 @@ namespace OOO_Bank_NVA
                     var dbBankRequest = personEnterForm.DBBank;
                     var dbBank = db.DBBanks.Authorization(dbBankRequest.Login, dbBankRequest.Password);
 
-                    if(dbBank == null)
+                    if (dbBank == null)
                     {
                         MessageBox.Show("Пользователь не найден среди зарегистрированных пользователей!",
                             "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);

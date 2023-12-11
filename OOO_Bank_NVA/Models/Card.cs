@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace OOO_Bank_NVA.Models
+﻿namespace OOO_Bank_NVA.Models
 {
     /// <summary>
     /// Сущность карты на котором хранятся средства
@@ -20,7 +18,7 @@ namespace OOO_Bank_NVA.Models
         /// <summary>
         /// Дата oкончания
         /// </summary>
-        public string DateEnd{ get; set; }
+        public string DateEnd { get; set; }
 
         /// <summary>
         /// Баланс карты

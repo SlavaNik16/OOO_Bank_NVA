@@ -7,15 +7,12 @@ using OOO_Bank_NVA.Models;
 using OOO_Bank_NVA.ModelsResponce;
 using OOO_Bank_NVA.Nuget;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 using ListViewItem = System.Windows.Forms.ListViewItem;
 
@@ -31,17 +28,17 @@ namespace OOO_Bank_NVA.Forms
         public MainForm()
         {
             InitializeComponent();
-           // connection = new HubConnectionBuilder()
-           //        .WithUrl("https://localhost:7097/chat")
-           //        .Build();
+            // connection = new HubConnectionBuilder()
+            //        .WithUrl("https://localhost:7097/chat")
+            //        .Build();
 
-           // connection.On<string, string>("Send", (message, username) =>
-           //{
-           //    this.Invoke(new Action(() =>
-           //    {
-           //        listBox1.Items.Add($"{username} отправил: {message}");
-           //    }));
-           //});
+            // connection.On<string, string>("Send", (message, username) =>
+            //{
+            //    this.Invoke(new Action(() =>
+            //    {
+            //        listBox1.Items.Add($"{username} отправил: {message}");
+            //    }));
+            //});
 
             options = DataBaseHelper.Options();
             baseBasketWriteRepository = new BaseWriteRepository<Basket>();
@@ -124,77 +121,77 @@ namespace OOO_Bank_NVA.Forms
         }
         private void dataGridUsers_SelectionChanged(object sender, System.EventArgs e)
         {
-            
+
             butView.Enabled =
                 butStripView.Enabled =
-            butSend.Enabled = 
-                butStripSend.Enabled = 
+            butSend.Enabled =
+                butStripSend.Enabled =
             butTranslate.Enabled =
                 butStripTranslate.Enabled =
-                    dataGridUsers.SelectedRows.Count == 1;  
+                    dataGridUsers.SelectedRows.Count == 1;
         }
 
 
         //var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnPhone"];
-            //using (var db = new ApplicationContext(options))
-            //{
-            //    var person = db.Persons.FirstOrDefault(x => x.Phone == id.Value.ToString());
-            //    if (person == null) return;
+        //using (var db = new ApplicationContext(options))
+        //{
+        //    var person = db.Persons.FirstOrDefault(x => x.Phone == id.Value.ToString());
+        //    if (person == null) return;
 
-            //    var result = MessageBox.Show($"Вы действительно хотите забанить\n" +
-            //        $"Id: {person.Id}\n" +
-            //        $"Телефон: {person.Phone}\n" +
-            //        $"Фамилия:{person.Surname}\n" +
-            //        $"Имя: {person.Name}", "Предупреждение!",
-            //        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        var bank = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
-            //        bank.Status = StatusType.Blocked;
-            //        baseDBBankWriteRepository.Update(bank, AuthorizationForm.UserName);
-            //        MessageBox.Show($"Пользователь успешно забанен!",
-            //            "Информация!",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        ResetDataGrid();
-            //    }
-            //}
+        //    var result = MessageBox.Show($"Вы действительно хотите забанить\n" +
+        //        $"Id: {person.Id}\n" +
+        //        $"Телефон: {person.Phone}\n" +
+        //        $"Фамилия:{person.Surname}\n" +
+        //        $"Имя: {person.Name}", "Предупреждение!",
+        //        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //    if (result == DialogResult.Yes)
+        //    {
+        //        var bank = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
+        //        bank.Status = StatusType.Blocked;
+        //        baseDBBankWriteRepository.Update(bank, AuthorizationForm.UserName);
+        //        MessageBox.Show($"Пользователь успешно забанен!",
+        //            "Информация!",
+        //        MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        ResetDataGrid();
+        //    }
+        //}
         //HubConnection connection;
 
-          //try
-            //{
-            //    // отправка сообщения
-            //    await connection.InvokeAsync("Send", "sdfsfd", textBox1.Text);
-            //}
-            //catch (Exception ex)
-            //{
-            //    listBox1.Items.Add(ex.Message);
-            //}
-            
-            
-            //try
-            //{
-            //    // подключемся к хабу
-            //    await connection.StartAsync();
-            //    listBox1.Items.Add("Вы вошли в чат");
-            //}
-            //catch (Exception ex)
-            //{
-            //    listBox1.Items.Add(ex.Message);
-            //}
-        
+        //try
+        //{
+        //    // отправка сообщения
+        //    await connection.InvokeAsync("Send", "sdfsfd", textBox1.Text);
+        //}
+        //catch (Exception ex)
+        //{
+        //    listBox1.Items.Add(ex.Message);
+        //}
+
+
+        //try
+        //{
+        //    // подключемся к хабу
+        //    await connection.StartAsync();
+        //    listBox1.Items.Add("Вы вошли в чат");
+        //}
+        //catch (Exception ex)
+        //{
+        //    listBox1.Items.Add(ex.Message);
+        //}
+
         #endregion
         private void MainForm_Load(object sender, System.EventArgs e)
         {
 
             var butArray = new System.Windows.Forms.Button[]
             {
-                butView, butSend, butTranslate, 
+                butView, butSend, butTranslate,
                 butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
                 butCancelTovar, butBy,
                 butAddCard, butRegCard, butEditProfile, butClearChat, butSendChat,
                 butEditPhone, butEditPassword
             };
-            foreach(var but in butArray)
+            foreach (var but in butArray)
             {
                 ColorsHelp.ButtonSubmit(but);
             }
@@ -228,7 +225,7 @@ namespace OOO_Bank_NVA.Forms
                 NavigationTab(tabTovars);
             }
             this.Show();
-        }        
+        }
 
         private void butEdit_Click(object sender, System.EventArgs e)
         {
@@ -247,8 +244,8 @@ namespace OOO_Bank_NVA.Forms
         private void butDelete_Click(object sender, System.EventArgs e)
         {
             var id = (TovarResponce)dataGridTovar.Rows[dataGridTovar.SelectedRows[0].Index].DataBoundItem;
-            if(MessageBox.Show($"Вы действительно хотите удалить товар:\nНазвание: {id.Title}\nЦена: {id.Price}", "Предупреждение!",
-                MessageBoxButtons.OKCancel , MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show($"Вы действительно хотите удалить товар:\nНазвание: {id.Title}\nЦена: {id.Price}", "Предупреждение!",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 using (var db = new ApplicationContext(options))
                 {
@@ -309,7 +306,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 var imageList = new ImageList();
                 imageList.ImageSize = new Size(32, 32);
-                var list = db.Baskets.AsNoTracking().NotDeletedAt().Where(x=>x.PersonId == AuthorizationForm.user.Id).OrderBy(x => x.CreatedAt).ToList();
+                var list = db.Baskets.AsNoTracking().NotDeletedAt().Where(x => x.PersonId == AuthorizationForm.user.Id).OrderBy(x => x.CreatedAt).ToList();
                 foreach (var l in list)
                 {
                     var tovar = db.Tovars.FirstOrDefault(x => x.Id == l.TovarId);
@@ -371,7 +368,7 @@ namespace OOO_Bank_NVA.Forms
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
         {
             butCancelTovar.Enabled =
-            butBy.Enabled = 
+            butBy.Enabled =
                 listView.SelectedItems.Count == 1;
         }
 
@@ -400,7 +397,7 @@ namespace OOO_Bank_NVA.Forms
         {
             var regCardBankForm = new RegCardBankForm();
             this.Hide();
-            if(regCardBankForm.ShowDialog() == DialogResult.OK)
+            if (regCardBankForm.ShowDialog() == DialogResult.OK)
             {
                 var card = regCardBankForm.Card;
                 baseCardWriteRepository.Add(card);

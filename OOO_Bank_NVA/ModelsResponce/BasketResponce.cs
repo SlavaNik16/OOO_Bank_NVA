@@ -1,7 +1,4 @@
-﻿using OOO_Bank_NVA.Models;
-using System;
-
-namespace OOO_Bank_NVA.ModelsResponce
+﻿namespace OOO_Bank_NVA.ModelsResponce
 {
     public class BasketResponce
     {
