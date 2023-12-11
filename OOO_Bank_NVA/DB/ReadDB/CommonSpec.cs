@@ -1,4 +1,5 @@
-﻿using OOO_Bank_NVA.Enums;
+﻿using Microsoft.EntityFrameworkCore;
+using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Interfaces;
 using OOO_Bank_NVA.Models;
 using OOO_Bank_NVA.Models.Enums;
@@ -16,16 +17,16 @@ namespace OOO_Bank_NVA.DB.ReadDB
     public static class CommonSpec
     {
         /// <summary>
-        /// По телефону проверить зарегистрирован ли ?
+        /// Есть ли логин в базе данных?
         /// </summary>
         public static bool IsPhoneWithLogin<TEntity>(this IQueryable<TEntity> query, string phone) where TEntity : DBBank
             => query.Any(x => x.Login == phone);
 
         /// <summary>
-        /// По номеру карты проверить есть ли?
+        /// Есть ли номер карты в базе данных?
         /// </summary>
-        public static bool IsCardWithPerson<TEntity>(this IQueryable<TEntity> query, string numberPerson) where TEntity : Card
-            => query.Any(x => x.Nomer == numberPerson);
+        public static bool IsCardWithPerson<TEntity>(this IQueryable<TEntity> query, string nomer) where TEntity : Card
+            => query.Any(x => x.Nomer == nomer);
 
         /// <summary>
         /// По идентификатору 
@@ -52,7 +53,7 @@ namespace OOO_Bank_NVA.DB.ReadDB
         /// Не удаленные записи
         /// </summary>
         public static IQueryable<TEntity> NotDeletedAt<TEntity>(this IQueryable<TEntity> query) where TEntity : class, IEntityDeleted
-            => query.Where(x => x.DeletedAt == null);
+            => query.AsNoTracking().Where(x => x.DeletedAt == null);
 
         /// <summary>
         /// По роли

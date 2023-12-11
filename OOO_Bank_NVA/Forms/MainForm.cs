@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
+using System.IdentityModel.Tokens;
 using System.Linq;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -24,6 +25,7 @@ namespace OOO_Bank_NVA.Forms
         private readonly BaseWriteRepository<Basket> baseBasketWriteRepository;
         private readonly BaseWriteRepository<Tovar> baseTovarWriteRepository;
         private readonly BaseWriteRepository<Card> baseCardWriteRepository;
+        private readonly BaseWriteRepository<Person> basePersonWriteRepository;
         private ListViewItem listItem;
         public MainForm()
         {
@@ -44,6 +46,7 @@ namespace OOO_Bank_NVA.Forms
             baseBasketWriteRepository = new BaseWriteRepository<Basket>();
             baseTovarWriteRepository = new BaseWriteRepository<Tovar>();
             baseCardWriteRepository = new BaseWriteRepository<Card>();
+            basePersonWriteRepository = new BaseWriteRepository<Person>();
         }
         private void materialTabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
@@ -75,7 +78,11 @@ namespace OOO_Bank_NVA.Forms
                     ResetListView();
                     break;
                 case nameof(tabSettings):
-
+                    if (AuthorizationForm.user.CardName != null)
+                    {
+                        butEditCard.Visible = false;
+                        butEditCardLabel.Visible = false;
+                    }
                     break;
                 case nameof(tabProfile):
                     ResetDataUserProfile();
@@ -95,7 +102,15 @@ namespace OOO_Bank_NVA.Forms
             textBoxName.Text = user.Name;
             maskTextBoxPhone.Text = user.Phone.Trim();
             textBoxGender.Text = user.Gender.PerevodDescription();
-            maskTextBoxCardName.Text = user.CardName ?? string.Empty;
+            using (var db = new ApplicationContext(options))
+            {
+                var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == user.CardName);
+                if (card == null) return;
+                maskTextBoxCardName.Text = card.Nomer;
+                textBoxBalance.Text = "Баланс карты: "+ $"{card.Balance:C2}";
+                maskedTextBoxCVCCode.Text = card.CSCCode.ToString();
+                maskedTextBoxDataEnd.Text = card.DateEnd.ToString();
+            }
         }
 
         #region Users
@@ -106,7 +121,7 @@ namespace OOO_Bank_NVA.Forms
                 dataGridUsers.DataSource = db.Persons
                     .NotDeletedAt()
                     .Where(s => s.Phone != AuthorizationForm.user.Phone)
-                    .Join(db.DBBanks, x => x.Phone, b => b.Login,
+                    .Join(db.DBBanks.NotDeletedAt(), x => x.Phone, b => b.Login,
                     (x, b) => new
                     {
                         Phone = x.Phone.ToString(),
@@ -188,7 +203,7 @@ namespace OOO_Bank_NVA.Forms
                 butView, butSend, butTranslate,
                 butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
                 butCancelTovar, butBy,
-                butAddCard, butRegCard, butEditProfile, butClearChat, butSendChat,
+                butChangeCard, butChangeCard, butClearChat, butSendChat,
                 butEditPhone, butEditPassword
             };
             foreach (var but in butArray)
@@ -203,7 +218,7 @@ namespace OOO_Bank_NVA.Forms
         {
             using (var db = new ApplicationContext(options))
             {
-                dataGridTovar.DataSource = db.Tovars.AsNoTracking().NotDeletedAt().OrderBy(x => x.Title).Select(x => new TovarResponce
+                dataGridTovar.DataSource = db.Tovars.NotDeletedAt().OrderBy(x => x.Title).Select(x => new TovarResponce
                 {
                     Id = x.Id,
                     MaxCount = x.MaxCount,
@@ -249,7 +264,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 using (var db = new ApplicationContext(options))
                 {
-                    var tovar = db.Tovars.ById(id.Id);
+                    var tovar = db.Tovars.NotDeletedAt().ById(id.Id);
                     baseTovarWriteRepository.Delete(tovar);
                     NavigationTab(tabTovars);
                 }
@@ -306,10 +321,11 @@ namespace OOO_Bank_NVA.Forms
             {
                 var imageList = new ImageList();
                 imageList.ImageSize = new Size(32, 32);
-                var list = db.Baskets.AsNoTracking().NotDeletedAt().Where(x => x.PersonId == AuthorizationForm.user.Id).OrderBy(x => x.CreatedAt).ToList();
+                var list = db.Baskets.NotDeletedAt().Where(x => x.PersonId == AuthorizationForm.user.Id).OrderBy(x => x.CreatedAt).ToList();
                 foreach (var l in list)
                 {
-                    var tovar = db.Tovars.FirstOrDefault(x => x.Id == l.TovarId);
+                    var tovar = db.Tovars.NotDeletedAt().FirstOrDefault(x => x.Id == l.TovarId);
+                    if (tovar == null) return;
                     listItem = new ListViewItem(new string[] {
                         string.Empty,
                         tovar.CreatedAt.ToString("G"),
@@ -318,8 +334,8 @@ namespace OOO_Bank_NVA.Forms
                         l.StatusBy.PerevodDescription()
                     });
                     listItem.Tag = l.Id;
-                    var photo = db.Tovars.FirstOrDefault(x => x.Id == l.TovarId).Photo;
-                    if (!string.IsNullOrEmpty(photo))
+                    var photo = db.Tovars.NotDeletedAt().FirstOrDefault(x => x.Id == l.TovarId).Photo;
+                    if (photo != null)
                     {
                         imageList.Images.Add(photo, new Bitmap(photo));
                         listView.SmallImageList = imageList;
@@ -354,7 +370,7 @@ namespace OOO_Bank_NVA.Forms
             var id = listView.SelectedItems[0].Tag.ToString();
             using (var db = new ApplicationContext(options))
             {
-                var basket = db.Baskets.FirstOrDefault(x => x.Id == Guid.Parse(id));
+                var basket = db.Baskets.NotDeletedAt().FirstOrDefault(x => x.Id == Guid.Parse(id));
                 if (basket == null) { return; }
                 if (MessageBox.Show("Вы действительно хотите отменить из брони данный товар!", "Предупреждение!",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
@@ -377,7 +393,7 @@ namespace OOO_Bank_NVA.Forms
             var id = listView.SelectedItems[0].Tag.ToString();
             using (var db = new ApplicationContext(options))
             {
-                var basket = db.Baskets.FirstOrDefault(x => x.Id == Guid.Parse(id));
+                var basket = db.Baskets.NotDeletedAt().FirstOrDefault(x => x.Id == Guid.Parse(id));
                 if (basket == null) { return; }
                 if (MessageBox.Show("Вы действительно хотите отменить из брони данный товар!", "Предупреждение!",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
@@ -388,19 +404,30 @@ namespace OOO_Bank_NVA.Forms
             }
         }
 
-        private void maskTextBoxCardName_TextChanged(object sender, EventArgs e)
-        {
-            butAddCard.Enabled = maskTextBoxCardName.MaskFull ? true : false;
-        }
-
-        private void butRegCard_Click(object sender, EventArgs e)
+        private void butEditCard_Click(object sender, EventArgs e)
         {
             var regCardBankForm = new RegCardBankForm();
             this.Hide();
             if (regCardBankForm.ShowDialog() == DialogResult.OK)
             {
                 var card = regCardBankForm.Card;
-                baseCardWriteRepository.Add(card);
+
+                baseCardWriteRepository.Add(card, AuthorizationForm.UserName);
+                AuthorizationForm.SetCardNameUser(card.Nomer);
+                basePersonWriteRepository.Update(AuthorizationForm.user, AuthorizationForm.UserName);
+                NavigationTab(tabSettings);
+            }
+            this.Show();
+        }
+
+        private void butChangeCard_Click(object sender, EventArgs e)
+        {
+            var cardValidate = new CardValidateForm();
+            this.Hide();
+            if (cardValidate.ShowDialog() == DialogResult.OK)
+            {
+                AuthorizationForm.SetCardNameUser(cardValidate.Card.Nomer);
+                basePersonWriteRepository.Update(AuthorizationForm.user, AuthorizationForm.UserName);
                 NavigationTab(tabProfile);
             }
             this.Show();

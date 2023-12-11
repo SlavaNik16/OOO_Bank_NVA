@@ -35,10 +35,10 @@ namespace OOO_Bank_NVA.Forms
         private void ValidatePerson()
         {
             butCreate.Enabled =
-                !string.IsNullOrEmpty(person.Surname.Trim()) &&
-                !string.IsNullOrEmpty(person.Name.Trim()) &&
-                !string.IsNullOrEmpty(password.Trim()) &&
-                !string.IsNullOrEmpty(person.Phone.Trim());
+                !string.IsNullOrEmpty(person.Surname) &&
+                !string.IsNullOrEmpty(person.Name) &&
+                !string.IsNullOrEmpty(password) &&
+                !string.IsNullOrEmpty(person.Phone);
         }
 
         private void surnameBox_TextChanged(object sender, System.EventArgs e)
@@ -66,45 +66,16 @@ namespace OOO_Bank_NVA.Forms
             ValidatePerson();
         }
 
-        private void maskNumberCardText_TextChanged(object sender, System.EventArgs e)
-        {
-            if (maskNumberCardText.MaskFull)
-            {
-                person.CardName = maskNumberCardText.Text.Trim();
-            }
-            else
-            {
-                person.CardName = string.Empty;
-            }
-        }
-
         private void butCreate_Click(object sender, System.EventArgs e)
         {
             using (var db = new ApplicationContext(options))
             {
-                var personValidate = db.DBBanks.IsPhoneWithLogin(person.Phone);
+                var personValidate = db.DBBanks.NotDeletedAt().IsPhoneWithLogin(person.Phone);
                 if (personValidate)
                 {
                     MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     maskPhoneText.Text = string.Empty;
                     return;
-                }
-                if (!string.IsNullOrEmpty(person.CardName.Trim()))
-                {
-
-                    var card = db.Cards.IsCardWithPerson(person.CardName.Trim());
-                    if (!card)
-                    {
-                        MessageBox.Show("Ваша карта не найдена!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        maskNumberCardText.Text = string.Empty;
-                        return;
-                    }
-
-                    var cardValidateForm = new CardValidateForm();
-                    this.Hide();
-                    cardValidateForm.ShowDialog();
-                    this.Show();
-
                 }
             }
             DialogResult = DialogResult.OK;

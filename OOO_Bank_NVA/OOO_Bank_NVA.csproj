@@ -376,6 +376,12 @@
     <Compile Include="Forms\PersonRegisterForm.Designer.cs">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PINCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PINCodeForm.Designer.cs">
+      <DependentUpon>PINCodeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RegCardBankForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +391,18 @@
     <Compile Include="Migrations\20231209195746_Init.cs" />
     <Compile Include="Migrations\20231209195746_Init.designer.cs">
       <DependentUpon>20231209195746_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231211184354_EditStringDataEnd.cs" />
+    <Compile Include="Migrations\20231211184354_EditStringDataEnd.designer.cs">
+      <DependentUpon>20231211184354_EditStringDataEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231211190344_EditStringDataEnd2.cs" />
+    <Compile Include="Migrations\20231211190344_EditStringDataEnd2.designer.cs">
+      <DependentUpon>20231211190344_EditStringDataEnd2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231211190647_123.cs" />
+    <Compile Include="Migrations\20231211190647_123.designer.cs">
+      <DependentUpon>20231211190647_123.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="ModelsResponce\BasketResponce.cs" />
@@ -440,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonRegisterForm.resx">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PINCodeForm.resx">
+      <DependentUpon>PINCodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegCardBankForm.resx">
       <DependentUpon>RegCardBankForm.cs</DependentUpon>

@@ -20,6 +20,11 @@ namespace OOO_Bank_NVA
         private readonly DbContextOptions<ApplicationContext> options;
         public static string UserName = "";
         public static Person user { get; private set; }
+        public static Person SetCardNameUser(string cardName)
+        {
+            user.CardName = cardName;
+            return user;
+        }
         public AuthorizationForm()
         {
             InitializeComponent();
@@ -46,7 +51,7 @@ namespace OOO_Bank_NVA
                 using (var db = new ApplicationContext(options))
                 {
                     var dbBankRequest = personEnterForm.DBBank;
-                    var dbBank = db.DBBanks.Authorization(dbBankRequest.Login, dbBankRequest.Password);
+                    var dbBank = db.DBBanks.NotDeletedAt().Authorization(dbBankRequest.Login, dbBankRequest.Password);
 
                     if (dbBank == null)
                     {
@@ -55,7 +60,7 @@ namespace OOO_Bank_NVA
                         this.Show();
                         return;
                     }
-                    var person = db.Persons.FirstOrDefault(x => x.Phone == dbBank.Login);
+                    var person = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == dbBank.Login);
 
                     user = person;
                     UserName = $"{person.Surname}_{person.Name}";
