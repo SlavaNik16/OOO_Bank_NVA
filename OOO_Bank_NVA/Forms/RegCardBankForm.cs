@@ -73,7 +73,7 @@ namespace OOO_Bank_NVA.Forms
                     maskedTextBoxNomer.Text = string.Empty;
                     return;
                 }
-                DialogResult= DialogResult.OK;
+                DialogResult = DialogResult.OK;
             }
 
         }

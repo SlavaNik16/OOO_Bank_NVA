@@ -93,7 +93,7 @@ namespace OOO_Bank_NVA
                 UserName = $"{person.Surname}_{person.Name}";
                 writePersonRepository.Add(person, UserName);
                 writeDbBankRepository.Add(dbbank, UserName);
-               
+
                 MessageBox.Show("Пользователь успешно зарегистрирован!",
                            "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

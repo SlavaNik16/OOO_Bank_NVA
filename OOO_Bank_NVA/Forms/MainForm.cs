@@ -122,7 +122,7 @@ namespace OOO_Bank_NVA.Forms
                 var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == user.CardName);
                 if (card == null) return;
                 maskTextBoxCardName.Text = card.Nomer;
-                textBoxBalance.Text = "Баланс карты: "+ $"{card.Balance:C2}";
+                textBoxBalance.Text = "Баланс карты: " + $"{card.Balance:C2}";
                 maskedTextBoxCVCCode.Text = card.CSCCode.ToString();
                 maskedTextBoxDataEnd.Text = card.DateEnd.ToString();
             }
@@ -164,7 +164,7 @@ namespace OOO_Bank_NVA.Forms
         }
 
 
-       
+
         //HubConnection connection;
 
         //try
@@ -447,7 +447,7 @@ namespace OOO_Bank_NVA.Forms
                         if (personEnterForm.ShowDialog() == DialogResult.OK)
                         {
                             var dbBank = db.DBBanks.IsAuthorization(user.Phone, personEnterForm.DBBank.Password);
-                            if(dbBank == null)
+                            if (dbBank == null)
                             {
                                 MessageBox.Show("Неправильный пароль!!!", "Отказано в удаление",
                                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -457,9 +457,9 @@ namespace OOO_Bank_NVA.Forms
                             basePersonWriteRepository.Delete(user);
                             this.Close();
                         }
-                        
+
                     }
-                      
+
                 }
             }
         }
@@ -472,7 +472,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 using (var db = new ApplicationContext(options))
                 {
-                    var isPhone = db.DBBanks.Where(x=>x.Login != AuthorizationForm.user.Phone).IsPhoneWithLogin(maskedTextBoxPhoneChat.Text);
+                    var isPhone = db.DBBanks.Where(x => x.Login != AuthorizationForm.user.Phone).IsPhoneWithLogin(maskedTextBoxPhoneChat.Text);
                     if (!isPhone)
                     {
                         maskedTextBoxPhoneChat.Text = string.Empty;
@@ -487,7 +487,7 @@ namespace OOO_Bank_NVA.Forms
 
         private void butSendChat_Click(object sender, EventArgs e)
         {
-            if(textBoxMessageChat.Text.Trim() == string.Empty)
+            if (textBoxMessageChat.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Введите какое-нибудь сообщение!!!", "Инофрмация!",
                                       MessageBoxButtons.OK, MessageBoxIcon.Information);

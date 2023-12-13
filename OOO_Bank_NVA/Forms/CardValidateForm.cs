@@ -65,7 +65,7 @@ namespace OOO_Bank_NVA.Forms
                     var cardValidate = db.Cards.NotDeletedAt().FirstOrDefault(x => x.DateEnd == card.DateEnd && x.CSCCode == card.CSCCode && x.PinCode == pinCodeForm.PINCODE);
                     if (cardValidate == null)
                     {
-                        MessageBox.Show("Неверно введенные данные!","Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Неверно введенные данные!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
