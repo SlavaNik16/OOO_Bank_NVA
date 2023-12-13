@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOO_Bank_NVA.Models.Enums;
+using System;
 
 namespace OOO_Bank_NVA.Models
 {
@@ -24,5 +25,10 @@ namespace OOO_Bank_NVA.Models
         /// </summary>
         public Guid PersonId { get; set; }
         internal Person Person { get; set; }
+
+        // <summary>
+        /// Статус оплаты
+        /// </summary>
+        public StatusBy StatusBy { get; set; } = StatusBy.Attendant;
     }
 }

@@ -3,8 +3,6 @@ using OOO_Bank_NVA.Models;
 using OOO_Bank_NVA.ModelsResponce;
 using System;
 using System.Drawing;
-using System.Threading;
-using System.Windows.Forms;
 
 namespace OOO_Bank_NVA.Forms
 {
@@ -16,12 +14,12 @@ namespace OOO_Bank_NVA.Forms
         {
             InitializeComponent();
             basket = new Basket();
-
+            basket.PersonId = AuthorizationForm.user.Id;
             basket.TovarId = tovarResponce.Id;
             textBoxTitle.Text = tovarResponce.Title;
             labelPrice.Text = tovarResponce.Price.ToString();
             labelMaxCount.Text = tovarResponce.MaxCount.ToString();
-            if(panelPicture.Visible = !string.IsNullOrEmpty(tovarResponce.Photo))
+            if (panelPicture.Visible = !string.IsNullOrEmpty(tovarResponce.Photo))
             {
                 pictureBoxPhotoTovar.Image = Bitmap.FromFile(tovarResponce.Photo);
             }

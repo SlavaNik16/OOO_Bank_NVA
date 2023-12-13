@@ -14,13 +14,13 @@ namespace OOO_Bank_NVA.Interfaces
         /// <summary><see cref="Card"></summary>
         DbSet<Card> Cards { get; set; }
 
-        /// <summary><see cref="Operation"></summary>
-        DbSet<Operation> Operations { get; set; }
-
         /// <summary><see cref="DBBank"></summary>
         DbSet<DBBank> DBBanks { get; set; }
 
         /// <summary><see cref="Basket"></summary>
         DbSet<Basket> Baskets { get; set; }
+
+        /// <summary><see cref="Tovar"></summary>
+        DbSet<Tovar> Tovars { get; set; }
     }
 }

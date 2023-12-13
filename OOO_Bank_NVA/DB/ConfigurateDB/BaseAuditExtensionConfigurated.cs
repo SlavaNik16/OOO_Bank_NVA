@@ -26,6 +26,6 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
         public static void HasById<TEntity>(this EntityTypeBuilder<TEntity> builder)
             where TEntity : class, IEntityWithId
             => builder.HasKey(x => x.Id);
-        
+
     }
 }

@@ -321,17 +321,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatConnect\Chat.cs" />
     <Compile Include="Colors\ColorsHelp.cs" />
     <Compile Include="DB\ApplicationContext.cs" />
     <Compile Include="DB\ConfigurateDB\BaseAuditExtensionConfigurated.cs" />
     <Compile Include="DB\ConfigurateDB\BasketEntityConfigurate.cs" />
     <Compile Include="DB\ConfigurateDB\TovarEntityConfigurate.cs" />
     <Compile Include="DB\ReadDB\CommonSpec.cs" />
+    <Compile Include="DB\ReadDB\Constants.cs" />
     <Compile Include="DB\WriteDB\BaseWriteRepository.cs" />
     <Compile Include="DB\ConfigurateDB\Anchors\IEntityConfigurateAnchors.cs" />
     <Compile Include="DB\ConfigurateDB\CardEntityConfigurate.cs" />
     <Compile Include="DB\ConfigurateDB\DBBankEntityConfigurate.cs" />
-    <Compile Include="DB\ConfigurateDB\OperationEntityConfigurate.cs" />
     <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="DB\DataBaseHelper.cs" />
     <Compile Include="DB\SampleContextFactory.cs" />
@@ -346,6 +347,12 @@
     </Compile>
     <Compile Include="Forms\AddTovarForm.Designer.cs">
       <DependentUpon>AddTovarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CardTranslateMoneyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CardTranslateMoneyForm.Designer.cs">
+      <DependentUpon>CardTranslateMoneyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CardValidateForm.cs">
       <SubType>Form</SubType>
@@ -377,29 +384,33 @@
     <Compile Include="Forms\PersonRegisterForm.Designer.cs">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231203131748_Init.cs" />
-    <Compile Include="Migrations\20231203131748_Init.designer.cs">
-      <DependentUpon>20231203131748_Init.cs</DependentUpon>
+    <Compile Include="Forms\PINCodeForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Migrations\20231203133932_AddTovars.cs" />
-    <Compile Include="Migrations\20231203133932_AddTovars.designer.cs">
-      <DependentUpon>20231203133932_AddTovars.cs</DependentUpon>
+    <Compile Include="Forms\PINCodeForm.Designer.cs">
+      <DependentUpon>PINCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231203134456_AddBasket.cs" />
-    <Compile Include="Migrations\20231203134456_AddBasket.designer.cs">
-      <DependentUpon>20231203134456_AddBasket.cs</DependentUpon>
+    <Compile Include="Forms\RegCardBankForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Migrations\20231203190233_UpdateTitle.cs" />
-    <Compile Include="Migrations\20231203190233_UpdateTitle.designer.cs">
-      <DependentUpon>20231203190233_UpdateTitle.cs</DependentUpon>
+    <Compile Include="Forms\RegCardBankForm.Designer.cs">
+      <DependentUpon>RegCardBankForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231203193552_UpdateDb.cs" />
-    <Compile Include="Migrations\20231203193552_UpdateDb.designer.cs">
-      <DependentUpon>20231203193552_UpdateDb.cs</DependentUpon>
+    <Compile Include="Migrations\20231209195746_Init.cs" />
+    <Compile Include="Migrations\20231209195746_Init.designer.cs">
+      <DependentUpon>20231209195746_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231203194549_UpdateDb2.cs" />
-    <Compile Include="Migrations\20231203194549_UpdateDb2.designer.cs">
-      <DependentUpon>20231203194549_UpdateDb2.cs</DependentUpon>
+    <Compile Include="Migrations\20231211184354_EditStringDataEnd.cs" />
+    <Compile Include="Migrations\20231211184354_EditStringDataEnd.designer.cs">
+      <DependentUpon>20231211184354_EditStringDataEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231211190344_EditStringDataEnd2.cs" />
+    <Compile Include="Migrations\20231211190344_EditStringDataEnd2.designer.cs">
+      <DependentUpon>20231211190344_EditStringDataEnd2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231211190647_123.cs" />
+    <Compile Include="Migrations\20231211190647_123.designer.cs">
+      <DependentUpon>20231211190647_123.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\20231126201419_ChangeBD.cs" />
     <Compile Include="Migrations\20231126201419_ChangeBD.designer.cs">
@@ -414,8 +425,10 @@
       <DependentUpon>20231129181210_AddRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
+    <Compile Include="ModelsResponce\BasketResponce.cs" />
     <Compile Include="ModelsResponce\TovarResponce.cs" />
     <Compile Include="Models\Basket.cs" />
+    <Compile Include="Models\Enums\StatusBy.cs" />
     <Compile Include="Models\Enums\Gender.cs" />
     <Compile Include="Models\Enums\OperationType.cs" />
     <Compile Include="Models\Enums\RoleType.cs" />
@@ -436,7 +449,6 @@
     <Compile Include="Models\BaseAuditEntity.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\DBBank.cs" />
-    <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Tovar.cs" />
     <Compile Include="Nuget\EnumHelpPerevod.cs" />
@@ -448,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddTovarForm.resx">
       <DependentUpon>AddTovarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CardTranslateMoneyForm.resx">
+      <DependentUpon>CardTranslateMoneyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CardValidateForm.resx">
       <DependentUpon>CardValidateForm.cs</DependentUpon>
@@ -466,6 +481,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonRegisterForm.resx">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PINCodeForm.resx">
+      <DependentUpon>PINCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegCardBankForm.resx">
+      <DependentUpon>RegCardBankForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -522,6 +543,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

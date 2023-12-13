@@ -30,9 +30,7 @@
         {
             this.nameBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.surnameBox = new MaterialSkin.Controls.MaterialTextBox2();
-            this.maskNumberCardText = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.genderMaleRadio = new MaterialSkin.Controls.MaterialRadioButton();
             this.genderFemaleRadio = new MaterialSkin.Controls.MaterialRadioButton();
             this.butCreate = new MaterialSkin.Controls.MaterialButton();
@@ -114,19 +112,6 @@
             this.surnameBox.UseSystemPasswordChar = false;
             this.surnameBox.TextChanged += new System.EventHandler(this.surnameBox_TextChanged);
             // 
-            // maskNumberCardText
-            // 
-            this.maskNumberCardText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.maskNumberCardText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskNumberCardText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.maskNumberCardText.Location = new System.Drawing.Point(97, 598);
-            this.maskNumberCardText.Mask = "0000-0000-0000-0000";
-            this.maskNumberCardText.Name = "maskNumberCardText";
-            this.maskNumberCardText.Size = new System.Drawing.Size(571, 37);
-            this.maskNumberCardText.SkipLiterals = false;
-            this.maskNumberCardText.TabIndex = 8;
-            this.maskNumberCardText.TextChanged += new System.EventHandler(this.maskNumberCardText_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -138,18 +123,6 @@
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Телефон";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(94, 566);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Номер карты";
             // 
             // genderMaleRadio
             // 
@@ -194,7 +167,7 @@
             this.butCreate.Enabled = false;
             this.butCreate.HighEmphasis = true;
             this.butCreate.Icon = null;
-            this.butCreate.Location = new System.Drawing.Point(142, 780);
+            this.butCreate.Location = new System.Drawing.Point(142, 712);
             this.butCreate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.butCreate.Name = "butCreate";
@@ -215,7 +188,7 @@
             this.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.butCancel.HighEmphasis = true;
             this.butCancel.Icon = null;
-            this.butCancel.Location = new System.Drawing.Point(509, 780);
+            this.butCancel.Location = new System.Drawing.Point(509, 712);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.butCancel.Name = "butCancel";
@@ -294,7 +267,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(94, 659);
+            this.label7.Location = new System.Drawing.Point(94, 591);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 17);
             this.label7.TabIndex = 20;
@@ -314,11 +287,11 @@
             this.passwordBox.HideSelection = true;
             this.passwordBox.Hint = "Пароль";
             this.passwordBox.LeadingIcon = null;
-            this.passwordBox.Location = new System.Drawing.Point(97, 697);
+            this.passwordBox.Location = new System.Drawing.Point(97, 629);
             this.passwordBox.MaxLength = 20;
             this.passwordBox.MouseState = MaterialSkin.MouseState.OUT;
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.PasswordChar = '*';
+            this.passwordBox.PasswordChar = '●';
             this.passwordBox.PrefixSuffixText = null;
             this.passwordBox.ReadOnly = false;
             this.passwordBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -338,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 846);
+            this.ClientSize = new System.Drawing.Size(750, 775);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.label6);
@@ -349,17 +322,15 @@
             this.Controls.Add(this.butCreate);
             this.Controls.Add(this.genderFemaleRadio);
             this.Controls.Add(this.genderMaleRadio);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskNumberCardText);
             this.Controls.Add(this.maskPhoneText);
             this.Controls.Add(this.surnameBox);
             this.Controls.Add(this.nameBox);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(750, 846);
+            this.MaximumSize = new System.Drawing.Size(750, 775);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(750, 846);
+            this.MinimumSize = new System.Drawing.Size(750, 775);
             this.Name = "PersonRegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
@@ -371,9 +342,7 @@
         #endregion
         private MaterialSkin.Controls.MaterialTextBox2 nameBox;
         private MaterialSkin.Controls.MaterialTextBox2 surnameBox;
-        private System.Windows.Forms.MaskedTextBox maskNumberCardText;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialRadioButton genderMaleRadio;
         private MaterialSkin.Controls.MaterialRadioButton genderFemaleRadio;
         private MaterialSkin.Controls.MaterialButton butCreate;

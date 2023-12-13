@@ -10,8 +10,8 @@ using OOO_Bank_NVA.DB;
 namespace OOO_Bank_NVA.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20231203131748_Init")]
-    partial class Init
+    [Migration("20231211190647_123")]
+    partial class _123
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,9 @@ namespace OOO_Bank_NVA.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
                     b.Property<DateTimeOffset>("CreatedAt")
                         .HasColumnType("datetimeoffset");
 
@@ -40,6 +43,9 @@ namespace OOO_Bank_NVA.Migrations
 
                     b.Property<Guid>("PersonId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("StatusBy")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("TovarId")
                         .HasColumnType("uniqueidentifier");
@@ -83,21 +89,22 @@ namespace OOO_Bank_NVA.Migrations
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
 
-                    b.Property<DateTime>("DateEnd")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DateEnd")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("DeletedAt")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Nomer")
                         .IsRequired()
-                        .HasColumnType("nvarchar(30)")
-                        .HasMaxLength(30);
+                        .HasColumnType("nvarchar(40)")
+                        .HasMaxLength(40);
 
                     b.Property<string>("PinCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(8)")
-                        .HasMaxLength(8);
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
 
                     b.Property<DateTimeOffset?>("UpdatedAt")
                         .IsRequired()
@@ -174,55 +181,6 @@ namespace OOO_Bank_NVA.Migrations
                     b.ToTable("DBBanks");
                 });
 
-            modelBuilder.Entity("OOO_Bank_NVA.Models.Operation", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset>("CreatedAt")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
-
-                    b.Property<DateTimeOffset?>("DeletedAt")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<int>("OperationType")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("PersonId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTimeOffset?>("UpdatedAt")
-                        .IsRequired()
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("UpdatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OperationType")
-                        .HasName("IX_Operation_OperationType")
-                        .HasFilter("DeletedAt is null");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("Operations");
-                });
-
             modelBuilder.Entity("OOO_Bank_NVA.Models.Person", b =>
                 {
                     b.Property<Guid>("Id")
@@ -285,9 +243,6 @@ namespace OOO_Bank_NVA.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
                     b.Property<DateTimeOffset>("CreatedAt")
                         .HasColumnType("datetimeoffset");
 
@@ -302,13 +257,16 @@ namespace OOO_Bank_NVA.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MaxCount")
+                        .HasColumnType("int");
+
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Tittle")
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(120)")
                         .HasMaxLength(120);
@@ -324,12 +282,12 @@ namespace OOO_Bank_NVA.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Tittle")
+                    b.HasIndex("Title")
                         .IsUnique()
-                        .HasName("IX_Tovar_Tittle")
+                        .HasName("IX_Tovar_Title")
                         .HasFilter("DeletedAt is null");
 
-                    b.ToTable("Tovar");
+                    b.ToTable("Tovars");
                 });
 
             modelBuilder.Entity("OOO_Bank_NVA.Models.Basket", b =>
@@ -343,15 +301,6 @@ namespace OOO_Bank_NVA.Migrations
                     b.HasOne("OOO_Bank_NVA.Models.Tovar", "Tovar")
                         .WithMany("Basket")
                         .HasForeignKey("TovarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("OOO_Bank_NVA.Models.Operation", b =>
-                {
-                    b.HasOne("OOO_Bank_NVA.Models.Person", "Person")
-                        .WithMany("Operation")
-                        .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

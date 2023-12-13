@@ -33,7 +33,6 @@ namespace OOO_Bank_NVA.Models
         /// </summary>
         public string CardName { get; set; }
 
-        internal ICollection<Operation> Operation { get; set; }
         internal ICollection<Basket> Basket { get; set; }
 
     }

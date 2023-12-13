@@ -1,15 +1,12 @@
 ﻿using MaterialSkin.Controls;
-using Microsoft.IdentityModel.Tokens;
 using OOO_Bank_NVA.Models;
 using OOO_Bank_NVA.ModelsResponce;
 using System;
 using System.Drawing;
 using System.Globalization;
-using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using File = System.IO.File;
 
@@ -103,9 +100,9 @@ namespace OOO_Bank_NVA.Forms
 
         private void textBoxPrice_TextChanged(object sender, EventArgs e)
         {
-            if(decimal.TryParse(textBoxPrice.Text.Trim(), out var price))
+            if (decimal.TryParse(textBoxPrice.Text.Trim(), out var price))
             {
-                tovar.Price = Math.Round(price,2);
+                tovar.Price = Math.Round(price, 2);
             }
             else
             {

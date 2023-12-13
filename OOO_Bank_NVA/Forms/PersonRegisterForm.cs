@@ -67,48 +67,16 @@ namespace OOO_Bank_NVA.Forms
             ValidatePerson();
         }
 
-        private void maskNumberCardText_TextChanged(object sender, System.EventArgs e)
-        {
-            if (maskNumberCardText.MaskFull)
-            {
-                person.CardName = maskNumberCardText.Text.Trim();
-            }
-            else
-            {
-                person.CardName = string.Empty;
-            }
-        }
-
         private void butCreate_Click(object sender, System.EventArgs e)
         {
-            if(!string.IsNullOrEmpty(person.CardName))
+            using (var db = new ApplicationContext(options))
             {
-                using (var db = new ApplicationContext(options))
+                var personValidate = db.DBBanks.NotDeletedAt().IsPhoneWithLogin(person.Phone);
+                if (personValidate)
                 {
-                    var personValidate = db.DBBanks.IsPhoneWithLogin(person.Phone);
-                    if (personValidate)
-                    {
-                        MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        maskPhoneText.Text = string.Empty;
-                        return;
-                    }
-                    if (!string.IsNullOrEmpty(person.CardName))
-                    {
-
-                        var card = db.Cards.IsCardWithPerson(person.CardName);
-                        if (!card)
-                        {
-                            MessageBox.Show("Ваша карта не найдена!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            maskNumberCardText.Text = string.Empty;
-                            return;
-                        }
-
-                        var cardValidateForm = new CardValidateForm();
-                        this.Hide();
-                        cardValidateForm.ShowDialog();
-                        this.Show();
-
-                    }
+                    MessageBox.Show("Номер уже занят!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    maskPhoneText.Text = string.Empty;
+                    return;
                 }
             }
             DialogResult = DialogResult.OK;

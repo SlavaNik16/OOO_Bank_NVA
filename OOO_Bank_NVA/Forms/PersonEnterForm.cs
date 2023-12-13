@@ -8,13 +8,21 @@ namespace OOO_Bank_NVA.Forms
     public partial class PersonEnterForm : MaterialForm
     {
         private DBBank dbBank;
-        public PersonEnterForm()
+        public PersonEnterForm(bool IsDelete = false)
         {
             InitializeComponent();
 
             dbBank = new DBBank();
             ColorsHelp.ButtonSubmit(butEnter);
             ColorsHelp.ButtonCancel(butCancel);
+
+            if (IsDelete)
+            {
+                this.Text = "Удаление аккаунта";
+                maskPhoneText.ReadOnly = true;
+                maskPhoneText.Text = AuthorizationForm.user.Phone;
+
+            }
         }
 
         public DBBank DBBank => dbBank;
@@ -34,7 +42,7 @@ namespace OOO_Bank_NVA.Forms
 
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
-            dbBank.Password = passwordBox.Text.Length >= 8 ? passwordBox.Text : string.Empty;
+            dbBank.Password = passwordBox.Text.Length >= 8 ? passwordBox.Text.Trim() : string.Empty;
             ValidatePerson();
         }
         private void ValidatePerson()

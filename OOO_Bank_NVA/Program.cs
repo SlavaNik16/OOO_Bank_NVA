@@ -1,5 +1,4 @@
-﻿using OOO_Bank_NVA.Forms;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace OOO_Bank_NVA
@@ -14,7 +13,7 @@ namespace OOO_Bank_NVA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());//new AuthorizationForm());
+            Application.Run(new AuthorizationForm());
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace OOO_Bank_NVA.Migrations
 {
-    public partial class UpdateDb : Migration
+    public partial class EditStringDataEnd2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
