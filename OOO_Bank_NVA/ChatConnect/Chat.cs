@@ -23,7 +23,8 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Чат временно недоступен!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Чат временно недоступен!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Console.WriteLine("Чат временно недоступен!");
             }
         }
 
@@ -38,7 +39,8 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка регистрации пользователя в чате!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Ошибка регистрации пользователя в чате!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Console.WriteLine("Ошибка регистрации пользователя в чате!");
             }
         }
 
@@ -53,7 +55,8 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка обновления пользователя в чате!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Ошибка обновления пользователя в чате!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Console.WriteLine("Ошибка обновления пользователя в чате!");
             }
         }
 
@@ -69,7 +72,8 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка взятие сообщений из чата!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Ошибка взятие сообщений из чата!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Console.WriteLine("Ошибка взятие сообщений из чата!");
             }
         }
 
@@ -84,7 +88,8 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка! Сообщение не было отправлено", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Ошибка! Сообщение не было отправлено", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Console.WriteLine("Ошибка! Сообщение не было отправлено!");
             }
         }
     }

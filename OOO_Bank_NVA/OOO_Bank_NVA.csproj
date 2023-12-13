@@ -328,6 +328,7 @@
     <Compile Include="DB\ConfigurateDB\BasketEntityConfigurate.cs" />
     <Compile Include="DB\ConfigurateDB\TovarEntityConfigurate.cs" />
     <Compile Include="DB\ReadDB\CommonSpec.cs" />
+    <Compile Include="DB\ReadDB\Constants.cs" />
     <Compile Include="DB\WriteDB\BaseWriteRepository.cs" />
     <Compile Include="DB\ConfigurateDB\Anchors\IEntityConfigurateAnchors.cs" />
     <Compile Include="DB\ConfigurateDB\CardEntityConfigurate.cs" />

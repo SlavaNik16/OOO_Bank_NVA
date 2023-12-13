@@ -7,6 +7,7 @@ using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Models;
+using OOO_Bank_NVA.Models.Enums;
 using OOO_Bank_NVA.ModelsResponce;
 using OOO_Bank_NVA.Nuget;
 using System;
@@ -17,6 +18,7 @@ using System.Linq;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Windows.Threading;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 using ListViewItem = System.Windows.Forms.ListViewItem;
 
@@ -31,7 +33,7 @@ namespace OOO_Bank_NVA.Forms
         private readonly BaseWriteRepository<Person> basePersonWriteRepository;
         private readonly BaseWriteRepository<DBBank> baseDBBankWriteRepository;
         private readonly Chat chat;
-
+        private RoleType userRole;
         private ListViewItem listItem;
         public MainForm()
         {
@@ -44,7 +46,7 @@ namespace OOO_Bank_NVA.Forms
             baseDBBankWriteRepository = new BaseWriteRepository<DBBank>();
         }
 
-        public MainForm(Chat chat) : this()
+        public MainForm(Chat chat, RoleType roleType = RoleType.User) : this()
         {
             this.chat = chat;
 
@@ -62,6 +64,17 @@ namespace OOO_Bank_NVA.Forms
                     listBoxChat.Items.Add($"От {fromName}: {message}");
                 }));
             });
+            userRole = roleType;
+            toolStripStatusLabelRole.Text = $"Статус: {userRole.PerevodDescription()}";
+            switch (userRole)
+            {
+                case RoleType.User:
+                    materialTabControlOOOBank.TabPages.RemoveByKey(nameof(tabUsers));
+                    tableLayoutPanelAdd_Edit_RemoveTovars.Visible = false;
+                    break;
+                default:
+                    break;
+            }
         }
         private void materialTabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
@@ -122,7 +135,7 @@ namespace OOO_Bank_NVA.Forms
                 var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == user.CardName);
                 if (card == null) return;
                 maskTextBoxCardName.Text = card.Nomer;
-                textBoxBalance.Text = "Баланс карты: " + $"{card.Balance:C2}";
+                textBoxBalance.Text = $"Баланс карты: ₽ {card.Balance}";
                 maskedTextBoxCVCCode.Text = card.CSCCode.ToString();
                 maskedTextBoxDataEnd.Text = card.DateEnd.ToString();
             }
@@ -142,7 +155,7 @@ namespace OOO_Bank_NVA.Forms
                         Phone = x.Phone.ToString(),
                         Surname = x.Surname.ToString(),
                         Name = x.Name.ToString(),
-                        CardName = x.CardName ?? "Нет",
+                        CardName = x.CardName ?? Constants.Not_Card_Nomer,
                         Gender = x.Gender.PerevodDescription(),
                         Status = b.Status.PerevodDescription(),
                         Role = b.Role.PerevodDescription()
@@ -162,32 +175,6 @@ namespace OOO_Bank_NVA.Forms
                 butStripTranslate.Enabled =
                     dataGridUsers.SelectedRows.Count == 1;
         }
-
-
-
-        //HubConnection connection;
-
-        //try
-        //{
-        //    // отправка сообщения
-        //    await connection.InvokeAsync("Send", "sdfsfd", textBox1.Text);
-        //}
-        //catch (Exception ex)
-        //{
-        //    listBox1.Items.Add(ex.Message);
-        //}
-
-
-        //try
-        //{
-        //    // подключемся к хабу
-        //    await connection.StartAsync();
-        //    listBox1.Items.Add("Вы вошли в чат");
-        //}
-        //catch (Exception ex)
-        //{
-        //    listBox1.Items.Add(ex.Message);
-        //}
 
         #endregion
         private void MainForm_Load(object sender, System.EventArgs e)
@@ -526,10 +513,22 @@ namespace OOO_Bank_NVA.Forms
         private void butTranslate_Click(object sender, EventArgs e)
         {
             var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnCardName"];
+            if (id.Value.ToString() == Constants.Not_Card_Nomer)
+            {
+                MessageBox.Show($"У данного пользователя нет карты!",
+                       "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             using (var db = new ApplicationContext(options))
             {
                 var card = db.Cards.FirstOrDefault(x => x.Nomer == id.Value.ToString());
+                var cardTranslateMoneyForm = new CardTranslateMoneyForm(card.Nomer, card.Balance);
+                this.Hide();
+                if (cardTranslateMoneyForm.ShowDialog() == DialogResult.OK)
+                {
 
+                }
+                this.Show();
             }
         }
     }

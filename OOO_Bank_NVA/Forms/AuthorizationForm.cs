@@ -69,7 +69,7 @@ namespace OOO_Bank_NVA
                     chat.Update(user.Phone);
                     dbBank.Status = StatusType.Online;
                     writeDbBankRepository.Update(dbBank, UserName);
-                    var mainForm = new MainForm(chat);
+                    var mainForm = new MainForm(chat, dbBank.Role);
                     mainForm.ShowDialog();
 
                 }
