@@ -1,5 +1,6 @@
 ﻿using MaterialSkin.Controls;
 using Microsoft.EntityFrameworkCore;
+using OOO_Bank_NVA.ChatConnect;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.DB.ReadDB;
@@ -19,6 +20,7 @@ namespace OOO_Bank_NVA
         private readonly BaseWriteRepository<DBBank> writeDbBankRepository;
         private readonly DbContextOptions<ApplicationContext> options;
         public static string UserName = "";
+        private readonly Chat chat;
         public static Person user { get; private set; }
         public static Person SetCardNameUser(string cardName)
         {
@@ -34,8 +36,8 @@ namespace OOO_Bank_NVA
             ColorsHelp.ButtonSubmit(butReg);
             ColorsHelp.ButtonSubmit(butEnter);
             ColorsHelp.ButtonCancel(butExit);
+            chat = new Chat();
         }
-
         private void butExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -51,7 +53,7 @@ namespace OOO_Bank_NVA
                 using (var db = new ApplicationContext(options))
                 {
                     var dbBankRequest = personEnterForm.DBBank;
-                    var dbBank = db.DBBanks.NotDeletedAt().Authorization(dbBankRequest.Login, dbBankRequest.Password);
+                    var dbBank = db.DBBanks.NotDeletedAt().IsAuthorization(dbBankRequest.Login, dbBankRequest.Password);
 
                     if (dbBank == null)
                     {
@@ -61,13 +63,13 @@ namespace OOO_Bank_NVA
                         return;
                     }
                     var person = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == dbBank.Login);
-
                     user = person;
-                    UserName = $"{person.Surname}_{person.Name}";
 
+                    UserName = $"{person.Surname}_{person.Name}";
+                    chat.Update(user.Phone);
                     dbBank.Status = StatusType.Online;
                     writeDbBankRepository.Update(dbBank, UserName);
-                    var mainForm = new MainForm();
+                    var mainForm = new MainForm(chat);
                     mainForm.ShowDialog();
 
                 }
@@ -87,9 +89,11 @@ namespace OOO_Bank_NVA
                     Login = person.Phone,
                     Password = CommonSpec.getHashSha256(personRegisterForm.Password)
                 };
+                chat.Create(person.Phone);
                 UserName = $"{person.Surname}_{person.Name}";
                 writePersonRepository.Add(person, UserName);
                 writeDbBankRepository.Add(dbbank, UserName);
+               
                 MessageBox.Show("Пользователь успешно зарегистрирован!",
                            "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

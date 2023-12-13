@@ -8,13 +8,21 @@ namespace OOO_Bank_NVA.Forms
     public partial class PersonEnterForm : MaterialForm
     {
         private DBBank dbBank;
-        public PersonEnterForm()
+        public PersonEnterForm(bool IsDelete = false)
         {
             InitializeComponent();
 
             dbBank = new DBBank();
             ColorsHelp.ButtonSubmit(butEnter);
             ColorsHelp.ButtonCancel(butCancel);
+
+            if (IsDelete)
+            {
+                this.Text = "Удаление аккаунта";
+                maskPhoneText.ReadOnly = true;
+                maskPhoneText.Text = AuthorizationForm.user.Phone;
+
+            }
         }
 
         public DBBank DBBank => dbBank;

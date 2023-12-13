@@ -1,8 +1,11 @@
 ﻿using MaterialSkin.Controls;
+using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.EntityFrameworkCore;
+using OOO_Bank_NVA.ChatConnect;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.DB.ReadDB;
+using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Models;
 using OOO_Bank_NVA.ModelsResponce;
 using OOO_Bank_NVA.Nuget;
@@ -10,10 +13,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
-using System.IdentityModel.Tokens;
 using System.Linq;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.Windows.Threading;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 using ListViewItem = System.Windows.Forms.ListViewItem;
 
@@ -26,27 +29,39 @@ namespace OOO_Bank_NVA.Forms
         private readonly BaseWriteRepository<Tovar> baseTovarWriteRepository;
         private readonly BaseWriteRepository<Card> baseCardWriteRepository;
         private readonly BaseWriteRepository<Person> basePersonWriteRepository;
+        private readonly BaseWriteRepository<DBBank> baseDBBankWriteRepository;
+        private readonly Chat chat;
+
         private ListViewItem listItem;
         public MainForm()
         {
             InitializeComponent();
-            // connection = new HubConnectionBuilder()
-            //        .WithUrl("https://localhost:7097/chat")
-            //        .Build();
-
-            // connection.On<string, string>("Send", (message, username) =>
-            //{
-            //    this.Invoke(new Action(() =>
-            //    {
-            //        listBox1.Items.Add($"{username} отправил: {message}");
-            //    }));
-            //});
-
             options = DataBaseHelper.Options();
             baseBasketWriteRepository = new BaseWriteRepository<Basket>();
             baseTovarWriteRepository = new BaseWriteRepository<Tovar>();
             baseCardWriteRepository = new BaseWriteRepository<Card>();
             basePersonWriteRepository = new BaseWriteRepository<Person>();
+            baseDBBankWriteRepository = new BaseWriteRepository<DBBank>();
+        }
+
+        public MainForm(Chat chat) : this()
+        {
+            this.chat = chat;
+
+            chat.GetConnection().On<string, string>("Receive", (fromName, message) =>
+            {
+                Dispatcher.CurrentDispatcher.Invoke(new System.Action(() =>
+                {
+                    listBoxChat.Items.Add($"От {fromName}: {message}");
+                }));
+            });
+            chat.GetConnection().On<string, string>("Send", (fromName, message) =>
+            {
+                Dispatcher.CurrentDispatcher.Invoke(new System.Action(() =>
+                {
+                    listBoxChat.Items.Add($"От {fromName}: {message}");
+                }));
+            });
         }
         private void materialTabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
@@ -57,6 +72,7 @@ namespace OOO_Bank_NVA.Forms
         private void NavigationTab(TabPage tabPage)
         {
             var tabName = tabPage.Name;
+            materialTabControlOOOBank.SelectedTab = tabPage;
             switch (tabName)
             {
                 case nameof(tabUsers):
@@ -69,7 +85,7 @@ namespace OOO_Bank_NVA.Forms
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (result == DialogResult.OK)
                         {
-                            materialTabControl1.SelectedTab = tabProfile;
+                            materialTabControlOOOBank.SelectedTab = tabProfile;
                         }
                     }
                     ResetDataGridTovars();
@@ -80,8 +96,7 @@ namespace OOO_Bank_NVA.Forms
                 case nameof(tabSettings):
                     if (AuthorizationForm.user.CardName != null)
                     {
-                        butEditCard.Visible = false;
-                        butEditCardLabel.Visible = false;
+                        panelButEditCard.Visible = false;
                     }
                     break;
                 case nameof(tabProfile):
@@ -133,13 +148,15 @@ namespace OOO_Bank_NVA.Forms
                         Role = b.Role.PerevodDescription()
                     }).ToList();
             }
+
+            butTranslate.Enabled = AuthorizationForm.user.CardName != null;
         }
         private void dataGridUsers_SelectionChanged(object sender, System.EventArgs e)
         {
 
             butView.Enabled =
                 butStripView.Enabled =
-            butSend.Enabled =
+            butBlocked.Enabled =
                 butStripSend.Enabled =
             butTranslate.Enabled =
                 butStripTranslate.Enabled =
@@ -147,29 +164,7 @@ namespace OOO_Bank_NVA.Forms
         }
 
 
-        //var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnPhone"];
-        //using (var db = new ApplicationContext(options))
-        //{
-        //    var person = db.Persons.FirstOrDefault(x => x.Phone == id.Value.ToString());
-        //    if (person == null) return;
-
-        //    var result = MessageBox.Show($"Вы действительно хотите забанить\n" +
-        //        $"Id: {person.Id}\n" +
-        //        $"Телефон: {person.Phone}\n" +
-        //        $"Фамилия:{person.Surname}\n" +
-        //        $"Имя: {person.Name}", "Предупреждение!",
-        //        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        //    if (result == DialogResult.Yes)
-        //    {
-        //        var bank = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
-        //        bank.Status = StatusType.Blocked;
-        //        baseDBBankWriteRepository.Update(bank, AuthorizationForm.UserName);
-        //        MessageBox.Show($"Пользователь успешно забанен!",
-        //            "Информация!",
-        //        MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        ResetDataGrid();
-        //    }
-        //}
+       
         //HubConnection connection;
 
         //try
@@ -200,11 +195,11 @@ namespace OOO_Bank_NVA.Forms
 
             var butArray = new System.Windows.Forms.Button[]
             {
-                butView, butSend, butTranslate,
+                butView, butBlocked, butTranslate,
                 butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
                 butCancelTovar, butBy,
                 butChangeCard, butChangeCard, butClearChat, butSendChat,
-                butEditPhone, butEditPassword
+                butEditPhone, butEditPassword, butEditCard
             };
             foreach (var but in butArray)
             {
@@ -212,6 +207,7 @@ namespace OOO_Bank_NVA.Forms
             }
             ColorsHelp.ButtonRed(butDeleteAccaunt);
             NavigationTab(tabProfile);
+
         }
         #region Tovars
         private void ResetDataGridTovars()
@@ -431,6 +427,110 @@ namespace OOO_Bank_NVA.Forms
                 NavigationTab(tabProfile);
             }
             this.Show();
+        }
+
+        private void butDeleteAccaunt_Click(object sender, EventArgs e)
+        {
+            var user = AuthorizationForm.user;
+            if (MessageBox.Show("Вы действительно хотите удалить данный аккаунт!!!", "Предупреждение!",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                if (MessageBox.Show($"Все ваши данные будут стерты!" +
+                    $"\n\rФамилия: {user.Surname}" +
+                    $"\n\rИмя: {user.Name}" +
+                    $"\n\rТелефон: {user.Phone}", "Предупреждение!",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    using (var db = new ApplicationContext(options))
+                    {
+                        var personEnterForm = new PersonEnterForm(true);
+                        if (personEnterForm.ShowDialog() == DialogResult.OK)
+                        {
+                            var dbBank = db.DBBanks.IsAuthorization(user.Phone, personEnterForm.DBBank.Password);
+                            if(dbBank == null)
+                            {
+                                MessageBox.Show("Неправильный пароль!!!", "Отказано в удаление",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            baseDBBankWriteRepository.Delete(dbBank);
+                            basePersonWriteRepository.Delete(user);
+                            this.Close();
+                        }
+                        
+                    }
+                      
+                }
+            }
+        }
+
+        private void maskedTextBoxPhoneChat_TextChanged(object sender, EventArgs e)
+        {
+            butClearChat.Enabled = butSendChat.Enabled = maskedTextBoxPhoneChat.MaskFull;
+            listBoxChat.Items.Clear();
+            if (maskedTextBoxPhoneChat.MaskFull)
+            {
+                using (var db = new ApplicationContext(options))
+                {
+                    var isPhone = db.DBBanks.Where(x=>x.Login != AuthorizationForm.user.Phone).IsPhoneWithLogin(maskedTextBoxPhoneChat.Text);
+                    if (!isPhone)
+                    {
+                        maskedTextBoxPhoneChat.Text = string.Empty;
+                        MessageBox.Show("Чат не найден!!!", "Ошибка!",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    chat.Receive(AuthorizationForm.user.Phone, maskedTextBoxPhoneChat.Text);
+                }
+            }
+        }
+
+        private void butSendChat_Click(object sender, EventArgs e)
+        {
+            if(textBoxMessageChat.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Введите какое-нибудь сообщение!!!", "Инофрмация!",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            chat.Send(AuthorizationForm.user.Phone, maskedTextBoxPhoneChat.Text, textBoxMessageChat.Text);
+        }
+
+        private void butBlocked_Click(object sender, EventArgs e)
+        {
+            var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnPhone"];
+            using (var db = new ApplicationContext(options))
+            {
+                var person = db.Persons.FirstOrDefault(x => x.Phone == id.Value.ToString());
+                if (person == null) return;
+
+                var result = MessageBox.Show($"Вы действительно хотите Забанить/Разбанить\n" +
+                    $"Id: {person.Id}\n" +
+                    $"Телефон: {person.Phone}\n" +
+                    $"Фамилия:{person.Surname}\n" +
+                    $"Имя: {person.Name}", "Предупреждение!",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    var bank = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
+                    bank.Status = bank.Status == StatusType.Blocked ? StatusType.Offline : StatusType.Blocked;
+                    baseDBBankWriteRepository.Update(bank, AuthorizationForm.UserName);
+                    MessageBox.Show($"Пользователь успешно {(bank.Status == StatusType.Blocked ? "Забанен" : "Разбанен")}!",
+                        "Информация!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    NavigationTab(tabUsers);
+                }
+            }
+        }
+
+        private void butTranslate_Click(object sender, EventArgs e)
+        {
+            var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnCardName"];
+            using (var db = new ApplicationContext(options))
+            {
+                var card = db.Cards.FirstOrDefault(x => x.Nomer == id.Value.ToString());
+
+            }
         }
     }
 }

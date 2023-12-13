@@ -70,8 +70,8 @@ namespace OOO_Bank_NVA.DB.ReadDB
         /// <summary>
         /// Авторизация
         /// </summary>
-        public static TEntity Authorization<TEntity>(this IQueryable<TEntity> query, string login, string password) where TEntity : DBBank
-            => query.FirstOrDefault(x => x.Login.StartsWith(login) && x.Password == getHashSha256(password));
+        public static TEntity IsAuthorization<TEntity>(this IQueryable<TEntity> query, string login, string password) where TEntity : DBBank
+            => query.NotDeletedAt().FirstOrDefault(x => x.Login.StartsWith(login) && x.Password == getHashSha256(password));
 
         public static string getHashSha256(string text)
         {

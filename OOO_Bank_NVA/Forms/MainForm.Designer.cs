@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.materialTabControlOOOBank = new MaterialSkin.Controls.MaterialTabControl();
             this.tabUsers = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.butView = new System.Windows.Forms.Button();
             this.butTranslate = new System.Windows.Forms.Button();
-            this.butSend = new System.Windows.Forms.Button();
+            this.butBlocked = new System.Windows.Forms.Button();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
             this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,7 +90,7 @@
             this.panel16 = new System.Windows.Forms.Panel();
             this.textBoxNicknameChat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxMessageChat = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.butSendChat = new System.Windows.Forms.Button();
@@ -113,7 +113,7 @@
             this.maskedTextBoxCVCCode = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxDataEnd = new System.Windows.Forms.MaskedTextBox();
             this.maskTextBoxCardName = new System.Windows.Forms.MaskedTextBox();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.panelButEditCard = new System.Windows.Forms.Panel();
             this.maskTextBoxPhone = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -124,13 +124,12 @@
             this.butEditPhone = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.butEditCardLabel = new System.Windows.Forms.Label();
-            this.butEditCard = new System.Windows.Forms.Button();
             this.imageListTag = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBoxBalance = new System.Windows.Forms.ToolStripStatusLabel();
-            this.materialTabControl1.SuspendLayout();
+            this.butEditCard = new System.Windows.Forms.Button();
+            this.materialTabControlOOOBank.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
@@ -164,31 +163,31 @@
             this.panel13.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelSecurityCard.SuspendLayout();
+            this.panelButEditCard.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.panel18.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // materialTabControl1
+            // materialTabControlOOOBank
             // 
-            this.materialTabControl1.Controls.Add(this.tabUsers);
-            this.materialTabControl1.Controls.Add(this.tabTovars);
-            this.materialTabControl1.Controls.Add(this.tabBasket);
-            this.materialTabControl1.Controls.Add(this.tabProfile);
-            this.materialTabControl1.Controls.Add(this.tabSettings);
-            this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialTabControl1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.materialTabControl1.ImageList = this.imageListTag;
-            this.materialTabControl1.Location = new System.Drawing.Point(3, 65);
-            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabControl1.Multiline = true;
-            this.materialTabControl1.Name = "materialTabControl1";
-            this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1500, 706);
-            this.materialTabControl1.TabIndex = 0;
-            this.materialTabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.materialTabControl1_Selecting);
+            this.materialTabControlOOOBank.Controls.Add(this.tabUsers);
+            this.materialTabControlOOOBank.Controls.Add(this.tabTovars);
+            this.materialTabControlOOOBank.Controls.Add(this.tabBasket);
+            this.materialTabControlOOOBank.Controls.Add(this.tabProfile);
+            this.materialTabControlOOOBank.Controls.Add(this.tabSettings);
+            this.materialTabControlOOOBank.Depth = 0;
+            this.materialTabControlOOOBank.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialTabControlOOOBank.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialTabControlOOOBank.ImageList = this.imageListTag;
+            this.materialTabControlOOOBank.Location = new System.Drawing.Point(3, 65);
+            this.materialTabControlOOOBank.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabControlOOOBank.Multiline = true;
+            this.materialTabControlOOOBank.Name = "materialTabControlOOOBank";
+            this.materialTabControlOOOBank.SelectedIndex = 0;
+            this.materialTabControlOOOBank.Size = new System.Drawing.Size(1500, 706);
+            this.materialTabControlOOOBank.TabIndex = 0;
+            this.materialTabControlOOOBank.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.materialTabControl1_Selecting);
             // 
             // tabUsers
             // 
@@ -213,7 +212,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.butView, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.butTranslate, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.butSend, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.butBlocked, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 575);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -234,6 +233,7 @@
             // 
             // butTranslate
             // 
+            this.butTranslate.Enabled = false;
             this.butTranslate.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.butTranslate.Location = new System.Drawing.Point(993, 3);
             this.butTranslate.Name = "butTranslate";
@@ -241,16 +241,18 @@
             this.butTranslate.TabIndex = 4;
             this.butTranslate.Text = "Передать деньги";
             this.butTranslate.UseVisualStyleBackColor = true;
+            this.butTranslate.Click += new System.EventHandler(this.butTranslate_Click);
             // 
-            // butSend
+            // butBlocked
             // 
-            this.butSend.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.butSend.Location = new System.Drawing.Point(498, 3);
-            this.butSend.Name = "butSend";
-            this.butSend.Size = new System.Drawing.Size(488, 83);
-            this.butSend.TabIndex = 3;
-            this.butSend.Text = "Отправить сообщение";
-            this.butSend.UseVisualStyleBackColor = true;
+            this.butBlocked.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.butBlocked.Location = new System.Drawing.Point(498, 3);
+            this.butBlocked.Name = "butBlocked";
+            this.butBlocked.Size = new System.Drawing.Size(488, 83);
+            this.butBlocked.TabIndex = 3;
+            this.butBlocked.Text = "Заблокировать/Разблокировать";
+            this.butBlocked.UseVisualStyleBackColor = true;
+            this.butBlocked.Click += new System.EventHandler(this.butBlocked_Click);
             // 
             // dataGridUsers
             // 
@@ -571,6 +573,7 @@
             this.panelInfoTovar.Name = "panelInfoTovar";
             this.panelInfoTovar.Size = new System.Drawing.Size(483, 657);
             this.panelInfoTovar.TabIndex = 1;
+            this.panelInfoTovar.Visible = false;
             // 
             // label1
             // 
@@ -813,11 +816,11 @@
             // 
             this.panel16.Controls.Add(this.textBoxNicknameChat);
             this.panel16.Controls.Add(this.label2);
-            this.panel16.Controls.Add(this.textBox1);
+            this.panel16.Controls.Add(this.textBoxMessageChat);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(484, 415);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1008, 148);
+            this.panel16.Size = new System.Drawing.Size(1008, 170);
             this.panel16.TabIndex = 4;
             // 
             // textBoxNicknameChat
@@ -827,6 +830,7 @@
             this.textBoxNicknameChat.Name = "textBoxNicknameChat";
             this.textBoxNicknameChat.Size = new System.Drawing.Size(616, 37);
             this.textBoxNicknameChat.TabIndex = 2;
+            this.textBoxNicknameChat.Visible = false;
             // 
             // label2
             // 
@@ -836,23 +840,24 @@
             this.label2.Size = new System.Drawing.Size(269, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Кто пишет(Никнейм):";
+            this.label2.Visible = false;
             // 
-            // textBox1
+            // textBoxMessageChat
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 65);
-            this.textBox1.MaxLength = 500;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(896, 76);
-            this.textBox1.TabIndex = 0;
+            this.textBoxMessageChat.Location = new System.Drawing.Point(9, 64);
+            this.textBoxMessageChat.MaxLength = 500;
+            this.textBoxMessageChat.Multiline = true;
+            this.textBoxMessageChat.Name = "textBoxMessageChat";
+            this.textBoxMessageChat.Size = new System.Drawing.Size(896, 99);
+            this.textBoxMessageChat.TabIndex = 0;
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.tableLayoutPanel5);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(484, 563);
+            this.panel15.Location = new System.Drawing.Point(484, 585);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1008, 100);
+            this.panel15.Size = new System.Drawing.Size(1008, 78);
             this.panel15.TabIndex = 3;
             // 
             // tableLayoutPanel5
@@ -860,7 +865,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.7654F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.2346F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 247F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 248F));
             this.tableLayoutPanel5.Controls.Add(this.butSendChat, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.butClearChat, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.panel17, 1, 0);
@@ -869,27 +874,30 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1008, 100);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1008, 78);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // butSendChat
             // 
             this.butSendChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butSendChat.Enabled = false;
             this.butSendChat.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSendChat.Location = new System.Drawing.Point(763, 3);
+            this.butSendChat.Location = new System.Drawing.Point(762, 3);
             this.butSendChat.Name = "butSendChat";
-            this.butSendChat.Size = new System.Drawing.Size(242, 94);
+            this.butSendChat.Size = new System.Drawing.Size(243, 72);
             this.butSendChat.TabIndex = 11;
             this.butSendChat.Text = "Отправить";
             this.butSendChat.UseVisualStyleBackColor = true;
+            this.butSendChat.Click += new System.EventHandler(this.butSendChat_Click);
             // 
             // butClearChat
             // 
             this.butClearChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butClearChat.Enabled = false;
             this.butClearChat.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.butClearChat.Location = new System.Drawing.Point(3, 3);
             this.butClearChat.Name = "butClearChat";
-            this.butClearChat.Size = new System.Drawing.Size(243, 94);
+            this.butClearChat.Size = new System.Drawing.Size(243, 72);
             this.butClearChat.TabIndex = 10;
             this.butClearChat.Text = "Очистить чат";
             this.butClearChat.UseVisualStyleBackColor = true;
@@ -900,7 +908,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(252, 3);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(505, 94);
+            this.panel17.Size = new System.Drawing.Size(504, 72);
             this.panel17.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -913,19 +921,20 @@
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(505, 94);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.66667F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.33333F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(504, 72);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // maskedTextBoxPhoneChat
             // 
-            this.maskedTextBoxPhoneChat.Location = new System.Drawing.Point(3, 50);
+            this.maskedTextBoxPhoneChat.Location = new System.Drawing.Point(3, 33);
             this.maskedTextBoxPhoneChat.Mask = "(000)-000-00-00";
             this.maskedTextBoxPhoneChat.Name = "maskedTextBoxPhoneChat";
             this.maskedTextBoxPhoneChat.Size = new System.Drawing.Size(496, 37);
             this.maskedTextBoxPhoneChat.TabIndex = 2;
             this.maskedTextBoxPhoneChat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskedTextBoxPhoneChat.TextChanged += new System.EventHandler(this.maskedTextBoxPhoneChat_TextChanged);
             // 
             // label3
             // 
@@ -935,7 +944,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(499, 47);
+            this.label3.Size = new System.Drawing.Size(498, 30);
             this.label3.TabIndex = 2;
             this.label3.Text = "Телефон";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -954,13 +963,6 @@
             this.listBoxChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxChat.FormattingEnabled = true;
             this.listBoxChat.ItemHeight = 30;
-            this.listBoxChat.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
             this.listBoxChat.Location = new System.Drawing.Point(0, 0);
             this.listBoxChat.Name = "listBoxChat";
             this.listBoxChat.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
@@ -1071,7 +1073,7 @@
             // 
             this.panelEditProfile.Controls.Add(this.panel13);
             this.panelEditProfile.Controls.Add(this.groupBox1);
-            this.panelEditProfile.Controls.Add(this.panel12);
+            this.panelEditProfile.Controls.Add(this.panelButEditCard);
             this.panelEditProfile.Location = new System.Drawing.Point(14, 332);
             this.panelEditProfile.Name = "panelEditProfile";
             this.panelEditProfile.Size = new System.Drawing.Size(440, 328);
@@ -1149,12 +1151,14 @@
             this.maskTextBoxCardName.TabIndex = 11;
             this.maskTextBoxCardName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel12
+            // panelButEditCard
             // 
-            this.panel12.Location = new System.Drawing.Point(15, 268);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(406, 46);
-            this.panel12.TabIndex = 7;
+            this.panelButEditCard.Controls.Add(this.butEditCard);
+            this.panelButEditCard.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panelButEditCard.Location = new System.Drawing.Point(15, 268);
+            this.panelButEditCard.Name = "panelButEditCard";
+            this.panelButEditCard.Size = new System.Drawing.Size(406, 46);
+            this.panelButEditCard.TabIndex = 7;
             // 
             // maskTextBoxPhone
             // 
@@ -1234,6 +1238,7 @@
             this.butDeleteAccaunt.TabIndex = 4;
             this.butDeleteAccaunt.Text = "Аккаунт";
             this.butDeleteAccaunt.UseVisualStyleBackColor = true;
+            this.butDeleteAccaunt.Click += new System.EventHandler(this.butDeleteAccaunt_Click);
             // 
             // label5
             // 
@@ -1281,33 +1286,12 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.butEditCardLabel);
-            this.panel18.Controls.Add(this.butEditCard);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel18.Font = new System.Drawing.Font("Times New Roman", 16F);
             this.panel18.Location = new System.Drawing.Point(1015, 0);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(477, 663);
             this.panel18.TabIndex = 0;
-            // 
-            // butEditCardLabel
-            // 
-            this.butEditCardLabel.AutoSize = true;
-            this.butEditCardLabel.Location = new System.Drawing.Point(113, 22);
-            this.butEditCardLabel.Name = "butEditCardLabel";
-            this.butEditCardLabel.Size = new System.Drawing.Size(263, 36);
-            this.butEditCardLabel.TabIndex = 5;
-            this.butEditCardLabel.Text = "Зарегистрировать ";
-            // 
-            // butEditCard
-            // 
-            this.butEditCard.Location = new System.Drawing.Point(17, 80);
-            this.butEditCard.Name = "butEditCard";
-            this.butEditCard.Size = new System.Drawing.Size(446, 83);
-            this.butEditCard.TabIndex = 5;
-            this.butEditCard.Text = "Карту";
-            this.butEditCard.UseVisualStyleBackColor = true;
-            this.butEditCard.Click += new System.EventHandler(this.butEditCard_Click);
             // 
             // imageListTag
             // 
@@ -1347,15 +1331,26 @@
             this.textBoxBalance.Size = new System.Drawing.Size(175, 27);
             this.textBoxBalance.Text = "Баланс карты: 0";
             // 
+            // butEditCard
+            // 
+            this.butEditCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butEditCard.Location = new System.Drawing.Point(0, 0);
+            this.butEditCard.Name = "butEditCard";
+            this.butEditCard.Size = new System.Drawing.Size(406, 46);
+            this.butEditCard.TabIndex = 6;
+            this.butEditCard.Text = "Зарегистрировать карту";
+            this.butEditCard.UseVisualStyleBackColor = true;
+            this.butEditCard.Click += new System.EventHandler(this.butEditCard_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1506, 808);
-            this.Controls.Add(this.materialTabControl1);
+            this.Controls.Add(this.materialTabControlOOOBank);
             this.Controls.Add(this.statusStrip);
             this.DrawerShowIconsWhenHidden = true;
-            this.DrawerTabControl = this.materialTabControl1;
+            this.DrawerTabControl = this.materialTabControlOOOBank;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1506, 808);
             this.MinimizeBox = false;
@@ -1365,7 +1360,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OOO Банк NVA";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.materialTabControl1.ResumeLayout(false);
+            this.materialTabControlOOOBank.ResumeLayout(false);
             this.tabUsers.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
@@ -1404,11 +1399,10 @@
             this.groupBox1.PerformLayout();
             this.panelSecurityCard.ResumeLayout(false);
             this.panelSecurityCard.PerformLayout();
+            this.panelButEditCard.ResumeLayout(false);
             this.tabSettings.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
-            this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -1418,7 +1412,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private MaterialSkin.Controls.MaterialTabControl materialTabControlOOOBank;
         private System.Windows.Forms.TabPage tabTovars;
         private System.Windows.Forms.TabPage tabSettings;
         private System.Windows.Forms.ImageList imageListTag;
@@ -1436,7 +1430,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRole;
         private System.Windows.Forms.Button butTranslate;
-        private System.Windows.Forms.Button butSend;
+        private System.Windows.Forms.Button butBlocked;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TabPage tabProfile;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripDataGridUsers;
@@ -1492,7 +1486,7 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.TextBox textBoxNicknameChat;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxMessageChat;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label3;
@@ -1515,8 +1509,7 @@
         private System.Windows.Forms.Panel panelSecurityCard;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCVCCode;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDataEnd;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label butEditCardLabel;
+        private System.Windows.Forms.Panel panelButEditCard;
         private System.Windows.Forms.Button butEditCard;
     }
 }

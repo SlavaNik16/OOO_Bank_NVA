@@ -134,7 +134,7 @@
             this.butEnter.Enabled = false;
             this.butEnter.HighEmphasis = true;
             this.butEnter.Icon = null;
-            this.butEnter.Location = new System.Drawing.Point(67, 334);
+            this.butEnter.Location = new System.Drawing.Point(68, 334);
             this.butEnter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butEnter.MouseState = MaterialSkin.MouseState.HOVER;
             this.butEnter.Name = "butEnter";

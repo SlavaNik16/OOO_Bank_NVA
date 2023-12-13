@@ -321,6 +321,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatConnect\Chat.cs" />
     <Compile Include="Colors\ColorsHelp.cs" />
     <Compile Include="DB\ApplicationContext.cs" />
     <Compile Include="DB\ConfigurateDB\BaseAuditExtensionConfigurated.cs" />
@@ -345,6 +346,12 @@
     </Compile>
     <Compile Include="Forms\AddTovarForm.Designer.cs">
       <DependentUpon>AddTovarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CardTranslateMoneyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CardTranslateMoneyForm.Designer.cs">
+      <DependentUpon>CardTranslateMoneyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CardValidateForm.cs">
       <SubType>Form</SubType>
@@ -441,6 +448,9 @@
     <EmbeddedResource Include="Forms\AddTovarForm.resx">
       <DependentUpon>AddTovarForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CardTranslateMoneyForm.resx">
+      <DependentUpon>CardTranslateMoneyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CardValidateForm.resx">
       <DependentUpon>CardValidateForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -520,6 +530,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
