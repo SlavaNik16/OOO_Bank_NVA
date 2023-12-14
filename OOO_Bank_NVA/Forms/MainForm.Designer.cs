@@ -232,6 +232,7 @@
             this.butView.TabIndex = 2;
             this.butView.Text = "Просмотреть профиль";
             this.butView.UseVisualStyleBackColor = true;
+            this.butView.Click += new System.EventHandler(this.butView_Click);
             // 
             // butTranslate
             // 
@@ -392,7 +393,7 @@
             this.tabTovars.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabTovars.Name = "tabTovars";
             this.tabTovars.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabTovars.Size = new System.Drawing.Size(992, 416);
+            this.tabTovars.Size = new System.Drawing.Size(992, 414);
             this.tabTovars.TabIndex = 1;
             this.tabTovars.Text = "Товары";
             this.tabTovars.UseVisualStyleBackColor = true;
@@ -586,7 +587,7 @@
             this.panelInfoTovar.Location = new System.Drawing.Point(668, 2);
             this.panelInfoTovar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelInfoTovar.Name = "panelInfoTovar";
-            this.panelInfoTovar.Size = new System.Drawing.Size(322, 412);
+            this.panelInfoTovar.Size = new System.Drawing.Size(322, 410);
             this.panelInfoTovar.TabIndex = 1;
             this.panelInfoTovar.Visible = false;
             // 
@@ -630,7 +631,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.butTovarView, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 307);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 305);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;

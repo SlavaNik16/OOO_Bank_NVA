@@ -22,7 +22,7 @@ namespace OOO_Bank_NVA.Forms
         public decimal GetPrice() => price;
         private void textBoxPrice_TextChanged(object sender, System.EventArgs e)
         {
-            if(!decimal.TryParse(textBoxPrice.Text, out price) && price < 10)
+            if (!decimal.TryParse(textBoxPrice.Text, out price) && price < 10)
             {
                 butAdd.Enabled = false;
             }

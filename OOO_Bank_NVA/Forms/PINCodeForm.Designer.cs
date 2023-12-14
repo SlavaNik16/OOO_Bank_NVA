@@ -38,21 +38,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(51, 117);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(75, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 33);
+            this.label2.Size = new System.Drawing.Size(143, 21);
             this.label2.TabIndex = 6;
             this.label2.Text = "Введите пин-код";
             // 
             // maskedTextBoxPinCode
             // 
             this.maskedTextBoxPinCode.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBoxPinCode.Location = new System.Drawing.Point(20, 155);
-            this.maskedTextBoxPinCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.maskedTextBoxPinCode.Location = new System.Drawing.Point(13, 101);
             this.maskedTextBoxPinCode.Mask = "0-0-0-0";
             this.maskedTextBoxPinCode.Name = "maskedTextBoxPinCode";
-            this.maskedTextBoxPinCode.Size = new System.Drawing.Size(283, 40);
+            this.maskedTextBoxPinCode.PasswordChar = '●';
+            this.maskedTextBoxPinCode.Size = new System.Drawing.Size(259, 29);
             this.maskedTextBoxPinCode.TabIndex = 5;
             this.maskedTextBoxPinCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBoxPinCode.TextChanged += new System.EventHandler(this.maskedTextBoxPinCode_TextChanged);
@@ -65,8 +64,8 @@
             this.materialButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(202, 223);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.materialButton2.Location = new System.Drawing.Point(171, 145);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -86,8 +85,8 @@
             this.butEnter.Enabled = false;
             this.butEnter.HighEmphasis = true;
             this.butEnter.Icon = null;
-            this.butEnter.Location = new System.Drawing.Point(20, 223);
-            this.butEnter.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.butEnter.Location = new System.Drawing.Point(13, 145);
+            this.butEnter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butEnter.MouseState = MaterialSkin.MouseState.HOVER;
             this.butEnter.Name = "butEnter";
             this.butEnter.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -100,14 +99,20 @@
             // 
             // PINCodeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 280);
+            this.ClientSize = new System.Drawing.Size(278, 192);
             this.Controls.Add(this.materialButton2);
             this.Controls.Add(this.butEnter);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.maskedTextBoxPinCode);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(278, 192);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(278, 192);
             this.Name = "PINCodeForm";
+            this.Padding = new System.Windows.Forms.Padding(2, 42, 2, 2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PINCodeForm";
             this.ResumeLayout(false);

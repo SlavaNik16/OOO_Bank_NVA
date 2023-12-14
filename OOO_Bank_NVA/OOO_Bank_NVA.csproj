@@ -384,6 +384,12 @@
     <Compile Include="Forms\PersonRegisterForm.Designer.cs">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PersonViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonViewForm.Designer.cs">
+      <DependentUpon>PersonViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PINCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonRegisterForm.resx">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonViewForm.resx">
+      <DependentUpon>PersonViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PINCodeForm.resx">
       <DependentUpon>PINCodeForm.cs</DependentUpon>

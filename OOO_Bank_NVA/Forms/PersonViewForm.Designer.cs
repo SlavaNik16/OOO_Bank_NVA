@@ -34,10 +34,10 @@
             this.textBoxSurname = new MaterialSkin.Controls.MaterialTextBox2();
             this.panelEditProfile = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.butChangeCard = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.maskTextBoxCardName = new System.Windows.Forms.MaskedTextBox();
             this.maskTextBoxPhone = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.burDelete = new MaterialSkin.Controls.MaterialButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.panel10.SuspendLayout();
@@ -49,6 +49,8 @@
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.panel1);
+            this.panel10.Controls.Add(this.panel13);
             this.panel10.Controls.Add(this.textBoxGender);
             this.panel10.Controls.Add(this.textBoxName);
             this.panel10.Controls.Add(this.textBoxSurname);
@@ -85,7 +87,7 @@
             this.textBoxGender.SelectionLength = 0;
             this.textBoxGender.SelectionStart = 0;
             this.textBoxGender.ShortcutsEnabled = true;
-            this.textBoxGender.Size = new System.Drawing.Size(275, 48);
+            this.textBoxGender.Size = new System.Drawing.Size(285, 48);
             this.textBoxGender.TabIndex = 4;
             this.textBoxGender.TabStop = false;
             this.textBoxGender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -115,7 +117,7 @@
             this.textBoxName.SelectionLength = 0;
             this.textBoxName.SelectionStart = 0;
             this.textBoxName.ShortcutsEnabled = true;
-            this.textBoxName.Size = new System.Drawing.Size(275, 48);
+            this.textBoxName.Size = new System.Drawing.Size(285, 48);
             this.textBoxName.TabIndex = 1;
             this.textBoxName.TabStop = false;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -145,7 +147,7 @@
             this.textBoxSurname.SelectionLength = 0;
             this.textBoxSurname.SelectionStart = 0;
             this.textBoxSurname.ShortcutsEnabled = false;
-            this.textBoxSurname.Size = new System.Drawing.Size(275, 48);
+            this.textBoxSurname.Size = new System.Drawing.Size(285, 48);
             this.textBoxSurname.TabIndex = 0;
             this.textBoxSurname.TabStop = false;
             this.textBoxSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -154,34 +156,21 @@
             // 
             // panelEditProfile
             // 
-            this.panelEditProfile.Controls.Add(this.panel13);
             this.panelEditProfile.Controls.Add(this.groupBox1);
             this.panelEditProfile.Location = new System.Drawing.Point(14, 233);
             this.panelEditProfile.Margin = new System.Windows.Forms.Padding(2);
             this.panelEditProfile.Name = "panelEditProfile";
-            this.panelEditProfile.Size = new System.Drawing.Size(290, 121);
+            this.panelEditProfile.Size = new System.Drawing.Size(290, 83);
             this.panelEditProfile.TabIndex = 3;
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.butChangeCard);
-            this.panel13.Location = new System.Drawing.Point(10, 79);
+            this.panel13.Controls.Add(this.burDelete);
+            this.panel13.Location = new System.Drawing.Point(13, 327);
             this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(271, 30);
+            this.panel13.Size = new System.Drawing.Size(156, 30);
             this.panel13.TabIndex = 8;
-            // 
-            // butChangeCard
-            // 
-            this.butChangeCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butChangeCard.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butChangeCard.Location = new System.Drawing.Point(0, 0);
-            this.butChangeCard.Margin = new System.Windows.Forms.Padding(2);
-            this.butChangeCard.Name = "butChangeCard";
-            this.butChangeCard.Size = new System.Drawing.Size(271, 30);
-            this.butChangeCard.TabIndex = 8;
-            this.butChangeCard.Text = "Поменять карту";
-            this.butChangeCard.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -240,7 +229,7 @@
             this.maskTextBoxPhone.SelectionLength = 0;
             this.maskTextBoxPhone.SelectionStart = 15;
             this.maskTextBoxPhone.ShortcutsEnabled = true;
-            this.maskTextBoxPhone.Size = new System.Drawing.Size(275, 48);
+            this.maskTextBoxPhone.Size = new System.Drawing.Size(285, 48);
             this.maskTextBoxPhone.SkipLiterals = true;
             this.maskTextBoxPhone.TabIndex = 7;
             this.maskTextBoxPhone.TabStop = false;
@@ -251,31 +240,54 @@
             this.maskTextBoxPhone.UseSystemPasswordChar = false;
             this.maskTextBoxPhone.ValidatingType = null;
             // 
+            // burDelete
+            // 
+            this.burDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.burDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.burDelete.Depth = 0;
+            this.burDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.burDelete.HighEmphasis = true;
+            this.burDelete.Icon = null;
+            this.burDelete.Location = new System.Drawing.Point(0, 0);
+            this.burDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.burDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.burDelete.Name = "burDelete";
+            this.burDelete.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.burDelete.Size = new System.Drawing.Size(156, 30);
+            this.burDelete.TabIndex = 0;
+            this.burDelete.Text = "Удалить аккаунт";
+            this.burDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.burDelete.UseAccentColor = false;
+            this.burDelete.UseVisualStyleBackColor = true;
+            this.burDelete.Click += new System.EventHandler(this.burDelete_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.materialButton1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(326, 64);
+            this.panel1.Location = new System.Drawing.Point(185, 327);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 366);
-            this.panel1.TabIndex = 2;
+            this.panel1.Size = new System.Drawing.Size(119, 30);
+            this.panel1.TabIndex = 9;
             // 
             // materialButton1
             // 
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton1.Depth = 0;
+            this.materialButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.materialButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(102, 312);
+            this.materialButton1.Location = new System.Drawing.Point(0, 0);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(162, 36);
+            this.materialButton1.Size = new System.Drawing.Size(119, 30);
             this.materialButton1.TabIndex = 0;
-            this.materialButton1.Text = "Удалить аккаунт";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.Text = "Назад";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
             // 
@@ -283,15 +295,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 433);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(332, 433);
             this.Controls.Add(this.panel10);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(332, 433);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(332, 433);
             this.Name = "PersonViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Профиль пользователя";
             this.panel10.ResumeLayout(false);
             this.panelEditProfile.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -308,10 +324,10 @@
         private MaterialSkin.Controls.MaterialTextBox2 textBoxSurname;
         private System.Windows.Forms.Panel panelEditProfile;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button butChangeCard;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox maskTextBoxCardName;
         private MaterialSkin.Controls.MaterialMaskedTextBox maskTextBoxPhone;
+        private MaterialSkin.Controls.MaterialButton burDelete;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
     }

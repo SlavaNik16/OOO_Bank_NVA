@@ -18,7 +18,6 @@ using System.Linq;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Windows.Threading;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using ApplicationContext = OOO_Bank_NVA.DB.ApplicationContext;
 using ListViewItem = System.Windows.Forms.ListViewItem;
 
@@ -538,6 +537,17 @@ namespace OOO_Bank_NVA.Forms
         private void butClearChat_Click(object sender, EventArgs e)
         {
             listBoxChat.Items.Clear();
+        }
+
+        private void butView_Click(object sender, EventArgs e)
+        {
+            var personViewForm = new PersonViewForm(AuthorizationForm.user);
+            this.Hide();
+            if (personViewForm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+            this.Show();
         }
     }
 }
