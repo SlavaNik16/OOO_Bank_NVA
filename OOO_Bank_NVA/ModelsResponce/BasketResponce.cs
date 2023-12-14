@@ -1,5 +1,8 @@
 ﻿namespace OOO_Bank_NVA.ModelsResponce
 {
+    /// <summary>
+    /// Класс вывода корзины
+    /// </summary>
     public class BasketResponce
     {
         /// <summary>

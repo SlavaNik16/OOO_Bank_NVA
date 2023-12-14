@@ -4,6 +4,7 @@ using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.ModelsResponce;
+using OOO_Bank_NVA.Nuget;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -11,10 +12,10 @@ using System.Windows.Forms;
 
 namespace OOO_Bank_NVA.Forms
 {
-    public partial class FiltrAndSortTovarForm : MaterialForm
+    public partial class FiltrAndSortUsersForm : MaterialForm
     {
         private DbContextOptions<DB.ApplicationContext> options;
-        public FiltrAndSortTovarForm()
+        public FiltrAndSortUsersForm()
         {
             InitializeComponent();
             options = DataBaseHelper.Options();
@@ -26,28 +27,35 @@ namespace OOO_Bank_NVA.Forms
 
         }
         public DataGridView GetDataGridView()
-            => dataGridViewTovar;
+            => dataGridUsers;
 
-        private IEnumerable<TovarResponce> GetTovarList()
+        private IEnumerable<UserResponce> GetTovarList()
         {
-            var list = new List<TovarResponce>();
+            var list = new List<UserResponce>();
             using (var db = new DB.ApplicationContext(options))
             {
-                list = db.Tovars.AsNoTracking().NotDeletedAt().OrderBy(x => x.Title).Select(x => new TovarResponce
-                {
-                    Id = x.Id,
-                    MaxCount = x.MaxCount,
-                    Price = x.Price,
-                    Title = x.Title,
-                    Description = x.Description,
-                    Photo = x.Photo,
-                }).ToList();
+                list = db.Persons
+                    .NotDeletedAt()
+                    .OrderBy(x => x.Phone)
+                    .Where(s => s.Phone != AuthorizationForm.user.Phone)
+                    .Join(db.DBBanks.NotDeletedAt(), x => x.Phone, b => b.Login,
+                    (x, b) => new UserResponce
+                    {
+                        Id = x.Id,
+                        Phone = x.Phone.ToString(),
+                        Surname = x.Surname.ToString(),
+                        Name = x.Name.ToString(),
+                        CardName = x.CardName ?? Constants.Not_Card_Nomer,
+                        Gender = x.Gender.PerevodDescription(),
+                        Status = b.Status.PerevodDescription(),
+                        Role = b.Role.PerevodDescription()
+                    }).ToList();
             }
             return list;
         }
         private void DataGridReset()
         {
-            dataGridViewTovar.DataSource = GetTovarList();
+            dataGridUsers.DataSource = GetTovarList();
         }
         private void butSort_Click(object sender, System.EventArgs e)
         {
@@ -56,7 +64,7 @@ namespace OOO_Bank_NVA.Forms
                 var list = GetTovarList();
                 using (var db = new DB.ApplicationContext(options))
                 {
-                    switch (dataGridViewTovar.Columns[listBoxSort.SelectedIndex + 1].DataPropertyName)
+                    switch (dataGridUsers.Columns[listBoxSort.SelectedIndex + 1].DataPropertyName)
                     {
                         case "Title":
                             list = radioAsc.Checked ? list.OrderBy(x => x.Title).ToList() : list.OrderByDescending(x => x.Title).ToList();
@@ -69,7 +77,7 @@ namespace OOO_Bank_NVA.Forms
                             break;
                     }
 
-                    dataGridViewTovar.DataSource = list;
+                    dataGridUsers.DataSource = list;
                 }
             }
         }
@@ -82,23 +90,23 @@ namespace OOO_Bank_NVA.Forms
         private void butSearch_Click(object sender, System.EventArgs e)
         {
             var isSearch = false;
-            for (int i = 0; i < dataGridViewTovar.ColumnCount; i++)
+            for (int i = 0; i < dataGridUsers.ColumnCount; i++)
             {
-                for (int j = 0; j < dataGridViewTovar.RowCount; j++)
+                for (int j = 0; j < dataGridUsers.RowCount; j++)
                 {
-                    dataGridViewTovar[i, j].Style.BackColor = Color.FromArgb(255, 255, 251, 217);
-                    dataGridViewTovar[i, j].Style.ForeColor = Color.Black;
+                    dataGridUsers[i, j].Style.BackColor = Color.FromArgb(255, 255, 251, 217);
+                    dataGridUsers[i, j].Style.ForeColor = Color.Black;
                 }
             }
-            for (int i = 0; i < dataGridViewTovar.RowCount; i++)
+            for (int i = 0; i < dataGridUsers.RowCount; i++)
             {
-                for (int j = 0; j < dataGridViewTovar.ColumnCount; j++)
+                for (int j = 0; j < dataGridUsers.ColumnCount; j++)
                 {
-                    if (dataGridViewTovar.Rows[i].Cells[j].Value.ToString().Contains(searchBox.Text))
+                    if (dataGridUsers.Rows[i].Cells[j].Value.ToString().Contains(searchBox.Text))
                     {
                         isSearch = true;
-                        dataGridViewTovar.Rows[i].Cells[j].Style.BackColor = Color.AliceBlue;
-                        dataGridViewTovar.Rows[i].Cells[j].Style.ForeColor = Color.Blue;
+                        dataGridUsers.Rows[i].Cells[j].Style.BackColor = Color.AliceBlue;
+                        dataGridUsers.Rows[i].Cells[j].Style.ForeColor = Color.Blue;
                     }
                 }
             }
@@ -116,27 +124,13 @@ namespace OOO_Bank_NVA.Forms
 
         private void butExport_Click(object sender, System.EventArgs e)
         {
-            Nuget.Export.CreateExcelSheet(dataGridViewTovar, "Список товаров");
-        }
-
-        private void priceBox_TextChanged(object sender, System.EventArgs e)
-        {
-            butFiltr.Enabled =
-               !string.IsNullOrWhiteSpace(priceBox.Text);
+            Nuget.Export.CreateExcelSheet(dataGridUsers, "Список пользователей");
         }
 
         private void butFiltr_Click(object sender, System.EventArgs e)
         {
             var list = GetTovarList();
-            dataGridViewTovar.DataSource = list.Where(x => x.Price >= int.Parse(priceBox.Text)).ToList();
-        }
-
-        private void priceBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && (e.KeyChar != 8))
-            {
-                e.Handled = true;
-            }
+            dataGridUsers.DataSource = list.Where(x => x.Status == comboBoxStatus.SelectedItem || x.Role == comboBoxRole.SelectedItem).ToList();
         }
     }
 }

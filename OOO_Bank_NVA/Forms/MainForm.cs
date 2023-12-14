@@ -146,10 +146,12 @@ namespace OOO_Bank_NVA.Forms
             {
                 dataGridUsers.DataSource = db.Persons
                     .NotDeletedAt()
+                    .OrderBy(x=>x.Phone)
                     .Where(s => s.Phone != AuthorizationForm.user.Phone)
                     .Join(db.DBBanks.NotDeletedAt(), x => x.Phone, b => b.Login,
-                    (x, b) => new
+                    (x, b) => new UserResponce
                     {
+                        Id = x.Id,
                         Phone = x.Phone.ToString(),
                         Surname = x.Surname.ToString(),
                         Name = x.Name.ToString(),
@@ -174,7 +176,7 @@ namespace OOO_Bank_NVA.Forms
 
             var butArray = new System.Windows.Forms.Button[]
             {
-                butView,
+                butView,butFiltrAndSortUsers,
                 butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
                 butCancelTovar, butBy,
                 butChangeCard, butChangeCard, butClearChat, butSendChat,
@@ -482,10 +484,10 @@ namespace OOO_Bank_NVA.Forms
 
         private void butView_Click(object sender, EventArgs e)
         {
-            var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnPhone"];
+            var id = (UserResponce)dataGridTovar.Rows[dataGridTovar.SelectedRows[0].Index].DataBoundItem;
             using (var db = new ApplicationContext(options))
             {
-                var user = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == id.Value.ToString());
+                var user = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == id.Phone);
                 if (user == null) return;
                 var personViewForm = new PersonViewForm(user);
                 this.Hide();
@@ -495,6 +497,17 @@ namespace OOO_Bank_NVA.Forms
                 }
                 this.Show();
             }
+        }
+
+        private void butFiltrAndSortUsers_Click(object sender, EventArgs e)
+        {
+            var filtrAndSortUserForm = new FiltrAndSortTovarForm();
+            this.Hide();
+            if (filtrAndSortUserForm.ShowDialog() == DialogResult.OK)
+            {
+                dataGridUsers.DataSource = filtrAndSortUserForm.GetDataGridView().DataSource;
+            }
+            this.Show();
         }
     }
 }

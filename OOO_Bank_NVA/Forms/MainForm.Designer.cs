@@ -35,13 +35,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.butView = new System.Windows.Forms.Button();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
-            this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStripDataGridUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.butStripView = new System.Windows.Forms.ToolStripMenuItem();
             this.tabTovars = new System.Windows.Forms.TabPage();
@@ -123,6 +116,15 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBoxBalance = new System.Windows.Forms.ToolStripStatusLabel();
+            this.butFiltrAndSortUsers = new System.Windows.Forms.Button();
+            this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialTabControlOOOBank.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -205,6 +207,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.butView, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.butFiltrAndSortUsers, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 575);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -215,10 +218,11 @@
             // 
             // butView
             // 
+            this.butView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butView.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.butView.Location = new System.Drawing.Point(3, 3);
             this.butView.Name = "butView";
-            this.butView.Size = new System.Drawing.Size(488, 83);
+            this.butView.Size = new System.Drawing.Size(489, 83);
             this.butView.TabIndex = 2;
             this.butView.Text = "Просмотреть профиль";
             this.butView.UseVisualStyleBackColor = true;
@@ -238,7 +242,8 @@
             this.ColumnGender,
             this.ColumnCardName,
             this.ColumnStatus,
-            this.ColumnRole});
+            this.ColumnRole,
+            this.ColumnUserId});
             this.dataGridUsers.ContextMenuStrip = this.contextMenuStripDataGridUsers;
             this.dataGridUsers.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridUsers.Location = new System.Drawing.Point(3, 3);
@@ -251,72 +256,6 @@
             this.dataGridUsers.Size = new System.Drawing.Size(1486, 572);
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.SelectionChanged += new System.EventHandler(this.dataGridUsers_SelectionChanged);
-            // 
-            // ColumnPhone
-            // 
-            this.ColumnPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnPhone.DataPropertyName = "Phone";
-            this.ColumnPhone.HeaderText = "Телефон";
-            this.ColumnPhone.MinimumWidth = 8;
-            this.ColumnPhone.Name = "ColumnPhone";
-            this.ColumnPhone.ReadOnly = true;
-            // 
-            // ColumnSurname
-            // 
-            this.ColumnSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnSurname.DataPropertyName = "Surname";
-            this.ColumnSurname.HeaderText = "Фамилия";
-            this.ColumnSurname.MinimumWidth = 8;
-            this.ColumnSurname.Name = "ColumnSurname";
-            this.ColumnSurname.ReadOnly = true;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnName.DataPropertyName = "Name";
-            this.ColumnName.HeaderText = "Имя";
-            this.ColumnName.MinimumWidth = 8;
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            // 
-            // ColumnGender
-            // 
-            this.ColumnGender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnGender.DataPropertyName = "Gender";
-            this.ColumnGender.HeaderText = "Пол";
-            this.ColumnGender.MinimumWidth = 8;
-            this.ColumnGender.Name = "ColumnGender";
-            this.ColumnGender.ReadOnly = true;
-            this.ColumnGender.Width = 94;
-            // 
-            // ColumnCardName
-            // 
-            this.ColumnCardName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnCardName.DataPropertyName = "CardName";
-            this.ColumnCardName.HeaderText = "Номер карты";
-            this.ColumnCardName.MinimumWidth = 8;
-            this.ColumnCardName.Name = "ColumnCardName";
-            this.ColumnCardName.ReadOnly = true;
-            // 
-            // ColumnStatus
-            // 
-            this.ColumnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnStatus.DataPropertyName = "Status";
-            this.ColumnStatus.HeaderText = "Статус";
-            this.ColumnStatus.MinimumWidth = 8;
-            this.ColumnStatus.Name = "ColumnStatus";
-            this.ColumnStatus.ReadOnly = true;
-            this.ColumnStatus.Width = 132;
-            // 
-            // ColumnRole
-            // 
-            this.ColumnRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnRole.DataPropertyName = "Role";
-            this.ColumnRole.HeaderText = "Права";
-            this.ColumnRole.MinimumWidth = 8;
-            this.ColumnRole.Name = "ColumnRole";
-            this.ColumnRole.ReadOnly = true;
-            this.ColumnRole.Width = 124;
             // 
             // contextMenuStripDataGridUsers
             // 
@@ -343,7 +282,7 @@
             this.tabTovars.Location = new System.Drawing.Point(4, 39);
             this.tabTovars.Name = "tabTovars";
             this.tabTovars.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabTovars.Size = new System.Drawing.Size(1492, 660);
+            this.tabTovars.Size = new System.Drawing.Size(1492, 663);
             this.tabTovars.TabIndex = 1;
             this.tabTovars.Text = "Товары";
             this.tabTovars.UseVisualStyleBackColor = true;
@@ -528,7 +467,7 @@
             this.panelInfoTovar.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelInfoTovar.Location = new System.Drawing.Point(1006, 3);
             this.panelInfoTovar.Name = "panelInfoTovar";
-            this.panelInfoTovar.Size = new System.Drawing.Size(483, 654);
+            this.panelInfoTovar.Size = new System.Drawing.Size(483, 657);
             this.panelInfoTovar.TabIndex = 1;
             this.panelInfoTovar.Visible = false;
             // 
@@ -569,7 +508,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.butTovarView, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 492);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 495);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.2795F));
@@ -597,7 +536,7 @@
             this.tabBasket.Location = new System.Drawing.Point(4, 39);
             this.tabBasket.Name = "tabBasket";
             this.tabBasket.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabBasket.Size = new System.Drawing.Size(1492, 660);
+            this.tabBasket.Size = new System.Drawing.Size(1492, 663);
             this.tabBasket.TabIndex = 3;
             this.tabBasket.Text = "Корзина";
             this.tabBasket.UseVisualStyleBackColor = true;
@@ -608,7 +547,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(1141, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(348, 654);
+            this.panel4.Size = new System.Drawing.Size(348, 657);
             this.panel4.TabIndex = 1;
             // 
             // panel6
@@ -617,7 +556,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(-2, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(350, 654);
+            this.panel6.Size = new System.Drawing.Size(350, 657);
             this.panel6.TabIndex = 4;
             // 
             // panel5
@@ -626,14 +565,14 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 654);
+            this.panel5.Size = new System.Drawing.Size(350, 657);
             this.panel5.TabIndex = 4;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.butBy);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 554);
+            this.panel9.Location = new System.Drawing.Point(0, 557);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(350, 100);
             this.panel9.TabIndex = 0;
@@ -657,7 +596,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1138, 654);
+            this.panel1.Size = new System.Drawing.Size(1138, 657);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -668,7 +607,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1138, 654);
+            this.panel3.Size = new System.Drawing.Size(1138, 657);
             this.panel3.TabIndex = 1;
             // 
             // panel8
@@ -677,7 +616,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1138, 554);
+            this.panel8.Size = new System.Drawing.Size(1138, 557);
             this.panel8.TabIndex = 2;
             // 
             // listView
@@ -700,7 +639,7 @@
             this.listView.OwnerDraw = true;
             this.listView.Scrollable = false;
             this.listView.ShowGroups = false;
-            this.listView.Size = new System.Drawing.Size(1138, 554);
+            this.listView.Size = new System.Drawing.Size(1138, 557);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -737,7 +676,7 @@
             // 
             this.panel7.Controls.Add(this.butCancelTovar);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 554);
+            this.panel7.Location = new System.Drawing.Point(0, 557);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1138, 100);
             this.panel7.TabIndex = 1;
@@ -764,7 +703,7 @@
             this.tabProfile.ImageKey = "User.png";
             this.tabProfile.Location = new System.Drawing.Point(4, 39);
             this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Size = new System.Drawing.Size(1492, 660);
+            this.tabProfile.Size = new System.Drawing.Size(1492, 663);
             this.tabProfile.TabIndex = 4;
             this.tabProfile.Text = "Профиль";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -775,7 +714,7 @@
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(484, 415);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1008, 140);
+            this.panel16.Size = new System.Drawing.Size(1008, 143);
             this.panel16.TabIndex = 4;
             // 
             // textBoxMessageChat
@@ -791,7 +730,7 @@
             // 
             this.panel15.Controls.Add(this.tableLayoutPanel5);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(484, 555);
+            this.panel15.Location = new System.Drawing.Point(484, 558);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1008, 105);
             this.panel15.TabIndex = 3;
@@ -916,7 +855,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(484, 660);
+            this.panel10.Size = new System.Drawing.Size(484, 663);
             this.panel10.TabIndex = 0;
             // 
             // textBoxGender
@@ -1159,7 +1098,7 @@
             this.tabSettings.ImageKey = "Settings.png";
             this.tabSettings.Location = new System.Drawing.Point(4, 39);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(1492, 660);
+            this.tabSettings.Size = new System.Drawing.Size(1492, 663);
             this.tabSettings.TabIndex = 2;
             this.tabSettings.Text = "Настройки";
             this.tabSettings.UseVisualStyleBackColor = true;
@@ -1175,7 +1114,7 @@
             this.panel20.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel20.Location = new System.Drawing.Point(423, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(592, 660);
+            this.panel20.Size = new System.Drawing.Size(592, 663);
             this.panel20.TabIndex = 2;
             // 
             // butDeleteAccaunt
@@ -1229,7 +1168,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel19.Location = new System.Drawing.Point(0, 0);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(423, 660);
+            this.panel19.Size = new System.Drawing.Size(423, 663);
             this.panel19.TabIndex = 1;
             // 
             // panel18
@@ -1238,7 +1177,7 @@
             this.panel18.Font = new System.Drawing.Font("Times New Roman", 16F);
             this.panel18.Location = new System.Drawing.Point(1015, 0);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(477, 660);
+            this.panel18.Size = new System.Drawing.Size(477, 663);
             this.panel18.TabIndex = 0;
             // 
             // imageListTag
@@ -1278,6 +1217,94 @@
             this.textBoxBalance.Name = "textBoxBalance";
             this.textBoxBalance.Size = new System.Drawing.Size(175, 27);
             this.textBoxBalance.Text = "Баланс карты: 0";
+            // 
+            // butFiltrAndSortUsers
+            // 
+            this.butFiltrAndSortUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butFiltrAndSortUsers.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.butFiltrAndSortUsers.Location = new System.Drawing.Point(993, 3);
+            this.butFiltrAndSortUsers.Name = "butFiltrAndSortUsers";
+            this.butFiltrAndSortUsers.Size = new System.Drawing.Size(490, 83);
+            this.butFiltrAndSortUsers.TabIndex = 3;
+            this.butFiltrAndSortUsers.Text = "Фильтровать/Сортировать";
+            this.butFiltrAndSortUsers.UseVisualStyleBackColor = true;
+            this.butFiltrAndSortUsers.Click += new System.EventHandler(this.butFiltrAndSortUsers_Click);
+            // 
+            // ColumnPhone
+            // 
+            this.ColumnPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnPhone.DataPropertyName = "Phone";
+            this.ColumnPhone.HeaderText = "Телефон";
+            this.ColumnPhone.MinimumWidth = 8;
+            this.ColumnPhone.Name = "ColumnPhone";
+            this.ColumnPhone.ReadOnly = true;
+            // 
+            // ColumnSurname
+            // 
+            this.ColumnSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnSurname.DataPropertyName = "Surname";
+            this.ColumnSurname.HeaderText = "Фамилия";
+            this.ColumnSurname.MinimumWidth = 8;
+            this.ColumnSurname.Name = "ColumnSurname";
+            this.ColumnSurname.ReadOnly = true;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnName.DataPropertyName = "Name";
+            this.ColumnName.HeaderText = "Имя";
+            this.ColumnName.MinimumWidth = 8;
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            // 
+            // ColumnGender
+            // 
+            this.ColumnGender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnGender.DataPropertyName = "Gender";
+            this.ColumnGender.HeaderText = "Пол";
+            this.ColumnGender.MinimumWidth = 8;
+            this.ColumnGender.Name = "ColumnGender";
+            this.ColumnGender.ReadOnly = true;
+            this.ColumnGender.Width = 94;
+            // 
+            // ColumnCardName
+            // 
+            this.ColumnCardName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnCardName.DataPropertyName = "CardName";
+            this.ColumnCardName.HeaderText = "Номер карты";
+            this.ColumnCardName.MinimumWidth = 8;
+            this.ColumnCardName.Name = "ColumnCardName";
+            this.ColumnCardName.ReadOnly = true;
+            // 
+            // ColumnStatus
+            // 
+            this.ColumnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnStatus.DataPropertyName = "Status";
+            this.ColumnStatus.HeaderText = "Статус";
+            this.ColumnStatus.MinimumWidth = 8;
+            this.ColumnStatus.Name = "ColumnStatus";
+            this.ColumnStatus.ReadOnly = true;
+            this.ColumnStatus.Width = 132;
+            // 
+            // ColumnRole
+            // 
+            this.ColumnRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnRole.DataPropertyName = "Role";
+            this.ColumnRole.HeaderText = "Права";
+            this.ColumnRole.MinimumWidth = 8;
+            this.ColumnRole.Name = "ColumnRole";
+            this.ColumnRole.ReadOnly = true;
+            this.ColumnRole.Width = 124;
+            // 
+            // ColumnUserId
+            // 
+            this.ColumnUserId.DataPropertyName = "Id";
+            this.ColumnUserId.HeaderText = "№";
+            this.ColumnUserId.MinimumWidth = 8;
+            this.ColumnUserId.Name = "ColumnUserId";
+            this.ColumnUserId.ReadOnly = true;
+            this.ColumnUserId.Visible = false;
+            this.ColumnUserId.Width = 150;
             // 
             // MainForm
             // 
@@ -1359,13 +1386,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelRole;
         private System.Windows.Forms.DataGridView dataGridUsers;
         private System.Windows.Forms.Button butView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSurname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCardName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRole;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TabPage tabProfile;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripDataGridUsers;
@@ -1442,5 +1462,14 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDataEnd;
         private System.Windows.Forms.Panel panelButEditCard;
         private System.Windows.Forms.Button butEditCard;
+        private System.Windows.Forms.Button butFiltrAndSortUsers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSurname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCardName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUserId;
     }
 }

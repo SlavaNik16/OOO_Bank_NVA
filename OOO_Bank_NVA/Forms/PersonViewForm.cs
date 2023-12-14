@@ -60,7 +60,11 @@ namespace OOO_Bank_NVA.Forms
                 if (cardTranslateMoneyForm.ShowDialog() == DialogResult.OK)
                 {
                     cardOther.Balance += cardTranslateMoneyForm.GetPrice();
+                    cardUser.Balance -= cardTranslateMoneyForm.GetPrice();
                     baseCardWriteRepository.Update(cardOther);
+                    baseCardWriteRepository.Update(cardUser);
+                    MessageBox.Show($"Перевод успешно выполнен!",
+                       "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.Show();
             }
