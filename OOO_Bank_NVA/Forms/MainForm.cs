@@ -521,15 +521,23 @@ namespace OOO_Bank_NVA.Forms
             }
             using (var db = new ApplicationContext(options))
             {
-                var card = db.Cards.FirstOrDefault(x => x.Nomer == id.Value.ToString());
-                var cardTranslateMoneyForm = new CardTranslateMoneyForm(card.Nomer, card.Balance);
+                var cardOther = db.Cards.FirstOrDefault(x => x.Nomer == id.Value.ToString());
+                var cardUser = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == AuthorizationForm.user.CardName);
+                var cardTranslateMoneyForm = new CardTranslateMoneyForm(cardUser.Nomer, cardUser.Balance);
                 this.Hide();
                 if (cardTranslateMoneyForm.ShowDialog() == DialogResult.OK)
                 {
-
+                    cardOther.Balance += cardTranslateMoneyForm.GetPrice();
+                    baseCardWriteRepository.Update(cardOther);
+                    NavigationTab(tabUsers);
                 }
                 this.Show();
             }
+        }
+
+        private void butClearChat_Click(object sender, EventArgs e)
+        {
+            listBoxChat.Items.Clear();
         }
     }
 }

@@ -178,12 +178,13 @@
             this.materialTabControlOOOBank.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControlOOOBank.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.materialTabControlOOOBank.ImageList = this.imageListTag;
-            this.materialTabControlOOOBank.Location = new System.Drawing.Point(3, 65);
+            this.materialTabControlOOOBank.Location = new System.Drawing.Point(2, 42);
+            this.materialTabControlOOOBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.materialTabControlOOOBank.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControlOOOBank.Multiline = true;
             this.materialTabControlOOOBank.Name = "materialTabControlOOOBank";
             this.materialTabControlOOOBank.SelectedIndex = 0;
-            this.materialTabControlOOOBank.Size = new System.Drawing.Size(1500, 706);
+            this.materialTabControlOOOBank.Size = new System.Drawing.Size(1000, 457);
             this.materialTabControlOOOBank.TabIndex = 0;
             this.materialTabControlOOOBank.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.materialTabControl1_Selecting);
             // 
@@ -194,9 +195,10 @@
             this.tabUsers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabUsers.ImageKey = "Users.png";
             this.tabUsers.Location = new System.Drawing.Point(4, 39);
+            this.tabUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabUsers.Name = "tabUsers";
-            this.tabUsers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUsers.Size = new System.Drawing.Size(1492, 663);
+            this.tabUsers.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabUsers.Size = new System.Drawing.Size(992, 414);
             this.tabUsers.TabIndex = 0;
             this.tabUsers.Text = "Пользователи";
             this.tabUsers.ToolTipText = "Привет";
@@ -212,19 +214,21 @@
             this.tableLayoutPanel1.Controls.Add(this.butTranslate, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.butBlocked, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 575);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 374);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1486, 89);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(988, 58);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // butView
             // 
             this.butView.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.butView.Location = new System.Drawing.Point(3, 3);
+            this.butView.Location = new System.Drawing.Point(2, 2);
+            this.butView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butView.Name = "butView";
-            this.butView.Size = new System.Drawing.Size(488, 83);
+            this.butView.Size = new System.Drawing.Size(325, 54);
             this.butView.TabIndex = 2;
             this.butView.Text = "Просмотреть профиль";
             this.butView.UseVisualStyleBackColor = true;
@@ -233,9 +237,10 @@
             // 
             this.butTranslate.Enabled = false;
             this.butTranslate.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.butTranslate.Location = new System.Drawing.Point(993, 3);
+            this.butTranslate.Location = new System.Drawing.Point(660, 2);
+            this.butTranslate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butTranslate.Name = "butTranslate";
-            this.butTranslate.Size = new System.Drawing.Size(489, 83);
+            this.butTranslate.Size = new System.Drawing.Size(326, 54);
             this.butTranslate.TabIndex = 4;
             this.butTranslate.Text = "Передать деньги";
             this.butTranslate.UseVisualStyleBackColor = true;
@@ -244,9 +249,10 @@
             // butBlocked
             // 
             this.butBlocked.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.butBlocked.Location = new System.Drawing.Point(498, 3);
+            this.butBlocked.Location = new System.Drawing.Point(331, 2);
+            this.butBlocked.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butBlocked.Name = "butBlocked";
-            this.butBlocked.Size = new System.Drawing.Size(488, 83);
+            this.butBlocked.Size = new System.Drawing.Size(325, 54);
             this.butBlocked.TabIndex = 3;
             this.butBlocked.Text = "Заблокировать/Разблокировать";
             this.butBlocked.UseVisualStyleBackColor = true;
@@ -269,14 +275,15 @@
             this.ColumnRole});
             this.dataGridUsers.ContextMenuStrip = this.contextMenuStripDataGridUsers;
             this.dataGridUsers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridUsers.Location = new System.Drawing.Point(3, 3);
+            this.dataGridUsers.Location = new System.Drawing.Point(2, 2);
+            this.dataGridUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridUsers.MultiSelect = false;
             this.dataGridUsers.Name = "dataGridUsers";
             this.dataGridUsers.ReadOnly = true;
             this.dataGridUsers.RowHeadersWidth = 62;
             this.dataGridUsers.RowTemplate.Height = 28;
             this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUsers.Size = new System.Drawing.Size(1486, 572);
+            this.dataGridUsers.Size = new System.Drawing.Size(988, 372);
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.SelectionChanged += new System.EventHandler(this.dataGridUsers_SelectionChanged);
             // 
@@ -315,7 +322,7 @@
             this.ColumnGender.MinimumWidth = 8;
             this.ColumnGender.Name = "ColumnGender";
             this.ColumnGender.ReadOnly = true;
-            this.ColumnGender.Width = 94;
+            this.ColumnGender.Width = 65;
             // 
             // ColumnCardName
             // 
@@ -334,7 +341,7 @@
             this.ColumnStatus.MinimumWidth = 8;
             this.ColumnStatus.Name = "ColumnStatus";
             this.ColumnStatus.ReadOnly = true;
-            this.ColumnStatus.Width = 132;
+            this.ColumnStatus.Width = 89;
             // 
             // ColumnRole
             // 
@@ -344,7 +351,7 @@
             this.ColumnRole.MinimumWidth = 8;
             this.ColumnRole.Name = "ColumnRole";
             this.ColumnRole.ReadOnly = true;
-            this.ColumnRole.Width = 124;
+            this.ColumnRole.Width = 86;
             // 
             // contextMenuStripDataGridUsers
             // 
@@ -354,24 +361,24 @@
             this.butStripSend,
             this.butStripTranslate});
             this.contextMenuStripDataGridUsers.Name = "contextMenuStripDataGridUsers";
-            this.contextMenuStripDataGridUsers.Size = new System.Drawing.Size(272, 100);
+            this.contextMenuStripDataGridUsers.Size = new System.Drawing.Size(202, 70);
             // 
             // butStripView
             // 
             this.butStripView.Name = "butStripView";
-            this.butStripView.Size = new System.Drawing.Size(271, 32);
+            this.butStripView.Size = new System.Drawing.Size(201, 22);
             this.butStripView.Text = "Просмотреть профиль";
             // 
             // butStripSend
             // 
             this.butStripSend.Name = "butStripSend";
-            this.butStripSend.Size = new System.Drawing.Size(271, 32);
+            this.butStripSend.Size = new System.Drawing.Size(201, 22);
             this.butStripSend.Text = "Отправить сообщение";
             // 
             // butStripTranslate
             // 
             this.butStripTranslate.Name = "butStripTranslate";
-            this.butStripTranslate.Size = new System.Drawing.Size(271, 32);
+            this.butStripTranslate.Size = new System.Drawing.Size(201, 22);
             this.butStripTranslate.Text = "Передать деньги";
             // 
             // tabTovars
@@ -382,9 +389,10 @@
             this.tabTovars.Controls.Add(this.panelInfoTovar);
             this.tabTovars.ImageKey = "Tovar.png";
             this.tabTovars.Location = new System.Drawing.Point(4, 39);
+            this.tabTovars.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabTovars.Name = "tabTovars";
-            this.tabTovars.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTovars.Size = new System.Drawing.Size(1492, 663);
+            this.tabTovars.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabTovars.Size = new System.Drawing.Size(992, 416);
             this.tabTovars.TabIndex = 1;
             this.tabTovars.Text = "Товары";
             this.tabTovars.UseVisualStyleBackColor = true;
@@ -397,20 +405,22 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.03091F));
             this.tableLayoutPanel4.Controls.Add(this.butSortWithFiltr, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 583);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 379);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1003, 82);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(666, 53);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // butSortWithFiltr
             // 
             this.butSortWithFiltr.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butSortWithFiltr.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSortWithFiltr.Location = new System.Drawing.Point(226, 3);
+            this.butSortWithFiltr.Location = new System.Drawing.Point(150, 2);
+            this.butSortWithFiltr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butSortWithFiltr.Name = "butSortWithFiltr";
-            this.butSortWithFiltr.Size = new System.Drawing.Size(542, 76);
+            this.butSortWithFiltr.Size = new System.Drawing.Size(360, 49);
             this.butSortWithFiltr.TabIndex = 3;
             this.butSortWithFiltr.Text = "Фильтровать/Сортировать";
             this.butSortWithFiltr.UseVisualStyleBackColor = true;
@@ -426,21 +436,23 @@
             this.tableLayoutPanelAdd_Edit_RemoveTovars.Controls.Add(this.butAdd, 0, 0);
             this.tableLayoutPanelAdd_Edit_RemoveTovars.Controls.Add(this.butDelete, 2, 0);
             this.tableLayoutPanelAdd_Edit_RemoveTovars.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanelAdd_Edit_RemoveTovars.Location = new System.Drawing.Point(3, 497);
+            this.tableLayoutPanelAdd_Edit_RemoveTovars.Location = new System.Drawing.Point(2, 323);
+            this.tableLayoutPanelAdd_Edit_RemoveTovars.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanelAdd_Edit_RemoveTovars.Name = "tableLayoutPanelAdd_Edit_RemoveTovars";
             this.tableLayoutPanelAdd_Edit_RemoveTovars.RowCount = 1;
             this.tableLayoutPanelAdd_Edit_RemoveTovars.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAdd_Edit_RemoveTovars.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
-            this.tableLayoutPanelAdd_Edit_RemoveTovars.Size = new System.Drawing.Size(1003, 86);
+            this.tableLayoutPanelAdd_Edit_RemoveTovars.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanelAdd_Edit_RemoveTovars.Size = new System.Drawing.Size(666, 56);
             this.tableLayoutPanelAdd_Edit_RemoveTovars.TabIndex = 3;
             // 
             // butEdit
             // 
             this.butEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butEdit.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butEdit.Location = new System.Drawing.Point(307, 3);
+            this.butEdit.Location = new System.Drawing.Point(204, 2);
+            this.butEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butEdit.Name = "butEdit";
-            this.butEdit.Size = new System.Drawing.Size(377, 80);
+            this.butEdit.Size = new System.Drawing.Size(250, 52);
             this.butEdit.TabIndex = 1;
             this.butEdit.Text = "Изменить";
             this.butEdit.UseVisualStyleBackColor = true;
@@ -450,9 +462,10 @@
             // 
             this.butAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butAdd.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butAdd.Location = new System.Drawing.Point(3, 3);
+            this.butAdd.Location = new System.Drawing.Point(2, 2);
+            this.butAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butAdd.Name = "butAdd";
-            this.butAdd.Size = new System.Drawing.Size(298, 80);
+            this.butAdd.Size = new System.Drawing.Size(198, 52);
             this.butAdd.TabIndex = 0;
             this.butAdd.Text = "Добавить";
             this.butAdd.UseVisualStyleBackColor = true;
@@ -462,9 +475,10 @@
             // 
             this.butDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butDelete.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butDelete.Location = new System.Drawing.Point(690, 3);
+            this.butDelete.Location = new System.Drawing.Point(458, 2);
+            this.butDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butDelete.Name = "butDelete";
-            this.butDelete.Size = new System.Drawing.Size(310, 80);
+            this.butDelete.Size = new System.Drawing.Size(206, 52);
             this.butDelete.TabIndex = 2;
             this.butDelete.Text = "Удалить";
             this.butDelete.UseVisualStyleBackColor = true;
@@ -474,9 +488,10 @@
             // 
             this.panel2.Controls.Add(this.dataGridTovar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1003, 494);
+            this.panel2.Size = new System.Drawing.Size(666, 321);
             this.panel2.TabIndex = 2;
             // 
             // dataGridTovar
@@ -493,13 +508,14 @@
             this.ColumnId});
             this.dataGridTovar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridTovar.Location = new System.Drawing.Point(0, 0);
+            this.dataGridTovar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridTovar.MultiSelect = false;
             this.dataGridTovar.Name = "dataGridTovar";
             this.dataGridTovar.ReadOnly = true;
             this.dataGridTovar.RowHeadersWidth = 62;
             this.dataGridTovar.RowTemplate.Height = 28;
             this.dataGridTovar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridTovar.Size = new System.Drawing.Size(1003, 494);
+            this.dataGridTovar.Size = new System.Drawing.Size(666, 321);
             this.dataGridTovar.TabIndex = 0;
             this.dataGridTovar.SelectionChanged += new System.EventHandler(this.dataGridTovar_SelectionChanged);
             // 
@@ -567,37 +583,41 @@
             this.panelInfoTovar.Controls.Add(this.pictureBoxTovar);
             this.panelInfoTovar.Controls.Add(this.tableLayoutPanel3);
             this.panelInfoTovar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelInfoTovar.Location = new System.Drawing.Point(1006, 3);
+            this.panelInfoTovar.Location = new System.Drawing.Point(668, 2);
+            this.panelInfoTovar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelInfoTovar.Name = "panelInfoTovar";
-            this.panelInfoTovar.Size = new System.Drawing.Size(483, 657);
+            this.panelInfoTovar.Size = new System.Drawing.Size(322, 412);
             this.panelInfoTovar.TabIndex = 1;
             this.panelInfoTovar.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 203);
+            this.label1.Location = new System.Drawing.Point(107, 132);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 30);
+            this.label1.Size = new System.Drawing.Size(95, 21);
             this.label1.TabIndex = 4;
             this.label1.Text = "Описание";
             // 
             // textBoxDesc
             // 
             this.textBoxDesc.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.textBoxDesc.Location = new System.Drawing.Point(16, 235);
+            this.textBoxDesc.Location = new System.Drawing.Point(11, 153);
+            this.textBoxDesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxDesc.Multiline = true;
             this.textBoxDesc.Name = "textBoxDesc";
             this.textBoxDesc.ReadOnly = true;
-            this.textBoxDesc.Size = new System.Drawing.Size(450, 246);
+            this.textBoxDesc.Size = new System.Drawing.Size(301, 161);
             this.textBoxDesc.TabIndex = 3;
             this.textBoxDesc.Text = "Пример: ыуадываывжаолыущзаолыузаузыщалзуыоазылзщаылозазыщаолзщы";
             // 
             // pictureBoxTovar
             // 
-            this.pictureBoxTovar.Location = new System.Drawing.Point(45, 17);
+            this.pictureBoxTovar.Location = new System.Drawing.Point(30, 11);
+            this.pictureBoxTovar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxTovar.Name = "pictureBoxTovar";
-            this.pictureBoxTovar.Size = new System.Drawing.Size(388, 183);
+            this.pictureBoxTovar.Size = new System.Drawing.Size(259, 119);
             this.pictureBoxTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxTovar.TabIndex = 1;
             this.pictureBoxTovar.TabStop = false;
@@ -610,21 +630,23 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.butTovarView, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 495);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 307);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.2795F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.7205F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(483, 162);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(322, 105);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // butTovarView
             // 
             this.butTovarView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butTovarView.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butTovarView.Location = new System.Drawing.Point(123, 3);
+            this.butTovarView.Location = new System.Drawing.Point(82, 2);
+            this.butTovarView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butTovarView.Name = "butTovarView";
-            this.butTovarView.Size = new System.Drawing.Size(235, 83);
+            this.butTovarView.Size = new System.Drawing.Size(157, 54);
             this.butTovarView.TabIndex = 5;
             this.butTovarView.Text = "Посмотреть";
             this.butTovarView.UseVisualStyleBackColor = true;
@@ -636,9 +658,10 @@
             this.tabBasket.Controls.Add(this.panel1);
             this.tabBasket.ImageKey = "Basket.png";
             this.tabBasket.Location = new System.Drawing.Point(4, 39);
+            this.tabBasket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabBasket.Name = "tabBasket";
-            this.tabBasket.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBasket.Size = new System.Drawing.Size(1492, 663);
+            this.tabBasket.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabBasket.Size = new System.Drawing.Size(992, 414);
             this.tabBasket.TabIndex = 3;
             this.tabBasket.Text = "Корзина";
             this.tabBasket.UseVisualStyleBackColor = true;
@@ -647,18 +670,20 @@
             // 
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(1141, 3);
+            this.panel4.Location = new System.Drawing.Point(761, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(348, 657);
+            this.panel4.Size = new System.Drawing.Size(229, 410);
             this.panel4.TabIndex = 1;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(-2, 0);
+            this.panel6.Location = new System.Drawing.Point(-4, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(350, 657);
+            this.panel6.Size = new System.Drawing.Size(233, 410);
             this.panel6.TabIndex = 4;
             // 
             // panel5
@@ -666,17 +691,19 @@
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 657);
+            this.panel5.Size = new System.Drawing.Size(233, 410);
             this.panel5.TabIndex = 4;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.butBy);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 557);
+            this.panel9.Location = new System.Drawing.Point(0, 345);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(350, 100);
+            this.panel9.Size = new System.Drawing.Size(233, 65);
             this.panel9.TabIndex = 0;
             // 
             // butBy
@@ -685,8 +712,9 @@
             this.butBy.Enabled = false;
             this.butBy.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.butBy.Location = new System.Drawing.Point(0, 0);
+            this.butBy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butBy.Name = "butBy";
-            this.butBy.Size = new System.Drawing.Size(350, 100);
+            this.butBy.Size = new System.Drawing.Size(233, 65);
             this.butBy.TabIndex = 4;
             this.butBy.Text = "Купить";
             this.butBy.UseVisualStyleBackColor = true;
@@ -696,9 +724,10 @@
             // 
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1138, 657);
+            this.panel1.Size = new System.Drawing.Size(759, 410);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -708,8 +737,9 @@
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1138, 657);
+            this.panel3.Size = new System.Drawing.Size(759, 410);
             this.panel3.TabIndex = 1;
             // 
             // panel8
@@ -717,8 +747,9 @@
             this.panel8.Controls.Add(this.listView);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1138, 557);
+            this.panel8.Size = new System.Drawing.Size(759, 345);
             this.panel8.TabIndex = 2;
             // 
             // listView
@@ -736,12 +767,13 @@
             this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(0, 0);
+            this.listView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView.MultiSelect = false;
             this.listView.Name = "listView";
             this.listView.OwnerDraw = true;
             this.listView.Scrollable = false;
             this.listView.ShowGroups = false;
-            this.listView.Size = new System.Drawing.Size(1138, 557);
+            this.listView.Size = new System.Drawing.Size(759, 345);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -778,9 +810,10 @@
             // 
             this.panel7.Controls.Add(this.butCancelTovar);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 557);
+            this.panel7.Location = new System.Drawing.Point(0, 345);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1138, 100);
+            this.panel7.Size = new System.Drawing.Size(759, 65);
             this.panel7.TabIndex = 1;
             // 
             // butCancelTovar
@@ -789,8 +822,9 @@
             this.butCancelTovar.Enabled = false;
             this.butCancelTovar.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.butCancelTovar.Location = new System.Drawing.Point(0, 0);
+            this.butCancelTovar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butCancelTovar.Name = "butCancelTovar";
-            this.butCancelTovar.Size = new System.Drawing.Size(1138, 100);
+            this.butCancelTovar.Size = new System.Drawing.Size(759, 65);
             this.butCancelTovar.TabIndex = 1;
             this.butCancelTovar.Text = "Отменить товар";
             this.butCancelTovar.UseVisualStyleBackColor = true;
@@ -804,8 +838,9 @@
             this.tabProfile.Controls.Add(this.panel10);
             this.tabProfile.ImageKey = "User.png";
             this.tabProfile.Location = new System.Drawing.Point(4, 39);
+            this.tabProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabProfile.Name = "tabProfile";
-            this.tabProfile.Size = new System.Drawing.Size(1492, 663);
+            this.tabProfile.Size = new System.Drawing.Size(992, 414);
             this.tabProfile.TabIndex = 4;
             this.tabProfile.Text = "Профиль";
             this.tabProfile.UseVisualStyleBackColor = true;
@@ -814,27 +849,30 @@
             // 
             this.panel16.Controls.Add(this.textBoxMessageChat);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(484, 415);
+            this.panel16.Location = new System.Drawing.Point(323, 270);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1008, 144);
+            this.panel16.Size = new System.Drawing.Size(669, 76);
             this.panel16.TabIndex = 4;
             // 
             // textBoxMessageChat
             // 
-            this.textBoxMessageChat.Location = new System.Drawing.Point(6, 20);
+            this.textBoxMessageChat.Location = new System.Drawing.Point(4, 13);
+            this.textBoxMessageChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxMessageChat.MaxLength = 500;
             this.textBoxMessageChat.Multiline = true;
             this.textBoxMessageChat.Name = "textBoxMessageChat";
-            this.textBoxMessageChat.Size = new System.Drawing.Size(896, 103);
+            this.textBoxMessageChat.Size = new System.Drawing.Size(599, 68);
             this.textBoxMessageChat.TabIndex = 0;
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.tableLayoutPanel5);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(484, 559);
+            this.panel15.Location = new System.Drawing.Point(323, 346);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1008, 104);
+            this.panel15.Size = new System.Drawing.Size(669, 68);
             this.panel15.TabIndex = 3;
             // 
             // tableLayoutPanel5
@@ -842,16 +880,17 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.25858F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.74142F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 297F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
             this.tableLayoutPanel5.Controls.Add(this.butSendChat, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.butClearChat, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.panel17, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1008, 104);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(669, 68);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // butSendChat
@@ -859,9 +898,10 @@
             this.butSendChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butSendChat.Enabled = false;
             this.butSendChat.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSendChat.Location = new System.Drawing.Point(713, 3);
+            this.butSendChat.Location = new System.Drawing.Point(471, 2);
+            this.butSendChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butSendChat.Name = "butSendChat";
-            this.butSendChat.Size = new System.Drawing.Size(292, 98);
+            this.butSendChat.Size = new System.Drawing.Size(196, 64);
             this.butSendChat.TabIndex = 11;
             this.butSendChat.Text = "Отправить";
             this.butSendChat.UseVisualStyleBackColor = true;
@@ -872,20 +912,23 @@
             this.butClearChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butClearChat.Enabled = false;
             this.butClearChat.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butClearChat.Location = new System.Drawing.Point(3, 3);
+            this.butClearChat.Location = new System.Drawing.Point(2, 2);
+            this.butClearChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butClearChat.Name = "butClearChat";
-            this.butClearChat.Size = new System.Drawing.Size(266, 98);
+            this.butClearChat.Size = new System.Drawing.Size(175, 64);
             this.butClearChat.TabIndex = 10;
             this.butClearChat.Text = "Очистить чат";
             this.butClearChat.UseVisualStyleBackColor = true;
+            this.butClearChat.Click += new System.EventHandler(this.butClearChat_Click);
             // 
             // panel17
             // 
             this.panel17.Controls.Add(this.tableLayoutPanel6);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel17.Location = new System.Drawing.Point(275, 3);
+            this.panel17.Location = new System.Drawing.Point(181, 2);
+            this.panel17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(432, 98);
+            this.panel17.Size = new System.Drawing.Size(286, 64);
             this.panel17.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -896,19 +939,21 @@
             this.tableLayoutPanel6.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.66667F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.33333F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(432, 98);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(286, 64);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // maskedTextBoxPhoneChat
             // 
-            this.maskedTextBoxPhoneChat.Location = new System.Drawing.Point(3, 43);
+            this.maskedTextBoxPhoneChat.Location = new System.Drawing.Point(2, 28);
+            this.maskedTextBoxPhoneChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskedTextBoxPhoneChat.Mask = "(000)-000-00-00";
             this.maskedTextBoxPhoneChat.Name = "maskedTextBoxPhoneChat";
-            this.maskedTextBoxPhoneChat.Size = new System.Drawing.Size(426, 37);
+            this.maskedTextBoxPhoneChat.Size = new System.Drawing.Size(282, 27);
             this.maskedTextBoxPhoneChat.TabIndex = 2;
             this.maskedTextBoxPhoneChat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBoxPhoneChat.TextChanged += new System.EventHandler(this.maskedTextBoxPhoneChat_TextChanged);
@@ -919,9 +964,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(2, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(426, 40);
+            this.label3.Size = new System.Drawing.Size(282, 26);
             this.label3.TabIndex = 2;
             this.label3.Text = "Телефон";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -930,20 +976,22 @@
             // 
             this.panel14.Controls.Add(this.listBoxChat);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(484, 0);
+            this.panel14.Location = new System.Drawing.Point(323, 0);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1008, 415);
+            this.panel14.Size = new System.Drawing.Size(669, 270);
             this.panel14.TabIndex = 2;
             // 
             // listBoxChat
             // 
             this.listBoxChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxChat.FormattingEnabled = true;
-            this.listBoxChat.ItemHeight = 30;
+            this.listBoxChat.ItemHeight = 21;
             this.listBoxChat.Location = new System.Drawing.Point(0, 0);
+            this.listBoxChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxChat.Name = "listBoxChat";
             this.listBoxChat.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxChat.Size = new System.Drawing.Size(1008, 415);
+            this.listBoxChat.Size = new System.Drawing.Size(669, 270);
             this.listBoxChat.TabIndex = 1;
             // 
             // panel10
@@ -955,8 +1003,9 @@
             this.panel10.Controls.Add(this.maskTextBoxPhone);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(484, 663);
+            this.panel10.Size = new System.Drawing.Size(323, 414);
             this.panel10.TabIndex = 0;
             // 
             // textBoxGender
@@ -969,7 +1018,8 @@
             this.textBoxGender.HideSelection = true;
             this.textBoxGender.Hint = "Пол";
             this.textBoxGender.LeadingIcon = null;
-            this.textBoxGender.Location = new System.Drawing.Point(28, 255);
+            this.textBoxGender.Location = new System.Drawing.Point(19, 166);
+            this.textBoxGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxGender.MaxLength = 32767;
             this.textBoxGender.MouseState = MaterialSkin.MouseState.OUT;
             this.textBoxGender.Name = "textBoxGender";
@@ -981,7 +1031,7 @@
             this.textBoxGender.SelectionLength = 0;
             this.textBoxGender.SelectionStart = 0;
             this.textBoxGender.ShortcutsEnabled = true;
-            this.textBoxGender.Size = new System.Drawing.Size(412, 48);
+            this.textBoxGender.Size = new System.Drawing.Size(275, 48);
             this.textBoxGender.TabIndex = 4;
             this.textBoxGender.TabStop = false;
             this.textBoxGender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -998,7 +1048,8 @@
             this.textBoxName.HideSelection = true;
             this.textBoxName.Hint = "Имя";
             this.textBoxName.LeadingIcon = null;
-            this.textBoxName.Location = new System.Drawing.Point(28, 105);
+            this.textBoxName.Location = new System.Drawing.Point(19, 68);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxName.MaxLength = 32767;
             this.textBoxName.MouseState = MaterialSkin.MouseState.OUT;
             this.textBoxName.Name = "textBoxName";
@@ -1010,7 +1061,7 @@
             this.textBoxName.SelectionLength = 0;
             this.textBoxName.SelectionStart = 0;
             this.textBoxName.ShortcutsEnabled = true;
-            this.textBoxName.Size = new System.Drawing.Size(412, 48);
+            this.textBoxName.Size = new System.Drawing.Size(275, 48);
             this.textBoxName.TabIndex = 1;
             this.textBoxName.TabStop = false;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1027,7 +1078,8 @@
             this.textBoxSurname.HideSelection = true;
             this.textBoxSurname.Hint = "Фамилия";
             this.textBoxSurname.LeadingIcon = null;
-            this.textBoxSurname.Location = new System.Drawing.Point(28, 28);
+            this.textBoxSurname.Location = new System.Drawing.Point(19, 18);
+            this.textBoxSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxSurname.MaxLength = 32767;
             this.textBoxSurname.MouseState = MaterialSkin.MouseState.OUT;
             this.textBoxSurname.Name = "textBoxSurname";
@@ -1039,7 +1091,7 @@
             this.textBoxSurname.SelectionLength = 0;
             this.textBoxSurname.SelectionStart = 0;
             this.textBoxSurname.ShortcutsEnabled = false;
-            this.textBoxSurname.Size = new System.Drawing.Size(412, 48);
+            this.textBoxSurname.Size = new System.Drawing.Size(275, 48);
             this.textBoxSurname.TabIndex = 0;
             this.textBoxSurname.TabStop = false;
             this.textBoxSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1051,17 +1103,19 @@
             this.panelEditProfile.Controls.Add(this.panel13);
             this.panelEditProfile.Controls.Add(this.groupBox1);
             this.panelEditProfile.Controls.Add(this.panelButEditCard);
-            this.panelEditProfile.Location = new System.Drawing.Point(14, 332);
+            this.panelEditProfile.Location = new System.Drawing.Point(9, 216);
+            this.panelEditProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelEditProfile.Name = "panelEditProfile";
-            this.panelEditProfile.Size = new System.Drawing.Size(440, 328);
+            this.panelEditProfile.Size = new System.Drawing.Size(293, 213);
             this.panelEditProfile.TabIndex = 3;
             // 
             // panel13
             // 
             this.panel13.Controls.Add(this.butChangeCard);
-            this.panel13.Location = new System.Drawing.Point(15, 215);
+            this.panel13.Location = new System.Drawing.Point(10, 140);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(406, 46);
+            this.panel13.Size = new System.Drawing.Size(271, 30);
             this.panel13.TabIndex = 8;
             // 
             // butChangeCard
@@ -1069,8 +1123,9 @@
             this.butChangeCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butChangeCard.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.butChangeCard.Location = new System.Drawing.Point(0, 0);
+            this.butChangeCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butChangeCard.Name = "butChangeCard";
-            this.butChangeCard.Size = new System.Drawing.Size(406, 46);
+            this.butChangeCard.Size = new System.Drawing.Size(271, 30);
             this.butChangeCard.TabIndex = 8;
             this.butChangeCard.Text = "Поменять карту";
             this.butChangeCard.UseVisualStyleBackColor = true;
@@ -1081,9 +1136,11 @@
             this.groupBox1.Controls.Add(this.panelSecurityCard);
             this.groupBox1.Controls.Add(this.maskTextBoxCardName);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 15);
+            this.groupBox1.Location = new System.Drawing.Point(10, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(406, 191);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(271, 124);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Карта";
@@ -1093,38 +1150,42 @@
             this.panelSecurityCard.Controls.Add(this.maskedTextBoxCVCCode);
             this.panelSecurityCard.Controls.Add(this.maskedTextBoxDataEnd);
             this.panelSecurityCard.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelSecurityCard.Location = new System.Drawing.Point(3, 88);
+            this.panelSecurityCard.Location = new System.Drawing.Point(2, 57);
+            this.panelSecurityCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelSecurityCard.Name = "panelSecurityCard";
-            this.panelSecurityCard.Size = new System.Drawing.Size(400, 100);
+            this.panelSecurityCard.Size = new System.Drawing.Size(267, 65);
             this.panelSecurityCard.TabIndex = 12;
             // 
             // maskedTextBoxCVCCode
             // 
-            this.maskedTextBoxCVCCode.Location = new System.Drawing.Point(257, 31);
+            this.maskedTextBoxCVCCode.Location = new System.Drawing.Point(171, 20);
+            this.maskedTextBoxCVCCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskedTextBoxCVCCode.Mask = "000";
             this.maskedTextBoxCVCCode.Name = "maskedTextBoxCVCCode";
             this.maskedTextBoxCVCCode.ReadOnly = true;
-            this.maskedTextBoxCVCCode.Size = new System.Drawing.Size(130, 40);
+            this.maskedTextBoxCVCCode.Size = new System.Drawing.Size(88, 29);
             this.maskedTextBoxCVCCode.TabIndex = 14;
             this.maskedTextBoxCVCCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // maskedTextBoxDataEnd
             // 
-            this.maskedTextBoxDataEnd.Location = new System.Drawing.Point(7, 31);
+            this.maskedTextBoxDataEnd.Location = new System.Drawing.Point(5, 20);
+            this.maskedTextBoxDataEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskedTextBoxDataEnd.Mask = "00/00";
             this.maskedTextBoxDataEnd.Name = "maskedTextBoxDataEnd";
             this.maskedTextBoxDataEnd.ReadOnly = true;
-            this.maskedTextBoxDataEnd.Size = new System.Drawing.Size(137, 40);
+            this.maskedTextBoxDataEnd.Size = new System.Drawing.Size(93, 29);
             this.maskedTextBoxDataEnd.TabIndex = 13;
             this.maskedTextBoxDataEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // maskTextBoxCardName
             // 
-            this.maskTextBoxCardName.Location = new System.Drawing.Point(10, 38);
+            this.maskTextBoxCardName.Location = new System.Drawing.Point(7, 25);
+            this.maskTextBoxCardName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskTextBoxCardName.Mask = "0000-0000-0000-0000";
             this.maskTextBoxCardName.Name = "maskTextBoxCardName";
             this.maskTextBoxCardName.ReadOnly = true;
-            this.maskTextBoxCardName.Size = new System.Drawing.Size(380, 40);
+            this.maskTextBoxCardName.Size = new System.Drawing.Size(255, 29);
             this.maskTextBoxCardName.TabIndex = 11;
             this.maskTextBoxCardName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1132,17 +1193,19 @@
             // 
             this.panelButEditCard.Controls.Add(this.butEditCard);
             this.panelButEditCard.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panelButEditCard.Location = new System.Drawing.Point(15, 268);
+            this.panelButEditCard.Location = new System.Drawing.Point(10, 174);
+            this.panelButEditCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelButEditCard.Name = "panelButEditCard";
-            this.panelButEditCard.Size = new System.Drawing.Size(406, 46);
+            this.panelButEditCard.Size = new System.Drawing.Size(271, 30);
             this.panelButEditCard.TabIndex = 7;
             // 
             // butEditCard
             // 
             this.butEditCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butEditCard.Location = new System.Drawing.Point(0, 0);
+            this.butEditCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butEditCard.Name = "butEditCard";
-            this.butEditCard.Size = new System.Drawing.Size(406, 46);
+            this.butEditCard.Size = new System.Drawing.Size(271, 30);
             this.butEditCard.TabIndex = 6;
             this.butEditCard.Text = "Зарегистрировать карту";
             this.butEditCard.UseVisualStyleBackColor = true;
@@ -1163,7 +1226,8 @@
             this.maskTextBoxPhone.Hint = "Телефон";
             this.maskTextBoxPhone.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.maskTextBoxPhone.LeadingIcon = null;
-            this.maskTextBoxPhone.Location = new System.Drawing.Point(28, 181);
+            this.maskTextBoxPhone.Location = new System.Drawing.Point(19, 118);
+            this.maskTextBoxPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maskTextBoxPhone.Mask = "(000)-000-00-00";
             this.maskTextBoxPhone.MaxLength = 32767;
             this.maskTextBoxPhone.MouseState = MaterialSkin.MouseState.OUT;
@@ -1180,7 +1244,7 @@
             this.maskTextBoxPhone.SelectionLength = 0;
             this.maskTextBoxPhone.SelectionStart = 15;
             this.maskTextBoxPhone.ShortcutsEnabled = true;
-            this.maskTextBoxPhone.Size = new System.Drawing.Size(412, 48);
+            this.maskTextBoxPhone.Size = new System.Drawing.Size(275, 48);
             this.maskTextBoxPhone.SkipLiterals = true;
             this.maskTextBoxPhone.TabIndex = 7;
             this.maskTextBoxPhone.TabStop = false;
@@ -1198,8 +1262,9 @@
             this.tabSettings.Controls.Add(this.panel18);
             this.tabSettings.ImageKey = "Settings.png";
             this.tabSettings.Location = new System.Drawing.Point(4, 39);
+            this.tabSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(1492, 663);
+            this.tabSettings.Size = new System.Drawing.Size(992, 414);
             this.tabSettings.TabIndex = 2;
             this.tabSettings.Text = "Настройки";
             this.tabSettings.UseVisualStyleBackColor = true;
@@ -1213,16 +1278,18 @@
             this.panel20.Controls.Add(this.butEditPhone);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel20.Location = new System.Drawing.Point(423, 0);
+            this.panel20.Location = new System.Drawing.Point(282, 0);
+            this.panel20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(592, 663);
+            this.panel20.Size = new System.Drawing.Size(392, 414);
             this.panel20.TabIndex = 2;
             // 
             // butDeleteAccaunt
             // 
-            this.butDeleteAccaunt.Location = new System.Drawing.Point(128, 532);
+            this.butDeleteAccaunt.Location = new System.Drawing.Point(85, 346);
+            this.butDeleteAccaunt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butDeleteAccaunt.Name = "butDeleteAccaunt";
-            this.butDeleteAccaunt.Size = new System.Drawing.Size(334, 83);
+            this.butDeleteAccaunt.Size = new System.Drawing.Size(223, 54);
             this.butDeleteAccaunt.TabIndex = 4;
             this.butDeleteAccaunt.Text = "Аккаунт";
             this.butDeleteAccaunt.UseVisualStyleBackColor = true;
@@ -1231,35 +1298,39 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(234, 471);
+            this.label5.Location = new System.Drawing.Point(156, 306);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 36);
+            this.label5.Size = new System.Drawing.Size(89, 25);
             this.label5.TabIndex = 3;
             this.label5.Text = "Удалить";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(225, 22);
+            this.label4.Location = new System.Drawing.Point(150, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 36);
+            this.label4.Size = new System.Drawing.Size(104, 25);
             this.label4.TabIndex = 2;
             this.label4.Text = "Изменить";
             // 
             // butEditPassword
             // 
-            this.butEditPassword.Location = new System.Drawing.Point(128, 185);
+            this.butEditPassword.Location = new System.Drawing.Point(85, 120);
+            this.butEditPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butEditPassword.Name = "butEditPassword";
-            this.butEditPassword.Size = new System.Drawing.Size(334, 83);
+            this.butEditPassword.Size = new System.Drawing.Size(223, 54);
             this.butEditPassword.TabIndex = 1;
             this.butEditPassword.Text = "Пароль";
             this.butEditPassword.UseVisualStyleBackColor = true;
             // 
             // butEditPhone
             // 
-            this.butEditPhone.Location = new System.Drawing.Point(128, 80);
+            this.butEditPhone.Location = new System.Drawing.Point(85, 52);
+            this.butEditPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butEditPhone.Name = "butEditPhone";
-            this.butEditPhone.Size = new System.Drawing.Size(334, 83);
+            this.butEditPhone.Size = new System.Drawing.Size(223, 54);
             this.butEditPhone.TabIndex = 0;
             this.butEditPhone.Text = "Телефон";
             this.butEditPhone.UseVisualStyleBackColor = true;
@@ -1268,17 +1339,19 @@
             // 
             this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel19.Location = new System.Drawing.Point(0, 0);
+            this.panel19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(423, 663);
+            this.panel19.Size = new System.Drawing.Size(282, 414);
             this.panel19.TabIndex = 1;
             // 
             // panel18
             // 
             this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel18.Font = new System.Drawing.Font("Times New Roman", 16F);
-            this.panel18.Location = new System.Drawing.Point(1015, 0);
+            this.panel18.Location = new System.Drawing.Point(674, 0);
+            this.panel18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(477, 663);
+            this.panel18.Size = new System.Drawing.Size(318, 414);
             this.panel18.TabIndex = 0;
             // 
             // imageListTag
@@ -1298,11 +1371,11 @@
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelRole,
             this.textBoxBalance});
-            this.statusStrip.Location = new System.Drawing.Point(3, 771);
+            this.statusStrip.Location = new System.Drawing.Point(2, 499);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(14, 0, 2, 0);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(9, 0, 1, 0);
             this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip.Size = new System.Drawing.Size(1500, 34);
+            this.statusStrip.Size = new System.Drawing.Size(1000, 24);
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -1310,30 +1383,31 @@
             // 
             this.toolStripStatusLabelRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toolStripStatusLabelRole.Name = "toolStripStatusLabelRole";
-            this.toolStripStatusLabelRole.Size = new System.Drawing.Size(231, 27);
+            this.toolStripStatusLabelRole.Size = new System.Drawing.Size(154, 19);
             this.toolStripStatusLabelRole.Text = "Статус: Пользователь";
             // 
             // textBoxBalance
             // 
             this.textBoxBalance.Name = "textBoxBalance";
-            this.textBoxBalance.Size = new System.Drawing.Size(175, 27);
+            this.textBoxBalance.Size = new System.Drawing.Size(115, 19);
             this.textBoxBalance.Text = "Баланс карты: 0";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1506, 808);
+            this.ClientSize = new System.Drawing.Size(1004, 525);
             this.Controls.Add(this.materialTabControlOOOBank);
             this.Controls.Add(this.statusStrip);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControlOOOBank;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1506, 808);
+            this.MaximumSize = new System.Drawing.Size(1004, 525);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1506, 808);
+            this.MinimumSize = new System.Drawing.Size(1004, 525);
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(3, 65, 3, 3);
+            this.Padding = new System.Windows.Forms.Padding(2, 42, 2, 2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OOO Банк NVA";
             this.Load += new System.EventHandler(this.MainForm_Load);
