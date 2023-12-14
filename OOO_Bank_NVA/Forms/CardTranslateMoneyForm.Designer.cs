@@ -30,11 +30,11 @@
         {
             this.maskedTextBoxCard = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.textBoxBalance = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.butAdd = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
@@ -64,34 +64,6 @@
             this.panel1.Size = new System.Drawing.Size(729, 313);
             this.panel1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(270, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 33);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Номер карты";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(281, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 33);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Пополнить на";
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Location = new System.Drawing.Point(102, 155);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(544, 40);
-            this.textBoxPrice.TabIndex = 3;
-            this.textBoxPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxPrice.TextChanged += new System.EventHandler(this.textBoxPrice_TextChanged);
-            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
-            // 
             // textBoxBalance
             // 
             this.textBoxBalance.Location = new System.Drawing.Point(102, 242);
@@ -110,12 +82,41 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Со счета:";
             // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(102, 155);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(544, 40);
+            this.textBoxPrice.TabIndex = 3;
+            this.textBoxPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.textBoxPrice_TextChanged);
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(281, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 33);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Пополнить на";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(270, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 33);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Номер карты";
+            // 
             // butAdd
             // 
             this.butAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.butAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.butAdd.Depth = 0;
             this.butAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.butAdd.Enabled = false;
             this.butAdd.HighEmphasis = true;
             this.butAdd.Icon = null;
             this.butAdd.Location = new System.Drawing.Point(37, 421);
@@ -143,7 +144,7 @@
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(113, 36);
+            this.materialButton2.Size = new System.Drawing.Size(82, 36);
             this.materialButton2.TabIndex = 3;
             this.materialButton2.Text = "Отмена";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;

@@ -62,6 +62,13 @@ namespace OOO_Bank_NVA
                         this.Show();
                         return;
                     }
+                    if(dbBank.Status == StatusType.Blocked)
+                    {
+                        MessageBox.Show("Аккаунт забанен!\nНапишите в тех. поддержку для дальнейшего продвижения!", 
+                            "Забанен!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Show();
+                        return;
+                    }
                     var person = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == dbBank.Login);
                     user = person;
 

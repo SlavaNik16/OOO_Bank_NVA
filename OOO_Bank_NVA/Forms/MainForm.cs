@@ -5,7 +5,6 @@ using OOO_Bank_NVA.ChatConnect;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.DB.ReadDB;
-using OOO_Bank_NVA.Enums;
 using OOO_Bank_NVA.Models;
 using OOO_Bank_NVA.Models.Enums;
 using OOO_Bank_NVA.ModelsResponce;
@@ -160,18 +159,12 @@ namespace OOO_Bank_NVA.Forms
                         Role = b.Role.PerevodDescription()
                     }).ToList();
             }
-
-            butTranslate.Enabled = AuthorizationForm.user.CardName != null;
         }
         private void dataGridUsers_SelectionChanged(object sender, System.EventArgs e)
         {
 
             butView.Enabled =
-                butStripView.Enabled =
-            butBlocked.Enabled =
-                butStripSend.Enabled =
-            butTranslate.Enabled =
-                butStripTranslate.Enabled =
+            butStripView.Enabled =
                     dataGridUsers.SelectedRows.Count == 1;
         }
 
@@ -181,7 +174,7 @@ namespace OOO_Bank_NVA.Forms
 
             var butArray = new System.Windows.Forms.Button[]
             {
-                butView, butBlocked, butTranslate,
+                butView,
                 butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
                 butCancelTovar, butBy,
                 butChangeCard, butChangeCard, butClearChat, butSendChat,
@@ -482,58 +475,6 @@ namespace OOO_Bank_NVA.Forms
             chat.Send(AuthorizationForm.user.Phone, maskedTextBoxPhoneChat.Text, textBoxMessageChat.Text);
         }
 
-        private void butBlocked_Click(object sender, EventArgs e)
-        {
-            var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnPhone"];
-            using (var db = new ApplicationContext(options))
-            {
-                var person = db.Persons.FirstOrDefault(x => x.Phone == id.Value.ToString());
-                if (person == null) return;
-
-                var result = MessageBox.Show($"Вы действительно хотите Забанить/Разбанить\n" +
-                    $"Id: {person.Id}\n" +
-                    $"Телефон: {person.Phone}\n" +
-                    $"Фамилия:{person.Surname}\n" +
-                    $"Имя: {person.Name}", "Предупреждение!",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    var bank = db.DBBanks.FirstOrDefault(x => x.Login == person.Phone);
-                    bank.Status = bank.Status == StatusType.Blocked ? StatusType.Offline : StatusType.Blocked;
-                    baseDBBankWriteRepository.Update(bank, AuthorizationForm.UserName);
-                    MessageBox.Show($"Пользователь успешно {(bank.Status == StatusType.Blocked ? "Забанен" : "Разбанен")}!",
-                        "Информация!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    NavigationTab(tabUsers);
-                }
-            }
-        }
-
-        private void butTranslate_Click(object sender, EventArgs e)
-        {
-            var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnCardName"];
-            if (id.Value.ToString() == Constants.Not_Card_Nomer)
-            {
-                MessageBox.Show($"У данного пользователя нет карты!",
-                       "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            using (var db = new ApplicationContext(options))
-            {
-                var cardOther = db.Cards.FirstOrDefault(x => x.Nomer == id.Value.ToString());
-                var cardUser = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == AuthorizationForm.user.CardName);
-                var cardTranslateMoneyForm = new CardTranslateMoneyForm(cardUser.Nomer, cardUser.Balance);
-                this.Hide();
-                if (cardTranslateMoneyForm.ShowDialog() == DialogResult.OK)
-                {
-                    cardOther.Balance += cardTranslateMoneyForm.GetPrice();
-                    baseCardWriteRepository.Update(cardOther);
-                    NavigationTab(tabUsers);
-                }
-                this.Show();
-            }
-        }
-
         private void butClearChat_Click(object sender, EventArgs e)
         {
             listBoxChat.Items.Clear();
@@ -541,13 +482,19 @@ namespace OOO_Bank_NVA.Forms
 
         private void butView_Click(object sender, EventArgs e)
         {
-            var personViewForm = new PersonViewForm(AuthorizationForm.user);
-            this.Hide();
-            if (personViewForm.ShowDialog() == DialogResult.OK)
+            var id = dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].Cells["ColumnPhone"];
+            using (var db = new ApplicationContext(options))
             {
-
+                var user = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == id.Value.ToString());
+                if (user == null) return;
+                var personViewForm = new PersonViewForm(user);
+                this.Hide();
+                if (personViewForm.ShowDialog() == DialogResult.OK)
+                {
+                    NavigationTab(tabUsers);
+                }
+                this.Show();
             }
-            this.Show();
         }
     }
 }
