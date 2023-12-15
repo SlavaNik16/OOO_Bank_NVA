@@ -287,7 +287,6 @@
             // butFiltr
             // 
             this.butFiltr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butFiltr.Enabled = false;
             this.butFiltr.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.butFiltr.Location = new System.Drawing.Point(3, 137);
             this.butFiltr.Name = "butFiltr";
@@ -360,11 +359,11 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 268F));
             this.tableLayoutPanel4.Controls.Add(this.comboBoxStatus, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.comboBoxRole, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(23, 752);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(23, 714);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(538, 57);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(538, 89);
             this.tableLayoutPanel4.TabIndex = 22;
             // 
             // comboBoxRole
@@ -510,6 +509,7 @@
             this.Padding = new System.Windows.Forms.Padding(3, 65, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сортировка и фильтрация данных товара";
+            this.Load += new System.EventHandler(this.FiltrAndSortUsersForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

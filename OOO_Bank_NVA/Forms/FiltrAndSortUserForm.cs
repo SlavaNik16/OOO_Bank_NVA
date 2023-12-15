@@ -3,12 +3,16 @@ using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.DB.ReadDB;
+using OOO_Bank_NVA.Enums;
+using OOO_Bank_NVA.Models.Enums;
 using OOO_Bank_NVA.ModelsResponce;
 using OOO_Bank_NVA.Nuget;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Constants = OOO_Bank_NVA.DB.ReadDB.Constants;
 
 namespace OOO_Bank_NVA.Forms
 {
@@ -24,7 +28,6 @@ namespace OOO_Bank_NVA.Forms
             ColorsHelp.ButtonSubmit(butSearch);
             ColorsHelp.ButtonRed(butExport);
             ColorsHelp.ButtonSubmit(butFiltr);
-
         }
         public DataGridView GetDataGridView()
             => dataGridUsers;
@@ -66,14 +69,17 @@ namespace OOO_Bank_NVA.Forms
                 {
                     switch (dataGridUsers.Columns[listBoxSort.SelectedIndex + 1].DataPropertyName)
                     {
-                        case "Title":
-                            list = radioAsc.Checked ? list.OrderBy(x => x.Title).ToList() : list.OrderByDescending(x => x.Title).ToList();
+                        case "Phone":
+                            list = radioAsc.Checked ? list.OrderBy(x => x.Phone).ToList() : list.OrderByDescending(x => x.Phone).ToList();
                             break;
-                        case "Price":
-                            list = radioAsc.Checked ? list.OrderBy(x => x.Price).ToList() : list.OrderByDescending(x => x.Price).ToList();
+                        case "Surname":
+                            list = radioAsc.Checked ? list.OrderBy(x => x.Surname).ToList() : list.OrderByDescending(x => x.Surname).ToList();
                             break;
-                        case "MaxCount":
-                            list = radioAsc.Checked ? list.OrderBy(x => x.MaxCount).ToList() : list.OrderByDescending(x => x.MaxCount).ToList();
+                        case "Name":
+                            list = radioAsc.Checked ? list.OrderBy(x => x.Name).ToList() : list.OrderByDescending(x => x.Name).ToList();
+                            break;
+                        case "Gender":
+                            list = radioAsc.Checked ? list.OrderBy(x => x.Gender).ToList() : list.OrderByDescending(x => x.Gender).ToList();
                             break;
                     }
 
@@ -130,7 +136,30 @@ namespace OOO_Bank_NVA.Forms
         private void butFiltr_Click(object sender, System.EventArgs e)
         {
             var list = GetTovarList();
-            dataGridUsers.DataSource = list.Where(x => x.Status == comboBoxStatus.SelectedItem || x.Role == comboBoxRole.SelectedItem).ToList();
+            dataGridUsers.DataSource = list.Where(x => x.Status == comboBoxStatus.SelectedItem.ToString() || x.Role == comboBoxRole.SelectedItem.ToString()).ToList();
+        }
+
+        private void FiltrAndSortUsersForm_Load(object sender, System.EventArgs e)
+        {
+            FillComboBoxRole();
+            FillComboBoxStatus();
+            
+        }
+        private void FillComboBoxRole()
+        {
+            foreach (RoleType role in Enum.GetValues(typeof(RoleType)))
+            {
+                comboBoxRole.Items.Add(role.PerevodDescription());
+            }
+            comboBoxRole.SelectedIndex = 0;
+        }
+        private void FillComboBoxStatus()
+        {
+            foreach (StatusType status in Enum.GetValues(typeof(StatusType)))
+            {
+                comboBoxStatus.Items.Add(status.PerevodDescription());
+            }
+            comboBoxStatus.SelectedIndex = 0;
         }
     }
 }

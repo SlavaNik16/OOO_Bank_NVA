@@ -501,7 +501,7 @@ namespace OOO_Bank_NVA.Forms
 
         private void butFiltrAndSortUsers_Click(object sender, EventArgs e)
         {
-            var filtrAndSortUserForm = new FiltrAndSortTovarForm();
+            var filtrAndSortUserForm = new FiltrAndSortUsersForm();
             this.Hide();
             if (filtrAndSortUserForm.ShowDialog() == DialogResult.OK)
             {
