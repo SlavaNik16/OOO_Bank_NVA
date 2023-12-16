@@ -55,7 +55,7 @@
             this.pictureBoxTovar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxTovar.ErrorImage = global::OOO_Bank_NVA.Properties.Resources.photoEmpty;
             this.pictureBoxTovar.Image = global::OOO_Bank_NVA.Properties.Resources.photoEmpty;
-            this.pictureBoxTovar.Location = new System.Drawing.Point(140, 118);
+            this.pictureBoxTovar.Location = new System.Drawing.Point(137, 18);
             this.pictureBoxTovar.Name = "pictureBoxTovar";
             this.pictureBoxTovar.Size = new System.Drawing.Size(373, 226);
             this.pictureBoxTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,7 +73,7 @@
             // numericUpDownCount
             // 
             this.numericUpDownCount.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDownCount.Location = new System.Drawing.Point(224, 379);
+            this.numericUpDownCount.Location = new System.Drawing.Point(224, 323);
             this.numericUpDownCount.Maximum = new decimal(new int[] {
             120,
             0,
@@ -99,7 +99,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(37, 381);
+            this.label1.Location = new System.Drawing.Point(37, 325);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 33);
             this.label1.TabIndex = 4;
@@ -108,7 +108,7 @@
             // textBoxDesc
             // 
             this.textBoxDesc.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDesc.Location = new System.Drawing.Point(34, 491);
+            this.textBoxDesc.Location = new System.Drawing.Point(34, 435);
             this.textBoxDesc.Multiline = true;
             this.textBoxDesc.Name = "textBoxDesc";
             this.textBoxDesc.Size = new System.Drawing.Size(560, 121);
@@ -120,7 +120,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(37, 443);
+            this.label2.Location = new System.Drawing.Point(37, 387);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 33);
             this.label2.TabIndex = 6;
@@ -172,6 +172,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
+            this.panel1.Controls.Add(this.pictureBoxTovar);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.textBoxPrice);
             this.panel1.Controls.Add(this.label4);
@@ -181,11 +182,11 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.numericUpDownCount);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(3, 64);
+            this.panel1.Location = new System.Drawing.Point(3, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(626, 694);
+            this.panel1.Size = new System.Drawing.Size(626, 648);
             this.panel1.TabIndex = 11;
             // 
             // label3
@@ -193,7 +194,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(37, 320);
+            this.label3.Location = new System.Drawing.Point(37, 264);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(187, 33);
             this.label3.TabIndex = 11;
@@ -201,7 +202,7 @@
             // 
             // textBoxTittle
             // 
-            this.textBoxTittle.Location = new System.Drawing.Point(224, 317);
+            this.textBoxTittle.Location = new System.Drawing.Point(224, 261);
             this.textBoxTittle.Name = "textBoxTittle";
             this.textBoxTittle.Size = new System.Drawing.Size(367, 40);
             this.textBoxTittle.TabIndex = 12;
@@ -212,7 +213,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label4.Location = new System.Drawing.Point(437, 386);
+            this.label4.Location = new System.Drawing.Point(437, 330);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 33);
             this.label4.TabIndex = 13;
@@ -220,7 +221,7 @@
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(342, 436);
+            this.textBoxPrice.Location = new System.Drawing.Point(342, 380);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(249, 40);
             this.textBoxPrice.TabIndex = 14;
@@ -237,7 +238,7 @@
             this.tableLayoutPanel1.Controls.Add(this.butAdd, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.butCancel, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 632);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 586);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -249,7 +250,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 761);
-            this.Controls.Add(this.pictureBoxTovar);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

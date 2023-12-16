@@ -137,7 +137,7 @@
             this.flowLayoutPanel1.Controls.Add(this.dataGridUsers);
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 42);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1288, 505);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -250,7 +250,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.label2.Location = new System.Drawing.Point(17, 575);
+            this.label2.Location = new System.Drawing.Point(20, 536);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 33);
@@ -308,7 +308,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.butViewAll, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.butOk, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(933, 550);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(936, 511);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -361,7 +361,7 @@
             this.tableLayoutPanel3.Controls.Add(this.butSearch, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.butExport, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.butFiltr, 0, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(574, 545);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(577, 506);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -379,7 +379,7 @@
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.comboBoxStatus, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.comboBoxRole, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(20, 649);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(23, 610);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -396,11 +396,11 @@
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Controls.Add(this.tableLayoutPanel4);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(3, 65);
+            this.panel1.Location = new System.Drawing.Point(3, 99);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1294, 750);
+            this.panel1.Size = new System.Drawing.Size(1294, 716);
             this.panel1.TabIndex = 23;
             // 
             // radioDesc
@@ -430,7 +430,7 @@
             // searchBox
             // 
             this.searchBox.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchBox.Location = new System.Drawing.Point(133, 572);
+            this.searchBox.Location = new System.Drawing.Point(136, 533);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(422, 40);
             this.searchBox.TabIndex = 23;

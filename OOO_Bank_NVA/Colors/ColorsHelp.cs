@@ -16,6 +16,9 @@ namespace OOO_Bank_NVA.Colors
         public static Color ColorButtonCancel { get => Color.FromArgb(255, 176, 51, 0); }
         public static Color ColorButtonCancelOver { get => Color.FromArgb(255, 200, 70, 9); }
 
+        public static Color ColorButtonNotifications { get => Color.FromArgb(255, 254, 246, 1); }
+        public static Color ColorButtonNotificationsOver { get => Color.FromArgb(200, 255, 179, 2); }
+
         public static Color ColorButtonRed { get => Color.FromArgb(255, 255, 0, 2); }
         public static Color ColorButtonRedOver { get => Color.FromArgb(155, 255, 0, 2); }
         public static void ButtonSubmit(Button but)
@@ -32,6 +35,14 @@ namespace OOO_Bank_NVA.Colors
             but.FlatAppearance.BorderSize = 1;
             but.FlatAppearance.MouseOverBackColor = ColorButtonCancelOver;
             but.DialogResult = DialogResult.Cancel;
+        }
+
+        public static void ButtonNotofication(Button but)
+        {
+            but.BackColor = ColorButtonNotifications;
+            but.FlatStyle = FlatStyle.Flat;
+            but.FlatAppearance.BorderSize = 1;
+            but.FlatAppearance.MouseOverBackColor = ColorButtonNotificationsOver;
         }
         public static void ButtonRed(Button but)
         {

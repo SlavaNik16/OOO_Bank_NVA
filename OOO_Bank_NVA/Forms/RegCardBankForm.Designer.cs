@@ -42,7 +42,7 @@
             // 
             // maskedTextBoxNomer
             // 
-            this.maskedTextBoxNomer.Location = new System.Drawing.Point(80, 81);
+            this.maskedTextBoxNomer.Location = new System.Drawing.Point(81, 55);
             this.maskedTextBoxNomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.maskedTextBoxNomer.Mask = "0000-0000-0000-0000";
             this.maskedTextBoxNomer.Name = "maskedTextBoxNomer";
@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(135, 43);
+            this.label1.Location = new System.Drawing.Point(136, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(316, 33);
@@ -69,19 +69,18 @@
             this.panel1.Controls.Add(this.maskedTextBoxPinCode);
             this.panel1.Controls.Add(this.maskedTextBoxNomer);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(3, 64);
+            this.panel1.Location = new System.Drawing.Point(3, 109);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(577, 267);
+            this.panel1.Size = new System.Drawing.Size(577, 222);
             this.panel1.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(164, 150);
+            this.label2.Location = new System.Drawing.Point(165, 124);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(260, 33);
@@ -90,7 +89,7 @@
             // 
             // maskedTextBoxPinCode
             // 
-            this.maskedTextBoxPinCode.Location = new System.Drawing.Point(80, 188);
+            this.maskedTextBoxPinCode.Location = new System.Drawing.Point(81, 162);
             this.maskedTextBoxPinCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.maskedTextBoxPinCode.Mask = "0-0-0-0";
             this.maskedTextBoxPinCode.Name = "maskedTextBoxPinCode";

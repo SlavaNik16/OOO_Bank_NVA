@@ -62,9 +62,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.maskedTextBoxCard);
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(-5, 104);
+            this.panel1.Location = new System.Drawing.Point(-5, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(654, 313);
+            this.panel1.Size = new System.Drawing.Size(654, 322);
             this.panel1.TabIndex = 1;
             // 
             // textBoxBalance
@@ -131,7 +131,7 @@
             this.butAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.butAdd.Name = "butAdd";
             this.butAdd.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.butAdd.Size = new System.Drawing.Size(177, 50);
+            this.butAdd.Size = new System.Drawing.Size(196, 50);
             this.butAdd.TabIndex = 2;
             this.butAdd.Text = "Пополнить";
             this.butAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -147,12 +147,12 @@
             this.materialButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(399, 6);
+            this.materialButton2.Location = new System.Drawing.Point(384, 6);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(181, 50);
+            this.materialButton2.Size = new System.Drawing.Size(196, 50);
             this.materialButton2.TabIndex = 3;
             this.materialButton2.Text = "Отмена";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -164,9 +164,9 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 166F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel1.Controls.Add(this.materialButton2, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.butAdd, 1, 0);

@@ -75,7 +75,7 @@
             this.butEnter.Location = new System.Drawing.Point(33, 215);
             this.butEnter.Name = "butEnter";
             this.butEnter.Size = new System.Drawing.Size(203, 60);
-            this.butEnter.TabIndex = 4;
+            this.butEnter.TabIndex = 2;
             this.butEnter.Text = "Подтвердить";
             this.butEnter.UseVisualStyleBackColor = true;
             // 
@@ -86,7 +86,7 @@
             this.butCancel.Location = new System.Drawing.Point(299, 215);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(210, 60);
-            this.butCancel.TabIndex = 5;
+            this.butCancel.TabIndex = 3;
             this.butCancel.Text = "Отменить";
             this.butCancel.UseVisualStyleBackColor = true;
             // 
@@ -96,7 +96,7 @@
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '●';
             this.passwordBox.Size = new System.Drawing.Size(266, 44);
-            this.passwordBox.TabIndex = 22;
+            this.passwordBox.TabIndex = 1;
             this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             // 
             // label2

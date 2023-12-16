@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 using System;
+using System.Windows.Forms;
 
 namespace OOO_Bank_NVA.ChatConnect
 {
@@ -22,7 +23,6 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Чат временно недоступен!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Console.WriteLine("Чат временно недоступен!");
             }
         }
@@ -38,7 +38,6 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Ошибка регистрации пользователя в чате!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Console.WriteLine("Ошибка регистрации пользователя в чате!");
             }
         }
@@ -54,7 +53,6 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Ошибка обновления пользователя в чате!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Console.WriteLine("Ошибка обновления пользователя в чате!");
             }
         }
@@ -71,7 +69,6 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Ошибка взятие сообщений из чата!", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Console.WriteLine("Ошибка взятие сообщений из чата!");
             }
         }
@@ -87,8 +84,22 @@ namespace OOO_Bank_NVA.ChatConnect
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Ошибка! Сообщение не было отправлено", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Console.WriteLine("Ошибка! Сообщение не было отправлено!");
+            }
+        }
+
+        /// <summary>
+        /// Метод отправки уведомления о технической работе (закрытие формы через 30 сек)
+        /// </summary>
+        public async void SendClose()
+        {
+            try
+            {
+                await connection.InvokeAsync("SendClose");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка! Уведомление не было отправлено", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

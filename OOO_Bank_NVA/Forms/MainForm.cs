@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using MaterialSkin.Properties;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.ChatConnect;
@@ -14,6 +15,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web.UI.Design;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -51,16 +53,23 @@ namespace OOO_Bank_NVA.Forms
 
             chat.GetConnection().On<string, string>("Receive", (fromName, message) =>
             {
-                Dispatcher.CurrentDispatcher.Invoke(new System.Action(() =>
+                Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
                 {
                     listBoxChat.Items.Add($"От {fromName}: {message}");
                 }));
             });
             chat.GetConnection().On<string, string>("Send", (fromName, message) =>
             {
-                Dispatcher.CurrentDispatcher.Invoke(new System.Action(() =>
+                Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
                 {
                     listBoxChat.Items.Add($"От {fromName}: {message}");
+                }));
+            });
+            chat.GetConnection().On("SendClose", () =>
+            {
+                Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
+                {
+                    Console.WriteLine("Было вызвано техническое уведомление!");
                 }));
             });
             userRole = roleType;
@@ -69,12 +78,13 @@ namespace OOO_Bank_NVA.Forms
                 case RoleType.User:
                     materialTabControlOOOBank.TabPages.RemoveByKey(nameof(tabUsers));
                     tableLayoutPanelAdd_Edit_RemoveTovars.Visible = false;
+                    flowLayoutPanelAdmin.Visible = false;
                     break;
                 default:
                     break;
             }
         }
-        private void MainForm_Load(object sender, System.EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
             var butArray = new System.Windows.Forms.Button[]
@@ -90,6 +100,7 @@ namespace OOO_Bank_NVA.Forms
                 ColorsHelp.ButtonSubmit(but);
             }
             ColorsHelp.ButtonRed(butDeleteAccaunt);
+            ColorsHelp.ButtonNotofication(butSendTexnWork);
             NavigationTab(tabProfile);
 
         }
@@ -132,6 +143,16 @@ namespace OOO_Bank_NVA.Forms
                 case nameof(tabProfile):
                     ResetDataUserProfile();
                     break;
+                case nameof(tabExit):
+                    using (var db = new ApplicationContext(options))
+                    {
+                        var dbBank = db.DBBanks.FirstOrDefault(b => b.Login == AuthorizationForm.user.Phone);
+                        if (dbBank == null) return;
+                        dbBank.Status = Enums.StatusType.Offline;
+                        baseDBBankWriteRepository.Update(dbBank);
+                    }
+                    this.Close();
+                    break;
                 default:
                     ResetDataGridUser();
                     ResetDataGridTovars();
@@ -165,6 +186,7 @@ namespace OOO_Bank_NVA.Forms
                 maskTextBoxCardName.Text = card.Nomer;
                 maskedTextBoxCVCCode.Text = card.CSCCode.ToString();
                 maskedTextBoxDataEnd.Text = card.DateEnd.ToString();
+                butEditCard.Visible = false;
             }
         }
 
@@ -271,7 +293,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 var id = (TovarResponce)dataGridTovar.Rows[dataGridTovar.SelectedRows[0].Index].DataBoundItem;
                 textBoxDesc.Text = id.Description;
-                pictureBoxTovar.Image = !string.IsNullOrEmpty(id.Photo) ? Bitmap.FromFile(id.Photo) : null;
+                pictureBoxTovar.Image = !string.IsNullOrEmpty(id.Photo) ? Bitmap.FromFile(id.Photo) : Properties.Resources.photoEmpty;
             }
         }
 
@@ -327,7 +349,10 @@ namespace OOO_Bank_NVA.Forms
             {
                 var imageList = new ImageList();
                 imageList.ImageSize = new Size(32, 32);
-                var list = db.Baskets.NotDeletedAt().Where(x => x.PersonId == AuthorizationForm.user.Id).OrderBy(x => x.CreatedAt).ToList();
+                var list = db.Baskets.NotDeletedAt()
+                    .OrderBy(x=>x.StatusBy)
+                    .ThenByDescending(x=>x.CreatedAt)
+                    .Where(x => x.PersonId == AuthorizationForm.user.Id).ToList();
                 foreach (var l in list)
                 {
                     listItem = new ListViewItem(new string[] {
@@ -578,6 +603,11 @@ namespace OOO_Bank_NVA.Forms
                 dataGridUsers.DataSource = filtrAndSortUserForm.GetDataGridView().DataSource;
             }
             this.Show();
+        }
+
+        private void butSendTexnWork_Click(object sender, EventArgs e)
+        {
+            chat.SendClose();
         }
     }
 }

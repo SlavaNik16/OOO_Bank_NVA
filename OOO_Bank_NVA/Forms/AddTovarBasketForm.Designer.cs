@@ -57,7 +57,7 @@
             // 
             this.pictureBoxPhotoTovar.ErrorImage = global::OOO_Bank_NVA.Properties.Resources.photoEmpty;
             this.pictureBoxPhotoTovar.Image = global::OOO_Bank_NVA.Properties.Resources.photoEmpty;
-            this.pictureBoxPhotoTovar.Location = new System.Drawing.Point(74, 62);
+            this.pictureBoxPhotoTovar.Location = new System.Drawing.Point(135, 19);
             this.pictureBoxPhotoTovar.Name = "pictureBoxPhotoTovar";
             this.pictureBoxPhotoTovar.Size = new System.Drawing.Size(276, 216);
             this.pictureBoxPhotoTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -69,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.label1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(148, 14);
+            this.label1.Location = new System.Drawing.Point(207, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 33);
             this.label1.TabIndex = 1;
@@ -80,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(81, 97);
+            this.label2.Location = new System.Drawing.Point(148, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(263, 33);
             this.label2.TabIndex = 3;
@@ -88,7 +88,6 @@
             // 
             // numericUpDownCount
             // 
-            this.numericUpDownCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numericUpDownCount.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.numericUpDownCount.Location = new System.Drawing.Point(3, 3);
             this.numericUpDownCount.Maximum = new decimal(new int[] {
@@ -102,7 +101,7 @@
             0,
             0});
             this.numericUpDownCount.Name = "numericUpDownCount";
-            this.numericUpDownCount.Size = new System.Drawing.Size(86, 40);
+            this.numericUpDownCount.Size = new System.Drawing.Size(146, 40);
             this.numericUpDownCount.TabIndex = 4;
             this.numericUpDownCount.Value = new decimal(new int[] {
             1,
@@ -115,7 +114,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.label3.Location = new System.Drawing.Point(92, 5);
+            this.label3.Location = new System.Drawing.Point(152, 5);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 33);
@@ -126,7 +125,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.label5.Location = new System.Drawing.Point(166, 198);
+            this.label5.Location = new System.Drawing.Point(240, 202);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 33);
             this.label5.TabIndex = 7;
@@ -145,7 +144,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.Menu;
             this.panel1.Location = new System.Drawing.Point(3, 369);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(433, 294);
+            this.panel1.Size = new System.Drawing.Size(547, 294);
             this.panel1.TabIndex = 9;
             // 
             // labelPrice
@@ -153,7 +152,7 @@
             this.labelPrice.Location = new System.Drawing.Point(74, 238);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.ReadOnly = true;
-            this.labelPrice.Size = new System.Drawing.Size(276, 44);
+            this.labelPrice.Size = new System.Drawing.Size(393, 44);
             this.labelPrice.TabIndex = 12;
             // 
             // flowLayoutPanel1
@@ -164,24 +163,24 @@
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(74, 133);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(276, 51);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(402, 51);
             this.flowLayoutPanel1.TabIndex = 11;
             // 
             // labelMaxCount
             // 
             this.labelMaxCount.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMaxCount.Location = new System.Drawing.Point(143, 3);
+            this.labelMaxCount.Location = new System.Drawing.Point(203, 3);
             this.labelMaxCount.Name = "labelMaxCount";
             this.labelMaxCount.ReadOnly = true;
-            this.labelMaxCount.Size = new System.Drawing.Size(120, 44);
+            this.labelMaxCount.Size = new System.Drawing.Size(190, 44);
             this.labelMaxCount.TabIndex = 12;
             // 
             // textBoxTitle
             // 
-            this.textBoxTitle.Location = new System.Drawing.Point(74, 50);
+            this.textBoxTitle.Location = new System.Drawing.Point(77, 50);
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(276, 44);
+            this.textBoxTitle.Size = new System.Drawing.Size(390, 44);
             this.textBoxTitle.TabIndex = 10;
             // 
             // panelPicture
@@ -189,9 +188,9 @@
             this.panelPicture.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
             this.panelPicture.Controls.Add(this.pictureBoxPhotoTovar);
-            this.panelPicture.Location = new System.Drawing.Point(3, 69);
+            this.panelPicture.Location = new System.Drawing.Point(3, 114);
             this.panelPicture.Name = "panelPicture";
-            this.panelPicture.Size = new System.Drawing.Size(433, 294);
+            this.panelPicture.Size = new System.Drawing.Size(547, 249);
             this.panelPicture.TabIndex = 10;
             // 
             // tableLayoutPanel1
@@ -206,7 +205,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(424, 62);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(547, 62);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
             // materialButton2
@@ -219,12 +218,12 @@
             this.materialButton2.ForeColor = System.Drawing.SystemColors.Menu;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(216, 6);
+            this.materialButton2.Location = new System.Drawing.Point(277, 6);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(204, 50);
+            this.materialButton2.Size = new System.Drawing.Size(266, 50);
             this.materialButton2.TabIndex = 1;
             this.materialButton2.Text = "Отмена";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -245,7 +244,7 @@
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(204, 50);
+            this.materialButton1.Size = new System.Drawing.Size(265, 50);
             this.materialButton1.TabIndex = 0;
             this.materialButton1.Text = "Добавить в корзину";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -260,21 +259,19 @@
             this.panel3.ForeColor = System.Drawing.SystemColors.Menu;
             this.panel3.Location = new System.Drawing.Point(3, 665);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(424, 66);
+            this.panel3.Size = new System.Drawing.Size(547, 66);
             this.panel3.TabIndex = 12;
             // 
             // AddTovarBasketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 734);
+            this.ClientSize = new System.Drawing.Size(553, 734);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelPicture);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(430, 734);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(430, 734);
             this.Name = "AddTovarBasketForm";
             this.Padding = new System.Windows.Forms.Padding(3, 65, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

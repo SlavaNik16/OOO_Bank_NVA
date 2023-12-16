@@ -51,12 +51,12 @@
             this.butEnter.Enabled = false;
             this.butEnter.HighEmphasis = true;
             this.butEnter.Icon = null;
-            this.butEnter.Location = new System.Drawing.Point(46, 6);
+            this.butEnter.Location = new System.Drawing.Point(30, 6);
             this.butEnter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butEnter.MouseState = MaterialSkin.MouseState.HOVER;
             this.butEnter.Name = "butEnter";
             this.butEnter.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.butEnter.Size = new System.Drawing.Size(122, 46);
+            this.butEnter.Size = new System.Drawing.Size(176, 46);
             this.butEnter.TabIndex = 0;
             this.butEnter.Text = "Подтвердить";
             this.butEnter.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -68,7 +68,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(275, 125);
+            this.label3.Location = new System.Drawing.Point(276, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 33);
             this.label3.TabIndex = 15;
@@ -77,7 +77,7 @@
             // maskDataEnd
             // 
             this.maskDataEnd.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskDataEnd.Location = new System.Drawing.Point(46, 232);
+            this.maskDataEnd.Location = new System.Drawing.Point(46, 146);
             this.maskDataEnd.Mask = "00/00";
             this.maskDataEnd.Name = "maskDataEnd";
             this.maskDataEnd.Size = new System.Drawing.Size(132, 40);
@@ -89,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(28, 125);
+            this.label2.Location = new System.Drawing.Point(27, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(201, 33);
             this.label2.TabIndex = 13;
@@ -104,12 +104,12 @@
             this.materialButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(264, 6);
+            this.materialButton2.Location = new System.Drawing.Point(258, 6);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(127, 46);
+            this.materialButton2.Size = new System.Drawing.Size(176, 46);
             this.materialButton2.TabIndex = 17;
             this.materialButton2.Text = "Отмена";
             this.materialButton2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -120,7 +120,7 @@
             // maskedTextBoxNomer
             // 
             this.maskedTextBoxNomer.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBoxNomer.Location = new System.Drawing.Point(56, 131);
+            this.maskedTextBoxNomer.Location = new System.Drawing.Point(53, 54);
             this.maskedTextBoxNomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.maskedTextBoxNomer.Mask = "0000-0000-0000-0000";
             this.maskedTextBoxNomer.Name = "maskedTextBoxNomer";
@@ -133,7 +133,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(140, 29);
+            this.label1.Location = new System.Drawing.Point(140, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 33);
             this.label1.TabIndex = 19;
@@ -142,9 +142,10 @@
             // maskedTextBoxCVCCode
             // 
             this.maskedTextBoxCVCCode.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBoxCVCCode.Location = new System.Drawing.Point(267, 232);
+            this.maskedTextBoxCVCCode.Location = new System.Drawing.Point(264, 146);
             this.maskedTextBoxCVCCode.Mask = "000";
             this.maskedTextBoxCVCCode.Name = "maskedTextBoxCVCCode";
+            this.maskedTextBoxCVCCode.PasswordChar = '●';
             this.maskedTextBoxCVCCode.Size = new System.Drawing.Size(132, 40);
             this.maskedTextBoxCVCCode.TabIndex = 20;
             this.maskedTextBoxCVCCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -153,31 +154,34 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
+            this.panel1.Controls.Add(this.maskedTextBoxCVCCode);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.maskDataEnd);
+            this.panel1.Controls.Add(this.maskedTextBoxNomer);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.panel1.Location = new System.Drawing.Point(3, 64);
+            this.panel1.Location = new System.Drawing.Point(3, 94);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 295);
+            this.panel1.Size = new System.Drawing.Size(460, 265);
             this.panel1.TabIndex = 21;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 6;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.Controls.Add(this.materialButton2, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.butEnter, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 237);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 207);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -189,9 +193,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 362);
-            this.Controls.Add(this.maskedTextBoxCVCCode);
-            this.Controls.Add(this.maskedTextBoxNomer);
-            this.Controls.Add(this.maskDataEnd);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(466, 362);
@@ -205,7 +206,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

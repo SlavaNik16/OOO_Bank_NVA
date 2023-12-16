@@ -43,7 +43,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(107, 38);
+            this.label2.Location = new System.Drawing.Point(108, 14);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(213, 33);
@@ -53,7 +53,7 @@
             // maskedTextBoxPinCode
             // 
             this.maskedTextBoxPinCode.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBoxPinCode.Location = new System.Drawing.Point(17, 86);
+            this.maskedTextBoxPinCode.Location = new System.Drawing.Point(8, 52);
             this.maskedTextBoxPinCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.maskedTextBoxPinCode.Mask = "0-0-0-0";
             this.maskedTextBoxPinCode.Name = "maskedTextBoxPinCode";
@@ -72,12 +72,12 @@
             this.materialButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(264, 9);
+            this.materialButton2.Location = new System.Drawing.Point(228, 9);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(129, 39);
+            this.materialButton2.Size = new System.Drawing.Size(165, 45);
             this.materialButton2.TabIndex = 8;
             this.materialButton2.Text = "Отменить";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -94,12 +94,12 @@
             this.butEnter.Enabled = false;
             this.butEnter.HighEmphasis = true;
             this.butEnter.Icon = null;
-            this.butEnter.Location = new System.Drawing.Point(26, 9);
+            this.butEnter.Location = new System.Drawing.Point(15, 9);
             this.butEnter.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.butEnter.MouseState = MaterialSkin.MouseState.HOVER;
             this.butEnter.Name = "butEnter";
             this.butEnter.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.butEnter.Size = new System.Drawing.Size(132, 39);
+            this.butEnter.Size = new System.Drawing.Size(173, 45);
             this.butEnter.TabIndex = 7;
             this.butEnter.Text = "Подтвердить";
             this.butEnter.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -112,29 +112,29 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.maskedTextBoxPinCode);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(3, 65);
+            this.panel1.Location = new System.Drawing.Point(3, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(411, 227);
+            this.panel1.Size = new System.Drawing.Size(411, 191);
             this.panel1.TabIndex = 9;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.86618F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.0365F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.87105F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.30657F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.189781F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.01217F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.812652F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.06569F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.676399F));
             this.tableLayoutPanel1.Controls.Add(this.materialButton2, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.butEnter, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 170);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 128);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(411, 57);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(411, 63);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // PINCodeForm
