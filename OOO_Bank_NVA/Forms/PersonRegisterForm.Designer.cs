@@ -42,6 +42,15 @@
             this.maskPhoneText = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.passwordBox = new MaterialSkin.Controls.MaterialTextBox2();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.labelHeader = new System.Windows.Forms.Label();
+            this.logoCollegePictureBox = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoCollegePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // nameBox
@@ -50,7 +59,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nameBox.AnimateReadOnly = false;
-            this.nameBox.BackColor = System.Drawing.SystemColors.Control;
+            this.nameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(180)))), ((int)(((byte)(168)))));
             this.nameBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.nameBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.nameBox.Depth = 0;
@@ -58,7 +67,7 @@
             this.nameBox.HideSelection = true;
             this.nameBox.Hint = "Имя";
             this.nameBox.LeadingIcon = null;
-            this.nameBox.Location = new System.Drawing.Point(97, 281);
+            this.nameBox.Location = new System.Drawing.Point(97, 291);
             this.nameBox.MaxLength = 75;
             this.nameBox.MouseState = MaterialSkin.MouseState.OUT;
             this.nameBox.Name = "nameBox";
@@ -70,7 +79,7 @@
             this.nameBox.SelectionLength = 0;
             this.nameBox.SelectionStart = 0;
             this.nameBox.ShortcutsEnabled = true;
-            this.nameBox.Size = new System.Drawing.Size(571, 48);
+            this.nameBox.Size = new System.Drawing.Size(577, 48);
             this.nameBox.TabIndex = 2;
             this.nameBox.TabStop = false;
             this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -84,7 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.surnameBox.AnimateReadOnly = false;
-            this.surnameBox.BackColor = System.Drawing.SystemColors.Control;
+            this.surnameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(180)))), ((int)(((byte)(168)))));
             this.surnameBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.surnameBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.surnameBox.Depth = 0;
@@ -92,7 +101,7 @@
             this.surnameBox.HideSelection = true;
             this.surnameBox.Hint = "Фамилия";
             this.surnameBox.LeadingIcon = null;
-            this.surnameBox.Location = new System.Drawing.Point(97, 141);
+            this.surnameBox.Location = new System.Drawing.Point(97, 175);
             this.surnameBox.MaxLength = 75;
             this.surnameBox.MouseState = MaterialSkin.MouseState.OUT;
             this.surnameBox.Name = "surnameBox";
@@ -104,7 +113,7 @@
             this.surnameBox.SelectionLength = 0;
             this.surnameBox.SelectionStart = 0;
             this.surnameBox.ShortcutsEnabled = true;
-            this.surnameBox.Size = new System.Drawing.Size(571, 48);
+            this.surnameBox.Size = new System.Drawing.Size(577, 48);
             this.surnameBox.TabIndex = 4;
             this.surnameBox.TabStop = false;
             this.surnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -115,12 +124,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(94, 484);
+            this.label1.Location = new System.Drawing.Point(91, 457);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(131, 36);
             this.label1.TabIndex = 9;
             this.label1.Text = "Телефон";
             // 
@@ -129,7 +138,8 @@
             this.genderMaleRadio.AutoSize = true;
             this.genderMaleRadio.Checked = true;
             this.genderMaleRadio.Depth = 0;
-            this.genderMaleRadio.Location = new System.Drawing.Point(320, 356);
+            this.genderMaleRadio.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.genderMaleRadio.Location = new System.Drawing.Point(560, 361);
             this.genderMaleRadio.Margin = new System.Windows.Forms.Padding(0);
             this.genderMaleRadio.MouseLocation = new System.Drawing.Point(-1, -1);
             this.genderMaleRadio.MouseState = MaterialSkin.MouseState.HOVER;
@@ -146,7 +156,8 @@
             // 
             this.genderFemaleRadio.AutoSize = true;
             this.genderFemaleRadio.Depth = 0;
-            this.genderFemaleRadio.Location = new System.Drawing.Point(320, 416);
+            this.genderFemaleRadio.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.genderFemaleRadio.Location = new System.Drawing.Point(560, 421);
             this.genderFemaleRadio.Margin = new System.Windows.Forms.Padding(0);
             this.genderFemaleRadio.MouseLocation = new System.Drawing.Point(-1, -1);
             this.genderFemaleRadio.MouseState = MaterialSkin.MouseState.HOVER;
@@ -167,7 +178,7 @@
             this.butCreate.Enabled = false;
             this.butCreate.HighEmphasis = true;
             this.butCreate.Icon = null;
-            this.butCreate.Location = new System.Drawing.Point(142, 712);
+            this.butCreate.Location = new System.Drawing.Point(91, 11);
             this.butCreate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.butCreate.Name = "butCreate";
@@ -188,7 +199,7 @@
             this.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.butCancel.HighEmphasis = true;
             this.butCancel.Icon = null;
-            this.butCancel.Location = new System.Drawing.Point(509, 712);
+            this.butCancel.Location = new System.Drawing.Point(572, 11);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.butCancel.Name = "butCancel";
@@ -196,55 +207,55 @@
             this.butCancel.Size = new System.Drawing.Size(90, 36);
             this.butCancel.TabIndex = 14;
             this.butCancel.Text = "Закрыть";
-            this.butCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.butCancel.UseAccentColor = false;
+            this.butCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.butCancel.UseAccentColor = true;
             this.butCancel.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(249, 396);
+            this.label3.Location = new System.Drawing.Point(476, 391);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 17);
+            this.label3.Size = new System.Drawing.Size(70, 36);
             this.label3.TabIndex = 15;
             this.label3.Text = "Пол";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(100, 107);
+            this.label4.Location = new System.Drawing.Point(104, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 17);
+            this.label4.Size = new System.Drawing.Size(151, 27);
             this.label4.TabIndex = 16;
             this.label4.Text = "*Обязательно";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(94, 243);
+            this.label5.Location = new System.Drawing.Point(104, 253);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 17);
+            this.label5.Size = new System.Drawing.Size(151, 27);
             this.label5.TabIndex = 17;
             this.label5.Text = "*Обязательно";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(209, 484);
+            this.label6.Location = new System.Drawing.Point(240, 466);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 17);
+            this.label6.Size = new System.Drawing.Size(151, 27);
             this.label6.TabIndex = 18;
             this.label6.Text = "*Обязательно";
             // 
@@ -253,7 +264,7 @@
             this.maskPhoneText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.maskPhoneText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.maskPhoneText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.maskPhoneText.Location = new System.Drawing.Point(97, 513);
+            this.maskPhoneText.Location = new System.Drawing.Point(94, 503);
             this.maskPhoneText.Mask = "(000)-000-00-00";
             this.maskPhoneText.Name = "maskPhoneText";
             this.maskPhoneText.Size = new System.Drawing.Size(571, 37);
@@ -264,12 +275,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(94, 591);
+            this.label7.Location = new System.Drawing.Point(98, 577);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 17);
+            this.label7.Size = new System.Drawing.Size(151, 27);
             this.label7.TabIndex = 20;
             this.label7.Text = "*Обязательно";
             // 
@@ -279,7 +290,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordBox.AnimateReadOnly = false;
-            this.passwordBox.BackColor = System.Drawing.SystemColors.Control;
+            this.passwordBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(180)))), ((int)(((byte)(168)))));
             this.passwordBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.passwordBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.passwordBox.Depth = 0;
@@ -287,7 +298,7 @@
             this.passwordBox.HideSelection = true;
             this.passwordBox.Hint = "Пароль";
             this.passwordBox.LeadingIcon = null;
-            this.passwordBox.Location = new System.Drawing.Point(97, 629);
+            this.passwordBox.Location = new System.Drawing.Point(91, 616);
             this.passwordBox.MaxLength = 20;
             this.passwordBox.MouseState = MaterialSkin.MouseState.OUT;
             this.passwordBox.Name = "passwordBox";
@@ -307,35 +318,101 @@
             this.passwordBox.UseSystemPasswordChar = false;
             this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(180)))), ((int)(((byte)(168)))));
+            this.panel1.Controls.Add(this.surnameBox);
+            this.panel1.Controls.Add(this.panelHeader);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.passwordBox);
+            this.panel1.Controls.Add(this.nameBox);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.genderMaleRadio);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.genderFemaleRadio);
+            this.panel1.Controls.Add(this.maskPhoneText);
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panel1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Location = new System.Drawing.Point(3, 98);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(744, 720);
+            this.panel1.TabIndex = 21;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
+            this.panel2.Controls.Add(this.butCreate);
+            this.panel2.Controls.Add(this.butCancel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 816);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(744, 85);
+            this.panel2.TabIndex = 20;
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.Salmon;
+            this.panelHeader.Controls.Add(this.labelHeader);
+            this.panelHeader.Controls.Add(this.logoCollegePictureBox);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Margin = new System.Windows.Forms.Padding(4);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(744, 104);
+            this.panelHeader.TabIndex = 21;
+            // 
+            // labelHeader
+            // 
+            this.labelHeader.AutoSize = true;
+            this.labelHeader.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelHeader.Location = new System.Drawing.Point(155, 30);
+            this.labelHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(512, 38);
+            this.labelHeader.TabIndex = 1;
+            this.labelHeader.Text = "Информация об пользователе";
+            this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // logoCollegePictureBox
+            // 
+            this.logoCollegePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logoCollegePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.logoCollegePictureBox.Image = global::OOO_Bank_NVA.Properties.Resources.usersInfo;
+            this.logoCollegePictureBox.Location = new System.Drawing.Point(15, 8);
+            this.logoCollegePictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.logoCollegePictureBox.Name = "logoCollegePictureBox";
+            this.logoCollegePictureBox.Size = new System.Drawing.Size(123, 82);
+            this.logoCollegePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoCollegePictureBox.TabIndex = 0;
+            this.logoCollegePictureBox.TabStop = false;
+            // 
             // PersonRegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 775);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.passwordBox);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.butCancel);
-            this.Controls.Add(this.butCreate);
-            this.Controls.Add(this.genderFemaleRadio);
-            this.Controls.Add(this.genderMaleRadio);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskPhoneText);
-            this.Controls.Add(this.surnameBox);
-            this.Controls.Add(this.nameBox);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(750, 904);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(750, 775);
+            this.MaximumSize = new System.Drawing.Size(750, 904);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(750, 775);
+            this.MinimumSize = new System.Drawing.Size(750, 904);
             this.Name = "PersonRegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoCollegePictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -354,5 +431,10 @@
         private System.Windows.Forms.MaskedTextBox maskPhoneText;
         private System.Windows.Forms.Label label7;
         private MaterialSkin.Controls.MaterialTextBox2 passwordBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Label labelHeader;
+        private System.Windows.Forms.PictureBox logoCollegePictureBox;
     }
 }

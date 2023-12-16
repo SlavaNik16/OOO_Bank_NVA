@@ -408,21 +408,9 @@
     <Compile Include="Forms\RegCardBankForm.Designer.cs">
       <DependentUpon>RegCardBankForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231209195746_Init.cs" />
-    <Compile Include="Migrations\20231209195746_Init.designer.cs">
-      <DependentUpon>20231209195746_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231211184354_EditStringDataEnd.cs" />
-    <Compile Include="Migrations\20231211184354_EditStringDataEnd.designer.cs">
-      <DependentUpon>20231211184354_EditStringDataEnd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231211190344_EditStringDataEnd2.cs" />
-    <Compile Include="Migrations\20231211190344_EditStringDataEnd2.designer.cs">
-      <DependentUpon>20231211190344_EditStringDataEnd2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231211190647_123.cs" />
-    <Compile Include="Migrations\20231211190647_123.designer.cs">
-      <DependentUpon>20231211190647_123.cs</DependentUpon>
+    <Compile Include="Migrations\20231216000544_Init.cs" />
+    <Compile Include="Migrations\20231216000544_Init.designer.cs">
+      <DependentUpon>20231216000544_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="ModelsResponce\BasketResponce.cs" />
@@ -504,6 +492,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -551,7 +540,12 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\photoEmpty.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usersInfo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

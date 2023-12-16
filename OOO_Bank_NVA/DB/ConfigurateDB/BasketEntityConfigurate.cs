@@ -15,7 +15,8 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
             builder.PropertyAuditConfiguration();
 
             builder.Property(x => x.PersonId).IsRequired();
-            builder.Property(x => x.TovarId).IsRequired();
+            builder.Property(x => x.Title).IsRequired().HasMaxLength(120);
+            builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.Count).IsRequired();
         }
     }

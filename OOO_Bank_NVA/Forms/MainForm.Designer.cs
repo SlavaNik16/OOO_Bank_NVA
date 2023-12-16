@@ -34,7 +34,16 @@
             this.tabUsers = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.butView = new System.Windows.Forms.Button();
+            this.butFiltrAndSortUsers = new System.Windows.Forms.Button();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
+            this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStripDataGridUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.butStripView = new System.Windows.Forms.ToolStripMenuItem();
             this.tabTovars = new System.Windows.Forms.TabPage();
@@ -59,10 +68,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.butTovarView = new System.Windows.Forms.Button();
             this.tabBasket = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.butBy = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -73,7 +78,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel7 = new System.Windows.Forms.Panel();
             this.butCancelTovar = new System.Windows.Forms.Button();
             this.tabProfile = new System.Windows.Forms.TabPage();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -116,15 +120,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBoxBalance = new System.Windows.Forms.ToolStripStatusLabel();
-            this.butFiltrAndSortUsers = new System.Windows.Forms.Button();
-            this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControlOOOBank.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -139,14 +137,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabBasket.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.tabProfile.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -163,6 +156,8 @@
             this.tabSettings.SuspendLayout();
             this.panel20.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControlOOOBank
@@ -193,7 +188,7 @@
             this.tabUsers.ImageKey = "Users.png";
             this.tabUsers.Location = new System.Drawing.Point(4, 39);
             this.tabUsers.Name = "tabUsers";
-            this.tabUsers.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabUsers.Padding = new System.Windows.Forms.Padding(3);
             this.tabUsers.Size = new System.Drawing.Size(1492, 663);
             this.tabUsers.TabIndex = 0;
             this.tabUsers.Text = "Пользователи";
@@ -228,6 +223,18 @@
             this.butView.UseVisualStyleBackColor = true;
             this.butView.Click += new System.EventHandler(this.butView_Click);
             // 
+            // butFiltrAndSortUsers
+            // 
+            this.butFiltrAndSortUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.butFiltrAndSortUsers.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.butFiltrAndSortUsers.Location = new System.Drawing.Point(993, 3);
+            this.butFiltrAndSortUsers.Name = "butFiltrAndSortUsers";
+            this.butFiltrAndSortUsers.Size = new System.Drawing.Size(490, 83);
+            this.butFiltrAndSortUsers.TabIndex = 3;
+            this.butFiltrAndSortUsers.Text = "Фильтровать/Сортировать";
+            this.butFiltrAndSortUsers.UseVisualStyleBackColor = true;
+            this.butFiltrAndSortUsers.Click += new System.EventHandler(this.butFiltrAndSortUsers_Click);
+            // 
             // dataGridUsers
             // 
             this.dataGridUsers.AllowUserToAddRows = false;
@@ -257,6 +264,82 @@
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.SelectionChanged += new System.EventHandler(this.dataGridUsers_SelectionChanged);
             // 
+            // ColumnPhone
+            // 
+            this.ColumnPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnPhone.DataPropertyName = "Phone";
+            this.ColumnPhone.HeaderText = "Телефон";
+            this.ColumnPhone.MinimumWidth = 8;
+            this.ColumnPhone.Name = "ColumnPhone";
+            this.ColumnPhone.ReadOnly = true;
+            // 
+            // ColumnSurname
+            // 
+            this.ColumnSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnSurname.DataPropertyName = "Surname";
+            this.ColumnSurname.HeaderText = "Фамилия";
+            this.ColumnSurname.MinimumWidth = 8;
+            this.ColumnSurname.Name = "ColumnSurname";
+            this.ColumnSurname.ReadOnly = true;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnName.DataPropertyName = "Name";
+            this.ColumnName.HeaderText = "Имя";
+            this.ColumnName.MinimumWidth = 8;
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            // 
+            // ColumnGender
+            // 
+            this.ColumnGender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnGender.DataPropertyName = "Gender";
+            this.ColumnGender.HeaderText = "Пол";
+            this.ColumnGender.MinimumWidth = 8;
+            this.ColumnGender.Name = "ColumnGender";
+            this.ColumnGender.ReadOnly = true;
+            this.ColumnGender.Width = 94;
+            // 
+            // ColumnCardName
+            // 
+            this.ColumnCardName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnCardName.DataPropertyName = "CardName";
+            this.ColumnCardName.HeaderText = "Номер карты";
+            this.ColumnCardName.MinimumWidth = 8;
+            this.ColumnCardName.Name = "ColumnCardName";
+            this.ColumnCardName.ReadOnly = true;
+            // 
+            // ColumnStatus
+            // 
+            this.ColumnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnStatus.DataPropertyName = "Status";
+            this.ColumnStatus.HeaderText = "Статус";
+            this.ColumnStatus.MinimumWidth = 8;
+            this.ColumnStatus.Name = "ColumnStatus";
+            this.ColumnStatus.ReadOnly = true;
+            this.ColumnStatus.Width = 132;
+            // 
+            // ColumnRole
+            // 
+            this.ColumnRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnRole.DataPropertyName = "Role";
+            this.ColumnRole.HeaderText = "Права";
+            this.ColumnRole.MinimumWidth = 8;
+            this.ColumnRole.Name = "ColumnRole";
+            this.ColumnRole.ReadOnly = true;
+            this.ColumnRole.Width = 124;
+            // 
+            // ColumnUserId
+            // 
+            this.ColumnUserId.DataPropertyName = "Id";
+            this.ColumnUserId.HeaderText = "№";
+            this.ColumnUserId.MinimumWidth = 8;
+            this.ColumnUserId.Name = "ColumnUserId";
+            this.ColumnUserId.ReadOnly = true;
+            this.ColumnUserId.Visible = false;
+            this.ColumnUserId.Width = 150;
+            // 
             // contextMenuStripDataGridUsers
             // 
             this.contextMenuStripDataGridUsers.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -281,7 +364,7 @@
             this.tabTovars.ImageKey = "Tovar.png";
             this.tabTovars.Location = new System.Drawing.Point(4, 39);
             this.tabTovars.Name = "tabTovars";
-            this.tabTovars.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabTovars.Padding = new System.Windows.Forms.Padding(3);
             this.tabTovars.Size = new System.Drawing.Size(1492, 663);
             this.tabTovars.TabIndex = 1;
             this.tabTovars.Text = "Товары";
@@ -530,61 +613,24 @@
             // 
             // tabBasket
             // 
-            this.tabBasket.Controls.Add(this.panel4);
             this.tabBasket.Controls.Add(this.panel1);
             this.tabBasket.ImageKey = "Basket.png";
             this.tabBasket.Location = new System.Drawing.Point(4, 39);
             this.tabBasket.Name = "tabBasket";
-            this.tabBasket.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabBasket.Padding = new System.Windows.Forms.Padding(3);
             this.tabBasket.Size = new System.Drawing.Size(1492, 663);
             this.tabBasket.TabIndex = 3;
             this.tabBasket.Text = "Корзина";
             this.tabBasket.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.panel6);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(1141, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(348, 657);
-            this.panel4.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel5);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(-2, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(350, 657);
-            this.panel6.TabIndex = 4;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.panel9);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 657);
-            this.panel5.TabIndex = 4;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.butBy);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 557);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(350, 100);
-            this.panel9.TabIndex = 0;
             // 
             // butBy
             // 
             this.butBy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butBy.Enabled = false;
             this.butBy.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.butBy.Location = new System.Drawing.Point(0, 0);
+            this.butBy.Location = new System.Drawing.Point(1098, 3);
             this.butBy.Name = "butBy";
-            this.butBy.Size = new System.Drawing.Size(350, 100);
+            this.butBy.Size = new System.Drawing.Size(385, 94);
             this.butBy.TabIndex = 4;
             this.butBy.Text = "Купить";
             this.butBy.UseVisualStyleBackColor = true;
@@ -593,30 +639,30 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1138, 657);
+            this.panel1.Size = new System.Drawing.Size(1486, 657);
             this.panel1.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.panel7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1138, 657);
+            this.panel3.Size = new System.Drawing.Size(1486, 657);
             this.panel3.TabIndex = 1;
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.panel4);
             this.panel8.Controls.Add(this.listView);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1138, 557);
+            this.panel8.Size = new System.Drawing.Size(1486, 657);
             this.panel8.TabIndex = 2;
             // 
             // listView
@@ -624,11 +670,12 @@
             this.listView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(213)))), ((int)(((byte)(104)))));
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Фото,
+            this.columnHeader2,
             this.Датапокупки,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader1});
-            this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.listView.FullRowSelect = true;
             this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -639,7 +686,7 @@
             this.listView.OwnerDraw = true;
             this.listView.Scrollable = false;
             this.listView.ShowGroups = false;
-            this.listView.Size = new System.Drawing.Size(1138, 557);
+            this.listView.Size = new System.Drawing.Size(1486, 557);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -672,23 +719,14 @@
             this.columnHeader1.Text = "Статус оплаты";
             this.columnHeader1.Width = 220;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.butCancelTovar);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 557);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1138, 100);
-            this.panel7.TabIndex = 1;
-            // 
             // butCancelTovar
             // 
             this.butCancelTovar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butCancelTovar.Enabled = false;
             this.butCancelTovar.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.butCancelTovar.Location = new System.Drawing.Point(0, 0);
+            this.butCancelTovar.Location = new System.Drawing.Point(3, 3);
             this.butCancelTovar.Name = "butCancelTovar";
-            this.butCancelTovar.Size = new System.Drawing.Size(1138, 100);
+            this.butCancelTovar.Size = new System.Drawing.Size(1089, 94);
             this.butCancelTovar.TabIndex = 1;
             this.butCancelTovar.Text = "Отменить товар";
             this.butCancelTovar.UseVisualStyleBackColor = true;
@@ -740,7 +778,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.25858F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.74142F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 301F));
             this.tableLayoutPanel5.Controls.Add(this.butSendChat, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.butClearChat, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.panel17, 1, 0);
@@ -757,9 +795,9 @@
             this.butSendChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butSendChat.Enabled = false;
             this.butSendChat.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSendChat.Location = new System.Drawing.Point(710, 3);
+            this.butSendChat.Location = new System.Drawing.Point(709, 3);
             this.butSendChat.Name = "butSendChat";
-            this.butSendChat.Size = new System.Drawing.Size(295, 99);
+            this.butSendChat.Size = new System.Drawing.Size(296, 99);
             this.butSendChat.TabIndex = 11;
             this.butSendChat.Text = "Отправить";
             this.butSendChat.UseVisualStyleBackColor = true;
@@ -784,7 +822,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(273, 3);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(431, 99);
+            this.panel17.Size = new System.Drawing.Size(430, 99);
             this.panel17.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -799,7 +837,7 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.66667F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.33333F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(431, 99);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(430, 99);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // maskedTextBoxPhoneChat
@@ -820,7 +858,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(425, 41);
+            this.label3.Size = new System.Drawing.Size(424, 41);
             this.label3.TabIndex = 2;
             this.label3.Text = "Телефон";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1144,6 +1182,7 @@
             this.label4.Size = new System.Drawing.Size(148, 36);
             this.label4.TabIndex = 2;
             this.label4.Text = "Изменить";
+            this.label4.Visible = false;
             // 
             // butEditPassword
             // 
@@ -1153,6 +1192,7 @@
             this.butEditPassword.TabIndex = 1;
             this.butEditPassword.Text = "Пароль";
             this.butEditPassword.UseVisualStyleBackColor = true;
+            this.butEditPassword.Visible = false;
             // 
             // butEditPhone
             // 
@@ -1162,6 +1202,7 @@
             this.butEditPhone.TabIndex = 0;
             this.butEditPhone.Text = "Телефон";
             this.butEditPhone.UseVisualStyleBackColor = true;
+            this.butEditPhone.Visible = false;
             // 
             // panel19
             // 
@@ -1218,93 +1259,34 @@
             this.textBoxBalance.Size = new System.Drawing.Size(175, 27);
             this.textBoxBalance.Text = "Баланс карты: 0";
             // 
-            // butFiltrAndSortUsers
+            // panel4
             // 
-            this.butFiltrAndSortUsers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butFiltrAndSortUsers.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.butFiltrAndSortUsers.Location = new System.Drawing.Point(993, 3);
-            this.butFiltrAndSortUsers.Name = "butFiltrAndSortUsers";
-            this.butFiltrAndSortUsers.Size = new System.Drawing.Size(490, 83);
-            this.butFiltrAndSortUsers.TabIndex = 3;
-            this.butFiltrAndSortUsers.Text = "Фильтровать/Сортировать";
-            this.butFiltrAndSortUsers.UseVisualStyleBackColor = true;
-            this.butFiltrAndSortUsers.Click += new System.EventHandler(this.butFiltrAndSortUsers_Click);
+            this.panel4.Controls.Add(this.tableLayoutPanel2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 557);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1486, 100);
+            this.panel4.TabIndex = 5;
             // 
-            // ColumnPhone
+            // tableLayoutPanel2
             // 
-            this.ColumnPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnPhone.DataPropertyName = "Phone";
-            this.ColumnPhone.HeaderText = "Телефон";
-            this.ColumnPhone.MinimumWidth = 8;
-            this.ColumnPhone.Name = "ColumnPhone";
-            this.ColumnPhone.ReadOnly = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 391F));
+            this.tableLayoutPanel2.Controls.Add(this.butBy, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.butCancelTovar, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1486, 100);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // ColumnSurname
+            // columnHeader2
             // 
-            this.ColumnSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnSurname.DataPropertyName = "Surname";
-            this.ColumnSurname.HeaderText = "Фамилия";
-            this.ColumnSurname.MinimumWidth = 8;
-            this.ColumnSurname.Name = "ColumnSurname";
-            this.ColumnSurname.ReadOnly = true;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnName.DataPropertyName = "Name";
-            this.ColumnName.HeaderText = "Имя";
-            this.ColumnName.MinimumWidth = 8;
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            // 
-            // ColumnGender
-            // 
-            this.ColumnGender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnGender.DataPropertyName = "Gender";
-            this.ColumnGender.HeaderText = "Пол";
-            this.ColumnGender.MinimumWidth = 8;
-            this.ColumnGender.Name = "ColumnGender";
-            this.ColumnGender.ReadOnly = true;
-            this.ColumnGender.Width = 94;
-            // 
-            // ColumnCardName
-            // 
-            this.ColumnCardName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnCardName.DataPropertyName = "CardName";
-            this.ColumnCardName.HeaderText = "Номер карты";
-            this.ColumnCardName.MinimumWidth = 8;
-            this.ColumnCardName.Name = "ColumnCardName";
-            this.ColumnCardName.ReadOnly = true;
-            // 
-            // ColumnStatus
-            // 
-            this.ColumnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnStatus.DataPropertyName = "Status";
-            this.ColumnStatus.HeaderText = "Статус";
-            this.ColumnStatus.MinimumWidth = 8;
-            this.ColumnStatus.Name = "ColumnStatus";
-            this.ColumnStatus.ReadOnly = true;
-            this.ColumnStatus.Width = 132;
-            // 
-            // ColumnRole
-            // 
-            this.ColumnRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnRole.DataPropertyName = "Role";
-            this.ColumnRole.HeaderText = "Права";
-            this.ColumnRole.MinimumWidth = 8;
-            this.ColumnRole.Name = "ColumnRole";
-            this.ColumnRole.ReadOnly = true;
-            this.ColumnRole.Width = 124;
-            // 
-            // ColumnUserId
-            // 
-            this.ColumnUserId.DataPropertyName = "Id";
-            this.ColumnUserId.HeaderText = "№";
-            this.ColumnUserId.MinimumWidth = 8;
-            this.ColumnUserId.Name = "ColumnUserId";
-            this.ColumnUserId.ReadOnly = true;
-            this.ColumnUserId.Visible = false;
-            this.ColumnUserId.Width = 150;
+            this.columnHeader2.Text = "Название";
+            this.columnHeader2.Width = 330;
             // 
             // MainForm
             // 
@@ -1339,14 +1321,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tabBasket.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.tabProfile.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
@@ -1369,6 +1346,8 @@
             this.panel20.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1412,15 +1391,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button butCancelTovar;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button butBy;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListView listView;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ColumnHeader Фото;
         private System.Windows.Forms.ColumnHeader Датапокупки;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -1471,5 +1445,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUserId;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
 using System.Linq;
+using System.Web.UI.Design;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Windows.Threading;
@@ -63,7 +64,6 @@ namespace OOO_Bank_NVA.Forms
                 }));
             });
             userRole = roleType;
-            toolStripStatusLabelRole.Text = $"Статус: {userRole.PerevodDescription()}";
             switch (userRole)
             {
                 case RoleType.User:
@@ -73,6 +73,25 @@ namespace OOO_Bank_NVA.Forms
                 default:
                     break;
             }
+        }
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+
+            var butArray = new System.Windows.Forms.Button[]
+            {
+                butView,butFiltrAndSortUsers,
+                butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
+                butCancelTovar, butBy,
+                butChangeCard, butChangeCard, butClearChat, butSendChat,
+                butEditPhone, butEditPassword, butEditCard
+            };
+            foreach (var but in butArray)
+            {
+                ColorsHelp.ButtonSubmit(but);
+            }
+            ColorsHelp.ButtonRed(butDeleteAccaunt);
+            NavigationTab(tabProfile);
+
         }
         private void materialTabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
@@ -119,6 +138,17 @@ namespace OOO_Bank_NVA.Forms
                     ResetListView();
                     break;
             }
+            Status();
+        }
+        private void Status()
+        {
+            toolStripStatusLabelRole.Text = $"Статус: {userRole.PerevodDescription()}";
+            using (var db = new ApplicationContext(options))
+            {
+                var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == AuthorizationForm.user.CardName);
+                if (card == null) return;
+                textBoxBalance.Text = $"Баланс карты: ₽ {card.Balance}";
+            }
         }
         private void ResetDataUserProfile()
         {
@@ -133,7 +163,6 @@ namespace OOO_Bank_NVA.Forms
                 var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == user.CardName);
                 if (card == null) return;
                 maskTextBoxCardName.Text = card.Nomer;
-                textBoxBalance.Text = $"Баланс карты: ₽ {card.Balance}";
                 maskedTextBoxCVCCode.Text = card.CSCCode.ToString();
                 maskedTextBoxDataEnd.Text = card.DateEnd.ToString();
             }
@@ -171,25 +200,7 @@ namespace OOO_Bank_NVA.Forms
         }
 
         #endregion
-        private void MainForm_Load(object sender, System.EventArgs e)
-        {
-
-            var butArray = new System.Windows.Forms.Button[]
-            {
-                butView,butFiltrAndSortUsers,
-                butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
-                butCancelTovar, butBy,
-                butChangeCard, butChangeCard, butClearChat, butSendChat,
-                butEditPhone, butEditPassword, butEditCard
-            };
-            foreach (var but in butArray)
-            {
-                ColorsHelp.ButtonSubmit(but);
-            }
-            ColorsHelp.ButtonRed(butDeleteAccaunt);
-            NavigationTab(tabProfile);
-
-        }
+       
         #region Tovars
         private void ResetDataGridTovars()
         {
@@ -267,15 +278,33 @@ namespace OOO_Bank_NVA.Forms
         private void butTovarView_Click(object sender, System.EventArgs e)
         {
             var id = (TovarResponce)dataGridTovar.Rows[dataGridTovar.SelectedRows[0].Index].DataBoundItem;
+
             var addTovarBasketForm = new AddTovarBasketForm(id);
-            this.Hide();
             if (addTovarBasketForm.ShowDialog() == DialogResult.OK)
             {
-                var basket = addTovarBasketForm.Basket;
-                baseBasketWriteRepository.Add(basket, AuthorizationForm.UserName);
-                NavigationTab(tabTovars);
+                using (var db = new ApplicationContext(options)) {
+                    var tovar = db.Tovars.NotDeletedAt().FirstOrDefault(x=>x.Id == id.Id);
+                    if (tovar == null) return;
+                    var basket = addTovarBasketForm.Basket;
+                    var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == AuthorizationForm.user.CardName);
+                    var priceAll = (basket.Count * basket.Price) * 0.8m;
+                    if (card.Balance < priceAll)
+                    {
+                        MessageBox.Show("Простите вы не можете бронировать товар без " +
+                            $"возможности оплатить хотя бы 80%({priceAll})", "Информация!",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    tovar.MaxCount -= basket.Count;
+                    baseTovarWriteRepository.Update(tovar);
+                    if (tovar.MaxCount <= 0)
+                    {
+                        baseTovarWriteRepository.Delete(tovar);
+                    }
+                    baseBasketWriteRepository.Add(basket, AuthorizationForm.UserName);
+                    NavigationTab(tabTovars);
+                }
             }
-            this.Show();
         }
 
         private void butSortWithFiltr_Click(object sender, System.EventArgs e)
@@ -301,29 +330,29 @@ namespace OOO_Bank_NVA.Forms
                 var list = db.Baskets.NotDeletedAt().Where(x => x.PersonId == AuthorizationForm.user.Id).OrderBy(x => x.CreatedAt).ToList();
                 foreach (var l in list)
                 {
-                    var tovar = db.Tovars.NotDeletedAt().FirstOrDefault(x => x.Id == l.TovarId);
-                    if (tovar == null) return;
                     listItem = new ListViewItem(new string[] {
                         string.Empty,
-                        tovar.CreatedAt.ToString("G"),
+                        l.Title,
+                        l.CreatedAt.ToString("G"),
                         l.Count.ToString(),
-                        (tovar.Price*l.Count).ToString(),
+                        (l.Price*l.Count).ToString(),
                         l.StatusBy.PerevodDescription()
                     });
                     listItem.Tag = l.Id;
-                    var photo = db.Tovars.NotDeletedAt().FirstOrDefault(x => x.Id == l.TovarId).Photo;
-                    if (photo != null)
+
+                    if (l.Photo != string.Empty)
                     {
-                        imageList.Images.Add(photo, new Bitmap(photo));
+                        imageList.Images.Add(l.Photo, new Bitmap(l.Photo));
                         listView.SmallImageList = imageList;
-                        listItem.ImageIndex = imageList.Images.IndexOfKey(photo);
+                        listItem.ImageIndex = imageList.Images.IndexOfKey(l.Photo);
                     }
                     listView.Items.Add(listItem);
                     listView.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
                     listView.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.HeaderSize);
-                    listView.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.None);
-                    listView.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listView.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listView.AutoResizeColumn(3, ColumnHeaderAutoResizeStyle.None);
                     listView.AutoResizeColumn(4, ColumnHeaderAutoResizeStyle.HeaderSize);
+                    listView.AutoResizeColumn(5, ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
             }
         }
@@ -353,6 +382,24 @@ namespace OOO_Bank_NVA.Forms
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     baseBasketWriteRepository.Delete(basket);
+                    var tovar = db.Tovars.NotDeletedAt().FirstOrDefault(x=>x.Title == basket.Title);
+                    if(tovar == null)
+                    {
+                        var tovarNew = new Tovar()
+                        {
+                            Title = basket.Title,
+                            Price = basket.Price,
+                            MaxCount = basket.Count,
+                            Description = basket.Description,
+                            Photo = basket.Photo,
+                        };
+                        baseTovarWriteRepository.Add(tovarNew, AuthorizationForm.UserName);
+                    }
+                    else
+                    {
+                        tovar.MaxCount += basket.Count;
+                        baseTovarWriteRepository.Update(tovar, AuthorizationForm.UserName);
+                    }
                     NavigationTab(tabBasket);
                 }
             }
@@ -372,12 +419,35 @@ namespace OOO_Bank_NVA.Forms
             {
                 var basket = db.Baskets.NotDeletedAt().FirstOrDefault(x => x.Id == Guid.Parse(id));
                 if (basket == null) { return; }
-                if (MessageBox.Show("Вы действительно хотите отменить из брони данный товар!", "Предупреждение!",
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                if (basket.StatusBy == StatusBy.Attendant)
                 {
-                    baseBasketWriteRepository.Delete(basket);
-                    NavigationTab(tabBasket);
+                    var priceAll = basket.Price * basket.Count;
+                    if (MessageBox.Show("Вы действительно хотите купить данный товар:\n\r" +
+                        $"Название: {basket.Title}\n\r" +
+                        $"Всего: {priceAll:C2}\n\r" +
+                        $"Кол-во: {basket.Count}", "Информация!",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == AuthorizationForm.user.CardName);
+                        if (card == null) return;
+                        if(card.Balance < priceAll)
+                        {
+                            MessageBox.Show("Недостаточно средств для оплаты товара!","Ошибка операции!",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        card.Balance -= priceAll;
+                        baseCardWriteRepository.Update(card);
+                        basket.StatusBy = StatusBy.By;
+                        baseBasketWriteRepository.Update(basket);
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Вы уже оплатили этот товар!","Товар оплачен!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } 
+                NavigationTab(tabBasket);
             }
         }
 
@@ -484,7 +554,7 @@ namespace OOO_Bank_NVA.Forms
 
         private void butView_Click(object sender, EventArgs e)
         {
-            var id = (UserResponce)dataGridTovar.Rows[dataGridTovar.SelectedRows[0].Index].DataBoundItem;
+            var id = (UserResponce)dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].DataBoundItem;
             using (var db = new ApplicationContext(options))
             {
                 var user = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == id.Phone);

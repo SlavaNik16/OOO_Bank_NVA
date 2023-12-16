@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OOO_Bank_NVA.Migrations
 {
@@ -17,11 +17,11 @@ namespace OOO_Bank_NVA.Migrations
                     UpdatedAt = table.Column<DateTimeOffset>(nullable: false),
                     UpdatedBy = table.Column<string>(maxLength: 200, nullable: false),
                     DeletedAt = table.Column<DateTimeOffset>(nullable: true),
-                    Nomer = table.Column<string>(maxLength: 30, nullable: false),
+                    Nomer = table.Column<string>(maxLength: 40, nullable: false),
                     CSCCode = table.Column<int>(maxLength: 6, nullable: false),
-                    DateEnd = table.Column<DateTime>(nullable: false),
+                    DateEnd = table.Column<string>(nullable: false),
                     Balance = table.Column<decimal>(nullable: false),
-                    PinCode = table.Column<string>(maxLength: 8, nullable: false)
+                    PinCode = table.Column<string>(maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -100,8 +100,11 @@ namespace OOO_Bank_NVA.Migrations
                     UpdatedAt = table.Column<DateTimeOffset>(nullable: false),
                     UpdatedBy = table.Column<string>(maxLength: 200, nullable: false),
                     DeletedAt = table.Column<DateTimeOffset>(nullable: true),
-                    TovarId = table.Column<Guid>(nullable: false),
+                    Title = table.Column<string>(maxLength: 120, nullable: false),
+                    Price = table.Column<decimal>(nullable: false),
                     Count = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    Photo = table.Column<string>(nullable: true),
                     PersonId = table.Column<Guid>(nullable: false),
                     StatusBy = table.Column<int>(nullable: false)
                 },
@@ -114,23 +117,12 @@ namespace OOO_Bank_NVA.Migrations
                         principalTable: "Persons",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Baskets_Tovars_TovarId",
-                        column: x => x.TovarId,
-                        principalTable: "Tovars",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Baskets_PersonId",
                 table: "Baskets",
                 column: "PersonId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Baskets_TovarId",
-                table: "Baskets",
-                column: "TovarId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Card_Nomer",
@@ -179,10 +171,10 @@ namespace OOO_Bank_NVA.Migrations
                 name: "DBBanks");
 
             migrationBuilder.DropTable(
-                name: "Persons");
+                name: "Tovars");
 
             migrationBuilder.DropTable(
-                name: "Tovars");
+                name: "Persons");
         }
     }
 }

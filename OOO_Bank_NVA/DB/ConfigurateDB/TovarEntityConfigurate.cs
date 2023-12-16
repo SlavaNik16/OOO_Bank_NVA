@@ -18,10 +18,6 @@ namespace OOO_Bank_NVA.DB.ConfigurateDB
             builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.MaxCount).IsRequired();
 
-            builder.HasMany(x => x.Basket)
-                .WithOne(x => x.Tovar)
-                .HasForeignKey(x => x.TovarId);
-
             builder.HasIndex(x => x.Title)
                 .IsUnique()
                 .HasFilter($"{nameof(Tovar.DeletedAt)} is null")

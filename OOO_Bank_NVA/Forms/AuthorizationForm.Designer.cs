@@ -73,6 +73,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.butExit, 0, 2);
@@ -88,7 +89,7 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 343);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // MainForm
+            // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +99,7 @@
             this.MaximumSize = new System.Drawing.Size(534, 450);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(534, 450);
-            this.Name = "MainForm";
+            this.Name = "AuthorizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.tableLayoutPanel1.ResumeLayout(false);

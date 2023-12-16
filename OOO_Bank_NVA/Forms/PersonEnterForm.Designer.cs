@@ -40,12 +40,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(46, 20);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label1.Location = new System.Drawing.Point(48, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(131, 36);
             this.label1.TabIndex = 20;
             this.label1.Text = "Телефон";
             // 
@@ -57,7 +57,7 @@
             this.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.butCancel.HighEmphasis = true;
             this.butCancel.Icon = null;
-            this.butCancel.Location = new System.Drawing.Point(576, 334);
+            this.butCancel.Location = new System.Drawing.Point(595, 334);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.butCancel.Name = "butCancel";
@@ -66,8 +66,8 @@
             this.butCancel.TabIndex = 3;
             this.butCancel.TabStop = false;
             this.butCancel.Text = "Отменить";
-            this.butCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.butCancel.UseAccentColor = false;
+            this.butCancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.butCancel.UseAccentColor = true;
             this.butCancel.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -76,9 +76,11 @@
             this.panel1.Controls.Add(this.passwordBox);
             this.panel1.Controls.Add(this.maskPhoneText);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(6, 105);
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panel1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Location = new System.Drawing.Point(-4, 105);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 206);
+            this.panel1.Size = new System.Drawing.Size(812, 206);
             this.panel1.TabIndex = 0;
             // 
             // passwordBox
@@ -87,15 +89,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordBox.AnimateReadOnly = false;
-            this.passwordBox.BackColor = System.Drawing.SystemColors.Control;
+            this.passwordBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
             this.passwordBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.passwordBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.passwordBox.Depth = 0;
-            this.passwordBox.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordBox.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passwordBox.HideSelection = true;
             this.passwordBox.Hint = "Пароль";
             this.passwordBox.LeadingIcon = null;
-            this.passwordBox.Location = new System.Drawing.Point(39, 123);
+            this.passwordBox.Location = new System.Drawing.Point(41, 129);
             this.passwordBox.MaxLength = 20;
             this.passwordBox.MouseState = MaterialSkin.MouseState.OUT;
             this.passwordBox.Name = "passwordBox";
@@ -107,7 +109,7 @@
             this.passwordBox.SelectionLength = 0;
             this.passwordBox.SelectionStart = 0;
             this.passwordBox.ShortcutsEnabled = true;
-            this.passwordBox.Size = new System.Drawing.Size(701, 48);
+            this.passwordBox.Size = new System.Drawing.Size(725, 48);
             this.passwordBox.TabIndex = 1;
             this.passwordBox.TabStop = false;
             this.passwordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -117,11 +119,11 @@
             // 
             // maskPhoneText
             // 
-            this.maskPhoneText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskPhoneText.Location = new System.Drawing.Point(39, 62);
+            this.maskPhoneText.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maskPhoneText.Location = new System.Drawing.Point(41, 68);
             this.maskPhoneText.Mask = "(000)-000-00-00";
             this.maskPhoneText.Name = "maskPhoneText";
-            this.maskPhoneText.Size = new System.Drawing.Size(701, 37);
+            this.maskPhoneText.Size = new System.Drawing.Size(701, 44);
             this.maskPhoneText.TabIndex = 0;
             this.maskPhoneText.TextChanged += new System.EventHandler(this.phoneBox_TextChanged);
             // 
@@ -134,7 +136,7 @@
             this.butEnter.Enabled = false;
             this.butEnter.HighEmphasis = true;
             this.butEnter.Icon = null;
-            this.butEnter.Location = new System.Drawing.Point(68, 334);
+            this.butEnter.Location = new System.Drawing.Point(79, 334);
             this.butEnter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.butEnter.MouseState = MaterialSkin.MouseState.HOVER;
             this.butEnter.Name = "butEnter";
@@ -150,6 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
             this.ClientSize = new System.Drawing.Size(800, 400);
             this.Controls.Add(this.butEnter);
             this.Controls.Add(this.butCancel);

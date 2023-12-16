@@ -35,6 +35,15 @@
             this.radioDesc = new MaterialSkin.Controls.MaterialRadioButton();
             this.radioAsc = new MaterialSkin.Controls.MaterialRadioButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dataGridUsers = new System.Windows.Forms.DataGridView();
+            this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.searchBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.butViewAll = new MaterialSkin.Controls.MaterialButton();
@@ -44,24 +53,15 @@
             this.butFiltr = new System.Windows.Forms.Button();
             this.butExport = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridUsers = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBoxRole = new MaterialSkin.Controls.MaterialComboBox();
             this.comboBoxStatus = new MaterialSkin.Controls.MaterialComboBox();
-            this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxRole = new MaterialSkin.Controls.MaterialComboBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,6 +169,109 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1288, 505);
             this.flowLayoutPanel1.TabIndex = 3;
+            // 
+            // dataGridUsers
+            // 
+            this.dataGridUsers.AllowUserToAddRows = false;
+            this.dataGridUsers.AllowUserToDeleteRows = false;
+            this.dataGridUsers.AllowUserToResizeColumns = false;
+            this.dataGridUsers.AllowUserToResizeRows = false;
+            this.dataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnPhone,
+            this.ColumnSurname,
+            this.ColumnName,
+            this.ColumnGender,
+            this.ColumnCardName,
+            this.ColumnStatus,
+            this.ColumnRole,
+            this.ColumnId});
+            this.dataGridUsers.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridUsers.Location = new System.Drawing.Point(3, 3);
+            this.dataGridUsers.MultiSelect = false;
+            this.dataGridUsers.Name = "dataGridUsers";
+            this.dataGridUsers.ReadOnly = true;
+            this.dataGridUsers.RowHeadersWidth = 62;
+            this.dataGridUsers.RowTemplate.Height = 28;
+            this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridUsers.Size = new System.Drawing.Size(921, 498);
+            this.dataGridUsers.TabIndex = 1;
+            // 
+            // ColumnPhone
+            // 
+            this.ColumnPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnPhone.DataPropertyName = "Phone";
+            this.ColumnPhone.HeaderText = "Телефон";
+            this.ColumnPhone.MinimumWidth = 8;
+            this.ColumnPhone.Name = "ColumnPhone";
+            this.ColumnPhone.ReadOnly = true;
+            // 
+            // ColumnSurname
+            // 
+            this.ColumnSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnSurname.DataPropertyName = "Surname";
+            this.ColumnSurname.HeaderText = "Фамилия";
+            this.ColumnSurname.MinimumWidth = 8;
+            this.ColumnSurname.Name = "ColumnSurname";
+            this.ColumnSurname.ReadOnly = true;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnName.DataPropertyName = "Name";
+            this.ColumnName.HeaderText = "Имя";
+            this.ColumnName.MinimumWidth = 8;
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            // 
+            // ColumnGender
+            // 
+            this.ColumnGender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnGender.DataPropertyName = "Gender";
+            this.ColumnGender.HeaderText = "Пол";
+            this.ColumnGender.MinimumWidth = 8;
+            this.ColumnGender.Name = "ColumnGender";
+            this.ColumnGender.ReadOnly = true;
+            this.ColumnGender.Width = 76;
+            // 
+            // ColumnCardName
+            // 
+            this.ColumnCardName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnCardName.DataPropertyName = "CardName";
+            this.ColumnCardName.HeaderText = "Номер карты";
+            this.ColumnCardName.MinimumWidth = 8;
+            this.ColumnCardName.Name = "ColumnCardName";
+            this.ColumnCardName.ReadOnly = true;
+            // 
+            // ColumnStatus
+            // 
+            this.ColumnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnStatus.DataPropertyName = "Status";
+            this.ColumnStatus.HeaderText = "Статус";
+            this.ColumnStatus.MinimumWidth = 8;
+            this.ColumnStatus.Name = "ColumnStatus";
+            this.ColumnStatus.ReadOnly = true;
+            this.ColumnStatus.Width = 98;
+            // 
+            // ColumnRole
+            // 
+            this.ColumnRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnRole.DataPropertyName = "Role";
+            this.ColumnRole.HeaderText = "Права";
+            this.ColumnRole.MinimumWidth = 8;
+            this.ColumnRole.Name = "ColumnRole";
+            this.ColumnRole.ReadOnly = true;
+            this.ColumnRole.Width = 93;
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.DataPropertyName = "Id";
+            this.ColumnId.HeaderText = "№";
+            this.ColumnId.MinimumWidth = 8;
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Visible = false;
+            this.ColumnId.Width = 150;
             // 
             // label2
             // 
@@ -325,33 +428,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(353, 203);
             this.tableLayoutPanel3.TabIndex = 21;
             // 
-            // dataGridUsers
-            // 
-            this.dataGridUsers.AllowUserToAddRows = false;
-            this.dataGridUsers.AllowUserToDeleteRows = false;
-            this.dataGridUsers.AllowUserToResizeColumns = false;
-            this.dataGridUsers.AllowUserToResizeRows = false;
-            this.dataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnPhone,
-            this.ColumnSurname,
-            this.ColumnName,
-            this.ColumnGender,
-            this.ColumnCardName,
-            this.ColumnStatus,
-            this.ColumnRole,
-            this.ColumnId});
-            this.dataGridUsers.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dataGridUsers.Location = new System.Drawing.Point(3, 3);
-            this.dataGridUsers.MultiSelect = false;
-            this.dataGridUsers.Name = "dataGridUsers";
-            this.dataGridUsers.ReadOnly = true;
-            this.dataGridUsers.RowHeadersWidth = 62;
-            this.dataGridUsers.RowTemplate.Height = 28;
-            this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUsers.Size = new System.Drawing.Size(921, 498);
-            this.dataGridUsers.TabIndex = 1;
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
@@ -365,30 +441,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(538, 89);
             this.tableLayoutPanel4.TabIndex = 22;
-            // 
-            // comboBoxRole
-            // 
-            this.comboBoxRole.AutoResize = false;
-            this.comboBoxRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBoxRole.Depth = 0;
-            this.comboBoxRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBoxRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.comboBoxRole.DropDownHeight = 174;
-            this.comboBoxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxRole.DropDownWidth = 121;
-            this.comboBoxRole.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBoxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.comboBoxRole.FormattingEnabled = true;
-            this.comboBoxRole.Hint = "Роль";
-            this.comboBoxRole.IntegralHeight = false;
-            this.comboBoxRole.ItemHeight = 43;
-            this.comboBoxRole.Location = new System.Drawing.Point(3, 3);
-            this.comboBoxRole.MaxDropDownItems = 4;
-            this.comboBoxRole.MouseState = MaterialSkin.MouseState.OUT;
-            this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(264, 49);
-            this.comboBoxRole.StartIndex = 0;
-            this.comboBoxRole.TabIndex = 0;
             // 
             // comboBoxStatus
             // 
@@ -414,81 +466,29 @@
             this.comboBoxStatus.StartIndex = 0;
             this.comboBoxStatus.TabIndex = 1;
             // 
-            // ColumnPhone
+            // comboBoxRole
             // 
-            this.ColumnPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnPhone.DataPropertyName = "Phone";
-            this.ColumnPhone.HeaderText = "Телефон";
-            this.ColumnPhone.MinimumWidth = 8;
-            this.ColumnPhone.Name = "ColumnPhone";
-            this.ColumnPhone.ReadOnly = true;
-            // 
-            // ColumnSurname
-            // 
-            this.ColumnSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnSurname.DataPropertyName = "Surname";
-            this.ColumnSurname.HeaderText = "Фамилия";
-            this.ColumnSurname.MinimumWidth = 8;
-            this.ColumnSurname.Name = "ColumnSurname";
-            this.ColumnSurname.ReadOnly = true;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnName.DataPropertyName = "Name";
-            this.ColumnName.HeaderText = "Имя";
-            this.ColumnName.MinimumWidth = 8;
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            // 
-            // ColumnGender
-            // 
-            this.ColumnGender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnGender.DataPropertyName = "Gender";
-            this.ColumnGender.HeaderText = "Пол";
-            this.ColumnGender.MinimumWidth = 8;
-            this.ColumnGender.Name = "ColumnGender";
-            this.ColumnGender.ReadOnly = true;
-            this.ColumnGender.Width = 76;
-            // 
-            // ColumnCardName
-            // 
-            this.ColumnCardName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnCardName.DataPropertyName = "CardName";
-            this.ColumnCardName.HeaderText = "Номер карты";
-            this.ColumnCardName.MinimumWidth = 8;
-            this.ColumnCardName.Name = "ColumnCardName";
-            this.ColumnCardName.ReadOnly = true;
-            // 
-            // ColumnStatus
-            // 
-            this.ColumnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnStatus.DataPropertyName = "Status";
-            this.ColumnStatus.HeaderText = "Статус";
-            this.ColumnStatus.MinimumWidth = 8;
-            this.ColumnStatus.Name = "ColumnStatus";
-            this.ColumnStatus.ReadOnly = true;
-            this.ColumnStatus.Width = 98;
-            // 
-            // ColumnRole
-            // 
-            this.ColumnRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnRole.DataPropertyName = "Role";
-            this.ColumnRole.HeaderText = "Права";
-            this.ColumnRole.MinimumWidth = 8;
-            this.ColumnRole.Name = "ColumnRole";
-            this.ColumnRole.ReadOnly = true;
-            this.ColumnRole.Width = 93;
-            // 
-            // ColumnId
-            // 
-            this.ColumnId.DataPropertyName = "Id";
-            this.ColumnId.HeaderText = "№";
-            this.ColumnId.MinimumWidth = 8;
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            this.ColumnId.Visible = false;
-            this.ColumnId.Width = 150;
+            this.comboBoxRole.AutoResize = false;
+            this.comboBoxRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.comboBoxRole.Depth = 0;
+            this.comboBoxRole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.comboBoxRole.DropDownHeight = 174;
+            this.comboBoxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRole.DropDownWidth = 121;
+            this.comboBoxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBoxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.comboBoxRole.FormattingEnabled = true;
+            this.comboBoxRole.Hint = "Роль";
+            this.comboBoxRole.IntegralHeight = false;
+            this.comboBoxRole.ItemHeight = 43;
+            this.comboBoxRole.Location = new System.Drawing.Point(3, 3);
+            this.comboBoxRole.MaxDropDownItems = 4;
+            this.comboBoxRole.MouseState = MaterialSkin.MouseState.OUT;
+            this.comboBoxRole.Name = "comboBoxRole";
+            this.comboBoxRole.Size = new System.Drawing.Size(264, 49);
+            this.comboBoxRole.StartIndex = 0;
+            this.comboBoxRole.TabIndex = 0;
             // 
             // FiltrAndSortUsersForm
             // 
@@ -515,10 +515,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

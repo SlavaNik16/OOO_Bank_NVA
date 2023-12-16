@@ -29,8 +29,5 @@ namespace OOO_Bank_NVA.Models
         /// </summary>
         public string Photo { get; set; } = string.Empty;
 
-
-
-        internal ICollection<Basket> Basket { get; set; }
     }
 }
