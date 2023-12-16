@@ -212,7 +212,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.Salmon;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
             this.panelHeader.Controls.Add(this.labelHeader);
             this.panelHeader.Controls.Add(this.logoCollegePictureBox);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;

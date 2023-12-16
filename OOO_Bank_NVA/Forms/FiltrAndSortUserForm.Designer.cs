@@ -32,8 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.butSort = new MaterialSkin.Controls.MaterialButton();
-            this.radioDesc = new MaterialSkin.Controls.MaterialRadioButton();
-            this.radioAsc = new MaterialSkin.Controls.MaterialRadioButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
             this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +43,6 @@
             this.ColumnRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.searchBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.butViewAll = new MaterialSkin.Controls.MaterialButton();
             this.butOk = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,8 +51,14 @@
             this.butExport = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBoxStatus = new MaterialSkin.Controls.MaterialComboBox();
-            this.comboBoxRole = new MaterialSkin.Controls.MaterialComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radioDesc = new System.Windows.Forms.RadioButton();
+            this.radioAsc = new System.Windows.Forms.RadioButton();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.comboBoxRole = new System.Windows.Forms.ComboBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -63,6 +66,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxSort
@@ -81,11 +85,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Controls.Add(this.radioDesc);
             this.groupBox1.Controls.Add(this.radioAsc);
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Controls.Add(this.listBoxSort);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.Menu;
             this.groupBox1.Location = new System.Drawing.Point(930, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(350, 498);
@@ -127,45 +132,12 @@
             this.butSort.UseVisualStyleBackColor = true;
             this.butSort.Click += new System.EventHandler(this.butSort_Click);
             // 
-            // radioDesc
-            // 
-            this.radioDesc.AutoSize = true;
-            this.radioDesc.Depth = 0;
-            this.radioDesc.Location = new System.Drawing.Point(8, 365);
-            this.radioDesc.Margin = new System.Windows.Forms.Padding(0);
-            this.radioDesc.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.radioDesc.MouseState = MaterialSkin.MouseState.HOVER;
-            this.radioDesc.Name = "radioDesc";
-            this.radioDesc.Ripple = true;
-            this.radioDesc.Size = new System.Drawing.Size(137, 37);
-            this.radioDesc.TabIndex = 3;
-            this.radioDesc.TabStop = true;
-            this.radioDesc.Text = "По убыванию";
-            this.radioDesc.UseVisualStyleBackColor = true;
-            // 
-            // radioAsc
-            // 
-            this.radioAsc.AutoSize = true;
-            this.radioAsc.Checked = true;
-            this.radioAsc.Depth = 0;
-            this.radioAsc.Location = new System.Drawing.Point(8, 306);
-            this.radioAsc.Margin = new System.Windows.Forms.Padding(0);
-            this.radioAsc.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.radioAsc.MouseState = MaterialSkin.MouseState.HOVER;
-            this.radioAsc.Name = "radioAsc";
-            this.radioAsc.Ripple = true;
-            this.radioAsc.Size = new System.Drawing.Size(159, 37);
-            this.radioAsc.TabIndex = 2;
-            this.radioAsc.TabStop = true;
-            this.radioAsc.Text = "По возрастанию";
-            this.radioAsc.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.dataGridUsers);
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 108);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 42);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1288, 505);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -232,7 +204,7 @@
             this.ColumnGender.MinimumWidth = 8;
             this.ColumnGender.Name = "ColumnGender";
             this.ColumnGender.ReadOnly = true;
-            this.ColumnGender.Width = 76;
+            this.ColumnGender.Width = 72;
             // 
             // ColumnCardName
             // 
@@ -251,7 +223,7 @@
             this.ColumnStatus.MinimumWidth = 8;
             this.ColumnStatus.Name = "ColumnStatus";
             this.ColumnStatus.ReadOnly = true;
-            this.ColumnStatus.Width = 98;
+            this.ColumnStatus.Width = 91;
             // 
             // ColumnRole
             // 
@@ -261,7 +233,7 @@
             this.ColumnRole.MinimumWidth = 8;
             this.ColumnRole.Name = "ColumnRole";
             this.ColumnRole.ReadOnly = true;
-            this.ColumnRole.Width = 93;
+            this.ColumnRole.Width = 86;
             // 
             // ColumnId
             // 
@@ -276,44 +248,14 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label2.Location = new System.Drawing.Point(18, 640);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label2.Location = new System.Drawing.Point(17, 575);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 27);
+            this.label2.Size = new System.Drawing.Size(96, 33);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Поиск по названию";
-            // 
-            // searchBox
-            // 
-            this.searchBox.AnimateReadOnly = false;
-            this.searchBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.searchBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.searchBox.Depth = 0;
-            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.searchBox.HideSelection = true;
-            this.searchBox.Hint = "Поиск по всем столбцам";
-            this.searchBox.LeadingIcon = null;
-            this.searchBox.Location = new System.Drawing.Point(239, 630);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.searchBox.MaxLength = 80;
-            this.searchBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.searchBox.Name = "searchBox";
-            this.searchBox.PasswordChar = '\0';
-            this.searchBox.PrefixSuffixText = null;
-            this.searchBox.ReadOnly = false;
-            this.searchBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.searchBox.SelectedText = "";
-            this.searchBox.SelectionLength = 0;
-            this.searchBox.SelectionStart = 0;
-            this.searchBox.ShortcutsEnabled = true;
-            this.searchBox.Size = new System.Drawing.Size(331, 48);
-            this.searchBox.TabIndex = 7;
-            this.searchBox.TabStop = false;
-            this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.searchBox.TrailingIcon = null;
-            this.searchBox.UseSystemPasswordChar = false;
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.label2.Text = "Поиск ";
             // 
             // butViewAll
             // 
@@ -346,7 +288,7 @@
             this.butOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.butOk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butOk.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.butOk.HighEmphasis = false;
+            this.butOk.HighEmphasis = true;
             this.butOk.Icon = null;
             this.butOk.Location = new System.Drawing.Point(6, 107);
             this.butOk.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
@@ -356,8 +298,8 @@
             this.butOk.Size = new System.Drawing.Size(346, 81);
             this.butOk.TabIndex = 12;
             this.butOk.Text = "Подтвердить";
-            this.butOk.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.butOk.UseAccentColor = false;
+            this.butOk.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.butOk.UseAccentColor = true;
             this.butOk.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
@@ -366,7 +308,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.butViewAll, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.butOk, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(936, 615);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(933, 550);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -419,7 +361,7 @@
             this.tableLayoutPanel3.Controls.Add(this.butSearch, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.butExport, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.butFiltr, 0, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(577, 609);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(574, 545);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -433,74 +375,121 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 268F));
-            this.tableLayoutPanel4.Controls.Add(this.comboBoxStatus, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.comboBoxRole, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(23, 714);
+            this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxStatus, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxRole, 0, 1);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(20, 649);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(538, 89);
             this.tableLayoutPanel4.TabIndex = 22;
             // 
-            // comboBoxStatus
+            // panel1
             // 
-            this.comboBoxStatus.AutoResize = false;
-            this.comboBoxStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBoxStatus.Depth = 0;
-            this.comboBoxStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBoxStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.comboBoxStatus.DropDownHeight = 174;
-            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxStatus.DropDownWidth = 121;
-            this.comboBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBoxStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Hint = "Статус";
-            this.comboBoxStatus.IntegralHeight = false;
-            this.comboBoxStatus.ItemHeight = 43;
-            this.comboBoxStatus.Location = new System.Drawing.Point(273, 3);
-            this.comboBoxStatus.MaxDropDownItems = 4;
-            this.comboBoxStatus.MouseState = MaterialSkin.MouseState.OUT;
-            this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(262, 49);
-            this.comboBoxStatus.StartIndex = 0;
-            this.comboBoxStatus.TabIndex = 1;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
+            this.panel1.Controls.Add(this.searchBox);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
+            this.panel1.Controls.Add(this.tableLayoutPanel3);
+            this.panel1.Controls.Add(this.tableLayoutPanel4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panel1.Location = new System.Drawing.Point(3, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1294, 750);
+            this.panel1.TabIndex = 23;
+            // 
+            // radioDesc
+            // 
+            this.radioDesc.AutoSize = true;
+            this.radioDesc.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.radioDesc.Location = new System.Drawing.Point(7, 371);
+            this.radioDesc.Name = "radioDesc";
+            this.radioDesc.Size = new System.Drawing.Size(202, 37);
+            this.radioDesc.TabIndex = 8;
+            this.radioDesc.Text = "По убыванию";
+            this.radioDesc.UseVisualStyleBackColor = true;
+            // 
+            // radioAsc
+            // 
+            this.radioAsc.AutoSize = true;
+            this.radioAsc.Checked = true;
+            this.radioAsc.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.radioAsc.Location = new System.Drawing.Point(7, 305);
+            this.radioAsc.Name = "radioAsc";
+            this.radioAsc.Size = new System.Drawing.Size(231, 37);
+            this.radioAsc.TabIndex = 7;
+            this.radioAsc.TabStop = true;
+            this.radioAsc.Text = "По возрастанию";
+            this.radioAsc.UseVisualStyleBackColor = true;
+            // 
+            // searchBox
+            // 
+            this.searchBox.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchBox.Location = new System.Drawing.Point(133, 572);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(422, 40);
+            this.searchBox.TabIndex = 23;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // comboBoxRole
             // 
-            this.comboBoxRole.AutoResize = false;
-            this.comboBoxRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBoxRole.Depth = 0;
-            this.comboBoxRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBoxRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.comboBoxRole.DropDownHeight = 174;
-            this.comboBoxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxRole.DropDownWidth = 121;
-            this.comboBoxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.comboBoxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.comboBoxRole.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxRole.FormattingEnabled = true;
-            this.comboBoxRole.Hint = "Роль";
-            this.comboBoxRole.IntegralHeight = false;
-            this.comboBoxRole.ItemHeight = 43;
-            this.comboBoxRole.Location = new System.Drawing.Point(3, 3);
-            this.comboBoxRole.MaxDropDownItems = 4;
-            this.comboBoxRole.MouseState = MaterialSkin.MouseState.OUT;
+            this.comboBoxRole.Location = new System.Drawing.Point(3, 46);
             this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(264, 49);
-            this.comboBoxRole.StartIndex = 0;
-            this.comboBoxRole.TabIndex = 0;
+            this.comboBoxRole.Size = new System.Drawing.Size(264, 41);
+            this.comboBoxRole.TabIndex = 24;
+            // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Location = new System.Drawing.Point(273, 46);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(262, 41);
+            this.comboBoxStatus.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 43);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Роль";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label3.Location = new System.Drawing.Point(274, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(260, 43);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Статус";
             // 
             // FiltrAndSortUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 818);
-            this.Controls.Add(this.tableLayoutPanel4);
-            this.Controls.Add(this.tableLayoutPanel3);
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.searchBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1300, 818);
             this.MinimizeBox = false;
@@ -520,8 +509,10 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -530,11 +521,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MaterialSkin.Controls.MaterialButton butSort;
-        private MaterialSkin.Controls.MaterialRadioButton radioDesc;
-        private MaterialSkin.Controls.MaterialRadioButton radioAsc;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;
-        private MaterialSkin.Controls.MaterialTextBox2 searchBox;
         private MaterialSkin.Controls.MaterialButton butViewAll;
         private MaterialSkin.Controls.MaterialButton butOk;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -544,8 +532,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView dataGridUsers;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private MaterialSkin.Controls.MaterialComboBox comboBoxStatus;
-        private MaterialSkin.Controls.MaterialComboBox comboBoxRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSurname;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
@@ -554,5 +540,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioDesc;
+        private System.Windows.Forms.RadioButton radioAsc;
+        private System.Windows.Forms.ComboBox comboBoxRole;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
