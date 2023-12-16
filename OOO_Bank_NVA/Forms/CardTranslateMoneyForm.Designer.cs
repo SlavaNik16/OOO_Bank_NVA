@@ -185,6 +185,10 @@
             this.ClientSize = new System.Drawing.Size(647, 480);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(647, 480);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(647, 480);
             this.Name = "CardTranslateMoneyForm";
             this.Text = "Перевод средств";
             this.panel1.ResumeLayout(false);
