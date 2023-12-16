@@ -52,9 +52,5 @@ namespace OOO_Bank_NVA.Forms
                 !string.IsNullOrEmpty(dbBank.Password);
         }
 
-        private void butEnter_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-        }
     }
 }
