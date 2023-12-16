@@ -69,7 +69,8 @@ namespace OOO_Bank_NVA.Forms
             {
                 Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
                 {
-                    Console.WriteLine("Было вызвано техническое уведомление!");
+                    MessageBox.Show("Было вызвано техническое уведомление!","Предупреждение!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }));
             });
             userRole = roleType;
@@ -401,8 +402,12 @@ namespace OOO_Bank_NVA.Forms
             var id = listView.SelectedItems[0].Tag.ToString();
             using (var db = new ApplicationContext(options))
             {
-                var basket = db.Baskets.NotDeletedAt().FirstOrDefault(x => x.Id == Guid.Parse(id));
-                if (basket == null) { return; }
+                var basket = db.Baskets.NotDeletedAt().FirstOrDefault(x => x.Id == Guid.Parse(id) && x.StatusBy == StatusBy.Attendant);
+                if (basket == null) {
+                    MessageBox.Show("Вы не можете отменить товар, который уже куплен!", "Предупреждение!",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    return;
+                }
                 if (MessageBox.Show("Вы действительно хотите отменить из брони данный товар!", "Предупреждение!",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {

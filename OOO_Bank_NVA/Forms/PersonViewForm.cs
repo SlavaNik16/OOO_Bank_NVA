@@ -50,6 +50,12 @@ namespace OOO_Bank_NVA.Forms
                        "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if(cardName == AuthorizationForm.user.CardName)
+            {
+                MessageBox.Show($"Вы не можете отправить деньги на одну и туже карту!",
+                      "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             using (var db = new ApplicationContext(options))
             {
                 var cardOther = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == cardName);
