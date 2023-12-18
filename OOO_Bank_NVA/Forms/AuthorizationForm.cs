@@ -73,7 +73,7 @@ namespace OOO_Bank_NVA
                     user = person;
 
                     UserName = $"{person.Surname}_{person.Name}";
-                    chat.Update(user.Phone);
+                    chat.CreateOrReplace(user.Phone);
                     dbBank.Status = StatusType.Online;
                     writeDbBankRepository.Update(dbBank, UserName);
                     var mainForm = new MainForm(chat, dbBank.Role);
@@ -96,7 +96,6 @@ namespace OOO_Bank_NVA
                     Login = person.Phone,
                     Password = CommonSpec.getHashSha256(personRegisterForm.Password)
                 };
-                chat.Create(person.Phone);
                 UserName = $"{person.Surname}_{person.Name}";
                 writePersonRepository.Add(person, UserName);
                 writeDbBankRepository.Add(dbbank, UserName);

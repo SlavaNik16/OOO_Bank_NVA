@@ -2,6 +2,7 @@
 
 using MaterialSkin.Controls;
 using Microsoft.EntityFrameworkCore;
+using OOO_Bank_NVA.ChatConnect;
 using OOO_Bank_NVA.DB;
 using OOO_Bank_NVA.DB.ReadDB;
 using OOO_Bank_NVA.Enums;
@@ -20,9 +21,11 @@ namespace OOO_Bank_NVA.Forms
         private DbContextOptions<ApplicationContext> options;
         private BaseWriteRepository<Card> baseCardWriteRepository;
         private BaseWriteRepository<DBBank> baseDBBankWriteRepository;
-        public PersonViewForm(Person person)
+        private Chat chat;
+        public PersonViewForm(Person person, Chat chat)
         {
             InitializeComponent();
+            this.chat = chat;
             options = DataBaseHelper.Options();
             baseCardWriteRepository = new BaseWriteRepository<Card>();
             baseDBBankWriteRepository = new BaseWriteRepository<DBBank>();
@@ -92,8 +95,15 @@ namespace OOO_Bank_NVA.Forms
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-
-                    dbBank.Status = dbBank.Status == StatusType.Blocked ? StatusType.Offline : StatusType.Blocked;
+                    if(dbBank.Status == StatusType.Blocked)
+                    {
+                        dbBank.Status = StatusType.Offline;
+                    }
+                    else
+                    {
+                        dbBank.Status = StatusType.Blocked;
+                        chat.SendBan(person.Phone);
+                    }
                     baseDBBankWriteRepository.Update(dbBank, AuthorizationForm.UserName);
                     MessageBox.Show($"Пользователь успешно {(dbBank.Status == StatusType.Blocked ? "Забанен" : "Разбанен")}!",
                         "Информация!",

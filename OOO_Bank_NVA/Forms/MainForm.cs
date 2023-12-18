@@ -58,6 +58,7 @@ namespace OOO_Bank_NVA.Forms
                     listBoxChat.Items.Add($"От {fromName}: {message}");
                 }));
             });
+
             chat.GetConnection().On<string, string>("Send", (fromName, message) =>
             {
                 Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
@@ -65,12 +66,24 @@ namespace OOO_Bank_NVA.Forms
                     listBoxChat.Items.Add($"От {fromName}: {message}");
                 }));
             });
+
             chat.GetConnection().On("SendClose", () =>
             {
                 Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
                 {
                     MessageBox.Show("Было вызвано техническое уведомление!","Предупреждение!",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }));
+            });
+
+            chat.GetConnection().On("SendBan", () =>
+            {
+                Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
+                {
+                    MessageBox.Show("Вы были забанены!\n\rОбратитесь в тех. поддержку, если есть вопросы!\n\r8(900)-635-73-15", "Предупреждение!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.Close();
+                    Application.Exit();
                 }));
             });
             userRole = roleType;
@@ -589,7 +602,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 var user = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == id.Phone);
                 if (user == null) return;
-                var personViewForm = new PersonViewForm(user);
+                var personViewForm = new PersonViewForm(user, chat);
                 this.Hide();
                 if (personViewForm.ShowDialog() == DialogResult.OK)
                 {
