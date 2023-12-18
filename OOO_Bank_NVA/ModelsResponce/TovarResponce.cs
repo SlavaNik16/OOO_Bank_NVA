@@ -2,6 +2,9 @@
 
 namespace OOO_Bank_NVA.ModelsResponce
 {
+    /// <summary>
+    /// Класс вывода товаров
+    /// </summary>
     public class TovarResponce
     {
 

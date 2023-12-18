@@ -2,7 +2,6 @@
 using OOO_Bank_NVA.Colors;
 using OOO_Bank_NVA.Models;
 using System;
-using System.Windows.Forms;
 namespace OOO_Bank_NVA.Forms
 {
     public partial class PersonEnterForm : MaterialForm
@@ -52,9 +51,5 @@ namespace OOO_Bank_NVA.Forms
                 !string.IsNullOrEmpty(dbBank.Password);
         }
 
-        private void butEnter_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-        }
     }
 }

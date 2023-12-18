@@ -21,7 +21,7 @@ namespace OOO_Bank_NVA.Forms
             DataGridReset();
             listBoxSort.SelectedIndex = 0;
             ColorsHelp.ButtonSubmit(butSearch);
-            ColorsHelp.ButtonSubmit(butExport);
+            ColorsHelp.ButtonRed(butExport);
             ColorsHelp.ButtonSubmit(butFiltr);
 
         }

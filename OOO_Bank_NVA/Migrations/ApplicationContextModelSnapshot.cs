@@ -39,14 +39,25 @@ namespace OOO_Bank_NVA.Migrations
                     b.Property<DateTimeOffset?>("DeletedAt")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("PersonId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("StatusBy")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("TovarId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(120)")
+                        .HasMaxLength(120);
 
                     b.Property<DateTimeOffset?>("UpdatedAt")
                         .IsRequired()
@@ -60,8 +71,6 @@ namespace OOO_Bank_NVA.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("PersonId");
-
-                    b.HasIndex("TovarId");
 
                     b.ToTable("Baskets");
                 });
@@ -293,12 +302,6 @@ namespace OOO_Bank_NVA.Migrations
                     b.HasOne("OOO_Bank_NVA.Models.Person", "Person")
                         .WithMany("Basket")
                         .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("OOO_Bank_NVA.Models.Tovar", "Tovar")
-                        .WithMany("Basket")
-                        .HasForeignKey("TovarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

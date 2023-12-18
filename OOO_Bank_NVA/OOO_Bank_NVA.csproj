@@ -336,6 +336,12 @@
     <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="DB\DataBaseHelper.cs" />
     <Compile Include="DB\SampleContextFactory.cs" />
+    <Compile Include="Forms\AboutBoxInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutBoxInfo.Designer.cs">
+      <DependentUpon>AboutBoxInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddTovarBasketForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,12 @@
     </Compile>
     <Compile Include="Forms\CardValidateForm.Designer.cs">
       <DependentUpon>CardValidateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiltrAndSortUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltrAndSortUserForm.Designer.cs">
+      <DependentUpon>FiltrAndSortUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FiltrAndSortTovarForm.cs">
       <SubType>Form</SubType>
@@ -384,6 +396,12 @@
     <Compile Include="Forms\PersonRegisterForm.Designer.cs">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PersonViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonViewForm.Designer.cs">
+      <DependentUpon>PersonViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PINCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,21 +414,9 @@
     <Compile Include="Forms\RegCardBankForm.Designer.cs">
       <DependentUpon>RegCardBankForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20231209195746_Init.cs" />
-    <Compile Include="Migrations\20231209195746_Init.designer.cs">
-      <DependentUpon>20231209195746_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231211184354_EditStringDataEnd.cs" />
-    <Compile Include="Migrations\20231211184354_EditStringDataEnd.designer.cs">
-      <DependentUpon>20231211184354_EditStringDataEnd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231211190344_EditStringDataEnd2.cs" />
-    <Compile Include="Migrations\20231211190344_EditStringDataEnd2.designer.cs">
-      <DependentUpon>20231211190344_EditStringDataEnd2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20231211190647_123.cs" />
-    <Compile Include="Migrations\20231211190647_123.designer.cs">
-      <DependentUpon>20231211190647_123.cs</DependentUpon>
+    <Compile Include="Migrations\20231216000544_Init.cs" />
+    <Compile Include="Migrations\20231216000544_Init.designer.cs">
+      <DependentUpon>20231216000544_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\20231126201419_ChangeBD.cs" />
     <Compile Include="Migrations\20231126201419_ChangeBD.designer.cs">
@@ -427,6 +433,7 @@
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="ModelsResponce\BasketResponce.cs" />
     <Compile Include="ModelsResponce\TovarResponce.cs" />
+    <Compile Include="ModelsResponce\UserResponce.cs" />
     <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\Enums\StatusBy.cs" />
     <Compile Include="Models\Enums\Gender.cs" />
@@ -455,6 +462,9 @@
     <Compile Include="Nuget\Export.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AboutBoxInfo.resx">
+      <DependentUpon>AboutBoxInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddTovarBasketForm.resx">
       <DependentUpon>AddTovarBasketForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -470,17 +480,24 @@
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltrAndSortUserForm.resx">
+      <DependentUpon>FiltrAndSortUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FiltrAndSortTovarForm.resx">
       <DependentUpon>FiltrAndSortTovarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonEnterForm.resx">
       <DependentUpon>PersonEnterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonRegisterForm.resx">
       <DependentUpon>PersonRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonViewForm.resx">
+      <DependentUpon>PersonViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PINCodeForm.resx">
       <DependentUpon>PINCodeForm.cs</DependentUpon>
@@ -496,6 +513,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -543,7 +561,12 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\photoEmpty.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usersInfo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

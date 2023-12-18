@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace OOO_Bank_NVA.Models
+﻿namespace OOO_Bank_NVA.Models
 {
     public class Tovar : BaseAuditEntity
     {
@@ -29,8 +27,5 @@ namespace OOO_Bank_NVA.Models
         /// </summary>
         public string Photo { get; set; } = string.Empty;
 
-
-
-        internal ICollection<Basket> Basket { get; set; }
     }
 }

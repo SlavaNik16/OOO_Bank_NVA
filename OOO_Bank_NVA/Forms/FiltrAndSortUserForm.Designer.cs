@@ -1,6 +1,6 @@
 ﻿namespace OOO_Bank_NVA.Forms
 {
-    partial class FiltrAndSortTovarForm
+    partial class FiltrAndSortUsersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,33 +33,39 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.butSort = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridViewTovar = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridUsers = new System.Windows.Forms.DataGridView();
+            this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.butViewAll = new MaterialSkin.Controls.MaterialButton();
             this.butOk = new MaterialSkin.Controls.MaterialButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.butSearch = new System.Windows.Forms.Button();
             this.butFiltr = new System.Windows.Forms.Button();
             this.butExport = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.priceBox = new System.Windows.Forms.TextBox();
-            this.radioAsc = new System.Windows.Forms.RadioButton();
             this.radioDesc = new System.Windows.Forms.RadioButton();
+            this.radioAsc = new System.Windows.Forms.RadioButton();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.comboBoxRole = new System.Windows.Forms.ComboBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTovar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,9 +74,10 @@
             this.listBoxSort.FormattingEnabled = true;
             this.listBoxSort.ItemHeight = 27;
             this.listBoxSort.Items.AddRange(new object[] {
-            "Название",
-            "Цена",
-            "Макс. кол-во"});
+            "Телефон",
+            "Фамилия",
+            "Имя",
+            "Пол"});
             this.listBoxSort.Location = new System.Drawing.Point(4, 34);
             this.listBoxSort.Name = "listBoxSort";
             this.listBoxSort.Size = new System.Drawing.Size(337, 247);
@@ -82,7 +89,6 @@
             this.groupBox1.Controls.Add(this.radioAsc);
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Controls.Add(this.listBoxSort);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Menu;
             this.groupBox1.Location = new System.Drawing.Point(930, 3);
@@ -111,7 +117,6 @@
             this.butSort.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.butSort.Depth = 0;
             this.butSort.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butSort.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.butSort.HighEmphasis = true;
             this.butSort.Icon = null;
             this.butSort.Location = new System.Drawing.Point(4, 6);
@@ -124,104 +129,128 @@
             this.butSort.Text = "Сортировать";
             this.butSort.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.butSort.UseAccentColor = false;
-            this.butSort.UseCompatibleTextRendering = true;
             this.butSort.UseVisualStyleBackColor = true;
             this.butSort.Click += new System.EventHandler(this.butSort_Click);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.dataGridViewTovar);
+            this.flowLayoutPanel1.Controls.Add(this.dataGridUsers);
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1288, 505);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
-            // dataGridViewTovar
+            // dataGridUsers
             // 
-            this.dataGridViewTovar.AllowUserToAddRows = false;
-            this.dataGridViewTovar.AllowUserToDeleteRows = false;
-            this.dataGridViewTovar.ColumnHeadersHeight = 34;
-            this.dataGridViewTovar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.dataGridViewTovar.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewTovar.MultiSelect = false;
-            this.dataGridViewTovar.Name = "dataGridViewTovar";
-            this.dataGridViewTovar.ReadOnly = true;
-            this.dataGridViewTovar.RowHeadersWidth = 62;
-            this.dataGridViewTovar.RowTemplate.Height = 28;
-            this.dataGridViewTovar.Size = new System.Drawing.Size(921, 494);
-            this.dataGridViewTovar.TabIndex = 5;
+            this.dataGridUsers.AllowUserToAddRows = false;
+            this.dataGridUsers.AllowUserToDeleteRows = false;
+            this.dataGridUsers.AllowUserToResizeColumns = false;
+            this.dataGridUsers.AllowUserToResizeRows = false;
+            this.dataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnPhone,
+            this.ColumnSurname,
+            this.ColumnName,
+            this.ColumnGender,
+            this.ColumnCardName,
+            this.ColumnStatus,
+            this.ColumnRole,
+            this.ColumnId});
+            this.dataGridUsers.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridUsers.Location = new System.Drawing.Point(3, 3);
+            this.dataGridUsers.MultiSelect = false;
+            this.dataGridUsers.Name = "dataGridUsers";
+            this.dataGridUsers.ReadOnly = true;
+            this.dataGridUsers.RowHeadersWidth = 62;
+            this.dataGridUsers.RowTemplate.Height = 28;
+            this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridUsers.Size = new System.Drawing.Size(921, 498);
+            this.dataGridUsers.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn1
+            // ColumnPhone
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Title";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Название";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.ColumnPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnPhone.DataPropertyName = "Phone";
+            this.ColumnPhone.HeaderText = "Телефон";
+            this.ColumnPhone.MinimumWidth = 8;
+            this.ColumnPhone.Name = "ColumnPhone";
+            this.ColumnPhone.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // ColumnSurname
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Price";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Цена";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.ColumnSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnSurname.DataPropertyName = "Surname";
+            this.ColumnSurname.HeaderText = "Фамилия";
+            this.ColumnSurname.MinimumWidth = 8;
+            this.ColumnSurname.Name = "ColumnSurname";
+            this.ColumnSurname.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // ColumnName
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "MaxCount";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Макс. кол-во";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnName.DataPropertyName = "Name";
+            this.ColumnName.HeaderText = "Имя";
+            this.ColumnName.MinimumWidth = 8;
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // ColumnGender
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Описание";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            this.dataGridViewTextBoxColumn4.Width = 150;
+            this.ColumnGender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnGender.DataPropertyName = "Gender";
+            this.ColumnGender.HeaderText = "Пол";
+            this.ColumnGender.MinimumWidth = 8;
+            this.ColumnGender.Name = "ColumnGender";
+            this.ColumnGender.ReadOnly = true;
+            this.ColumnGender.Width = 72;
             // 
-            // dataGridViewTextBoxColumn5
+            // ColumnCardName
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Photo";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Фото";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 150;
+            this.ColumnCardName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnCardName.DataPropertyName = "CardName";
+            this.ColumnCardName.HeaderText = "Номер карты";
+            this.ColumnCardName.MinimumWidth = 8;
+            this.ColumnCardName.Name = "ColumnCardName";
+            this.ColumnCardName.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // ColumnStatus
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn6.HeaderText = "№";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 150;
+            this.ColumnStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnStatus.DataPropertyName = "Status";
+            this.ColumnStatus.HeaderText = "Статус";
+            this.ColumnStatus.MinimumWidth = 8;
+            this.ColumnStatus.Name = "ColumnStatus";
+            this.ColumnStatus.ReadOnly = true;
+            this.ColumnStatus.Width = 91;
+            // 
+            // ColumnRole
+            // 
+            this.ColumnRole.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColumnRole.DataPropertyName = "Role";
+            this.ColumnRole.HeaderText = "Права";
+            this.ColumnRole.MinimumWidth = 8;
+            this.ColumnRole.Name = "ColumnRole";
+            this.ColumnRole.ReadOnly = true;
+            this.ColumnRole.Width = 86;
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.DataPropertyName = "Id";
+            this.ColumnId.HeaderText = "№";
+            this.ColumnId.MinimumWidth = 8;
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Visible = false;
+            this.ColumnId.Width = 150;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(21, 542);
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label2.Location = new System.Drawing.Point(20, 536);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 33);
@@ -234,7 +263,7 @@
             this.butViewAll.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.butViewAll.Depth = 0;
             this.butViewAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butViewAll.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butViewAll.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.butViewAll.HighEmphasis = true;
             this.butViewAll.Icon = null;
             this.butViewAll.Location = new System.Drawing.Point(6, 9);
@@ -258,7 +287,7 @@
             this.butOk.Depth = 0;
             this.butOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.butOk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butOk.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butOk.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.butOk.HighEmphasis = true;
             this.butOk.Icon = null;
             this.butOk.Location = new System.Drawing.Point(6, 107);
@@ -271,18 +300,7 @@
             this.butOk.Text = "Подтвердить";
             this.butOk.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.butOk.UseAccentColor = true;
-            this.butOk.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(21, 645);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 33);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Цена";
+            this.butOk.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -290,7 +308,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.butViewAll, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.butOk, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(930, 513);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(936, 511);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -314,7 +332,6 @@
             // butFiltr
             // 
             this.butFiltr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.butFiltr.Enabled = false;
             this.butFiltr.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.butFiltr.Location = new System.Drawing.Point(3, 137);
             this.butFiltr.Name = "butFiltr";
@@ -344,7 +361,7 @@
             this.tableLayoutPanel3.Controls.Add(this.butSearch, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.butExport, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.butFiltr, 0, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(574, 507);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(577, 506);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -353,67 +370,121 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(353, 203);
             this.tableLayoutPanel3.TabIndex = 21;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 268F));
+            this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxStatus, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxRole, 0, 1);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(23, 610);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(538, 89);
+            this.tableLayoutPanel4.TabIndex = 22;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
-            this.panel1.Controls.Add(this.priceBox);
             this.panel1.Controls.Add(this.searchBox);
-            this.panel1.Controls.Add(this.tableLayoutPanel3);
-            this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
+            this.panel1.Controls.Add(this.tableLayoutPanel3);
+            this.panel1.Controls.Add(this.tableLayoutPanel4);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 102);
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panel1.Location = new System.Drawing.Point(3, 99);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1294, 713);
-            this.panel1.TabIndex = 22;
+            this.panel1.Size = new System.Drawing.Size(1294, 716);
+            this.panel1.TabIndex = 23;
             // 
-            // searchBox
+            // radioDesc
             // 
-            this.searchBox.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchBox.Location = new System.Drawing.Point(145, 535);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(422, 40);
-            this.searchBox.TabIndex = 22;
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
-            // 
-            // priceBox
-            // 
-            this.priceBox.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.priceBox.Location = new System.Drawing.Point(145, 638);
-            this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(422, 40);
-            this.priceBox.TabIndex = 23;
-            this.priceBox.TextChanged += new System.EventHandler(this.priceBox_TextChanged);
-            this.priceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceBox_KeyPress);
+            this.radioDesc.AutoSize = true;
+            this.radioDesc.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.radioDesc.Location = new System.Drawing.Point(7, 371);
+            this.radioDesc.Name = "radioDesc";
+            this.radioDesc.Size = new System.Drawing.Size(202, 37);
+            this.radioDesc.TabIndex = 8;
+            this.radioDesc.Text = "По убыванию";
+            this.radioDesc.UseVisualStyleBackColor = true;
             // 
             // radioAsc
             // 
             this.radioAsc.AutoSize = true;
             this.radioAsc.Checked = true;
             this.radioAsc.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.radioAsc.Location = new System.Drawing.Point(8, 300);
+            this.radioAsc.Location = new System.Drawing.Point(7, 305);
             this.radioAsc.Name = "radioAsc";
             this.radioAsc.Size = new System.Drawing.Size(231, 37);
-            this.radioAsc.TabIndex = 5;
+            this.radioAsc.TabIndex = 7;
             this.radioAsc.TabStop = true;
             this.radioAsc.Text = "По возрастанию";
             this.radioAsc.UseVisualStyleBackColor = true;
             // 
-            // radioDesc
+            // searchBox
             // 
-            this.radioDesc.AutoSize = true;
-            this.radioDesc.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.radioDesc.Location = new System.Drawing.Point(8, 366);
-            this.radioDesc.Name = "radioDesc";
-            this.radioDesc.Size = new System.Drawing.Size(202, 37);
-            this.radioDesc.TabIndex = 6;
-            this.radioDesc.TabStop = true;
-            this.radioDesc.Text = "По убыванию";
-            this.radioDesc.UseVisualStyleBackColor = true;
+            this.searchBox.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchBox.Location = new System.Drawing.Point(136, 533);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(422, 40);
+            this.searchBox.TabIndex = 23;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
-            // FiltrAndSortTovarForm
+            // comboBoxRole
+            // 
+            this.comboBoxRole.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxRole.FormattingEnabled = true;
+            this.comboBoxRole.Location = new System.Drawing.Point(3, 46);
+            this.comboBoxRole.Name = "comboBoxRole";
+            this.comboBoxRole.Size = new System.Drawing.Size(264, 41);
+            this.comboBoxRole.TabIndex = 24;
+            // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Location = new System.Drawing.Point(273, 46);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(262, 41);
+            this.comboBoxStatus.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 43);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Роль";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label3.Location = new System.Drawing.Point(274, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(260, 43);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Статус";
+            // 
+            // FiltrAndSortUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -423,19 +494,22 @@
             this.MaximumSize = new System.Drawing.Size(1300, 818);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1300, 818);
-            this.Name = "FiltrAndSortTovarForm";
+            this.Name = "FiltrAndSortUsersForm";
             this.Padding = new System.Windows.Forms.Padding(3, 65, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сортировка и фильтрация данных товара";
+            this.Load += new System.EventHandler(this.FiltrAndSortUsersForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTovar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -451,23 +525,28 @@
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialButton butViewAll;
         private MaterialSkin.Controls.MaterialButton butOk;
-        private System.Windows.Forms.DataGridView dataGridViewTovar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button butSearch;
         private System.Windows.Forms.Button butFiltr;
         private System.Windows.Forms.Button butExport;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.DataGridView dataGridUsers;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSurname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCardName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioAsc;
-        private System.Windows.Forms.TextBox priceBox;
-        private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.RadioButton radioDesc;
+        private System.Windows.Forms.RadioButton radioAsc;
+        private System.Windows.Forms.ComboBox comboBoxRole;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -39,7 +39,7 @@
             // 
             this.butReg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.butReg.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butReg.Location = new System.Drawing.Point(3, 40);
+            this.butReg.Location = new System.Drawing.Point(3, 43);
             this.butReg.Name = "butReg";
             this.butReg.Size = new System.Drawing.Size(522, 82);
             this.butReg.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             this.butEnter.Dock = System.Windows.Forms.DockStyle.Top;
             this.butEnter.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butEnter.Location = new System.Drawing.Point(3, 128);
+            this.butEnter.Location = new System.Drawing.Point(3, 131);
             this.butEnter.Name = "butEnter";
             this.butEnter.Size = new System.Drawing.Size(522, 82);
             this.butEnter.TabIndex = 1;
@@ -63,9 +63,9 @@
             // 
             this.butExit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butExit.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butExit.Location = new System.Drawing.Point(3, 259);
+            this.butExit.Location = new System.Drawing.Point(3, 265);
             this.butExit.Name = "butExit";
-            this.butExit.Size = new System.Drawing.Size(522, 81);
+            this.butExit.Size = new System.Drawing.Size(522, 84);
             this.butExit.TabIndex = 2;
             this.butExit.Text = "Выход";
             this.butExit.UseVisualStyleBackColor = true;
@@ -73,22 +73,23 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.butExit, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.butEnter, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.butReg, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 104);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 95);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.44315F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.19242F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.07289F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 343);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 352);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // MainForm
+            // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +99,7 @@
             this.MaximumSize = new System.Drawing.Size(534, 450);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(534, 450);
-            this.Name = "MainForm";
+            this.Name = "AuthorizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.tableLayoutPanel1.ResumeLayout(false);
