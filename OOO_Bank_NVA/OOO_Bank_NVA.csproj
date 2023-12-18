@@ -418,6 +418,18 @@
     <Compile Include="Migrations\20231216000544_Init.designer.cs">
       <DependentUpon>20231216000544_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20231126201419_ChangeBD.cs" />
+    <Compile Include="Migrations\20231126201419_ChangeBD.designer.cs">
+      <DependentUpon>20231126201419_ChangeBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231129171108_AddDateEnd.cs" />
+    <Compile Include="Migrations\20231129171108_AddDateEnd.designer.cs">
+      <DependentUpon>20231129171108_AddDateEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20231129181210_AddRole.cs" />
+    <Compile Include="Migrations\20231129181210_AddRole.designer.cs">
+      <DependentUpon>20231129181210_AddRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="ModelsResponce\BasketResponce.cs" />
     <Compile Include="ModelsResponce\TovarResponce.cs" />
