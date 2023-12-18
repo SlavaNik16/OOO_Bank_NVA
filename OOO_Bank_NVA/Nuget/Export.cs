@@ -21,7 +21,7 @@ namespace OOO_Bank_NVA.Nuget
 
             for (int k = 0; k < dataGridView.ColumnCount - 1; k++)
             {
-                xlSheet.Cells[i, k + 1] = dataGridView.Columns[k+1].HeaderCell.Value;
+                xlSheet.Cells[i, k + 1] = dataGridView.Columns[k + 1].HeaderCell.Value;
             }
 
             i++;
@@ -29,7 +29,7 @@ namespace OOO_Bank_NVA.Nuget
             {
                 for (int j = 0; j < dataGridView.ColumnCount - 1; j++)
                 {
-                    xlSheet.Cells[k + i, j + 1] = dataGridView.Rows[k].Cells[j+1].Value?.ToString();
+                    xlSheet.Cells[k + i, j + 1] = dataGridView.Rows[k].Cells[j + 1].Value?.ToString();
                 }
             }
             xlSheet.Cells.HorizontalAlignment = 3;

@@ -48,7 +48,7 @@ namespace OOO_Bank_NVA.ChatConnect
             }
         }
 
-      
+
 
         /// <summary>
         /// Метод взятие всех сообщений отправителя и принимателя

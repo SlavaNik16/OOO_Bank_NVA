@@ -143,7 +143,7 @@ namespace OOO_Bank_NVA.Forms
         {
             FillComboBoxRole();
             FillComboBoxStatus();
-            
+
         }
         private void FillComboBoxRole()
         {

@@ -62,7 +62,6 @@
             this.panelInfoTovar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDesc = new System.Windows.Forms.TextBox();
-            this.pictureBoxTovar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.butSortWithFiltr = new System.Windows.Forms.Button();
             this.butTovarView = new System.Windows.Forms.Button();
@@ -132,6 +131,7 @@
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
             this.butInfo = new System.Windows.Forms.Button();
+            this.pictureBoxTovar = new System.Windows.Forms.PictureBox();
             this.materialTabControlOOOBank.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -142,7 +142,6 @@
             this.tableLayoutPanelAdd_Edit_RemoveTovars.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTovar)).BeginInit();
             this.panelInfoTovar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabBasket.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -166,6 +165,7 @@
             this.flowLayoutPanelAdmin.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControlOOOBank
@@ -573,17 +573,6 @@
             this.textBoxDesc.TabIndex = 3;
             this.textBoxDesc.Text = "Пример: ыуадываывжаолыущзаолыузаузыщалзуыоазылзщаылозазыщаолзщы";
             // 
-            // pictureBoxTovar
-            // 
-            this.pictureBoxTovar.Image = global::OOO_Bank_NVA.Properties.Resources.photoEmpty;
-            this.pictureBoxTovar.Location = new System.Drawing.Point(110, 19);
-            this.pictureBoxTovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBoxTovar.Name = "pictureBoxTovar";
-            this.pictureBoxTovar.Size = new System.Drawing.Size(328, 201);
-            this.pictureBoxTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxTovar.TabIndex = 1;
-            this.pictureBoxTovar.TabStop = false;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 3;
@@ -872,7 +861,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.25858F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.74142F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 371F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 372F));
             this.tableLayoutPanel5.Controls.Add(this.butSendChat, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.butClearChat, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -889,10 +878,10 @@
             this.butSendChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butSendChat.Enabled = false;
             this.butSendChat.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSendChat.Location = new System.Drawing.Point(865, 3);
+            this.butSendChat.Location = new System.Drawing.Point(864, 3);
             this.butSendChat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butSendChat.Name = "butSendChat";
-            this.butSendChat.Size = new System.Drawing.Size(364, 54);
+            this.butSendChat.Size = new System.Drawing.Size(365, 54);
             this.butSendChat.TabIndex = 11;
             this.butSendChat.Text = "Отправить";
             this.butSendChat.UseVisualStyleBackColor = true;
@@ -1423,6 +1412,17 @@
             this.butInfo.UseVisualStyleBackColor = true;
             this.butInfo.Click += new System.EventHandler(this.butInfo_Click);
             // 
+            // pictureBoxTovar
+            // 
+            this.pictureBoxTovar.Image = global::OOO_Bank_NVA.Properties.Resources.photoEmpty;
+            this.pictureBoxTovar.Location = new System.Drawing.Point(110, 19);
+            this.pictureBoxTovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxTovar.Name = "pictureBoxTovar";
+            this.pictureBoxTovar.Size = new System.Drawing.Size(328, 201);
+            this.pictureBoxTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxTovar.TabIndex = 1;
+            this.pictureBoxTovar.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -1455,7 +1455,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTovar)).EndInit();
             this.panelInfoTovar.ResumeLayout(false);
             this.panelInfoTovar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tabBasket.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1489,6 +1488,7 @@
             this.statusStrip.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

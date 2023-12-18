@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace OOO_Bank_NVA.Models
+﻿namespace OOO_Bank_NVA.Models
 {
     public class Tovar : BaseAuditEntity
     {

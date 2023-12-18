@@ -21,7 +21,7 @@ namespace OOO_Bank_NVA.ModelsResponce
         /// <summary>
         /// Фамилия
         /// </summary>
-        public string Surname { get; set; } 
+        public string Surname { get; set; }
 
         /// <summary>
         /// Имя

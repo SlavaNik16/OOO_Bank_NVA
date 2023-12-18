@@ -1,5 +1,4 @@
 ﻿using MaterialSkin.Controls;
-using MaterialSkin.Properties;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.EntityFrameworkCore;
 using OOO_Bank_NVA.ChatConnect;
@@ -15,8 +14,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Web.UI.Design;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Windows.Threading;
@@ -46,7 +43,7 @@ namespace OOO_Bank_NVA.Forms
             basePersonWriteRepository = new BaseWriteRepository<Person>();
             baseDBBankWriteRepository = new BaseWriteRepository<DBBank>();
         }
-
+        #region MainFormAndTabControl
         public MainForm(Chat chat, RoleType roleType = RoleType.User) : this()
         {
             this.chat = chat;
@@ -71,7 +68,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
                 {
-                    MessageBox.Show("Было вызвано техническое уведомление!","Предупреждение!",
+                    MessageBox.Show("Было вызвано техническое уведомление!", "Предупреждение!",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }));
             });
@@ -175,6 +172,9 @@ namespace OOO_Bank_NVA.Forms
             }
             Status();
         }
+        #endregion
+
+        #region Status
         private void Status()
         {
             toolStripStatusLabelRole.Text = $"Статус: {userRole.PerevodDescription()}";
@@ -185,24 +185,7 @@ namespace OOO_Bank_NVA.Forms
                 textBoxBalance.Text = $"Баланс карты: ₽ {card.Balance}";
             }
         }
-        private void ResetDataUserProfile()
-        {
-            var user = AuthorizationForm.user;
-            textBoxSurname.Text = user.Surname;
-            textBoxSurname.BackColor = SystemColors.Window;
-            textBoxName.Text = user.Name;
-            maskTextBoxPhone.Text = user.Phone.Trim();
-            textBoxGender.Text = user.Gender.PerevodDescription();
-            using (var db = new ApplicationContext(options))
-            {
-                var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == user.CardName);
-                if (card == null) return;
-                maskTextBoxCardName.Text = card.Nomer;
-                maskedTextBoxCVCCode.Text = card.CSCCode.ToString();
-                maskedTextBoxDataEnd.Text = card.DateEnd.ToString();
-                butEditCard.Visible = false;
-            }
-        }
+        #endregion
 
         #region Users
         private void ResetDataGridUser()
@@ -211,7 +194,7 @@ namespace OOO_Bank_NVA.Forms
             {
                 dataGridUsers.DataSource = db.Persons
                     .NotDeletedAt()
-                    .OrderBy(x=>x.Phone)
+                    .OrderBy(x => x.Phone)
                     .Where(s => s.Phone != AuthorizationForm.user.Phone)
                     .Join(db.DBBanks.NotDeletedAt(), x => x.Phone, b => b.Login,
                     (x, b) => new UserResponce
@@ -234,9 +217,35 @@ namespace OOO_Bank_NVA.Forms
             butStripView.Enabled =
                     dataGridUsers.SelectedRows.Count == 1;
         }
+        private void butView_Click(object sender, EventArgs e)
+        {
+            var id = (UserResponce)dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].DataBoundItem;
+            using (var db = new ApplicationContext(options))
+            {
+                var user = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == id.Phone);
+                if (user == null) return;
+                var personViewForm = new PersonViewForm(user, chat);
+                this.Hide();
+                if (personViewForm.ShowDialog() == DialogResult.OK)
+                {
+                    NavigationTab(tabUsers);
+                }
+                this.Show();
+            }
+        }
 
+        private void butFiltrAndSortUsers_Click(object sender, EventArgs e)
+        {
+            var filtrAndSortUserForm = new FiltrAndSortUsersForm();
+            this.Hide();
+            if (filtrAndSortUserForm.ShowDialog() == DialogResult.OK)
+            {
+                dataGridUsers.DataSource = filtrAndSortUserForm.GetDataGridView().DataSource;
+            }
+            this.Show();
+        }
         #endregion
-       
+
         #region Tovars
         private void ResetDataGridTovars()
         {
@@ -318,8 +327,9 @@ namespace OOO_Bank_NVA.Forms
             var addTovarBasketForm = new AddTovarBasketForm(id);
             if (addTovarBasketForm.ShowDialog() == DialogResult.OK)
             {
-                using (var db = new ApplicationContext(options)) {
-                    var tovar = db.Tovars.NotDeletedAt().FirstOrDefault(x=>x.Id == id.Id);
+                using (var db = new ApplicationContext(options))
+                {
+                    var tovar = db.Tovars.NotDeletedAt().FirstOrDefault(x => x.Id == id.Id);
                     if (tovar == null) return;
                     var basket = addTovarBasketForm.Basket;
                     var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == AuthorizationForm.user.CardName);
@@ -364,8 +374,8 @@ namespace OOO_Bank_NVA.Forms
                 var imageList = new ImageList();
                 imageList.ImageSize = new Size(32, 32);
                 var list = db.Baskets.NotDeletedAt()
-                    .OrderBy(x=>x.StatusBy)
-                    .ThenByDescending(x=>x.CreatedAt)
+                    .OrderBy(x => x.StatusBy)
+                    .ThenByDescending(x => x.CreatedAt)
                     .Where(x => x.PersonId == AuthorizationForm.user.Id).ToList();
                 foreach (var l in list)
                 {
@@ -395,7 +405,6 @@ namespace OOO_Bank_NVA.Forms
                 }
             }
         }
-        #endregion
 
         private void listView_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
@@ -409,14 +418,14 @@ namespace OOO_Bank_NVA.Forms
             e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(127, 232, 229)), e.Bounds);
             e.DrawText();
         }
-
         private void butCancelTovar_Click(object sender, System.EventArgs e)
         {
             var id = listView.SelectedItems[0].Tag.ToString();
             using (var db = new ApplicationContext(options))
             {
                 var basket = db.Baskets.NotDeletedAt().FirstOrDefault(x => x.Id == Guid.Parse(id) && x.StatusBy == StatusBy.Attendant);
-                if (basket == null) {
+                if (basket == null)
+                {
                     MessageBox.Show("Вы не можете отменить товар, который уже куплен!", "Предупреждение!",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -425,8 +434,8 @@ namespace OOO_Bank_NVA.Forms
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     baseBasketWriteRepository.Delete(basket);
-                    var tovar = db.Tovars.NotDeletedAt().FirstOrDefault(x=>x.Title == basket.Title);
-                    if(tovar == null)
+                    var tovar = db.Tovars.NotDeletedAt().FirstOrDefault(x => x.Title == basket.Title);
+                    if (tovar == null)
                     {
                         var tovarNew = new Tovar()
                         {
@@ -473,9 +482,9 @@ namespace OOO_Bank_NVA.Forms
                     {
                         var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == AuthorizationForm.user.CardName);
                         if (card == null) return;
-                        if(card.Balance < priceAll)
+                        if (card.Balance < priceAll)
                         {
-                            MessageBox.Show("Недостаточно средств для оплаты товара!","Ошибка операции!",
+                            MessageBox.Show("Недостаточно средств для оплаты товара!", "Ошибка операции!",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
@@ -487,13 +496,15 @@ namespace OOO_Bank_NVA.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Вы уже оплатили этот товар!","Товар оплачен!",
+                    MessageBox.Show("Вы уже оплатили этот товар!", "Товар оплачен!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } 
+                }
                 NavigationTab(tabBasket);
             }
         }
+        #endregion
 
+        #region Settings
         private void butEditCard_Click(object sender, EventArgs e)
         {
             var regCardBankForm = new RegCardBankForm();
@@ -557,7 +568,49 @@ namespace OOO_Bank_NVA.Forms
                 }
             }
         }
+        private void butSendTexnWork_Click(object sender, EventArgs e)
+        {
+            chat.SendClose();
+        }
 
+        private void butEditPhone_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Извините, опция находится на стадии разработки!\n\rЖдите дальнейших обновлений программы!",
+                "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void butEditPassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Извините, опция находится на стадии разработки!\n\rЖдите дальнейших обновлений программы!",
+               "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void butInfo_Click(object sender, EventArgs e)
+        {
+            var aboutBoxInfo = new AboutBoxInfo();
+            aboutBoxInfo.ShowDialog();
+        }
+        #endregion
+
+        #region Profile
+        private void ResetDataUserProfile()
+        {
+            var user = AuthorizationForm.user;
+            textBoxSurname.Text = user.Surname;
+            textBoxSurname.BackColor = SystemColors.Window;
+            textBoxName.Text = user.Name;
+            maskTextBoxPhone.Text = user.Phone.Trim();
+            textBoxGender.Text = user.Gender.PerevodDescription();
+            using (var db = new ApplicationContext(options))
+            {
+                var card = db.Cards.NotDeletedAt().FirstOrDefault(x => x.Nomer == user.CardName);
+                if (card == null) return;
+                maskTextBoxCardName.Text = card.Nomer;
+                maskedTextBoxCVCCode.Text = card.CSCCode.ToString();
+                maskedTextBoxDataEnd.Text = card.DateEnd.ToString();
+                butEditCard.Visible = false;
+            }
+        }
         private void maskedTextBoxPhoneChat_TextChanged(object sender, EventArgs e)
         {
             butClearChat.Enabled = butSendChat.Enabled = maskedTextBoxPhoneChat.MaskFull;
@@ -595,55 +648,9 @@ namespace OOO_Bank_NVA.Forms
             listBoxChat.Items.Clear();
         }
 
-        private void butView_Click(object sender, EventArgs e)
-        {
-            var id = (UserResponce)dataGridUsers.Rows[dataGridUsers.SelectedRows[0].Index].DataBoundItem;
-            using (var db = new ApplicationContext(options))
-            {
-                var user = db.Persons.NotDeletedAt().FirstOrDefault(x => x.Phone == id.Phone);
-                if (user == null) return;
-                var personViewForm = new PersonViewForm(user, chat);
-                this.Hide();
-                if (personViewForm.ShowDialog() == DialogResult.OK)
-                {
-                    NavigationTab(tabUsers);
-                }
-                this.Show();
-            }
-        }
+        #endregion
 
-        private void butFiltrAndSortUsers_Click(object sender, EventArgs e)
-        {
-            var filtrAndSortUserForm = new FiltrAndSortUsersForm();
-            this.Hide();
-            if (filtrAndSortUserForm.ShowDialog() == DialogResult.OK)
-            {
-                dataGridUsers.DataSource = filtrAndSortUserForm.GetDataGridView().DataSource;
-            }
-            this.Show();
-        }
 
-        private void butSendTexnWork_Click(object sender, EventArgs e)
-        {
-            chat.SendClose();
-        }
 
-        private void butEditPhone_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Извините, опция находится на стадии разработки!\n\rЖдите дальнейших обновлений программы!",
-                "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void butEditPassword_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Извините, опция находится на стадии разработки!\n\rЖдите дальнейших обновлений программы!",
-               "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void butInfo_Click(object sender, EventArgs e)
-        {
-            var aboutBoxInfo = new AboutBoxInfo();
-            aboutBoxInfo.ShowDialog();
-        }
     }
 }

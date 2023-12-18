@@ -2,7 +2,6 @@
 using OOO_Bank_NVA.Colors;
 using System;
 using System.Reflection;
-using System.Windows.Forms;
 
 namespace OOO_Bank_NVA.Forms
 {

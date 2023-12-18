@@ -18,7 +18,7 @@ namespace OOO_Bank_NVA.Models
         /// Цена за 1
         /// </summary>
         public decimal Price { get; set; } = 0;
-        
+
         /// <summary>
         /// Кол-во данного товара
         /// </summary>

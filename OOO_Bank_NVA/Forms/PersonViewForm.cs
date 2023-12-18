@@ -37,7 +37,7 @@ namespace OOO_Bank_NVA.Forms
             maskTextBoxCardName.Text = person.CardName ?? string.Empty;
             using (var db = new ApplicationContext(options))
             {
-                dbBank = db.DBBanks.NotDeletedAt().FirstOrDefault(x=>x.Login == person.Phone);
+                dbBank = db.DBBanks.NotDeletedAt().FirstOrDefault(x => x.Login == person.Phone);
                 if (dbBank == null) return;
                 butBan.Text = dbBank.Status == StatusType.Blocked ? "Разбанить" : "Забанить";
             }
@@ -53,7 +53,7 @@ namespace OOO_Bank_NVA.Forms
                        "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if(cardName == AuthorizationForm.user.CardName)
+            if (cardName == AuthorizationForm.user.CardName)
             {
                 MessageBox.Show($"Вы не можете отправить деньги на одну и туже карту!",
                       "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,7 +95,7 @@ namespace OOO_Bank_NVA.Forms
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if(dbBank.Status == StatusType.Blocked)
+                    if (dbBank.Status == StatusType.Blocked)
                     {
                         dbBank.Status = StatusType.Offline;
                     }
