@@ -136,7 +136,7 @@ namespace OOO_Bank_NVA.Forms
         private void butFiltr_Click(object sender, System.EventArgs e)
         {
             var list = GetTovarList();
-            dataGridUsers.DataSource = list.Where(x => x.Status == comboBoxStatus.SelectedItem.ToString() || x.Role == comboBoxRole.SelectedItem.ToString()).ToList();
+            dataGridUsers.DataSource = list.Where(x => x.Status == comboBoxStatus.SelectedItem.ToString() && x.Role == comboBoxRole.SelectedItem.ToString()).ToList();
         }
 
         private void FiltrAndSortUsersForm_Load(object sender, System.EventArgs e)

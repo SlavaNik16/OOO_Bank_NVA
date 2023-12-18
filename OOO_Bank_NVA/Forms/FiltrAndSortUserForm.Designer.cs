@@ -30,6 +30,8 @@
         {
             this.listBoxSort = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioDesc = new System.Windows.Forms.RadioButton();
+            this.radioAsc = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.butSort = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -51,14 +53,12 @@
             this.butExport = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radioDesc = new System.Windows.Forms.RadioButton();
-            this.radioAsc = new System.Windows.Forms.RadioButton();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.comboBoxRole = new System.Windows.Forms.ComboBox();
-            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.comboBoxRole = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -97,6 +97,30 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Сортировка";
+            // 
+            // radioDesc
+            // 
+            this.radioDesc.AutoSize = true;
+            this.radioDesc.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.radioDesc.Location = new System.Drawing.Point(7, 371);
+            this.radioDesc.Name = "radioDesc";
+            this.radioDesc.Size = new System.Drawing.Size(202, 37);
+            this.radioDesc.TabIndex = 8;
+            this.radioDesc.Text = "По убыванию";
+            this.radioDesc.UseVisualStyleBackColor = true;
+            // 
+            // radioAsc
+            // 
+            this.radioAsc.AutoSize = true;
+            this.radioAsc.Checked = true;
+            this.radioAsc.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.radioAsc.Location = new System.Drawing.Point(7, 305);
+            this.radioAsc.Name = "radioAsc";
+            this.radioAsc.Size = new System.Drawing.Size(231, 37);
+            this.radioAsc.TabIndex = 7;
+            this.radioAsc.TabStop = true;
+            this.radioAsc.Text = "По возрастанию";
+            this.radioAsc.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -387,72 +411,20 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(538, 89);
             this.tableLayoutPanel4.TabIndex = 22;
             // 
-            // panel1
+            // label3
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
-            this.panel1.Controls.Add(this.searchBox);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.tableLayoutPanel2);
-            this.panel1.Controls.Add(this.tableLayoutPanel3);
-            this.panel1.Controls.Add(this.tableLayoutPanel4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(3, 99);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1294, 716);
-            this.panel1.TabIndex = 23;
-            // 
-            // radioDesc
-            // 
-            this.radioDesc.AutoSize = true;
-            this.radioDesc.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.radioDesc.Location = new System.Drawing.Point(7, 371);
-            this.radioDesc.Name = "radioDesc";
-            this.radioDesc.Size = new System.Drawing.Size(202, 37);
-            this.radioDesc.TabIndex = 8;
-            this.radioDesc.Text = "По убыванию";
-            this.radioDesc.UseVisualStyleBackColor = true;
-            // 
-            // radioAsc
-            // 
-            this.radioAsc.AutoSize = true;
-            this.radioAsc.Checked = true;
-            this.radioAsc.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.radioAsc.Location = new System.Drawing.Point(7, 305);
-            this.radioAsc.Name = "radioAsc";
-            this.radioAsc.Size = new System.Drawing.Size(231, 37);
-            this.radioAsc.TabIndex = 7;
-            this.radioAsc.TabStop = true;
-            this.radioAsc.Text = "По возрастанию";
-            this.radioAsc.UseVisualStyleBackColor = true;
-            // 
-            // searchBox
-            // 
-            this.searchBox.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchBox.Location = new System.Drawing.Point(136, 533);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(422, 40);
-            this.searchBox.TabIndex = 23;
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
-            // 
-            // comboBoxRole
-            // 
-            this.comboBoxRole.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxRole.FormattingEnabled = true;
-            this.comboBoxRole.Location = new System.Drawing.Point(3, 46);
-            this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(264, 41);
-            this.comboBoxRole.TabIndex = 24;
-            // 
-            // comboBoxStatus
-            // 
-            this.comboBoxStatus.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Location = new System.Drawing.Point(273, 46);
-            this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(262, 41);
-            this.comboBoxStatus.TabIndex = 25;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label3.Location = new System.Drawing.Point(274, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(260, 43);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Статус";
             // 
             // label1
             // 
@@ -469,20 +441,48 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Роль";
             // 
-            // label3
+            // comboBoxStatus
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.label3.Location = new System.Drawing.Point(274, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(260, 43);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Статус";
+            this.comboBoxStatus.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Location = new System.Drawing.Point(273, 46);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(262, 41);
+            this.comboBoxStatus.TabIndex = 25;
+            // 
+            // comboBoxRole
+            // 
+            this.comboBoxRole.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxRole.FormattingEnabled = true;
+            this.comboBoxRole.Location = new System.Drawing.Point(3, 46);
+            this.comboBoxRole.Name = "comboBoxRole";
+            this.comboBoxRole.Size = new System.Drawing.Size(264, 41);
+            this.comboBoxRole.TabIndex = 24;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(74)))), ((int)(((byte)(104)))));
+            this.panel1.Controls.Add(this.searchBox);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
+            this.panel1.Controls.Add(this.tableLayoutPanel3);
+            this.panel1.Controls.Add(this.tableLayoutPanel4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panel1.Location = new System.Drawing.Point(3, 99);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1294, 716);
+            this.panel1.TabIndex = 23;
+            // 
+            // searchBox
+            // 
+            this.searchBox.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchBox.Location = new System.Drawing.Point(136, 533);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(422, 40);
+            this.searchBox.TabIndex = 23;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // FiltrAndSortUsersForm
             // 

@@ -1433,6 +1433,7 @@
             this.toolStripProgressBarTime.Maximum = 30;
             this.toolStripProgressBarTime.Name = "toolStripProgressBarTime";
             this.toolStripProgressBarTime.Size = new System.Drawing.Size(100, 26);
+            this.toolStripProgressBarTime.Visible = false;
             // 
             // toolStripStatusTime
             // 
@@ -1441,6 +1442,7 @@
             this.toolStripStatusTime.Size = new System.Drawing.Size(36, 27);
             this.toolStripStatusTime.Tag = "";
             this.toolStripStatusTime.Text = "30";
+            this.toolStripStatusTime.Visible = false;
             // 
             // timerClose
             // 

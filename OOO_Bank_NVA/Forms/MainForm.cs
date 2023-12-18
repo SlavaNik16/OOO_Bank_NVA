@@ -70,6 +70,8 @@ namespace OOO_Bank_NVA.Forms
                 {
                     MessageBox.Show("Технические работы через 30 сек.\n\rПожалуйста закончите все свои дела! !", "Предупреждение!",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    toolStripProgressBarTime.Visible = true;
+                    toolStripStatusTime.Visible = true;
                     timerClose.Start();
                 }));
             });
