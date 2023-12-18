@@ -336,6 +336,12 @@
     <Compile Include="DB\ConfigurateDB\PersonEntityConfigurate.cs" />
     <Compile Include="DB\DataBaseHelper.cs" />
     <Compile Include="DB\SampleContextFactory.cs" />
+    <Compile Include="Forms\AboutBoxInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutBoxInfo.Designer.cs">
+      <DependentUpon>AboutBoxInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddTovarBasketForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -444,6 +450,9 @@
     <Compile Include="Nuget\Export.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AboutBoxInfo.resx">
+      <DependentUpon>AboutBoxInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddTovarBasketForm.resx">
       <DependentUpon>AddTovarBasketForm.cs</DependentUpon>
     </EmbeddedResource>

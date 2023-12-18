@@ -83,7 +83,7 @@ namespace OOO_Bank_NVA.Forms
                     MessageBox.Show("Вы были забанены!\n\rОбратитесь в тех. поддержку, если есть вопросы!\n\r8(900)-635-73-15", "Предупреждение!",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Close();
-                    Application.Exit();
+                    Environment.Exit(0);
                 }));
             });
             userRole = roleType;
@@ -107,7 +107,7 @@ namespace OOO_Bank_NVA.Forms
                 butAdd,butEdit, butDelete, butSortWithFiltr,butTovarView,
                 butCancelTovar, butBy,
                 butChangeCard, butChangeCard, butClearChat, butSendChat,
-                butEditPhone, butEditPassword, butEditCard
+                butEditPhone, butEditPassword, butEditCard,butInfo
             };
             foreach (var but in butArray)
             {
@@ -418,7 +418,7 @@ namespace OOO_Bank_NVA.Forms
                 var basket = db.Baskets.NotDeletedAt().FirstOrDefault(x => x.Id == Guid.Parse(id) && x.StatusBy == StatusBy.Attendant);
                 if (basket == null) {
                     MessageBox.Show("Вы не можете отменить товар, который уже куплен!", "Предупреждение!",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (MessageBox.Show("Вы действительно хотите отменить из брони данный товар!", "Предупреждение!",
@@ -626,6 +626,24 @@ namespace OOO_Bank_NVA.Forms
         private void butSendTexnWork_Click(object sender, EventArgs e)
         {
             chat.SendClose();
+        }
+
+        private void butEditPhone_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Извините, опция находится на стадии разработки!\n\rЖдите дальнейших обновлений программы!",
+                "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void butEditPassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Извините, опция находится на стадии разработки!\n\rЖдите дальнейших обновлений программы!",
+               "Информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void butInfo_Click(object sender, EventArgs e)
+        {
+            var aboutBoxInfo = new AboutBoxInfo();
+            aboutBoxInfo.ShowDialog();
         }
     }
 }
