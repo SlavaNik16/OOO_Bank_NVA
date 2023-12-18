@@ -10,8 +10,8 @@ namespace OOO_Bank_NVA.ChatConnect
         public Chat()
         {
             connection = new HubConnectionBuilder()
-                //.WithUrl("https://macsimnik-001-site1.ctempurl.com/chat")
-                .WithUrl("https://localhost:7097/chat")
+                .WithUrl("https://macsimnik-001-site1.ctempurl.com/chat")
+                //.WithUrl("https://localhost:7097/chat")
                 .Build();
             Connected();
         }

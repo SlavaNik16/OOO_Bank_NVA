@@ -62,6 +62,7 @@
             this.panelInfoTovar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDesc = new System.Windows.Forms.TextBox();
+            this.pictureBoxTovar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.butSortWithFiltr = new System.Windows.Forms.Button();
             this.butTovarView = new System.Windows.Forms.Button();
@@ -119,6 +120,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.butDeleteAccaunt = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.butInfo = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
             this.flowLayoutPanelAdmin = new System.Windows.Forms.FlowLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
@@ -128,10 +132,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBoxBalance = new System.Windows.Forms.ToolStripStatusLabel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.butInfo = new System.Windows.Forms.Button();
-            this.pictureBoxTovar = new System.Windows.Forms.PictureBox();
+            this.toolStripProgressBarTime = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timerClose = new System.Windows.Forms.Timer(this.components);
             this.materialTabControlOOOBank.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -142,6 +145,7 @@
             this.tableLayoutPanelAdd_Edit_RemoveTovars.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTovar)).BeginInit();
             this.panelInfoTovar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabBasket.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -161,11 +165,10 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel19.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
             this.panel18.SuspendLayout();
             this.flowLayoutPanelAdmin.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControlOOOBank
@@ -573,6 +576,17 @@
             this.textBoxDesc.TabIndex = 3;
             this.textBoxDesc.Text = "Пример: ыуадываывжаолыущзаолыузаузыщалзуыоазылзщаылозазыщаолзщы";
             // 
+            // pictureBoxTovar
+            // 
+            this.pictureBoxTovar.Image = global::OOO_Bank_NVA.Properties.Resources.photoEmpty;
+            this.pictureBoxTovar.Location = new System.Drawing.Point(110, 19);
+            this.pictureBoxTovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBoxTovar.Name = "pictureBoxTovar";
+            this.pictureBoxTovar.Size = new System.Drawing.Size(328, 201);
+            this.pictureBoxTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxTovar.TabIndex = 1;
+            this.pictureBoxTovar.TabStop = false;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 3;
@@ -861,7 +875,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.25858F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.74142F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 372F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 373F));
             this.tableLayoutPanel5.Controls.Add(this.butSendChat, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.butClearChat, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -878,10 +892,10 @@
             this.butSendChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butSendChat.Enabled = false;
             this.butSendChat.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSendChat.Location = new System.Drawing.Point(864, 3);
+            this.butSendChat.Location = new System.Drawing.Point(863, 3);
             this.butSendChat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butSendChat.Name = "butSendChat";
-            this.butSendChat.Size = new System.Drawing.Size(365, 54);
+            this.butSendChat.Size = new System.Drawing.Size(366, 54);
             this.butSendChat.TabIndex = 11;
             this.butSendChat.Text = "Отправить";
             this.butSendChat.UseVisualStyleBackColor = true;
@@ -1278,6 +1292,41 @@
             this.panel19.Size = new System.Drawing.Size(517, 737);
             this.panel19.TabIndex = 1;
             // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.label13);
+            this.flowLayoutPanel4.Controls.Add(this.butInfo);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(517, 737);
+            this.flowLayoutPanel4.TabIndex = 7;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label13.Location = new System.Drawing.Point(4, 0);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(215, 41);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Информация";
+            // 
+            // butInfo
+            // 
+            this.butInfo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butInfo.Location = new System.Drawing.Point(4, 44);
+            this.butInfo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.butInfo.Name = "butInfo";
+            this.butInfo.Size = new System.Drawing.Size(408, 91);
+            this.butInfo.TabIndex = 5;
+            this.butInfo.Text = "О программе";
+            this.butInfo.UseVisualStyleBackColor = true;
+            this.butInfo.Click += new System.EventHandler(this.butInfo_Click);
+            // 
             // panel18
             // 
             this.panel18.Controls.Add(this.flowLayoutPanelAdmin);
@@ -1353,7 +1402,9 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelRole,
-            this.textBoxBalance});
+            this.textBoxBalance,
+            this.toolStripStatusTime,
+            this.toolStripProgressBarTime});
             this.statusStrip.Location = new System.Drawing.Point(4, 852);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(17, 0, 2, 0);
@@ -1377,51 +1428,24 @@
             this.textBoxBalance.Size = new System.Drawing.Size(175, 27);
             this.textBoxBalance.Text = "Баланс карты: 0";
             // 
-            // flowLayoutPanel4
+            // toolStripProgressBarTime
             // 
-            this.flowLayoutPanel4.Controls.Add(this.label13);
-            this.flowLayoutPanel4.Controls.Add(this.butInfo);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(517, 737);
-            this.flowLayoutPanel4.TabIndex = 7;
+            this.toolStripProgressBarTime.Maximum = 30;
+            this.toolStripProgressBarTime.Name = "toolStripProgressBarTime";
+            this.toolStripProgressBarTime.Size = new System.Drawing.Size(100, 26);
             // 
-            // label13
+            // toolStripStatusTime
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label13.Location = new System.Drawing.Point(4, 0);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(215, 41);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Информация";
+            this.toolStripStatusTime.ForeColor = System.Drawing.SystemColors.Menu;
+            this.toolStripStatusTime.Name = "toolStripStatusTime";
+            this.toolStripStatusTime.Size = new System.Drawing.Size(36, 27);
+            this.toolStripStatusTime.Tag = "";
+            this.toolStripStatusTime.Text = "30";
             // 
-            // butInfo
+            // timerClose
             // 
-            this.butInfo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butInfo.Location = new System.Drawing.Point(4, 44);
-            this.butInfo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.butInfo.Name = "butInfo";
-            this.butInfo.Size = new System.Drawing.Size(408, 91);
-            this.butInfo.TabIndex = 5;
-            this.butInfo.Text = "О программе";
-            this.butInfo.UseVisualStyleBackColor = true;
-            this.butInfo.Click += new System.EventHandler(this.butInfo_Click);
-            // 
-            // pictureBoxTovar
-            // 
-            this.pictureBoxTovar.Image = global::OOO_Bank_NVA.Properties.Resources.photoEmpty;
-            this.pictureBoxTovar.Location = new System.Drawing.Point(110, 19);
-            this.pictureBoxTovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBoxTovar.Name = "pictureBoxTovar";
-            this.pictureBoxTovar.Size = new System.Drawing.Size(328, 201);
-            this.pictureBoxTovar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxTovar.TabIndex = 1;
-            this.pictureBoxTovar.TabStop = false;
+            this.timerClose.Interval = 1000;
+            this.timerClose.Tick += new System.EventHandler(this.timerClose_Tick);
             // 
             // MainForm
             // 
@@ -1455,6 +1479,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTovar)).EndInit();
             this.panelInfoTovar.ResumeLayout(false);
             this.panelInfoTovar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tabBasket.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1481,14 +1506,13 @@
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.panel19.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.flowLayoutPanelAdmin.ResumeLayout(false);
             this.flowLayoutPanelAdmin.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTovar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1598,5 +1622,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button butInfo;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusTime;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBarTime;
+        private System.Windows.Forms.Timer timerClose;
     }
 }

@@ -68,8 +68,9 @@ namespace OOO_Bank_NVA.Forms
             {
                 Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
                 {
-                    MessageBox.Show("Было вызвано техническое уведомление!", "Предупреждение!",
+                    MessageBox.Show("Технические работы через 30 сек.\n\rПожалуйста закончите все свои дела! !", "Предупреждение!",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    timerClose.Start();
                 }));
             });
 
@@ -648,9 +649,25 @@ namespace OOO_Bank_NVA.Forms
             listBoxChat.Items.Clear();
         }
 
+
+
         #endregion
 
+        #region Timer
+        private void timerClose_Tick(object sender, EventArgs e)
+        {
+            if (int.TryParse(toolStripStatusTime.Text,out int count))
+            {
+                toolStripProgressBarTime.Value = count;
+                toolStripStatusTime.Text = (count - 1).ToString();
+            }
 
-
+            if(count - 1 == 0)
+            {
+                timerClose.Stop();
+                Environment.Exit(0);
+            }
+        }
+        #endregion
     }
 }
