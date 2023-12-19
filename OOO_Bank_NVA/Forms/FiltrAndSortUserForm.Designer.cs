@@ -499,7 +499,7 @@
             this.Name = "FiltrAndSortUsersForm";
             this.Padding = new System.Windows.Forms.Padding(3, 65, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Сортировка и фильтрация данных товара";
+            this.Text = "Сортировка и фильтрация данных пользователей";
             this.Load += new System.EventHandler(this.FiltrAndSortUsersForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
