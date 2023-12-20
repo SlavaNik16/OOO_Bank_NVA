@@ -563,11 +563,10 @@ namespace OOO_Bank_NVA.Forms
                             }
                             baseDBBankWriteRepository.Delete(dbBank);
                             basePersonWriteRepository.Delete(user);
-                            this.Close();
                         }
 
                     }
-
+                     this.Close();
                 }
             }
         }
