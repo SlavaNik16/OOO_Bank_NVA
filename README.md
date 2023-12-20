@@ -3,7 +3,7 @@
 # Asp.Net Core SingleRapplication -> https://github.com/SlavaNik16/SingalRApplication
 
 
-[Аттестационный_Лист.docx](https://github.com/SlavaNik16/OOO_Bank_NVA/files/13721500/Аттестационный_лист.docx)
+[Аттестационный_Лист.docx](https://github.com/SlavaNik16/OOO_Bank_NVA/files/13721500/_._.docx)
 
 [ТЗ_ИП-20-3.docx](https://github.com/SlavaNik16/OOO_Bank_NVA/files/13721499/_._.-20-3.docx)
 
