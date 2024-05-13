@@ -1,4 +1,4 @@
-# OOO_Bank_NVA
+# OOO_Bank_NVA - курсовая работа, по теме банк
 
 # Asp.Net Core SingleRapplication -> https://github.com/SlavaNik16/SingalRApplication
 
