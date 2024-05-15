@@ -515,7 +515,7 @@ namespace OOO_Bank_NVA.Forms
             if (regCardBankForm.ShowDialog() == DialogResult.OK)
             {
                 var card = regCardBankForm.Card;
-
+                card.Balance = 2000;
                 baseCardWriteRepository.Add(card, AuthorizationForm.UserName);
                 AuthorizationForm.SetCardNameUser(card.Nomer);
                 basePersonWriteRepository.Update(AuthorizationForm.user, AuthorizationForm.UserName);

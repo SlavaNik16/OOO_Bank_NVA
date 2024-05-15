@@ -189,7 +189,7 @@
             this.materialTabControlOOOBank.Multiline = true;
             this.materialTabControlOOOBank.Name = "materialTabControlOOOBank";
             this.materialTabControlOOOBank.SelectedIndex = 0;
-            this.materialTabControlOOOBank.Size = new System.Drawing.Size(1833, 790);
+            this.materialTabControlOOOBank.Size = new System.Drawing.Size(1833, 780);
             this.materialTabControlOOOBank.TabIndex = 0;
             this.materialTabControlOOOBank.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.materialTabControl1_Selecting);
             // 
@@ -204,7 +204,7 @@
             this.tabUsers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabUsers.Name = "tabUsers";
             this.tabUsers.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tabUsers.Size = new System.Drawing.Size(1825, 747);
+            this.tabUsers.Size = new System.Drawing.Size(1825, 737);
             this.tabUsers.TabIndex = 0;
             this.tabUsers.Text = "Пользователи";
             this.tabUsers.ToolTipText = "Привет";
@@ -219,7 +219,7 @@
             this.tableLayoutPanel1.Controls.Add(this.butView, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.butFiltrAndSortUsers, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 665);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 655);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -279,7 +279,7 @@
             this.dataGridUsers.RowHeadersWidth = 62;
             this.dataGridUsers.RowTemplate.Height = 28;
             this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUsers.Size = new System.Drawing.Size(1817, 741);
+            this.dataGridUsers.Size = new System.Drawing.Size(1817, 731);
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.SelectionChanged += new System.EventHandler(this.dataGridUsers_SelectionChanged);
             // 
@@ -318,7 +318,7 @@
             this.ColumnGender.MinimumWidth = 8;
             this.ColumnGender.Name = "ColumnGender";
             this.ColumnGender.ReadOnly = true;
-            this.ColumnGender.Width = 65;
+            this.ColumnGender.Width = 94;
             // 
             // ColumnCardName
             // 
@@ -337,7 +337,7 @@
             this.ColumnStatus.MinimumWidth = 8;
             this.ColumnStatus.Name = "ColumnStatus";
             this.ColumnStatus.ReadOnly = true;
-            this.ColumnStatus.Width = 89;
+            this.ColumnStatus.Width = 132;
             // 
             // ColumnRole
             // 
@@ -347,7 +347,7 @@
             this.ColumnRole.MinimumWidth = 8;
             this.ColumnRole.Name = "ColumnRole";
             this.ColumnRole.ReadOnly = true;
-            this.ColumnRole.Width = 86;
+            this.ColumnRole.Width = 124;
             // 
             // ColumnUserId
             // 
@@ -365,13 +365,13 @@
             this.contextMenuStripDataGridUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.butStripView});
             this.contextMenuStripDataGridUsers.Name = "contextMenuStripDataGridUsers";
-            this.contextMenuStripDataGridUsers.Size = new System.Drawing.Size(202, 26);
+            this.contextMenuStripDataGridUsers.Size = new System.Drawing.Size(272, 36);
             this.contextMenuStripDataGridUsers.Click += new System.EventHandler(this.butView_Click);
             // 
             // butStripView
             // 
             this.butStripView.Name = "butStripView";
-            this.butStripView.Size = new System.Drawing.Size(201, 22);
+            this.butStripView.Size = new System.Drawing.Size(271, 32);
             this.butStripView.Text = "Просмотреть профиль";
             // 
             // tabTovars
@@ -560,7 +560,7 @@
             this.label1.Location = new System.Drawing.Point(196, 223);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 21);
+            this.label1.Size = new System.Drawing.Size(140, 30);
             this.label1.TabIndex = 4;
             this.label1.Text = "Описание";
             // 
@@ -780,12 +780,12 @@
             // 
             this.listBoxChat.Font = new System.Drawing.Font("Times New Roman", 18F);
             this.listBoxChat.FormattingEnabled = true;
-            this.listBoxChat.ItemHeight = 27;
+            this.listBoxChat.ItemHeight = 41;
             this.listBoxChat.Location = new System.Drawing.Point(4, 3);
             this.listBoxChat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.listBoxChat.Name = "listBoxChat";
             this.listBoxChat.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxChat.Size = new System.Drawing.Size(1225, 355);
+            this.listBoxChat.Size = new System.Drawing.Size(1225, 332);
             this.listBoxChat.TabIndex = 1;
             // 
             // label3
@@ -796,10 +796,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(4, 361);
+            this.label3.Location = new System.Drawing.Point(4, 338);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1225, 27);
+            this.label3.Size = new System.Drawing.Size(1225, 41);
             this.label3.TabIndex = 2;
             this.label3.Text = "Введите телефон, кому вы хотите написать";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -811,7 +811,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 658F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 284F));
             this.tableLayoutPanel6.Controls.Add(this.maskedTextBoxPhoneChat, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 391);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 382);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
@@ -827,7 +827,7 @@
             this.maskedTextBoxPhoneChat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.maskedTextBoxPhoneChat.Mask = "(000)-000-00-00";
             this.maskedTextBoxPhoneChat.Name = "maskedTextBoxPhoneChat";
-            this.maskedTextBoxPhoneChat.Size = new System.Drawing.Size(650, 35);
+            this.maskedTextBoxPhoneChat.Size = new System.Drawing.Size(650, 49);
             this.maskedTextBoxPhoneChat.TabIndex = 2;
             this.maskedTextBoxPhoneChat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBoxPhoneChat.TextChanged += new System.EventHandler(this.maskedTextBoxPhoneChat_TextChanged);
@@ -840,10 +840,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(4, 457);
+            this.label2.Location = new System.Drawing.Point(4, 448);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1225, 27);
+            this.label2.Size = new System.Drawing.Size(1225, 41);
             this.label2.TabIndex = 3;
             this.label2.Text = "Введите сообщение";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -852,7 +852,7 @@
             // 
             this.textBoxMessageChat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.textBoxMessageChat.Font = new System.Drawing.Font("Times New Roman", 18F);
-            this.textBoxMessageChat.Location = new System.Drawing.Point(4, 487);
+            this.textBoxMessageChat.Location = new System.Drawing.Point(4, 492);
             this.textBoxMessageChat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxMessageChat.MaxLength = 500;
             this.textBoxMessageChat.Multiline = true;
@@ -875,7 +875,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.25858F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.74142F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 376F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 379F));
             this.tableLayoutPanel5.Controls.Add(this.butSendChat, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.butClearChat, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -892,10 +892,10 @@
             this.butSendChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.butSendChat.Enabled = false;
             this.butSendChat.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSendChat.Location = new System.Drawing.Point(860, 3);
+            this.butSendChat.Location = new System.Drawing.Point(857, 3);
             this.butSendChat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butSendChat.Name = "butSendChat";
-            this.butSendChat.Size = new System.Drawing.Size(369, 54);
+            this.butSendChat.Size = new System.Drawing.Size(372, 54);
             this.butSendChat.TabIndex = 11;
             this.butSendChat.Text = "Отправить";
             this.butSendChat.UseVisualStyleBackColor = true;
@@ -909,7 +909,7 @@
             this.butClearChat.Location = new System.Drawing.Point(4, 3);
             this.butClearChat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butClearChat.Name = "butClearChat";
-            this.butClearChat.Size = new System.Drawing.Size(319, 54);
+            this.butClearChat.Size = new System.Drawing.Size(318, 54);
             this.butClearChat.TabIndex = 10;
             this.butClearChat.Text = "Очистить чат";
             this.butClearChat.UseVisualStyleBackColor = true;
@@ -940,7 +940,7 @@
             this.label8.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.label8.Location = new System.Drawing.Point(42, 279);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 21);
+            this.label8.Size = new System.Drawing.Size(62, 33);
             this.label8.TabIndex = 25;
             this.label8.Text = "Пол";
             // 
@@ -950,7 +950,7 @@
             this.textBoxGender.Location = new System.Drawing.Point(35, 317);
             this.textBoxGender.Name = "textBoxGender";
             this.textBoxGender.ReadOnly = true;
-            this.textBoxGender.Size = new System.Drawing.Size(503, 29);
+            this.textBoxGender.Size = new System.Drawing.Size(503, 40);
             this.textBoxGender.TabIndex = 24;
             this.textBoxGender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -962,7 +962,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.Menu;
             this.label9.Location = new System.Drawing.Point(41, 190);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 21);
+            this.label9.Size = new System.Drawing.Size(115, 33);
             this.label9.TabIndex = 23;
             this.label9.Text = "Телефон";
             // 
@@ -974,7 +974,7 @@
             this.maskTextBoxPhone.Location = new System.Drawing.Point(34, 229);
             this.maskTextBoxPhone.Mask = "(000)-000-00-00";
             this.maskTextBoxPhone.Name = "maskTextBoxPhone";
-            this.maskTextBoxPhone.Size = new System.Drawing.Size(504, 29);
+            this.maskTextBoxPhone.Size = new System.Drawing.Size(504, 40);
             this.maskTextBoxPhone.SkipLiterals = false;
             this.maskTextBoxPhone.TabIndex = 22;
             this.maskTextBoxPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -985,7 +985,7 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.label10.Location = new System.Drawing.Point(42, 102);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 21);
+            this.label10.Size = new System.Drawing.Size(65, 33);
             this.label10.TabIndex = 21;
             this.label10.Text = "Имя";
             // 
@@ -995,7 +995,7 @@
             this.textBoxName.Location = new System.Drawing.Point(34, 139);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.ReadOnly = true;
-            this.textBoxName.Size = new System.Drawing.Size(504, 29);
+            this.textBoxName.Size = new System.Drawing.Size(504, 40);
             this.textBoxName.TabIndex = 20;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1004,7 +1004,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(34, 17);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 21);
+            this.label11.Size = new System.Drawing.Size(125, 30);
             this.label11.TabIndex = 19;
             this.label11.Text = "Фамилия";
             // 
@@ -1014,7 +1014,7 @@
             this.textBoxSurname.Location = new System.Drawing.Point(35, 53);
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.ReadOnly = true;
-            this.textBoxSurname.Size = new System.Drawing.Size(503, 29);
+            this.textBoxSurname.Size = new System.Drawing.Size(503, 40);
             this.textBoxSurname.TabIndex = 18;
             this.textBoxSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1092,7 +1092,7 @@
             this.label7.Location = new System.Drawing.Point(391, 17);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 21);
+            this.label7.Size = new System.Drawing.Size(73, 33);
             this.label7.TabIndex = 16;
             this.label7.Text = "CVC";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1108,7 +1108,7 @@
             this.label6.Location = new System.Drawing.Point(65, 17);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 21);
+            this.label6.Size = new System.Drawing.Size(69, 33);
             this.label6.TabIndex = 15;
             this.label6.Text = "Дата";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1120,7 +1120,7 @@
             this.maskedTextBoxCVCCode.Mask = "000";
             this.maskedTextBoxCVCCode.Name = "maskedTextBoxCVCCode";
             this.maskedTextBoxCVCCode.ReadOnly = true;
-            this.maskedTextBoxCVCCode.Size = new System.Drawing.Size(184, 29);
+            this.maskedTextBoxCVCCode.Size = new System.Drawing.Size(184, 40);
             this.maskedTextBoxCVCCode.TabIndex = 14;
             this.maskedTextBoxCVCCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1131,7 +1131,7 @@
             this.maskedTextBoxDataEnd.Mask = "00/00";
             this.maskedTextBoxDataEnd.Name = "maskedTextBoxDataEnd";
             this.maskedTextBoxDataEnd.ReadOnly = true;
-            this.maskedTextBoxDataEnd.Size = new System.Drawing.Size(217, 29);
+            this.maskedTextBoxDataEnd.Size = new System.Drawing.Size(217, 40);
             this.maskedTextBoxDataEnd.TabIndex = 13;
             this.maskedTextBoxDataEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1142,7 +1142,7 @@
             this.maskTextBoxCardName.Mask = "0000-0000-0000-0000";
             this.maskTextBoxCardName.Name = "maskTextBoxCardName";
             this.maskTextBoxCardName.ReadOnly = true;
-            this.maskTextBoxCardName.Size = new System.Drawing.Size(508, 29);
+            this.maskTextBoxCardName.Size = new System.Drawing.Size(508, 40);
             this.maskTextBoxCardName.TabIndex = 11;
             this.maskTextBoxCardName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1180,7 +1180,7 @@
             this.tabSettings.Location = new System.Drawing.Point(4, 39);
             this.tabSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Size = new System.Drawing.Size(1825, 747);
+            this.tabSettings.Size = new System.Drawing.Size(1825, 737);
             this.tabSettings.TabIndex = 2;
             this.tabSettings.Text = "Настройки";
             // 
@@ -1193,7 +1193,7 @@
             this.panel20.Location = new System.Drawing.Point(517, 0);
             this.panel20.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(725, 747);
+            this.panel20.Size = new System.Drawing.Size(725, 737);
             this.panel20.TabIndex = 2;
             // 
             // flowLayoutPanel1
@@ -1208,7 +1208,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(7, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(711, 250);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(711, 240);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // label4
@@ -1219,14 +1219,14 @@
             this.label4.Location = new System.Drawing.Point(4, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 27);
+            this.label4.Size = new System.Drawing.Size(166, 41);
             this.label4.TabIndex = 2;
             this.label4.Text = "Изменить";
             // 
             // butEditPhone
             // 
             this.butEditPhone.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butEditPhone.Location = new System.Drawing.Point(4, 30);
+            this.butEditPhone.Location = new System.Drawing.Point(4, 44);
             this.butEditPhone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butEditPhone.Name = "butEditPhone";
             this.butEditPhone.Size = new System.Drawing.Size(408, 91);
@@ -1238,7 +1238,7 @@
             // butEditPassword
             // 
             this.butEditPassword.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butEditPassword.Location = new System.Drawing.Point(4, 127);
+            this.butEditPassword.Location = new System.Drawing.Point(4, 141);
             this.butEditPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butEditPassword.Name = "butEditPassword";
             this.butEditPassword.Size = new System.Drawing.Size(408, 91);
@@ -1253,7 +1253,7 @@
             this.flowLayoutPanel3.Controls.Add(this.butDeleteAccaunt);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 604);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 594);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(725, 143);
             this.flowLayoutPanel3.TabIndex = 6;
@@ -1266,14 +1266,14 @@
             this.label5.Location = new System.Drawing.Point(4, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 27);
+            this.label5.Size = new System.Drawing.Size(141, 41);
             this.label5.TabIndex = 3;
             this.label5.Text = "Удалить";
             // 
             // butDeleteAccaunt
             // 
             this.butDeleteAccaunt.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butDeleteAccaunt.Location = new System.Drawing.Point(4, 30);
+            this.butDeleteAccaunt.Location = new System.Drawing.Point(4, 44);
             this.butDeleteAccaunt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butDeleteAccaunt.Name = "butDeleteAccaunt";
             this.butDeleteAccaunt.Size = new System.Drawing.Size(408, 91);
@@ -1289,7 +1289,7 @@
             this.panel19.Location = new System.Drawing.Point(0, 0);
             this.panel19.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(517, 747);
+            this.panel19.Size = new System.Drawing.Size(517, 737);
             this.panel19.TabIndex = 1;
             // 
             // flowLayoutPanel4
@@ -1300,7 +1300,7 @@
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(517, 747);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(517, 737);
             this.flowLayoutPanel4.TabIndex = 7;
             // 
             // label13
@@ -1311,14 +1311,14 @@
             this.label13.Location = new System.Drawing.Point(4, 0);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 27);
+            this.label13.Size = new System.Drawing.Size(215, 41);
             this.label13.TabIndex = 3;
             this.label13.Text = "Информация";
             // 
             // butInfo
             // 
             this.butInfo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butInfo.Location = new System.Drawing.Point(4, 30);
+            this.butInfo.Location = new System.Drawing.Point(4, 44);
             this.butInfo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butInfo.Name = "butInfo";
             this.butInfo.Size = new System.Drawing.Size(408, 91);
@@ -1335,7 +1335,7 @@
             this.panel18.Location = new System.Drawing.Point(1242, 0);
             this.panel18.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(583, 747);
+            this.panel18.Size = new System.Drawing.Size(583, 737);
             this.panel18.TabIndex = 0;
             // 
             // flowLayoutPanelAdmin
@@ -1346,7 +1346,7 @@
             this.flowLayoutPanelAdmin.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelAdmin.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelAdmin.Name = "flowLayoutPanelAdmin";
-            this.flowLayoutPanelAdmin.Size = new System.Drawing.Size(583, 747);
+            this.flowLayoutPanelAdmin.Size = new System.Drawing.Size(583, 737);
             this.flowLayoutPanelAdmin.TabIndex = 6;
             // 
             // label12
@@ -1357,14 +1357,14 @@
             this.label12.Location = new System.Drawing.Point(4, 0);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(259, 27);
+            this.label12.Size = new System.Drawing.Size(386, 41);
             this.label12.TabIndex = 3;
             this.label12.Text = "Отправить уведомление";
             // 
             // butSendTexnWork
             // 
             this.butSendTexnWork.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSendTexnWork.Location = new System.Drawing.Point(4, 30);
+            this.butSendTexnWork.Location = new System.Drawing.Point(4, 44);
             this.butSendTexnWork.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butSendTexnWork.Name = "butSendTexnWork";
             this.butSendTexnWork.Size = new System.Drawing.Size(408, 91);
@@ -1405,11 +1405,11 @@
             this.textBoxBalance,
             this.toolStripStatusTime,
             this.toolStripProgressBarTime});
-            this.statusStrip.Location = new System.Drawing.Point(4, 862);
+            this.statusStrip.Location = new System.Drawing.Point(4, 852);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(17, 0, 2, 0);
             this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip.Size = new System.Drawing.Size(1833, 24);
+            this.statusStrip.Size = new System.Drawing.Size(1833, 34);
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -1418,21 +1418,21 @@
             this.toolStripStatusLabelRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toolStripStatusLabelRole.ForeColor = System.Drawing.SystemColors.Menu;
             this.toolStripStatusLabelRole.Name = "toolStripStatusLabelRole";
-            this.toolStripStatusLabelRole.Size = new System.Drawing.Size(154, 19);
+            this.toolStripStatusLabelRole.Size = new System.Drawing.Size(231, 27);
             this.toolStripStatusLabelRole.Text = "Статус: Пользователь";
             // 
             // textBoxBalance
             // 
             this.textBoxBalance.ForeColor = System.Drawing.SystemColors.Menu;
             this.textBoxBalance.Name = "textBoxBalance";
-            this.textBoxBalance.Size = new System.Drawing.Size(115, 19);
+            this.textBoxBalance.Size = new System.Drawing.Size(175, 27);
             this.textBoxBalance.Text = "Баланс карты: 0";
             // 
             // toolStripStatusTime
             // 
             this.toolStripStatusTime.ForeColor = System.Drawing.SystemColors.Menu;
             this.toolStripStatusTime.Name = "toolStripStatusTime";
-            this.toolStripStatusTime.Size = new System.Drawing.Size(25, 27);
+            this.toolStripStatusTime.Size = new System.Drawing.Size(36, 27);
             this.toolStripStatusTime.Tag = "";
             this.toolStripStatusTime.Text = "30";
             this.toolStripStatusTime.Visible = false;
@@ -1451,7 +1451,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1841, 889);
             this.Controls.Add(this.materialTabControlOOOBank);
